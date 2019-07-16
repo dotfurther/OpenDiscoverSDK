@@ -1,2 +1,2 @@
 # OpenDiscoverSDK
-.NET API for document text extraction, metadata extraction, and embedded object/attachment extraction
+.NET API for document file format identification and text, metadata, and embedded object/attachment extraction
