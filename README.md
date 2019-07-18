@@ -17,3 +17,13 @@
 - IT Departments - identify and de-duplicate documents on file servers
 - eDiscovery applications 
 - And more...
+
+## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
+- DocumentIdentifier Example: shows how to use SDK to identify the document file formats of all files under an input directory/sub-directories
+- ContentExtraction Example: illustrates the following SDK features:
+   - How to extract text and metadata from office documents, PDFs, XPS, raster images, vector images, multimedia, and more
+   - How to decrypted password protected office documents, PDFs, and archives
+   - How to identify the languages present in extracted text
+   - MD5/SHA-1 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of same document or email whether saved as .msg, .eml, or .emlx.
+   - How to extract items from archives such as 7ZIP, ZIP, RAR, split archives, self-extracting archives, etc.
+   - Extract email objects from PST, OST, and MBOX mail stores
