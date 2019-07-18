@@ -27,3 +27,7 @@
    - MD5/SHA-1 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of same document or email whether saved as .msg, .eml, or .emlx.
    - How to extract items from archives such as 7ZIP, ZIP, RAR, split archives, self-extracting archives, etc.
    - Extract email objects from PST, OST, and MBOX mail stores
+- Indexing Example: illustrates a simple indexing strategy using Lucene.NET and also how to make indexes better by:
+   - Indexing document format ID as a field. Users can limit searches for documents with very specific formats.
+   - Indexing document format classification (ex: WordProcessing, Spreadsheet, etc are file format classifications). Users can limit searches to all "WordProcessing" or all "Spreadsheet", for example.
+   - Indexing MD5/SHA-1 binary and content based hashes. When searching index, duplicate documents can be indicated and returned as a group.
