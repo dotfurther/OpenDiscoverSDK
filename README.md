@@ -1,8 +1,8 @@
 # Welcome to Open Discover® SDK for .NET
 ## Open Discover SDK is a .NET application programming interface (API) that allows for:
-- Identifying file formats using internal binary signatures for reliable and fast file format identification (versus using unreliable file extensions)
+- Identifying file formats using internal binary signatures for reliable and fast file format identification (versus using unreliable file extensions). 1400+ file formats supported for identification.
 - Extracting text from supported file formats and optionally identifying languages present in the extracted text
-- Extracting metadata from supported file formats (over 1,325 known metadata fields in total)
+- Extracting metadata from supported file formats (over 1,325 known and documented metadata fields in total)
 - Extracting embedded items/attachments from supported document formats
 - Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 - Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
