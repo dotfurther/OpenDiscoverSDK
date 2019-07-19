@@ -1,4 +1,4 @@
-# Welcome to Open Discover® SDK for .NET
+# COMING SOON - Welcome to Open Discover® SDK for .NET
 ## Open Discover SDK is a .NET application programming interface (API) that allows for:
 - Identifying file formats using internal binary signatures for reliable and fast file format identification (versus using unreliable file extensions). 1400+ file formats supported for identification.
 - Extracting text from supported file formats and optionally identifying languages present in the extracted text
