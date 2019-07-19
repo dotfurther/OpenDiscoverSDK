@@ -8,7 +8,7 @@
 - Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
 
 ## Open Discover SDK API is purposed for users to develop higher level document processing applications for:
-- Full text search using Lucene.NET
+- Full text search using Lucene.NET 
 - Machine learning using extracted text and metadata
 - Text analytics and document concept clustering
 - Information governance
