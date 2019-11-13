@@ -8,7 +8,7 @@
 - Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
 
 ## Open Discover SDK API is purposed for users to develop higher level document processing applications for:
-- Full text search using Lucene.NET 
+- Full text indexing/search
 - Machine learning using extracted text and metadata
 - Text analytics and document concept clustering
 - Information governance
@@ -19,8 +19,8 @@
 - And more...
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
-- DocumentIdentifier Example: shows how to use SDK to identify the document file formats of all files under an input directory/sub-directories
-- ContentExtraction Example: illustrates the following SDK features:
+- DocumentIdentifier Example - shows how to use SDK to identify the document file formats of all files under an input directory/sub-directories
+- ContentExtraction Example - illustrates the following SDK features:
    - How to extract text and metadata from office documents, PDFs, XPS, raster images, vector images, multimedia, and more
    - How to decrypt password protected office documents, PDFs, and archives
    - How to identify the languages present in extracted text
@@ -31,3 +31,6 @@
    - Indexing document format ID as a field. Users can limit searches for documents with very specific formats.
    - Indexing document format classification as fields (ex: WordProcessing, Spreadsheet, etc are file format classifications). Users can limit searches to all "WordProcessing" or all "Spreadsheet" document classifications, for example.
    - Indexing MD5/SHA-1 binary and content based hashes as fields. When searching index, duplicate documents can be indicated and returned as a group.
+- PowerShell Example - shows how to create Cmdlets that use SDK to:
+   - Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
+   - Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
