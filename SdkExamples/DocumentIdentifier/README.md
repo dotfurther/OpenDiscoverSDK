@@ -4,7 +4,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 
 ### DocumentIdentifierExample.csproj:
 This example shows how to use the Open Discover SDK DocumentIdentifier API in a parallel ForEach loop to identify the file formats 
-of files contained in a directory (and including all sub-directories).
+of files contained in a directory (including all sub-directories).
 
 The DocumentIdentifier.Identify methods take either a System.IO.Stream or byte array of file bytes. When opening a stream or reading in all file bytes, it is up to the user to take care of long file paths that are greater than MAX_PATH characters in length.
 
