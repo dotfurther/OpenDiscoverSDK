@@ -2,7 +2,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 
 ## The projects contained in this directory show case the use of the Open Discover SDK API in a WCF service.
 
-## WCF Example Projects:
+### WCF Example Projects:
 - Service Clients\SdkAPIWinFormClient.csproj : A Winform UI that starts and connects to the console application hosted WCF service 
   and uses that service to extract document content. This test UI will display a dialog to connect to the console app hosted service.
   After connected, use the File menu to open a document that you which to extract content from. The UI will then display the extracted
