@@ -21,8 +21,9 @@
 - And more...
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
-### DocumentIdentifier Example 
-- Shows how to use SDK to identify the document file formats of all files under an input directory and its sub-directories
+### DocumentIdentifier Example:
+   - Shows how to use SDK to identify the document file formats of all files under an input directory and its 
+     sub-directories
 ### ContentExtraction Example - illustrates the following SDK features:
    - How to extract text and metadata from office documents, PDFs, XPS, raster images, vector images, multimedia, and more
    - How to decrypt password protected office documents, PDFs, and archives
