@@ -1,7 +1,6 @@
 Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
 
 ## The projects contained in this directory show case the use of the Open Discover SDK API in a WCF service.
-## The example demonstrates how SDK extracted document content is supported for serialization.
 
 ## WCF Example Projects:
 - Service Clients\SdkAPIWinFormClient.csproj : A Winform UI that starts and connects to the console application hosted WCF service 
@@ -11,6 +10,8 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - Service Host\SdkAPIServiceHost.csproj:  Hosts the "SdkAPIWCFService" service in a console application
 - SdkAPI.Common.csproj: Contains the service interfaces and a lightweight and reusable service proxy.    
 - SdkAPIWCFService.csproj: Contains the service implementation
+
+The example demonstrates how SDK extracted document content is supported for serialization.
 
 ## Example Screen:
 
