@@ -13,7 +13,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 
 The example demonstrates how SDK extracted document content is supported for serialization.
 
-## Example Screen:
+### Example Screen:
 
 ------------------------------------------------------------------------------------------------------------------------
 NOTE: Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependencies
