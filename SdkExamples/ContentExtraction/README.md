@@ -1,15 +1,15 @@
 Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
 
-#ContentExtractionExample.csproj:
+# ContentExtractionExample.csproj:
 
 This example shows how to use the Open Discover SDK API to identify file formats and extract content from various
 formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returned interfaces.
 
 
-##How to use this example:
+## How to use this example:
 
 
-##Note:
+## Note:
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
  
