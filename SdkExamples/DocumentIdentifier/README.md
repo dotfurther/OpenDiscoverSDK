@@ -19,7 +19,7 @@ may use a lot of the available CPU. The anti-virus program may even kill the pro
 to configure your anti-virus to 'trust' this application.
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
-### NOTE: 
+### Note: 
 Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependencies
 - Build examples with Visual Studio Platform set to x64 (either Debug or Release)
 - To edit WinForm forms in VS 2017, set build VS Platform to "Any CPU" and rebuild. This is required to edit WinForm windows. 
