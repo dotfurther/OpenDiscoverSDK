@@ -1,0 +1,22 @@
+﻿Directions:
+  1) Enter a directory in which you want to identify all files (includes all sub-directories). Try to keep the total number of files 
+     to be identified under 500,000 because for this test application all file identification results are stored in memory.
+  2) Press the 'Start' button to begin parallel file format identification of all files under the entered directory.
+  3) Run test at least 2 times on same input directory to gauge true identification performance from that of your particular file system.
+     On the second and following tests of same directory Windows will have cached the read files in the system cache so performance results 
+	 will only reflect that of the SDK performance and not that of your file system's.
+
+A graphical pie chart break down of the file format Id classifications and specific file formats identified will appear here after a 
+successful file format identification test.
+
+The 'Identification Details' tab page will have detailed file format information on each identified file (double-clicking on entry will 
+open File Explorer to that file)
+
+The 'All Supported Document File Formats' tab page details all Open Discover SDK supported file formats for identification (grouped by 
+IdClassification)
+
+**WARNING**
+This example application will read 1000's of files a second and this may pique the interest of your anti-virus software. Your anti-virus 
+software may use lots of CPU to closely monitor this example application because of this, or even kill this process. To monitor your anti-
+virus, run this application with Windows Task Manager open and under the 'Details' sort by CPU. If your anti-virus software is interfering 
+or killing this example application, add this application to your anti-virus' trusted applications (if possible).

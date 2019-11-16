@@ -1,0 +1,197 @@
+﻿<Window x:Class="DocumentIdentifierExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chart="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        Title="Document File Format Identification using Open Discover® SDK for .NET (www.dotfurther.com)"
+        xmlns:local="clr-namespace:DocumentIdentifierExample"
+        WindowState="Maximized">
+    <Window.Resources>
+        <local:TrueToVisibilityConverter      x:Key="TrueToVisibilityConverter"/>
+        <local:FalseToVisibilityConverter     x:Key="FalseToVisibilityConverter"/>
+    </Window.Resources>
+
+   <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="_mainTabControl" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <TabItem Header="Document ID Scan">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Identify Files under this Directory (includes sub-directories):" 
+                                   Margin="5"
+                                   VerticalAlignment="Center"/>
+                        <TextBox x:Name="_rootIdPathTextBox" 
+                                 Grid.Column="1"
+                                 VerticalAlignment="Center" Margin="0,5,0,5"/>
+                        <Button x:Name="_browseFolderButton"
+                                Grid.Column="2"
+                                Width="20"
+                                Margin="5"
+                                VerticalAlignment="Center" Click="_browseFolderButton_Click">...</Button>
+                        <Button x:Name="_startIdProcessButton"
+                                Grid.Column="3"
+                                Margin="5"
+                                MinWidth="70"
+                                VerticalAlignment="Center" 
+                                Click="_startIdProcessButton_Click">Start</Button>
+                    </Grid>
+                    <TabControl Grid.Row="1" Grid.ColumnSpan="4">
+                        <TabItem Header="Identification Summary">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBox x:Name="_identificationDirectionsTextBox" Margin="20"
+		                                 FontSize="16"
+                                         Grid.Row="0"
+                                         VerticalAlignment="Stretch" 
+                                         HorizontalAlignment="Stretch"
+                                         IsReadOnly="True"  
+                                         BorderThickness="0"
+                                         AcceptsReturn="True" 
+                                         TextWrapping="NoWrap"
+		                                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+		                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                         Visibility="{Binding IdentificationResultsAvailable, Converter={StaticResource FalseToVisibilityConverter}}" >
+                                </TextBox>
+
+                                <Grid Margin="10" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                      Visibility="{Binding IdentificationResultsAvailable, Converter={StaticResource TrueToVisibilityConverter}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <WindowsFormsHost Background="White" Grid.Column="0" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <chart:Chart x:Name="_classificationChart">
+                                            <chart:Chart.ChartAreas>
+                                                <chart:ChartArea x:Name="_classificationChartArea"/>
+                                            </chart:Chart.ChartAreas>
+                                            <chart:Chart.Titles>
+                                                <chart:Title Text="Document Id Classification"/>
+                                            </chart:Chart.Titles>
+                                            <chart:Chart.Legends>
+                                                <chart:Legend x:Name="_classificationLegend"/>
+                                            </chart:Chart.Legends>
+                                            <chart:Chart.Series>
+                                                <chart:Series x:Name="_classificationSeries" ChartType="Pie"/>
+                                            </chart:Chart.Series>
+                                        </chart:Chart>
+                                    </WindowsFormsHost>
+
+                                    <WindowsFormsHost Background="White" Grid.Column="1" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <chart:Chart x:Name="_idCountChart">
+                                            <chart:Chart.ChartAreas>
+                                                <chart:ChartArea x:Name="_idCountChartArea"/>
+                                            </chart:Chart.ChartAreas>
+                                            <chart:Chart.Titles>
+                                                <chart:Title Text="Document Format Id"/>
+                                            </chart:Chart.Titles>
+                                            <chart:Chart.Legends>
+                                                <chart:Legend x:Name="_idCountChartLegend"/>
+                                            </chart:Chart.Legends>
+                                            <chart:Chart.Series>
+                                                <chart:Series x:Name="_idCountChartSeries" ChartType="Pie"/>
+                                            </chart:Chart.Series>
+                                        </chart:Chart>
+                                    </WindowsFormsHost>
+                                </Grid>
+                            </Grid>
+                        </TabItem>
+                        
+                        <TabItem Header="Identification Details">
+                            <DataGrid x:Name="_fileIdResultsDataGrid"
+                              Grid.Row="1"
+                              Grid.ColumnSpan="4"
+                              IsReadOnly="True"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              AutoGenerateColumns="True"
+                              SelectionMode="Single"
+                              MouseDoubleClick="_fileIdResultsDataGrid_MouseDoubleClick"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="All Supported Document File Formats">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Total File Formats:" 
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock x:Name="_totalFileFormatsTextBlock" 
+                                   Text="0" 
+                                   Grid.Column="1"
+                                   Margin="5"
+                                   MinWidth="30"
+                                   VerticalAlignment="Center"/>                        
+                        <TextBlock Text="Classification:" 
+                                   Grid.Column="2"
+                                   Margin="20,5"
+                                   VerticalAlignment="Center"/>
+                        <ComboBox  x:Name="_docClassComboBox" 
+                                   Grid.Column="3"
+                                   SelectionChanged="_docClassComboBox_SelectionChanged"
+                                   Margin="5"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="Number of File Formats:" 
+                                   Grid.Column="4"
+                                   Margin="5"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock x:Name="_numberOfFileFormatsTextBlock" 
+                                   Text="0" 
+                                   Grid.Column="5"
+                                   Margin="5"
+                                   MinWidth="30"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                    <DataGrid x:Name="_fileFormatsDataGrid"
+                              Grid.Row="1"
+                              IsReadOnly="True"
+                              SelectionMode="Single"
+                              ClipboardCopyMode="None"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="2" Height="22" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ProgressBar x:Name="_progressBar" Margin="15,0,0,0" Width="400" Height="12" VerticalAlignment="Center" Minimum="0" Maximum="100" Visibility="Collapsed"/>
+            <TextBlock   x:Name="_statusTextBox" Text="Ready." Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        </StatusBar>
+    </Grid>
+</Window>
