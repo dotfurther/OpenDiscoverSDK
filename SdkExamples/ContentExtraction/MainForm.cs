@@ -346,7 +346,7 @@ namespace ContentExtractionExample
                 var stopWatch = Stopwatch.StartNew();
                 var fInfo     = new FileInfo(filePath);
 
-                _stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                _stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 16384); // Minimum recommended buffer size of 16kb
 
                 stopWatch.Stop();
                 var loadTime = stopWatch.Elapsed.TotalMilliseconds;

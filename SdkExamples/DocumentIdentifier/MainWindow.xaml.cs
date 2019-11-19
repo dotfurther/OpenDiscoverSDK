@@ -401,7 +401,8 @@ namespace DocumentIdentifierExample
 
                         // WARNING: This example does not support long path names (> 255) - .NET solutions for getting valid FileStreams for 'long file paths'
                         // can be found on the internet - also .NET 4.6.2 supports long file paths (web search for how to enable)
-                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                        // Note: Minimum recommended buffer size of 16kb for file identification
+                        using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 16384))
                         {
                             docFormat = DocumentIdentifier.Identify(stream, file);
                         }
