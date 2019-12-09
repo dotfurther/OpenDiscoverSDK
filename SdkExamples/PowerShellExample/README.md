@@ -16,31 +16,31 @@ The Cmdlet derived classes in this example C# project show how to use the Open D
 Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (this path will be unique to where the user installed the Github examples):
   PS> cd F:\OpenDiscover\Examples\SDK\Build  
 
-# Import assembly "PowerShellExample.dll" as a module into PowerShell environment:
+### Import assembly "PowerShellExample.dll" as a module into PowerShell environment:
   PS> Import-Module .\PowerShellExample.dll -Force
 
-# Display all Cmdlets in "PowerShellExample.dll" module:
+### Display all Cmdlets in "PowerShellExample.dll" module:
   PS> Get-Command -Module PowerShellExample       
 
-# Identify a file's format:
+### Identify a file's format:
   PS> Get-FileFormat -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf"
 
-# Identify a file's format and store the returned IdResult object in a variable:
+### Identify a file's format and store the returned IdResult object in a variable:
   PS> $format = Get-FileFormat -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf"  
-# Compare $format.ID enumerated value with SDK's Id.PDF value:
+### Compare $format.ID enumerated value with SDK's Id.PDF value:
   PS> $format.ID -eq [OpenDiscoverSDK.Interfaces.Id]::PDF
-# Compare the $format.Classification with SDK's IdClassification.DocumentExchange:
+### Compare the $format.Classification with SDK's IdClassification.DocumentExchange:
   PS>  $format.Classification -eq [OpenDiscoverSDK.Interfaces.IdClassification]::DocumentExchange
 It's not hard to see that the user using a file path pipeline with this Cmdlet could search for all documents on a file server that either have certain format Id or IdClassification type.
 
-# Get a file's format, metadata, attributes, hyperlinks, and [optionaly] display up to the first 1000 characters of extracted text:
+### Get a file's format, metadata, attributes, hyperlinks, and [optionaly] display up to the first 1000 characters of extracted text:
   PS> Get-FileInfo -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf" 
   PS> Get-FileInfo -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf" -ShowText $true
 
-# Get a file's extracted content as a DocumentContent object ans store it in a variable names "$content":
+### Get a file's extracted content as a DocumentContent object ans store it in a variable names "$content":
   PS> $content = Get-FileContent -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf"
 
-# Now display the $content result object's SHA1 binary hash, language identification, and convert the extracted text to an HTML file:
+### Now display the $content result object's SHA1 binary hash, language identification, and convert the extracted text to an HTML file:
   PS> $content.SHA1BinaryHash
   PS> $content.LanguageIdResults
   PS> ConvertTo-Html -InputObject $content -Property ExtractedText | Out-File content.htm
