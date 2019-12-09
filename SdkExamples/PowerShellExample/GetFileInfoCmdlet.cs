@@ -208,13 +208,12 @@ namespace OpenDiscoverSDK.PowerShell
             strBuilder.AppendLine(string.Format("   MediaType:        {0}", idResult.MediaType.ToString()));
             strBuilder.AppendLine(string.Format("   Description:      {0}", idResult.Description.ToString()));
 
-            strBuilder.AppendLine();
-            strBuilder.AppendLine("File Metadata:");
-            strBuilder.AppendLine("--------------");
-
-            var tempDictionary = new Dictionary<string, string>();
             if (content != null)
             {
+                strBuilder.AppendLine();
+                strBuilder.AppendLine("File Metadata:");
+                strBuilder.AppendLine("---------------");
+
                 foreach (var meta in content.Metadata)
                 {
                     string value = "";
@@ -238,51 +237,120 @@ namespace OpenDiscoverSDK.PowerShell
                         case PropertyType.String:
                             value = ((StringProperty)meta.Value).Value;
                             break;
+                        case PropertyType.BooleanList:
+                            value = string.Join("; ", ((BooleanListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.DateTimeList:
+                            value = string.Join("; ", ((DateTimeListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.DoubleList:
+                            value = string.Join("; ", ((DoubleListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.Int32List:
+                            value = string.Join("; ", ((Int32ListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.Int64List:
+                            value = string.Join("; ", ((Int64ListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.StringList:
+                            value = string.Join("; ", ((StringListProperty)meta.Value).Value);
+                            break;
                     }
 
                     strBuilder.AppendLine(string.Format("   {0,-35} {1}", meta.Key, value));
                 }
-            }
 
-            strBuilder.AppendLine();
-            strBuilder.AppendLine("File Attributes:");
-            strBuilder.AppendLine("----------------");
-            if (content.Attributes.Count > 0)
-            {
-                foreach (var attr in content.Attributes)
-                {
-                    strBuilder.AppendLine(string.Format("   {0}", attr.ToString()));
-                }
-            }
-
-            strBuilder.AppendLine();
-            strBuilder.AppendLine("File Hyperlinks:");
-            strBuilder.AppendLine("----------------");
-            if (content.HyperLinks.Count > 0)
-            {
-                foreach (var link in content.HyperLinks)
-                {
-                    strBuilder.AppendLine(string.Format("   {0}", link.Url));
-                }
-            }
-            strBuilder.AppendLine();
-
-            if (ShowText)
-            {
                 strBuilder.AppendLine();
-                if (content.ExtractedText != null)
+                strBuilder.AppendLine("Custom Metadata:");
+                strBuilder.AppendLine("-----------------");
+
+                foreach (var meta in content.CustomMetadata)
                 {
-                    var charsToDisplay = Math.Min(1000, content.ExtractedText.Length);
-                    strBuilder.AppendLine(string.Format("Extracted Text: Total Chars = {0}, Displayed Chars = {1}", content.ExtractedText.Length, charsToDisplay));
-                    strBuilder.AppendLine("-------------------------------------------------------------------");
-                    strBuilder.AppendLine(content.ExtractedText.Substring(0, charsToDisplay));
-                    strBuilder.AppendLine();
+                    string value = "";
+                    switch (meta.Value.PropertyType)
+                    {
+                        case PropertyType.Boolean:
+                            value = ((BooleanProperty)meta.Value).Value.ToString();
+                            break;
+                        case PropertyType.DateTime:
+                            value = ((DateTimeProperty)meta.Value).Value.ToString();
+                            break;
+                        case PropertyType.Double:
+                            value = ((DoubleProperty)meta.Value).Value.ToString();
+                            break;
+                        case PropertyType.Int32:
+                            value = ((Int32Property)meta.Value).Value.ToString();
+                            break;
+                        case PropertyType.Int64:
+                            value = ((Int64Property)meta.Value).Value.ToString();
+                            break;
+                        case PropertyType.String:
+                            value = ((StringProperty)meta.Value).Value;
+                            break;
+                        case PropertyType.BooleanList:
+                            value = string.Join("; ", ((BooleanListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.DateTimeList:
+                            value = string.Join("; ", ((DateTimeListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.DoubleList:
+                            value = string.Join("; ", ((DoubleListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.Int32List:
+                            value = string.Join("; ", ((Int32ListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.Int64List:
+                            value = string.Join("; ", ((Int64ListProperty)meta.Value).Value);
+                            break;
+                        case PropertyType.StringList:
+                            value = string.Join("; ", ((StringListProperty)meta.Value).Value);
+                            break;
+                    }
+
+                    strBuilder.AppendLine(string.Format("   {0,-35} {1}", meta.Key, value));
                 }
-                else
+
+
+                strBuilder.AppendLine();
+                strBuilder.AppendLine("File Attributes:");
+                strBuilder.AppendLine("----------------");
+                if (content.Attributes.Count > 0)
                 {
-                    strBuilder.AppendLine(string.Format("Extracted Text: Total Chars = {0}, Displayed Chars = {1}", 0, 0));
-                    strBuilder.AppendLine("-------------------------------------------------------------------");
+                    foreach (var attr in content.Attributes)
+                    {
+                        strBuilder.AppendLine(string.Format("   {0}", attr.ToString()));
+                    }
+                }
+
+                strBuilder.AppendLine();
+                strBuilder.AppendLine("File Hyperlinks:");
+                strBuilder.AppendLine("----------------");
+                if (content.HyperLinks.Count > 0)
+                {
+                    foreach (var link in content.HyperLinks)
+                    {
+                        strBuilder.AppendLine(string.Format("   {0}", link.Url));
+                    }
+                }
+                strBuilder.AppendLine();
+
+                if (ShowText)
+                {
                     strBuilder.AppendLine();
+                    if (content.ExtractedText != null)
+                    {
+                        var charsToDisplay = Math.Min(1000, content.ExtractedText.Length);
+                        strBuilder.AppendLine(string.Format("Extracted Text: Total Chars = {0}, Displayed Chars = {1}", content.ExtractedText.Length, charsToDisplay));
+                        strBuilder.AppendLine("-------------------------------------------------------------------");
+                        strBuilder.AppendLine(content.ExtractedText.Substring(0, charsToDisplay));
+                        strBuilder.AppendLine();
+                    }
+                    else
+                    {
+                        strBuilder.AppendLine(string.Format("Extracted Text: Total Chars = {0}, Displayed Chars = {1}", 0, 0));
+                        strBuilder.AppendLine("-------------------------------------------------------------------");
+                        strBuilder.AppendLine();
+                    }
                 }
             }
 

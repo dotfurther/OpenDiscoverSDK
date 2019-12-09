@@ -416,7 +416,7 @@ namespace ContentExtractionExample.Content
                 _totalTextCharsLabel.Text = "0 chars of extracted text";
             }
 
-            _metdataTabPage.Text    = string.Format("Metadata ({0})",   _docContent.Metadata.Count);
+            _metdataTabPage.Text    = string.Format("Metadata ({0})",   _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
             _attributesTabPage.Text = string.Format("Attributes ({0})", _docContent.Attributes.Count);
             _hyperLinksTabPage.Text = string.Format("Hyperlinks ({0})", _docContent.HyperLinks.Count);
             _languagesTabPage.Text  = string.Format("Languages ({0})",  _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
@@ -425,9 +425,10 @@ namespace ContentExtractionExample.Content
             //
             // Set metadata:
             //
-            if (_docContent.Metadata.Count > 0)
+            if (_docContent.Metadata.Count > 0 || _docContent.CustomMetadata.Count > 0)
             {
                 MetadataHelper.PopulateListViewWithMetadata(_metadataListView, _docContent.Metadata);
+                MetadataHelper.PopulateListViewWithMetadata(_metadataListView, _docContent.CustomMetadata, false);
             }
 
             if (_docContent.Attributes.Count > 0)

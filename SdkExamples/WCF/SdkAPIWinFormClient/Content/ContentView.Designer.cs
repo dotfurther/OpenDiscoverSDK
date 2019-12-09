@@ -60,6 +60,10 @@
             this._emailDocTabPage = new System.Windows.Forms.TabPage();
             this._emailDocTabControl = new System.Windows.Forms.TabControl();
             this._emailInfoTabPage = new System.Windows.Forms.TabPage();
+            this._senderX500DNLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this._fromX500DNLabel = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this._fromSmtpLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this._fromNameLabel = new System.Windows.Forms.Label();
@@ -100,6 +104,10 @@
             this._htmlImagesListView = new System.Windows.Forms.ListView();
             this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._htmlBaseUrlLabel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this._htmlTitleLabel = new System.Windows.Forms.Label();
@@ -112,6 +120,7 @@
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._featuresTabControl = new System.Windows.Forms.TabControl();
@@ -122,6 +131,17 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
+            this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
+            this._hyperLinksListView = new System.Windows.Forms.ListView();
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._languagesTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this._langIdListView = new System.Windows.Forms.ListView();
@@ -146,26 +166,7 @@
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._fromX500DNLabel = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this._senderX500DNLabel = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
-            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader21 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this._hyperLinksListView = new System.Windows.Forms.ListView();
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader41 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader42 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader43 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -192,6 +193,7 @@
             this._featuresTabControl.SuspendLayout();
             this._metdataTabPage.SuspendLayout();
             this._attributesTabPage.SuspendLayout();
+            this._hyperLinksTabPage.SuspendLayout();
             this._languagesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -202,7 +204,6 @@
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
-            this._hyperLinksTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -571,6 +572,44 @@
             this._emailInfoTabPage.Size = new System.Drawing.Size(594, 275);
             this._emailInfoTabPage.TabIndex = 1;
             this._emailInfoTabPage.Text = "Info";
+            // 
+            // _senderX500DNLabel
+            // 
+            this._senderX500DNLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._senderX500DNLabel.Location = new System.Drawing.Point(99, 109);
+            this._senderX500DNLabel.Name = "_senderX500DNLabel";
+            this._senderX500DNLabel.Size = new System.Drawing.Size(411, 13);
+            this._senderX500DNLabel.TabIndex = 100;
+            this._senderX500DNLabel.Text = " ";
+            this._senderX500DNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(9, 109);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(88, 13);
+            this.label26.TabIndex = 99;
+            this.label26.Text = "Sender X500DN:";
+            // 
+            // _fromX500DNLabel
+            // 
+            this._fromX500DNLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fromX500DNLabel.Location = new System.Drawing.Point(99, 49);
+            this._fromX500DNLabel.Name = "_fromX500DNLabel";
+            this._fromX500DNLabel.Size = new System.Drawing.Size(411, 13);
+            this._fromX500DNLabel.TabIndex = 98;
+            this._fromX500DNLabel.Text = " ";
+            this._fromX500DNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(9, 49);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(77, 13);
+            this.label24.TabIndex = 97;
+            this.label24.Text = "From X500DN:";
             // 
             // _fromSmtpLabel
             // 
@@ -971,6 +1010,24 @@
             this.columnHeader34.Text = "AlternateText";
             this.columnHeader34.Width = 331;
             // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Width";
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Height";
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "SourceSet";
+            this.columnHeader20.Width = 79;
+            // 
+            // columnHeader21
+            // 
+            this.columnHeader21.Text = "LongDescription";
+            this.columnHeader21.Width = 132;
+            // 
             // _htmlBaseUrlLabel
             // 
             this._htmlBaseUrlLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1085,6 +1142,11 @@
             // 
             this.columnHeader29.Text = "NumTextCharsExtracted";
             // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "ContentLength";
+            this.columnHeader22.Width = 79;
+            // 
             // columnHeader30
             // 
             this.columnHeader30.Text = "Has Images";
@@ -1124,6 +1186,7 @@
             this._metadataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader6,
+            this.columnHeader23,
             this.columnHeader7});
             this._metadataListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._metadataListView.FullRowSelect = true;
@@ -1148,7 +1211,7 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Value";
-            this.columnHeader7.Width = 152;
+            this.columnHeader7.Width = 308;
             // 
             // _attributesTabPage
             // 
@@ -1171,6 +1234,79 @@
             this._attributesTextBox.ReadOnly = true;
             this._attributesTextBox.Size = new System.Drawing.Size(499, 301);
             this._attributesTextBox.TabIndex = 0;
+            // 
+            // _hyperLinksTabPage
+            // 
+            this._hyperLinksTabPage.Controls.Add(this._hyperLinksListView);
+            this._hyperLinksTabPage.Location = new System.Drawing.Point(4, 22);
+            this._hyperLinksTabPage.Name = "_hyperLinksTabPage";
+            this._hyperLinksTabPage.Size = new System.Drawing.Size(505, 307);
+            this._hyperLinksTabPage.TabIndex = 4;
+            this._hyperLinksTabPage.Text = "HyperLinks (0)";
+            this._hyperLinksTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _hyperLinksListView
+            // 
+            this._hyperLinksListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._hyperLinksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader35,
+            this.columnHeader36,
+            this.columnHeader37,
+            this.columnHeader38,
+            this.columnHeader39,
+            this.columnHeader40,
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43});
+            this._hyperLinksListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._hyperLinksListView.FullRowSelect = true;
+            this._hyperLinksListView.HideSelection = false;
+            this._hyperLinksListView.Location = new System.Drawing.Point(0, 0);
+            this._hyperLinksListView.Name = "_hyperLinksListView";
+            this._hyperLinksListView.Size = new System.Drawing.Size(505, 307);
+            this._hyperLinksListView.TabIndex = 72;
+            this._hyperLinksListView.UseCompatibleStateImageBehavior = false;
+            this._hyperLinksListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "IsExternalLink";
+            this.columnHeader35.Width = 79;
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "Text";
+            this.columnHeader36.Width = 72;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "Url";
+            this.columnHeader37.Width = 69;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "Download";
+            this.columnHeader38.Width = 76;
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "Type";
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "Relationship";
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "RefLang";
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "Target";
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "Ping";
             // 
             // _languagesTabPage
             // 
@@ -1393,139 +1529,10 @@
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
             // 
-            // _fromX500DNLabel
+            // columnHeader23
             // 
-            this._fromX500DNLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._fromX500DNLabel.Location = new System.Drawing.Point(99, 49);
-            this._fromX500DNLabel.Name = "_fromX500DNLabel";
-            this._fromX500DNLabel.Size = new System.Drawing.Size(411, 13);
-            this._fromX500DNLabel.TabIndex = 98;
-            this._fromX500DNLabel.Text = " ";
-            this._fromX500DNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(9, 49);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(77, 13);
-            this.label24.TabIndex = 97;
-            this.label24.Text = "From X500DN:";
-            // 
-            // _senderX500DNLabel
-            // 
-            this._senderX500DNLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._senderX500DNLabel.Location = new System.Drawing.Point(99, 109);
-            this._senderX500DNLabel.Name = "_senderX500DNLabel";
-            this._senderX500DNLabel.Size = new System.Drawing.Size(411, 13);
-            this._senderX500DNLabel.TabIndex = 100;
-            this._senderX500DNLabel.Text = " ";
-            this._senderX500DNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(9, 109);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(88, 13);
-            this.label26.TabIndex = 99;
-            this.label26.Text = "Sender X500DN:";
-            // 
-            // _hyperLinksTabPage
-            // 
-            this._hyperLinksTabPage.Controls.Add(this._hyperLinksListView);
-            this._hyperLinksTabPage.Location = new System.Drawing.Point(4, 22);
-            this._hyperLinksTabPage.Name = "_hyperLinksTabPage";
-            this._hyperLinksTabPage.Size = new System.Drawing.Size(505, 307);
-            this._hyperLinksTabPage.TabIndex = 4;
-            this._hyperLinksTabPage.Text = "HyperLinks (0)";
-            this._hyperLinksTabPage.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Width";
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "Height";
-            // 
-            // columnHeader20
-            // 
-            this.columnHeader20.Text = "SourceSet";
-            this.columnHeader20.Width = 79;
-            // 
-            // columnHeader21
-            // 
-            this.columnHeader21.Text = "LongDescription";
-            this.columnHeader21.Width = 132;
-            // 
-            // _hyperLinksListView
-            // 
-            this._hyperLinksListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._hyperLinksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37,
-            this.columnHeader38,
-            this.columnHeader39,
-            this.columnHeader40,
-            this.columnHeader41,
-            this.columnHeader42,
-            this.columnHeader43});
-            this._hyperLinksListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._hyperLinksListView.FullRowSelect = true;
-            this._hyperLinksListView.HideSelection = false;
-            this._hyperLinksListView.Location = new System.Drawing.Point(0, 0);
-            this._hyperLinksListView.Name = "_hyperLinksListView";
-            this._hyperLinksListView.Size = new System.Drawing.Size(505, 307);
-            this._hyperLinksListView.TabIndex = 72;
-            this._hyperLinksListView.UseCompatibleStateImageBehavior = false;
-            this._hyperLinksListView.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader35
-            // 
-            this.columnHeader35.Text = "IsExternalLink";
-            this.columnHeader35.Width = 79;
-            // 
-            // columnHeader36
-            // 
-            this.columnHeader36.Text = "Text";
-            this.columnHeader36.Width = 72;
-            // 
-            // columnHeader37
-            // 
-            this.columnHeader37.Text = "Url";
-            this.columnHeader37.Width = 69;
-            // 
-            // columnHeader38
-            // 
-            this.columnHeader38.Text = "Download";
-            this.columnHeader38.Width = 76;
-            // 
-            // columnHeader39
-            // 
-            this.columnHeader39.Text = "Type";
-            // 
-            // columnHeader40
-            // 
-            this.columnHeader40.Text = "Relationship";
-            // 
-            // columnHeader41
-            // 
-            this.columnHeader41.Text = "RefLang";
-            // 
-            // columnHeader42
-            // 
-            this.columnHeader42.Text = "Target";
-            // 
-            // columnHeader43
-            // 
-            this.columnHeader43.Text = "Ping";
-            // 
-            // columnHeader22
-            // 
-            this.columnHeader22.Text = "ContentLength";
-            this.columnHeader22.Width = 79;
+            this.columnHeader23.Text = "IsUserDefined";
+            this.columnHeader23.Width = 89;
             // 
             // ContentView
             // 
@@ -1568,6 +1575,7 @@
             this._metdataTabPage.ResumeLayout(false);
             this._attributesTabPage.ResumeLayout(false);
             this._attributesTabPage.PerformLayout();
+            this._hyperLinksTabPage.ResumeLayout(false);
             this._languagesTabPage.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -1580,7 +1588,6 @@
             this._textTabPage.PerformLayout();
             this._imageViewTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
-            this._hyperLinksTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1724,5 +1731,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader42;
         private System.Windows.Forms.ColumnHeader columnHeader43;
         private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
     }
 }
