@@ -8,6 +8,8 @@ of files contained in a directory (including all sub-directories).
 
 The DocumentIdentifier.Identify methods take either a System.IO.Stream or byte array of file bytes. When opening a stream or reading in all file bytes, it is up to the user to take care of long file paths that are greater than MAX_PATH characters in length.
 
+Any higher level document processing application built upon SDK should make use file identification at the start of a workflow in order to make decisions on how to best process the document set.
+
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
 
