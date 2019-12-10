@@ -23,4 +23,4 @@ NOTE: Open Discover SDK is comprised of x64 assemblies due to unmanaged code dep
   back to x64 before executing in either Debug/Release mode.
 - If you get initialization exceptions with error messages like "An attempt was made to load a program with
   an incorrect format" then you are mixing x86 and x64 platforms.
-------------------------------------------------------------------------------------------------------------------------
+
