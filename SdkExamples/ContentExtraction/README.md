@@ -6,6 +6,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 This WinForm UI example shows how to use the Open Discover SDK API to identify file formats and extract content from various
 formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returned interfaces.
 
+
 ### How to use this example:
 
 - Set the Visual Studio Startup Project to "ContentExtractionExample.csproj". 
