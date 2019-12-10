@@ -8,12 +8,14 @@ formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returne
 
 ### How to use this example:
 
+
+![alt text](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction "ContentExtractionExample UI screen shot 1")
+
+
 ### Note:
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
- 
-
- 
+  
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
 Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependencies
