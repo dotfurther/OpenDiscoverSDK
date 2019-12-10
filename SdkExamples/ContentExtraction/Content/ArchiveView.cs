@@ -98,16 +98,17 @@ namespace ContentExtractionExample.Content
 
             _totalItemCountLabel.Text = archiveContent.ItemCount.ToString();
 
-
             //
             // Set metadata:
             //
-            if (archiveContent.Metadata.Count > 0)
+            _metdataTabPage.Text = string.Format("Metadata ({0})", archiveContent.Metadata.Count + archiveContent.CustomMetadata.Count);
+
+            if (archiveContent.Metadata.Count > 0 || archiveContent.CustomMetadata.Count > 0)
             {
                 MetadataHelper.PopulateListViewWithMetadata(_metadataListView, archiveContent.Metadata);
+                MetadataHelper.PopulateListViewWithMetadata(_metadataListView, archiveContent.CustomMetadata, false);
             }
 
-            _metdataTabPage.Text = string.Format("Metadata ({0})", archiveContent.Metadata.Count);
 
             UpdateArchiveItemListView();
 

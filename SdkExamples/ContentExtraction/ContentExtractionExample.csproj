@@ -157,9 +157,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\..\bin\7z64.dll">
+    <None Include="..\..\..\..\bin\7z64.dll">
       <Link>7z64.dll</Link>
-    </Content>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Images\FolderClosed.png" />
     <None Include="README.md" />
   </ItemGroup>

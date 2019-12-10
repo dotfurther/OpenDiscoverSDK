@@ -63,6 +63,8 @@ namespace ContentExtractionExample
             _sha1BinaryHashLabel.Text  = "";
             _sha1ContentHashLabel.Text = "";
             _isEncryptedLabel.Text     = "";
+
+            _metdataTabPage.Text = "Metadata";
         }
         #endregion
 
@@ -124,9 +126,12 @@ namespace ContentExtractionExample
                 //
                 // Set metadata:
                 //
-                if (_mailStoreContent.Metadata.Count > 0)
+                _metdataTabPage.Text = string.Format("Metadata ({0})", _mailStoreContent.Metadata.Count + _mailStoreContent.CustomMetadata.Count);
+
+                if (_mailStoreContent.Metadata.Count > 0 || _mailStoreContent.CustomMetadata.Count > 0)
                 {
                     MetadataHelper.PopulateListViewWithMetadata(_metadataListView, _mailStoreContent.Metadata);
+                    MetadataHelper.PopulateListViewWithMetadata(_metadataListView, _mailStoreContent.CustomMetadata, false);
                 }
 
                 //

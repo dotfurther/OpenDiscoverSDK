@@ -35,6 +35,8 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this._docBaseTabPage = new System.Windows.Forms.TabPage();
+            this._errorMessageLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this._isEncryptedLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this._fileNameLabel = new System.Windows.Forms.Label();
@@ -70,8 +72,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this._errorMessageLabel = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -176,6 +177,26 @@
             this._docBaseTabPage.Size = new System.Drawing.Size(532, 249);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "MailStoreContent";
+            // 
+            // _errorMessageLabel
+            // 
+            this._errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this._errorMessageLabel.Location = new System.Drawing.Point(93, 100);
+            this._errorMessageLabel.Name = "_errorMessageLabel";
+            this._errorMessageLabel.Size = new System.Drawing.Size(388, 13);
+            this._errorMessageLabel.TabIndex = 68;
+            this._errorMessageLabel.Text = " ";
+            this._errorMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 100);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 67;
+            this.label19.Text = "ErrorMessage:";
             // 
             // _isEncryptedLabel
             // 
@@ -390,6 +411,7 @@
             this._metadataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader6,
+            this.columnHeader2,
             this.columnHeader7});
             this._metadataListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._metadataListView.FullRowSelect = true;
@@ -506,25 +528,10 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Email Output Folder:";
             // 
-            // _errorMessageLabel
+            // columnHeader2
             // 
-            this._errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this._errorMessageLabel.Location = new System.Drawing.Point(93, 100);
-            this._errorMessageLabel.Name = "_errorMessageLabel";
-            this._errorMessageLabel.Size = new System.Drawing.Size(388, 13);
-            this._errorMessageLabel.TabIndex = 68;
-            this._errorMessageLabel.Text = " ";
-            this._errorMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(3, 100);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 13);
-            this.label19.TabIndex = 67;
-            this.label19.Text = "ErrorMessage:";
+            this.columnHeader2.Text = "IsUserDefined";
+            this.columnHeader2.Width = 89;
             // 
             // MailStoreView
             // 
@@ -594,5 +601,6 @@
         private System.Windows.Forms.CheckBox _saveWithMailStoreFolderStructureCheckBox;
         private System.Windows.Forms.Label _errorMessageLabel;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

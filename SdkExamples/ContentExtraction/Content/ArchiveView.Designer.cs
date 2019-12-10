@@ -37,6 +37,8 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this._docBaseTabPage = new System.Windows.Forms.TabPage();
+            this._errorMessageLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this._testArchiveButton = new System.Windows.Forms.Button();
             this._isEncryptedLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -88,8 +90,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this._foldersTreeView = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._errorMessageLabel = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -206,6 +207,26 @@
             this._docBaseTabPage.Size = new System.Drawing.Size(486, 290);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "ArchiveContent";
+            // 
+            // _errorMessageLabel
+            // 
+            this._errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this._errorMessageLabel.Location = new System.Drawing.Point(95, 101);
+            this._errorMessageLabel.Name = "_errorMessageLabel";
+            this._errorMessageLabel.Size = new System.Drawing.Size(388, 13);
+            this._errorMessageLabel.TabIndex = 66;
+            this._errorMessageLabel.Text = " ";
+            this._errorMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(5, 101);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 65;
+            this.label19.Text = "ErrorMessage:";
             // 
             // _testArchiveButton
             // 
@@ -434,6 +455,7 @@
             this._metadataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader6,
+            this.columnHeader13,
             this.columnHeader7});
             this._metadataListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._metadataListView.FullRowSelect = true;
@@ -673,25 +695,10 @@
             this._foldersTreeView.Size = new System.Drawing.Size(598, 243);
             this._foldersTreeView.TabIndex = 14;
             // 
-            // _errorMessageLabel
+            // columnHeader13
             // 
-            this._errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this._errorMessageLabel.Location = new System.Drawing.Point(95, 101);
-            this._errorMessageLabel.Name = "_errorMessageLabel";
-            this._errorMessageLabel.Size = new System.Drawing.Size(388, 13);
-            this._errorMessageLabel.TabIndex = 66;
-            this._errorMessageLabel.Text = " ";
-            this._errorMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 101);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 13);
-            this.label19.TabIndex = 65;
-            this.label19.Text = "ErrorMessage:";
+            this.columnHeader13.Text = "IsUserDefined";
+            this.columnHeader13.Width = 110;
             // 
             // ArchiveView
             // 
@@ -785,5 +792,6 @@
         private System.Windows.Forms.TextBox _attributesTextBox;
         private System.Windows.Forms.Label _errorMessageLabel;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }
