@@ -11,7 +11,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - SdkAPI.Common.csproj: Contains the service interfaces and a lightweight and reusable service proxy.    
 - SdkAPIWCFService.csproj: Contains the service implementation
 
-The example demonstrates how SDK extracted document content is supported for serialization.
+These example projects demonstrate how SDK extracted document content is supported for serialization. These examples also show to implement document content extraction as an out-of-process service for a layer of main application protection. 
 
 ### Example Screen:
 
