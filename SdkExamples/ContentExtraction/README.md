@@ -8,7 +8,7 @@ formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returne
 
 ### How to use this example:
 
-<img src="Image1.png" width="80%">
+<img src="Image1.png">
 
 ![ContentExtractionExample UI screen shot 1](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction/Image1.png "ContentExtractionExample UI screen shot 1")
 
