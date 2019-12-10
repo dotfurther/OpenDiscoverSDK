@@ -10,17 +10,13 @@ formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returne
 
 <img src="Image1.png">
 
-![ContentExtractionExample UI screen shot 1](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction/Image1.png "ContentExtractionExample UI screen shot 1")
+<img src="Image2.png">
 
+<img src="Image3.png">
 
-![ContentExtractionExample UI screen shot 2](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction/Image2.png "ContentExtractionExample UI screen shot 2")
+<img src="Image4.png">
 
-
-![ContentExtractionExample UI screen shot 3](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction/Image3.png "ContentExtractionExample UI screen shot 3")
-
-![ContentExtractionExample UI screen shot 4](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction/Image4.png "ContentExtractionExample UI screen shot 4")
-
-![ContentExtractionExample UI screen shot 5](https://github.com/dotfurther/OpenDiscoverSDK/edit/master/SdkExamples/ContentExtraction/Image5.png "ContentExtractionExample UI screen shot 5")
+<img src="Image5.png">
 
 
 ### Note:
