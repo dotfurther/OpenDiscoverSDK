@@ -16,12 +16,14 @@ These example projects demonstrate how SDK extracted document content is support
 
 Make sure all WCF C# example projects are built (Microsoft Visual Studio menu "Build/Rebuild Solution") before running the Winform UI client app - the client app will start the WCF service host console app (SdkAPIServiceHost.exe). Also make sure the Microsoft Visual Studio solution platform is x64.
 
-### Configuring Microsoft Visual Studio IIS Express when building your own WCF services:
+If you have issues connecting to the WCF named-pipe service see section [Trouble Shooting WCF Named-Pipe Connection Errors](#Trouble Shooting WCF Named-Pipe Connection Errors)
+
+### Configuring Microsoft Visual Studio IIS Express when building your own WCF services
 If you creating your own WCF service that uses Open Discover SDK remember that the SDK assemblies are x64 (64 bit and not AnyCPU). To use Microsoft Visual Studio IIS Express to test a x64 service, make sure you configure IIS like this (use Microsoft Visual Studio menu "Tools/Options..." to display the dialog below):
 
 <img src="VS_IIS_Express_x64_HostedSettings.png">
 
-### Example Screen Shots:
+### Example Screen Shots
 
 Running the WinForm client SdkAPIWinFormClient.exe will also launch the the WCF console host executable (SdkAPIServiceHost.exe). Press "Connect to Service" button to connect to the console app hosted WCF service:
 
@@ -35,7 +37,7 @@ After connected to service the Winform SdkAPIWinFormClient.exe app works the sam
 
 <img src="Image3.png">
 
-### Trouble Shooting WCF Named-Pipe Connection Errors:
+### Trouble Shooting WCF Named-Pipe Connection Errors
 1. Open Control Panel.
 2. Select Programs, then "Programs and Features", or if in Classic view, select "Programs and Features".
 3. Right mouse click on "Turn Windows Features on or off".
