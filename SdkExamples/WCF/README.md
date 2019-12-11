@@ -12,7 +12,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - **SdkAPIWCFService.csproj:** Contains the service implementation
 
 
-These example projects demonstrate how SDK extracted document content is supported for serialization and also show how to implement document content extraction as an out-of-process service for a layer of main application fault protection.
+These example projects demonstrate how SDK extracted document content is supported for serialization and show how to implement document content extraction as an out-of-process service for a layer of main application fault protection.
 
 Make sure all WCF C# example projects are built (Microsoft Visual Studio menu "Build/Rebuild Solution") before running the Winform UI client app - the client app will start the WCF service host console app (SdkAPIServiceHost.exe). Also make sure the Microsoft Visual Studio solution platform is x64.
 
