@@ -43,4 +43,4 @@ Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependenc
 - Build examples with Visual Studio Platform set to x64 (either Debug or Release)
 - To edit WinForm forms in VS 2017, set build VS Platform to "Any CPU" and rebuild. This is required to edit WinForm windows. 
   When done, set platform back to x64 before executing in either Debug/Release mode.
-------------------------------------------------------------------------------------------------------------------------	
+
