@@ -6,7 +6,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - **Service Clients\SdkAPIWinFormClient.csproj:** A Winform UI that starts and connects to the console application hosted WCF service 
   and uses that service to extract document content. This test UI will display a dialog to connect to the console app hosted service.
   After connected, use the File menu to open a document that you which to extract content from. The UI will then display the extracted
-  content in the various UI controls. The SdkAPIWinFormClient.proj WinForm UI WCF client app is a modified version of the  SdkSamples/ContentExtraction/ContentExtractionExample.csproj project WinForm UI. 
+  content in the various UI controls. The SdkAPIWinFormClient.proj WinForm UI WCF client app is a modified version of the  OpenDiscoverSDK/SdkSamples/ContentExtraction/ContentExtractionExample.csproj project WinForm UI. 
 - **Service Host\SdkAPIServiceHost.csproj:**  Hosts the "SdkAPIWCFService" service in a console application
 - **SdkAPI.Common.csproj:** Contains the service interfaces and a lightweight and reusable service proxy.    
 - **SdkAPIWCFService.csproj:** Contains the service implementation
@@ -16,7 +16,15 @@ These example projects demonstrate how SDK extracted document content is support
 
 Make sure all WCF C# example projects are built (Visual Studio menu "Build/Rebuild Solution") before running the Winform UI client app - the client app will start the WCF service host console app (SdkAPIServiceHost.exe).
 
-### Example Screen Shot:
+### Example Screen Shots:
+
+Running the WinForm client SdkAPIWinFormClient.exe will also launch the the WCF console host executable (SdkAPIServiceHost.exe). Press "Connect to Service" button to connect to the console app hosted WCF service:
+<img src="Image1.png">
+The console app that hosts the WCF service:
+<img src="Image2.png">
+
+After connected to service the Winform SdkAPIWinFormClient.exe app works the same way as the OpenDiscoverSDK/SdkSamples/ContentExtraction/ContentExtractionExample.csproj does:
+<img src="Image3.png">
 
 ------------------------------------------------------------------------------------------------------------------------
 NOTE: Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependencies
