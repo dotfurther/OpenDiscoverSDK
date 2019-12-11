@@ -53,7 +53,7 @@ Change PowerShell directory to location of compiled "PowerShellExample.dll" asse
    PS>  $format.Classification -eq [OpenDiscoverSDK.Interfaces.IdClassification]::DocumentExchange
 ```
 
-It's not hard to see that the user using a file path pipeline with this Cmdlet could search for all documents on a file server that either have certain format Id or IdClassification type.
+It's not hard to see that users using a file path pipeline with this Cmdlet could search for all documents on a file server that either have certain format Id or IdClassification type.
 
 <img src="Image4.png">
 
