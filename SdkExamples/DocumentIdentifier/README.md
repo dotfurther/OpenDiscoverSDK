@@ -13,6 +13,7 @@ Any higher level document processing application built upon SDK should make use 
 ### How to use this example:
 
 Upon DocumentIdentifierExample.exe app startup, the "Directions" screen is shown. Read the app directions: 
+
 <img src="Image1.png">
 
 Screen shot of a file identication run summary view:
