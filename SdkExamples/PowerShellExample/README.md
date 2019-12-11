@@ -49,12 +49,13 @@ It's not hard to see that the user using a file path pipeline with this Cmdlet c
   
 <img src="Image5.png">
 
-### Get a file's extracted content as a DocumentContent object ans store it in a variable names "$content":
+### Get a file's extracted content as a DocumentContent object and store it in a variable named "$content":
   PS> $content = Get-FileContent -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"
 
 ### Now display the $content result object's SHA1 binary hash, language identification, and convert the extracted text to an HTML file:
   PS> $content.SHA1BinaryHash
   PS> $content.LanguageIdResults
+  PS> $content.ExtractedText
   PS> ConvertTo-Html -InputObject $content -Property ExtractedText | Out-File content.htm
 Using a a pipeline that compared both $content.SHA1BinaryHash and also $content.SHA1ContentHash and aggragated all documents with matching hashes, an IT professional or power user could easily find all duplicate documents on a file server.
 
