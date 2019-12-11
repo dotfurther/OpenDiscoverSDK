@@ -47,7 +47,8 @@ Change PowerShell directory to location of compiled "PowerShellExample.dll" asse
 ### Compare $format.ID enumerated value with SDK's Id.AcrobatPDF enumeration value:
 ```powershell
    PS> $format.ID -eq [OpenDiscoverSDK.Interfaces.Id]::AcrobatPDF
-  
+```
+
 ### Compare the $format.Classification with SDK's IdClassification.DocumentExchange enumeration value:
 ```powershell
    PS>  $format.Classification -eq [OpenDiscoverSDK.Interfaces.IdClassification]::DocumentExchange
