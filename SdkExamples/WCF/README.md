@@ -16,8 +16,8 @@ These example projects demonstrate how SDK extracted document content is support
 
 Make sure all WCF C# example projects are built (Visual Studio menu "Build/Rebuild Solution") before running the Winform UI client app - the client app will start the WCF service host console app (SdkAPIServiceHost.exe).
 
-### Visual Studio IIS Express:
-If you are a WCF service that uses Open Discover SDK remember that the SDK is x64. To use Microsoft Visual Studio IIS Express to test a x64 service, make sure you configure IIS like this (use Microsoft Visual Studio menu "Tools/Options..." to display the dialog below):
+### When Building your own SDK WCF Services Configure Microsoft Visual Studio IIS Express:
+If you creating your own WCF service that uses Open Discover SDK remember that the SDK assemblies are x64 (64 bit and not AnyCPU). To use Microsoft Visual Studio IIS Express to test a x64 service, make sure you configure IIS like this (use Microsoft Visual Studio menu "Tools/Options..." to display the dialog below):
 
 <img src="VS_IIS_Express_x64_HostedSettings.png">
 
