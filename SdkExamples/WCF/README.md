@@ -1,8 +1,8 @@
 Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
 
-## The projects contained in this directory show case the use of the Open Discover SDK API in a WCF service.
+## The SDK example C# projects contained in this directory show case the use of the Open Discover SDK API in a WCF service.
 
-### WCF Example Projects:
+### WCF C# Example Projects:
 - **Service Clients\SdkAPIWinFormClient.csproj:** A Winform UI that starts and connects to the console application hosted WCF service 
   and uses that service to extract document content. This test UI will display a dialog to connect to the console app hosted service.
   After connected, use the File menu to open a document that you which to extract content from. The UI will then display the extracted
@@ -12,11 +12,11 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - **SdkAPIWCFService.csproj:** Contains the service implementation
 
 
-These example projects demonstrate how SDK extracted document content is supported for serialization and also show how to implement document content extraction as an out-of-process service for a layer of main application protection.
+These example projects demonstrate how SDK extracted document content is supported for serialization and also show how to implement document content extraction as an out-of-process service for a layer of main application fault protection.
 
-Make sure all WCF C# example projects are built (Visual Studio menu "Build/Rebuild Solution") before running the Winform UI client app - the client app will start the WCF service host console app (SdkAPIServiceHost.exe).
+Make sure all WCF C# example projects are built (Microsoft Visual Studio menu "Build/Rebuild Solution") before running the Winform UI client app - the client app will start the WCF service host console app (SdkAPIServiceHost.exe). Also make sure the Microsoft Visual Studio solution platform is x64.
 
-### When Building your own SDK WCF Services Configure Microsoft Visual Studio IIS Express:
+### Configuring Microsoft Visual Studio IIS Express when building your own WCF services:
 If you creating your own WCF service that uses Open Discover SDK remember that the SDK assemblies are x64 (64 bit and not AnyCPU). To use Microsoft Visual Studio IIS Express to test a x64 service, make sure you configure IIS like this (use Microsoft Visual Studio menu "Tools/Options..." to display the dialog below):
 
 <img src="VS_IIS_Express_x64_HostedSettings.png">
@@ -27,7 +27,7 @@ Running the WinForm client SdkAPIWinFormClient.exe will also launch the the WCF 
 
 <img src="Image1.png">
 
-The console app that hosts the WCF service (this console app process is automatically started by the client SdkAPIWinFormClient.exe executable):
+The console app that hosts the WCF service is automatically started by the client SdkAPIWinFormClient.exe executable:
 
 <img src="Image2.png">
 
