@@ -34,10 +34,10 @@ Change PowerShell directory to location of compiled "PowerShellExample.dll" asse
 ### Identify a file's format and store the returned IdResult object in a variable:
   PS> $format = Get-FileFormat -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"  
   
-### Compare $format.ID enumerated value with SDK's Id.PDF value:
+### Compare $format.ID enumerated value with SDK's Id.AcrobatPDF enumeration value:
   PS> $format.ID -eq [OpenDiscoverSDK.Interfaces.Id]::AcrobatPDF
   
-### Compare the $format.Classification with SDK's IdClassification.DocumentExchange:
+### Compare the $format.Classification with SDK's IdClassification.DocumentExchange enumeration value:
   PS>  $format.Classification -eq [OpenDiscoverSDK.Interfaces.IdClassification]::DocumentExchange
 It's not hard to see that the user using a file path pipeline with this Cmdlet could search for all documents on a file server that either have certain format Id or IdClassification type.
 
