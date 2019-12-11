@@ -35,6 +35,19 @@ After connected to service the Winform SdkAPIWinFormClient.exe app works the sam
 
 <img src="Image3.png">
 
+### Trouble Shooting WCF Named-Pipe Connection Errors:
+1. Open Control Panel.
+2. Select Programs, then "Programs and Features", or if in Classic view, select "Programs and Features".
+3. Right mouse click on "Turn Windows Features on or off".
+4. Expand the Microsoft.NET Framework 3.0(or 3.5) tree view node and check the "Windows Communication Foundation Non-HTTP Activation" feature. See first image below for reference.
+5. Run Services.msc
+6. Make sure "Net.Pipe Listener Adapter" service is running. Start if not running (also set 'Startup type' to automatic). See second image below for reference.
+
+<img src="TurnWindowsFeaturesOnOff.png">
+
+<img src="NetPipeListnerAdapterService.png">
+
+
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
 Open Discover SDK is comprised of .NET x64 assemblies due to unmanaged code dependencies
