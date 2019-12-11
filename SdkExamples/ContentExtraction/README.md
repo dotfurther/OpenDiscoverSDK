@@ -43,9 +43,10 @@ To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
   
 ------------------------------------------------------------------------------------------------------------------------
-### Note: 
-Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependencies
-- Build examples with Visual Studio Platform set to x64 (either Debug or Release)
-- To edit WinForm forms in VS 2017, set build VS Platform to "Any CPU" and rebuild. This is required to edit WinForm windows. 
-  When done, set platform back to x64 before executing in either Debug/Release mode.
+NOTE: Open Discover SDK is comprised of .NET x64 assemblies due to unmanaged code dependencies
+
+- Run Microsoft Visual Studio C# examples in x64 solution platform (either Debug or Release)
+- To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows as Visual Studio WinForm designer is a 32-bit process. When done, set solution platform back to x64 before executing in either x64 Debug/Release mode.
+- If you get run-time initialization exceptions with error messages like "An attempt was made to load a program with
+  an incorrect format" then you are mixing x86 and x64 platforms. 
 
