@@ -77,7 +77,7 @@ It's not hard to see that users using a file path pipeline with this Cmdlet coul
    PS> $content.LanguageIdResults
    PS> $content.ExtractedText
 ```
-Using a a pipeline that compared both $content.SHA1BinaryHash and also $content.SHA1ContentHash and aggragated all documents with matching hashes, an IT professional or power user could easily find all duplicate documents on a file server.
+Using a a pipeline that compares both $content.SHA1BinaryHash and $content.SHA1ContentHash and stores document information for documents that have matching hashes, an IT professional or power user could easily find all duplicate documents on a file server.
 
 <img src="Image6.png">
 
