@@ -9,42 +9,57 @@ The Cmdlet derived classes in this example C# project show how to use the Open D
 - Identify a file's format (GetFileFormatCmdlet.cs)
 - Display a summary of a file's content (GetFileInfoCmdlet.cs)
 - Extract document content and return the result as a DocumentContent object (GetFileContentCmdlet.cs)
-- Test an archive for true expansion size (GetArchiveExpandedSizeCmdlet.cs)
+- Test an archive for true expansion size (GetArchiveExpandedSizeCmdlet.cs) to help detect malicious archives with intentionally malformed container item headers to hide item true expanded (uncompressed) size.
 
 
 # Example Cmdlet Usage:
 Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (this path will be unique to where the user installed the Github examples):
-  PS> cd F:\OpenDiscover\Examples\SDK\Build  
+  PS> cd D:\GitHub\OpenDiscoverSDK\Examples\SdkExamples\Build  
 
 ### Import assembly "PowerShellExample.dll" as a module into PowerShell environment:
   PS> Import-Module .\PowerShellExample.dll -Force
 
+<img src="Image1.png">
+
 ### Display all Cmdlets in "PowerShellExample.dll" module:
   PS> Get-Command -Module PowerShellExample       
 
+<img src="Image2.png">
+
 ### Identify a file's format:
-  PS> Get-FileFormat -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf"
+  PS> Get-FileFormat -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"
+
+<img src="Image3.png">
 
 ### Identify a file's format and store the returned IdResult object in a variable:
-  PS> $format = Get-FileFormat -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf"  
+  PS> $format = Get-FileFormat -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"  
+  
 ### Compare $format.ID enumerated value with SDK's Id.PDF value:
-  PS> $format.ID -eq [OpenDiscoverSDK.Interfaces.Id]::PDF
+  PS> $format.ID -eq [OpenDiscoverSDK.Interfaces.Id]::AcrobatPDF
+  
 ### Compare the $format.Classification with SDK's IdClassification.DocumentExchange:
   PS>  $format.Classification -eq [OpenDiscoverSDK.Interfaces.IdClassification]::DocumentExchange
 It's not hard to see that the user using a file path pipeline with this Cmdlet could search for all documents on a file server that either have certain format Id or IdClassification type.
 
+<img src="Image4.png">
+
 ### Get a file's format, metadata, attributes, hyperlinks, and [optionaly] display up to the first 1000 characters of extracted text:
-  PS> Get-FileInfo -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf" 
-  PS> Get-FileInfo -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf" -ShowText $true
+  PS> Get-FileInfo -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf" 
+  PS> Get-FileInfo -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf" -ShowText $true
+  
+<img src="Image5.png">
 
 ### Get a file's extracted content as a DocumentContent object ans store it in a variable names "$content":
-  PS> $content = Get-FileContent -Path "F:\OpenDiscover\TestData\Document Hyperlinks\010190.pdf"
+  PS> $content = Get-FileContent -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"
 
 ### Now display the $content result object's SHA1 binary hash, language identification, and convert the extracted text to an HTML file:
   PS> $content.SHA1BinaryHash
   PS> $content.LanguageIdResults
   PS> ConvertTo-Html -InputObject $content -Property ExtractedText | Out-File content.htm
 Using a a pipeline that compared both $content.SHA1BinaryHash and also $content.SHA1ContentHash and aggragated all documents with matching hashes, an IT professional or power user could easily find all duplicate documents on a file server.
+
+
+<img src="Image6.png">
 
 
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
