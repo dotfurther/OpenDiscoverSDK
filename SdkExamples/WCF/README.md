@@ -36,11 +36,12 @@ After connected to service the Winform SdkAPIWinFormClient.exe app works the sam
 <img src="Image3.png">
 
 ------------------------------------------------------------------------------------------------------------------------
-NOTE: Open Discover SDK is comprised of x64 assemblies due to unmanaged code dependencies
+### Note: 
+Open Discover SDK is comprised of .NET x64 assemblies due to unmanaged code dependencies
 
-- Run examples in x64 build (either Debug or Release)
-- To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows. When done, set platform 
-  back to x64 before executing in either Debug/Release mode.
-- If you get initialization exceptions with error messages like "An attempt was made to load a program with
-  an incorrect format" then you are mixing x86 and x64 platforms.
+- Run Microsoft Visual Studio C# examples in x64 solution platform (either Debug or Release)
+- To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows as Visual Studio WinForm designer is a 32-bit process. When done, set solution platform back to x64 before executing in either x64 Debug/Release mode.
+- If you get run-time initialization exceptions with error messages like "An attempt was made to load a program with
+  an incorrect format" then you are mixing x86 and x64 platforms. 
+
 
