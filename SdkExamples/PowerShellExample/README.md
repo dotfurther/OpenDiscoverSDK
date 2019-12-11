@@ -86,6 +86,8 @@ Save extracted text as HTML using PowerShell 'ConvertTo':
    PS> ConvertTo-Html -InputObject $content -Property ExtractedText | Out-File content.htm
 ```
 
+The extracted text converted to HTML (opened in a web browser):
+
 <img src="Image7.png">
 
 
