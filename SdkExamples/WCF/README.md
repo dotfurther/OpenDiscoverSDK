@@ -19,11 +19,15 @@ Make sure all WCF C# example projects are built (Visual Studio menu "Build/Rebui
 ### Example Screen Shots:
 
 Running the WinForm client SdkAPIWinFormClient.exe will also launch the the WCF console host executable (SdkAPIServiceHost.exe). Press "Connect to Service" button to connect to the console app hosted WCF service:
+
 <img src="Image1.png">
+
 The console app that hosts the WCF service:
+
 <img src="Image2.png">
 
-After connected to service the Winform SdkAPIWinFormClient.exe app works the same way as the OpenDiscoverSDK/SdkSamples/ContentExtraction/ContentExtractionExample.csproj does:
+After connected to service the Winform SdkAPIWinFormClient.exe app works the same way as the OpenDiscoverSDK/SdkSamples/ContentExtraction/ContentExtractionExample.csproj WinForm app:
+
 <img src="Image3.png">
 
 ------------------------------------------------------------------------------------------------------------------------
