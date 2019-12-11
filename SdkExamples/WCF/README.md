@@ -31,7 +31,7 @@ The console app that hosts the WCF service (this console app process is automati
 
 <img src="Image2.png">
 
-After connected to service the Winform SdkAPIWinFormClient.exe app works the same way as the OpenDiscoverSDK/SdkSamples/ContentExtraction/ContentExtractionExample.csproj WinForm app:
+After connected to service the Winform SdkAPIWinFormClient.exe app works the same way as the OpenDiscoverSDK/SdkSamples/ContentExtraction/ContentExtractionExample.csproj WinForm app. In the screen shot below, we are viewing the extracted content of a PowerPoint 97-2003 (PPT) file that was selected from a list of files in the left side panel list box. To extract content from a file use "File/Open..." menu - all files in the same directory of the selected file will also appear in the file list box:
 
 <img src="Image3.png">
 
