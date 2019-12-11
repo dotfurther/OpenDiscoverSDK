@@ -8,7 +8,7 @@ of files contained in a input directory (including all files in all sub-director
 
 The overloaded OpenDiscoverSDK.DocumentIdentifier.Identify methods take either a System.IO.Stream or byte array of file bytes as an argument along with an optional (but highly recommended) file name/file path argument. When opening a stream or reading in all file bytes, it is up to the user to take care of long file paths that are greater than MAX_PATH characters in length (see note at end of this readme).
 
-Any higher level document processing application built upon Open Discover SDK should make use of file identification at the start of a workflow in order to make decisions on how to best process the document set.
+Any higher-level document processing application built upon Open Discover SDK should make use of file identification at the start of a workflow in order to make decisions on how to best process the document set.
 
 ### How to use this example:
 
