@@ -10,6 +10,15 @@ The DocumentIdentifier.Identify methods take either a System.IO.Stream or byte a
 
 Any higher level document processing application built upon SDK should make use of file identification at the start of a workflow in order to make decisions on how to best process the document set.
 
+<img src="Image1.png">
+
+<img src="Image2.png">
+
+<img src="Image3.png">
+
+<img src="Image4.png">
+
+
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
 
@@ -20,6 +29,7 @@ application will identify hundreds to thousands of files a second (opening a Fil
 software may monitor it very closely and this monitoring may use a lot of the available CPU. The anti-virus program may even 
 kill the process. If this happens you will need to configure your anti-virus to 'trust' this application or any document 
 processing application you build with SDK.
+
 
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
