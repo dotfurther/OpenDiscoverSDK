@@ -12,19 +12,19 @@ Any higher level document processing application built upon Open Discover SDK sh
 
 ### How to use this example:
 
-Upon DocumentIdentifierExample.exe app startup, the "Directions" screen is shown. Read the app directions: 
+Upon DocumentIdentifierExample.exe app startup, the "Directions" screen is shown. Follow these directions: 
 
 <img src="Image1.png">
 
-Screen shot of a file identication run summary view:
+Screen shot of "Identification Summary" view (visual summary of file format classifications and format IDs):
 
 <img src="Image2.png">
 
-Screen shot a file identification run details view:
+Screen shot of "Identification Details" view (details of each file format identified):
 
 <img src="Image3.png">
 
-Screen shot of "All Supported File Formats" view. This view allows viewing of all Open Discover SDK supported file formats for identification:
+Screen shot of "All Supported File Formats" view. This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification:
 
 <img src="Image4.png">
 
