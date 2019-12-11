@@ -10,11 +10,20 @@ The DocumentIdentifier.Identify methods take either a System.IO.Stream or byte a
 
 Any higher level document processing application built upon SDK should make use of file identification at the start of a workflow in order to make decisions on how to best process the document set.
 
+### How to use this example:
+
+Upon DocumentIdentifierExample.exe app startup, the "Directions" screen is shown. Read the app directions: 
 <img src="Image1.png">
+
+Screen shot of a file identication run summary view:
 
 <img src="Image2.png">
 
+Screen shot a file identification run details view:
+
 <img src="Image3.png">
+
+Screen shot of "All Supported File Formats" view. This view allows viewing of all Open Discover SDK supported file formats for identification:
 
 <img src="Image4.png">
 
