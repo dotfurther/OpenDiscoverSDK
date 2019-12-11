@@ -27,7 +27,7 @@ Running the WinForm client SdkAPIWinFormClient.exe will also launch the the WCF 
 
 <img src="Image1.png">
 
-The console app that hosts the WCF service:
+The console app that hosts the WCF service (this console app process is automatically started by the client SdkAPIWinFormClient.exe executable):
 
 <img src="Image2.png">
 
