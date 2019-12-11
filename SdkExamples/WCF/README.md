@@ -19,7 +19,7 @@ Make sure all WCF C# example projects are built (Microsoft Visual Studio menu "B
 If you have issues connecting to the WCF named-pipe service see section [Trouble Shooting WCF Named-Pipe Connection Errors](#trouble-shooting-wcf-named-pipe-connection-errors)
 
 ### Configuring Microsoft Visual Studio IIS Express when building your own WCF services
-If you creating your own WCF service that uses Open Discover SDK remember that the SDK assemblies are x64 (64 bit and not AnyCPU). To use Microsoft Visual Studio IIS Express to test a x64 service, make sure you configure IIS like this (use Microsoft Visual Studio menu "Tools/Options..." to display the dialog below):
+If you are creating your own WCF service that uses Open Discover SDK remember that the SDK assemblies are x64 (64 bit and not AnyCPU). To use Microsoft Visual Studio IIS Express to test a x64 service, make sure you configure IIS like this (use Microsoft Visual Studio menu "Tools/Options..." to display the dialog below):
 
 <img src="VS_IIS_Express_x64_HostedSettings.png">
 
