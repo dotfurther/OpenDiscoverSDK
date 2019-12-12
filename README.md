@@ -36,7 +36,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 ### PowerShell Example - shows how to create Cmdlets that use SDK to:
    - Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    - Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
-### Indexing Example - illustrates a simple indexing strategy using SDK with Lucene.NET and also how to make indexes better by:
+### Indexing Example - illustrates a simple indexing strategy using SDK with Lucene.NET and how to make indexes better by:
    - Indexing document format ID as a field. Users can limit searches for documents with very specific formats.
    - Indexing document format classification as fields (ex: WordProcessing, Spreadsheet, etc are file format classifications). Users can limit searches to all "WordProcessing" or all "Spreadsheet" document classifications, for example.
-   - Indexing MD5/SHA-1 binary and content based hashes as fields. When searching index, duplicate documents can be indicated and returned as a group.
+   - Indexing MD5/SHA-1 binary and content based hashes as fields. When searching index, duplicate documents returned by a search can be indicated and grouped together.
