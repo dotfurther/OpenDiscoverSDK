@@ -13,7 +13,7 @@ The Cmdlet derived classes in this example C# project show how to use the Open D
 
 
 # Example Cmdlet Usage:
-Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (this path will be unique to where the user installed the Github examples):
+Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (the full path will be unique to where the user installed the Github examples but the example build output relative path is ".\OpenDiscoverSDK\Examples\SdkExamples\Build"):
 ```powershell
    PS> cd D:\GitHub\OpenDiscoverSDK\Examples\SdkExamples\Build  
 ```
