@@ -22,6 +22,8 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - eDiscovery applications 
 - And more...
 
+The Open Discover SDK Help is publisher here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
+
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
 ### DocumentIdentifier Example:
    - Shows how to use SDK to identify the document file formats of all files under an input directory and its 
