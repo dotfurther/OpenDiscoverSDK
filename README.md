@@ -23,7 +23,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - And more...
 
 ## Open Discover SDK Help:
-The Open Discover SDK Help is publisher here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
+The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
 ### DocumentIdentifier Example:
