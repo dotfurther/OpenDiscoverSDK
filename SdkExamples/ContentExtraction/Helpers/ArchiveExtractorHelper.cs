@@ -79,7 +79,7 @@ namespace ContentExtractionExample
 
                     while (_hostUI.RequestPassword(out password) == DialogResult.OK)
                     {
-                        stopWatch.Reset();
+                        stopWatch.Restart();
                         testResult = _archiveExtractor.TestSolidBlockItems(ItemTestFinishedCallback, password);
 
                         if (testResult != ContentResult.WrongPassword)

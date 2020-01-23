@@ -30,14 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArchiveView));
-            this._contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this._extractItemStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._imageList = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this._docBaseTabPage = new System.Windows.Forms.TabPage();
-            this._testArchiveButton = new System.Windows.Forms.Button();
+            this._errorMessageLabel = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this._isEncryptedLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this._fileNameLabel = new System.Windows.Forms.Label();
@@ -81,16 +80,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this._totalItemCountLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this._selectOutputFolderButton = new System.Windows.Forms.Button();
-            this._archiveOutputFolderTextBox = new System.Windows.Forms.TextBox();
-            this._extractAllArchiveItemsButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._foldersTreeView = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._errorMessageLabel = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this._contextMenuStrip.SuspendLayout();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -108,20 +101,6 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // _contextMenuStrip
-            // 
-            this._contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._extractItemStripMenuItem});
-            this._contextMenuStrip.Name = "_contextMenuStrip";
-            this._contextMenuStrip.Size = new System.Drawing.Size(147, 26);
-            // 
-            // _extractItemStripMenuItem
-            // 
-            this._extractItemStripMenuItem.Name = "_extractItemStripMenuItem";
-            this._extractItemStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this._extractItemStripMenuItem.Text = "Extract Item...";
-            this._extractItemStripMenuItem.Click += new System.EventHandler(this._extractItemStripMenuItem_Click);
             // 
             // _imageList
             // 
@@ -161,7 +140,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.tabControl3);
             this.splitContainer5.Size = new System.Drawing.Size(1033, 316);
-            this.splitContainer5.SplitterDistance = 494;
+            this.splitContainer5.SplitterDistance = 456;
             this.splitContainer5.TabIndex = 1;
             // 
             // tabControl2
@@ -171,7 +150,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(494, 316);
+            this.tabControl2.Size = new System.Drawing.Size(456, 316);
             this.tabControl2.TabIndex = 0;
             // 
             // _docBaseTabPage
@@ -179,7 +158,6 @@
             this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
             this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
             this._docBaseTabPage.Controls.Add(this.label19);
-            this._docBaseTabPage.Controls.Add(this._testArchiveButton);
             this._docBaseTabPage.Controls.Add(this._isEncryptedLabel);
             this._docBaseTabPage.Controls.Add(this.label11);
             this._docBaseTabPage.Controls.Add(this._fileNameLabel);
@@ -203,20 +181,29 @@
             this._docBaseTabPage.Location = new System.Drawing.Point(4, 22);
             this._docBaseTabPage.Name = "_docBaseTabPage";
             this._docBaseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._docBaseTabPage.Size = new System.Drawing.Size(486, 290);
+            this._docBaseTabPage.Size = new System.Drawing.Size(448, 290);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "ArchiveContent";
             // 
-            // _testArchiveButton
+            // _errorMessageLabel
             // 
-            this._testArchiveButton.Location = new System.Drawing.Point(6, 220);
-            this._testArchiveButton.Name = "_testArchiveButton";
-            this._testArchiveButton.Size = new System.Drawing.Size(122, 23);
-            this._testArchiveButton.TabIndex = 62;
-            this._testArchiveButton.Text = "Test Archive";
-            this.toolTip1.SetToolTip(this._testArchiveButton, "Tests archive items for true expansion size");
-            this._testArchiveButton.UseVisualStyleBackColor = true;
-            this._testArchiveButton.Click += new System.EventHandler(this._testArchiveButton_Click);
+            this._errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this._errorMessageLabel.Location = new System.Drawing.Point(95, 101);
+            this._errorMessageLabel.Name = "_errorMessageLabel";
+            this._errorMessageLabel.Size = new System.Drawing.Size(388, 13);
+            this._errorMessageLabel.TabIndex = 66;
+            this._errorMessageLabel.Text = " ";
+            this._errorMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(5, 101);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 65;
+            this.label19.Text = "ErrorMessage:";
             // 
             // _isEncryptedLabel
             // 
@@ -414,7 +401,7 @@
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(535, 316);
+            this.tabControl3.Size = new System.Drawing.Size(573, 316);
             this.tabControl3.TabIndex = 13;
             // 
             // _metdataTabPage
@@ -423,7 +410,7 @@
             this._metdataTabPage.Location = new System.Drawing.Point(4, 22);
             this._metdataTabPage.Name = "_metdataTabPage";
             this._metdataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._metdataTabPage.Size = new System.Drawing.Size(527, 290);
+            this._metdataTabPage.Size = new System.Drawing.Size(565, 290);
             this._metdataTabPage.TabIndex = 3;
             this._metdataTabPage.Text = "Metadata (0)";
             this._metdataTabPage.UseVisualStyleBackColor = true;
@@ -434,13 +421,14 @@
             this._metadataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader6,
+            this.columnHeader13,
             this.columnHeader7});
             this._metadataListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._metadataListView.FullRowSelect = true;
             this._metadataListView.HideSelection = false;
             this._metadataListView.Location = new System.Drawing.Point(3, 3);
             this._metadataListView.Name = "_metadataListView";
-            this._metadataListView.Size = new System.Drawing.Size(521, 284);
+            this._metadataListView.Size = new System.Drawing.Size(559, 284);
             this._metadataListView.TabIndex = 6;
             this._metadataListView.UseCompatibleStateImageBehavior = false;
             this._metadataListView.View = System.Windows.Forms.View.Details;
@@ -458,7 +446,7 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Value";
-            this.columnHeader7.Width = 152;
+            this.columnHeader7.Width = 207;
             // 
             // _attributesTabPage
             // 
@@ -516,7 +504,6 @@
             this.columnHeader11,
             this.columnHeader10,
             this.columnHeader9});
-            this._archiveItemInfoListView.ContextMenuStrip = this._contextMenuStrip;
             this._archiveItemInfoListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._archiveItemInfoListView.FullRowSelect = true;
             this._archiveItemInfoListView.HideSelection = false;
@@ -577,10 +564,6 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this._totalItemCountLabel);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this._selectOutputFolderButton);
-            this.tabPage2.Controls.Add(this._archiveOutputFolderTextBox);
-            this.tabPage2.Controls.Add(this._extractAllArchiveItemsButton);
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this._foldersTreeView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -610,46 +593,6 @@
             this.label13.TabIndex = 33;
             this.label13.Text = "Item Count:";
             // 
-            // _selectOutputFolderButton
-            // 
-            this._selectOutputFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._selectOutputFolderButton.Location = new System.Drawing.Point(609, 271);
-            this._selectOutputFolderButton.Name = "_selectOutputFolderButton";
-            this._selectOutputFolderButton.Size = new System.Drawing.Size(27, 24);
-            this._selectOutputFolderButton.TabIndex = 32;
-            this._selectOutputFolderButton.Text = "...";
-            this._selectOutputFolderButton.UseVisualStyleBackColor = true;
-            this._selectOutputFolderButton.Click += new System.EventHandler(this._selectOutputFolderButton_Click);
-            // 
-            // _archiveOutputFolderTextBox
-            // 
-            this._archiveOutputFolderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._archiveOutputFolderTextBox.Location = new System.Drawing.Point(139, 274);
-            this._archiveOutputFolderTextBox.Name = "_archiveOutputFolderTextBox";
-            this._archiveOutputFolderTextBox.Size = new System.Drawing.Size(465, 20);
-            this._archiveOutputFolderTextBox.TabIndex = 31;
-            // 
-            // _extractAllArchiveItemsButton
-            // 
-            this._extractAllArchiveItemsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._extractAllArchiveItemsButton.Location = new System.Drawing.Point(642, 270);
-            this._extractAllArchiveItemsButton.Name = "_extractAllArchiveItemsButton";
-            this._extractAllArchiveItemsButton.Size = new System.Drawing.Size(158, 26);
-            this._extractAllArchiveItemsButton.TabIndex = 29;
-            this._extractAllArchiveItemsButton.Text = "Extract All  Archive Items";
-            this._extractAllArchiveItemsButton.UseVisualStyleBackColor = true;
-            this._extractAllArchiveItemsButton.Click += new System.EventHandler(this._extractAllArchiveItemsButton_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 277);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 13);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Archive Output Folder:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -670,28 +613,13 @@
             this._foldersTreeView.Location = new System.Drawing.Point(6, 25);
             this._foldersTreeView.Name = "_foldersTreeView";
             this._foldersTreeView.SelectedImageIndex = 0;
-            this._foldersTreeView.Size = new System.Drawing.Size(598, 243);
+            this._foldersTreeView.Size = new System.Drawing.Size(598, 284);
             this._foldersTreeView.TabIndex = 14;
             // 
-            // _errorMessageLabel
+            // columnHeader13
             // 
-            this._errorMessageLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this._errorMessageLabel.Location = new System.Drawing.Point(95, 101);
-            this._errorMessageLabel.Name = "_errorMessageLabel";
-            this._errorMessageLabel.Size = new System.Drawing.Size(388, 13);
-            this._errorMessageLabel.TabIndex = 66;
-            this._errorMessageLabel.Text = " ";
-            this._errorMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 101);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 13);
-            this.label19.TabIndex = 65;
-            this.label19.Text = "ErrorMessage:";
+            this.columnHeader13.Text = "IsUserDefined";
+            this.columnHeader13.Width = 98;
             // 
             // ArchiveView
             // 
@@ -700,7 +628,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "ArchiveView";
             this.Size = new System.Drawing.Size(1033, 661);
-            this._contextMenuStrip.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -725,8 +652,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip _contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem _extractItemStripMenuItem;
         private System.Windows.Forms.ImageList _imageList;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl tabControl1;
@@ -771,13 +696,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.Button _selectOutputFolderButton;
-        private System.Windows.Forms.TextBox _archiveOutputFolderTextBox;
-        private System.Windows.Forms.Button _extractAllArchiveItemsButton;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label _totalItemCountLabel;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button _testArchiveButton;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -785,5 +705,6 @@
         private System.Windows.Forms.TextBox _attributesTextBox;
         private System.Windows.Forms.Label _errorMessageLabel;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }

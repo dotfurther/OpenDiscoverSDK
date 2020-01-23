@@ -62,6 +62,7 @@
             this._metadataListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._saveWithMailStoreFolderStructureCheckBox = new System.Windows.Forms.CheckBox();
             this._selectOutputFolderButton = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -133,7 +133,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.tabControl3);
             this.splitContainer5.Size = new System.Drawing.Size(911, 275);
-            this.splitContainer5.SplitterDistance = 540;
+            this.splitContainer5.SplitterDistance = 446;
             this.splitContainer5.TabIndex = 2;
             // 
             // tabControl2
@@ -143,7 +143,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(540, 275);
+            this.tabControl2.Size = new System.Drawing.Size(446, 275);
             this.tabControl2.TabIndex = 0;
             // 
             // _docBaseTabPage
@@ -174,7 +174,7 @@
             this._docBaseTabPage.Location = new System.Drawing.Point(4, 22);
             this._docBaseTabPage.Name = "_docBaseTabPage";
             this._docBaseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._docBaseTabPage.Size = new System.Drawing.Size(532, 249);
+            this._docBaseTabPage.Size = new System.Drawing.Size(438, 249);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "MailStoreContent";
             // 
@@ -391,7 +391,7 @@
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(367, 275);
+            this.tabControl3.Size = new System.Drawing.Size(461, 275);
             this.tabControl3.TabIndex = 13;
             // 
             // _metdataTabPage
@@ -400,7 +400,7 @@
             this._metdataTabPage.Location = new System.Drawing.Point(4, 22);
             this._metdataTabPage.Name = "_metdataTabPage";
             this._metdataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._metdataTabPage.Size = new System.Drawing.Size(359, 249);
+            this._metdataTabPage.Size = new System.Drawing.Size(453, 249);
             this._metdataTabPage.TabIndex = 3;
             this._metdataTabPage.Text = "Metadata (0)";
             this._metdataTabPage.UseVisualStyleBackColor = true;
@@ -418,7 +418,7 @@
             this._metadataListView.HideSelection = false;
             this._metadataListView.Location = new System.Drawing.Point(3, 3);
             this._metadataListView.Name = "_metadataListView";
-            this._metadataListView.Size = new System.Drawing.Size(353, 243);
+            this._metadataListView.Size = new System.Drawing.Size(447, 243);
             this._metadataListView.TabIndex = 6;
             this._metadataListView.UseCompatibleStateImageBehavior = false;
             this._metadataListView.View = System.Windows.Forms.View.Details;
@@ -432,6 +432,11 @@
             // 
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 72;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "IsUserDefined";
+            this.columnHeader2.Width = 89;
             // 
             // columnHeader7
             // 
@@ -527,11 +532,6 @@
             this.label4.Size = new System.Drawing.Size(102, 13);
             this.label4.TabIndex = 26;
             this.label4.Text = "Email Output Folder:";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "IsUserDefined";
-            this.columnHeader2.Width = 89;
             // 
             // MailStoreView
             // 

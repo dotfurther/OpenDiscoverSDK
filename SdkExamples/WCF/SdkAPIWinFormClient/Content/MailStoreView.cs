@@ -23,9 +23,6 @@ namespace SdkAPIWinFormClient
         private BackgroundWorker    _worker = new BackgroundWorker();
         private string              _outputFolder;
         private MailStoreContent    _mailStoreContent;
-        private bool                _saveWithMailStoreFolderStructure;
-        private int                 _totalEmailMessagesWritten;
-        private double              _totalWriteTime_ms;
 
         /// <summary>
         /// Constructor.
@@ -75,26 +72,6 @@ namespace SdkAPIWinFormClient
                 ClearView();
                 _mailStoreContent = docContent;
 
-                _extractAllEmailsButton.Enabled = true;
-
-                if (_saveWithMailStoreFolderStructureCheckBox.Checked)
-                {
-                    switch (_mailStoreContent.FormatId.ID)
-                    {
-                        case Id.OutlookPSTAnsi:
-                        case Id.OutlookPSTUnicode:
-                        case Id.OutlookOST2013Unicode:
-                        case Id.OutlookOSTAnsi:
-                        case Id.OutlookOSTUnicode:
-                            _saveWithMailStoreFolderStructureCheckBox.Enabled = true;
-                            break;
-                        default:
-                            _saveWithMailStoreFolderStructureCheckBox.Checked = false;
-                            _saveWithMailStoreFolderStructureCheckBox.Enabled = false;
-                            break;
-                    }
-                }
-
                 _fileNameLabel.Text = filename;
                 _fileSizeLabel.Text = string.Format("{0:###,###,###,###}", filelength);
 
@@ -139,52 +116,6 @@ namespace SdkAPIWinFormClient
             catch (Exception ex)
             {
                 _hostUI.LogMessage("Error in MailStoreView.UpdateContentView: " + ex.Message);
-            }
-        }
-        #endregion
-
-        //
-        // Control Event Handlers:
-        //
-        #region private void _extractAllEmailsButton_Click(object sender, EventArgs e)
-        private void _extractAllEmailsButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _outputFolder = _emailOutputFolderTextBox.Text;
-
-                _totalEmailMessagesWritten = 0;
-                _totalWriteTime_ms = 0;
-
-                _saveWithMailStoreFolderStructure = _saveWithMailStoreFolderStructureCheckBox.Checked;
-
-                if (!Directory.Exists(_outputFolder))
-                {
-                    MessageBox.Show("Email Output folder does not exist: " + _outputFolder);
-                    return;
-                }
-
-                this.Enabled = false;
-                this.Cursor  = Cursors.WaitCursor;
-
-                _worker.RunWorkerAsync();
-            }
-            catch (Exception ex)
-            {
-                _hostUI.LogMessage("Error in MailStoreView._extractAllEmailsButton_Click: " + ex.Message);
-                _hostUI.ShowMessageBox(ex.Message, "Error extracting emails...");
-            }
-        }
-        #endregion
-
-        #region private void _selectOutputFolderButton_Click(object sender, EventArgs e)
-        private void _selectOutputFolderButton_Click(object sender, EventArgs e)
-        {
-            var folderBrowser = new FolderBrowserDialog();
-
-            if (folderBrowser.ShowDialog() == DialogResult.OK)
-            {
-                _emailOutputFolderTextBox.Text = folderBrowser.SelectedPath;
             }
         }
         #endregion

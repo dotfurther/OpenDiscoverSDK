@@ -128,6 +128,7 @@
             this._metadataListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
@@ -166,7 +167,18 @@
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._piiTabPage = new System.Windows.Forms.TabPage();
+            this._piiListView = new System.Windows.Forms.ListView();
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -204,6 +216,7 @@
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
+            this._piiTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -1158,6 +1171,7 @@
             // 
             this._featuresTabControl.Controls.Add(this._metdataTabPage);
             this._featuresTabControl.Controls.Add(this._attributesTabPage);
+            this._featuresTabControl.Controls.Add(this._piiTabPage);
             this._featuresTabControl.Controls.Add(this._hyperLinksTabPage);
             this._featuresTabControl.Controls.Add(this._languagesTabPage);
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
@@ -1206,6 +1220,11 @@
             // 
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 72;
+            // 
+            // columnHeader22
+            // 
+            this.columnHeader22.Text = "IsUserDefined";
+            this.columnHeader22.Width = 88;
             // 
             // columnHeader7
             // 
@@ -1528,10 +1547,88 @@
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
             // 
-            // columnHeader22
+            // _piiTabPage
             // 
-            this.columnHeader22.Text = "IsUserDefined";
-            this.columnHeader22.Width = 88;
+            this._piiTabPage.Controls.Add(this._piiListView);
+            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
+            this._piiTabPage.Name = "_piiTabPage";
+            this._piiTabPage.Size = new System.Drawing.Size(505, 307);
+            this._piiTabPage.TabIndex = 5;
+            this._piiTabPage.Text = "PII (0)";
+            this._piiTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _piiListView
+            // 
+            this._piiListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._piiListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader23,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader48,
+            this.columnHeader49,
+            this.columnHeader52,
+            this.columnHeader53,
+            this.columnHeader50,
+            this.columnHeader51});
+            this._piiListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._piiListView.FullRowSelect = true;
+            this._piiListView.HideSelection = false;
+            this._piiListView.Location = new System.Drawing.Point(0, 0);
+            this._piiListView.Name = "_piiListView";
+            this._piiListView.Size = new System.Drawing.Size(505, 307);
+            this._piiListView.TabIndex = 8;
+            this._piiListView.UseCompatibleStateImageBehavior = false;
+            this._piiListView.View = System.Windows.Forms.View.Details;
+            this._piiListView.SelectedIndexChanged += new System.EventHandler(this._piiListView_SelectedIndexChanged);
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "PIIType";
+            this.columnHeader23.Width = 88;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "MatchType";
+            this.columnHeader45.Width = 82;
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "ProximityIdentifier";
+            this.columnHeader46.Width = 98;
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "Line";
+            this.columnHeader47.Width = 40;
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "Start";
+            this.columnHeader48.Width = 40;
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Text = "End";
+            this.columnHeader49.Width = 40;
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Text = "IsMetadata";
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "MetadataName";
+            this.columnHeader53.Width = 70;
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "Extra";
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "Text";
+            this.columnHeader51.Width = 150;
             // 
             // ContentView
             // 
@@ -1587,6 +1684,7 @@
             this._textTabPage.PerformLayout();
             this._imageViewTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
+            this._piiTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1731,5 +1829,17 @@
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
+        private System.Windows.Forms.TabPage _piiTabPage;
+        private System.Windows.Forms.ListView _piiListView;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.ColumnHeader columnHeader45;
+        private System.Windows.Forms.ColumnHeader columnHeader46;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader48;
+        private System.Windows.Forms.ColumnHeader columnHeader49;
+        private System.Windows.Forms.ColumnHeader columnHeader52;
+        private System.Windows.Forms.ColumnHeader columnHeader53;
+        private System.Windows.Forms.ColumnHeader columnHeader50;
+        private System.Windows.Forms.ColumnHeader columnHeader51;
     }
 }

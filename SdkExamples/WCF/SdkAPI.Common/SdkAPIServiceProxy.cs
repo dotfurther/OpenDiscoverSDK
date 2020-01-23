@@ -24,7 +24,7 @@ namespace SdkAPI.Common
     /// </summary>
     /// <remarks>
     /// <para>
-    /// This proxy uses named piped binding for fast inter-process communication. User 
+    /// This proxy uses named piped binding for fast inter-process communication. 
     /// </para>
     /// <para>
     /// By not relying on WCF WSDL proxy generation, this proxy class can be referenced by and used by different projects.

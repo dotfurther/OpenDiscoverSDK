@@ -329,20 +329,20 @@ namespace SdkAPIWCFService
         /// <summary>
         /// Used for data contract serialization trouble shooting. This method will serialize and then deserialize the input argument.
         /// WCF will often give cryptic error messages, that if serialization related, are hard to track down. If serialization is the 
-        /// issue, any serialization related exceptions it will happen here - and then we will know (note: you can attach the VS debugger 
+        /// issue, any serialization related exceptions will happen here - and then we will know (note: you can attach the VS debugger 
         /// to a running instance of the service host app)
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="returnValue"></param>
+        /// <param name="objToSerialize">The object to serialize.</param>
         /// <returns>The input argument serialized and then de-serialized by DataContractSerializer.</returns>
-        private T DebugCheckDataContractSerialize<T>(T returnValue)
+        private T DebugCheckDataContractSerialize<T>(T objToSerialize)
         {
             var serializer = new System.Runtime.Serialization.DataContractSerializer(typeof(T));
 
             byte[] bytes;
             using (var serializedStream = new System.IO.MemoryStream())
             {
-                serializer.WriteObject(serializedStream, returnValue);
+                serializer.WriteObject(serializedStream, objToSerialize);
                 bytes = serializedStream.ToArray();
             }
 

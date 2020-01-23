@@ -66,6 +66,7 @@ namespace SdkAPIWinFormClient
         public void ClearView()
         {
             _metadataListView.Items.Clear();
+            _piiListView.Items.Clear();
             _attributesTextBox.Text = "";
             _hyperLinksListView.Items.Clear();
             _childDocsListView.Items.Clear();
@@ -97,6 +98,7 @@ namespace SdkAPIWinFormClient
             }
 
             _metdataTabPage.Text    = "Metadata (0)";
+            _piiTabPage.Text        = "PII (0)";
             _attributesTabPage.Text = "Attributes (0)";
             _hyperLinksTabPage.Text = "Hyperlinks (0)";
             _languagesTabPage.Text  = "Languages (0)";
@@ -418,9 +420,54 @@ namespace SdkAPIWinFormClient
             }
 
             _metdataTabPage.Text    = string.Format("Metadata ({0})",   _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
+            _piiTabPage.Text        = string.Format("PII ({0})",        _docContent.PIICheckResult != null ? _docContent.PIICheckResult.PIIResults.Count : 0);
             _attributesTabPage.Text = string.Format("Attributes ({0})", _docContent.Attributes.Count); 
             _languagesTabPage.Text  = string.Format("Languages ({0})",  _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
             _childrenTabPage.Text   = string.Format("Children ({0})",   _docContent.ChildDocuments.Count);
+
+            //
+            // Set PII:
+            //
+            if (_docContent.PIICheckResult.PIIResults.Count > 0)
+            {
+                try
+                {
+                    _piiListView.BeginUpdate();
+
+                    foreach (var piiItem in _docContent.PIICheckResult.PIIResults)
+                    {
+                        var item = new ListViewItem(piiItem.PIIType.ToString());
+                        item.UseItemStyleForSubItems = false;
+
+                        item.SubItems.Add(piiItem.MatchType.ToString());
+                        item.SubItems.Add(piiItem.ProximityIdentifier != null ? piiItem.ProximityIdentifier : "");
+                        item.SubItems.Add(piiItem.Line.ToString());
+                        item.SubItems.Add(piiItem.Start.ToString());
+                        item.SubItems.Add(piiItem.End.ToString());
+
+                        var subItem = item.SubItems.Add(piiItem.IsMetadata.ToString());
+                        if (piiItem.IsMetadata)
+                        {
+                            subItem.ForeColor = Color.Blue;
+                        }
+                        subItem = item.SubItems.Add(piiItem.MetadataName != null ? piiItem.MetadataName : "");
+                        if (piiItem.MetadataName != null)
+                        {
+                            subItem.ForeColor = Color.DarkRed;
+                        }
+
+                        item.SubItems.Add(piiItem.Extra != null ? piiItem.Extra : "");
+                        item.SubItems.Add(piiItem.Text  != null ? piiItem.Text  : "");
+                        item.Tag = piiItem;
+
+                        _piiListView.Items.Add(item);
+                    }
+                }
+                finally
+                {
+                    _piiListView.EndUpdate();
+                }
+            }
 
             //
             // Set metadata:
@@ -722,6 +769,31 @@ namespace SdkAPIWinFormClient
             catch (Exception ex)
             {
                 MessageBox.Show(this, ex.Message, "Error saving text...");
+            }
+        }
+        #endregion
+
+        #region private void _piiListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _piiListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_piiListView.SelectedItems.Count == 1)
+                {
+                    var piiResult = _piiListView.SelectedItems[0].Tag as PIIResult;
+                    if (piiResult != null)
+                    {
+                        _selectedChildInfoTabControl.SelectedTab = _textTabPage;
+                        _extractedTextBox.Focus();
+                        _extractedTextBox.SelectionStart  = piiResult.Start;
+                        _extractedTextBox.SelectionLength = piiResult.End - piiResult.Start + 1;
+                        _extractedTextBox.ScrollToCaret();
+                        _piiListView.Focus();
+                    }
+                }
+            }
+            catch
+            {
             }
         }
         #endregion

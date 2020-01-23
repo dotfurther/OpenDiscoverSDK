@@ -398,6 +398,8 @@ namespace SdkAPIWinFormClient
             var largeDocCriteriaText = _largeDocumentCriteraComboBox.Text.Substring(0, _largeDocumentCriteraComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
             _extractionSettings.LargeDocumentCritera          = int.Parse(largeDocCriteriaText);
             _extractionSettings.UseLargeDocumentUTF16Encoding = _useLargeDocumentUTF16EncodingCheckBox.Checked;
+
+            _extractionSettings.PII.Check = _enablePiiItemsCheckCheckBox.Checked;
         }
         #endregion
 
@@ -539,6 +541,7 @@ namespace SdkAPIWinFormClient
             }
 
             var connectForm = new ConnectForm();
+
             if (connectForm.ShowDialog(this) == DialogResult.OK)
             {
                 try
@@ -554,13 +557,13 @@ namespace SdkAPIWinFormClient
 
                     // Trouble Shooting for connection errors:
                     //-----------------------------------------
-                    // 1. From the Start menu, choose Control Panel.
-                    // 2. Select Programs, then Programs and Features, or in Classic view, select Programs and Features.
-                    // 3. Click Turn Windows Features on or off.
-                    // 4. Expand the Microsoft.NET Framework 3.0(or 3.5) node and check the Windows Communication Foundation Non-HTTP Activation feature.
-                    // 5. Make sure Net.Pipe Listener Adapter service is running:
-                    // 6. Got to run & open Services.msc
-                    // 7. Make sure Net.Pipe Listener Adapter service is running.
+                    // 1. Open Control Panel.
+                    // 2. Select Programs, then "Programs and Features", or if in Classic view, select "Programs and Features".
+                    // 3. Right mouse click on "Turn Windows Features on or off".
+                    // 4. Expand the Microsoft.NET Framework 3.0(or 3.5) tree view node and check the "Windows Communication Foundation Non-HTTP Activation" feature.
+                    // 5. Make sure "Net.Pipe Listener Adapter" Windows service is running
+                    //    a. Run Services.msc
+                    //    b. Make sure Net.Pipe Listener Adapter service is running. Start if not running.
                     _sdkAPIServiceProxy = new SdkAPIServiceProxy(context, binding, endpoint);
                     _sdkAPIServiceProxy.Opened  += _sdkAPIServiceProxy_Opened;
                     _sdkAPIServiceProxy.Faulted += _sdkAPIServiceProxy_Faulted;

@@ -687,11 +687,11 @@ namespace ContentExtractionExample
             _extractionSettings.ExtractionType           = (ExtractionType)_extractionTypeComboBox.SelectedIndex;
             _extractionSettings.EmbeddedObjectExtraction = (EmbeddedExtractionType)_embeddedObjExtractionComboBox.SelectedIndex;
 
-            _extractionSettings.Hashing.HashingType = (HashingType)_hashingTypeComboBox.SelectedIndex;
+            _extractionSettings.Hashing.HashingType      = (HashingType)_hashingTypeComboBox.SelectedIndex;
             var maxHashLen = _maxBinaryHashLengthComboBox.Text.Substring(0, _maxBinaryHashLengthComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
             _extractionSettings.Hashing.MaxBinaryHashLength = int.Parse(maxHashLen);
 
-            _extractionSettings.PdfDocument.ImageExtraction = (PdfImageExtraction)_pdfImageExtractionComboBox.SelectedIndex;
+            _extractionSettings.PdfDocument.ImageExtraction           = (PdfImageExtraction)_pdfImageExtractionComboBox.SelectedIndex;
             _extractionSettings.PdfDocument.PageExtractedTextCriteria = int.Parse(_pdfPageExtractedTextCriteriaComboBox.Text);
 
             _extractionSettings.LanguageId.IdentifyLanguages              = _identifyLangInExtractedTextCheckBox.Checked;
@@ -712,6 +712,8 @@ namespace ContentExtractionExample
             var largeDocCriteriaText = _largeDocumentCriteraComboBox.Text.Substring(0, _largeDocumentCriteraComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
             _extractionSettings.LargeDocumentCritera          = int.Parse(largeDocCriteriaText);
             _extractionSettings.UseLargeDocumentUTF16Encoding = _useLargeDocumentUTF16EncodingCheckBox.Checked;
+
+            _extractionSettings.PII.Check = _enablePiiItemsCheckCheckBox.Checked;
         }
         #endregion
 

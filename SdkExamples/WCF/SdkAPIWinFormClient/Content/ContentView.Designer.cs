@@ -128,6 +128,7 @@
             this._metadataListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
@@ -166,7 +167,18 @@
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._piiTabPage = new System.Windows.Forms.TabPage();
+            this._piiListView = new System.Windows.Forms.ListView();
+            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -204,6 +216,7 @@
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
+            this._piiTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -238,7 +251,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this._featuresTabControl);
             this.splitContainer5.Size = new System.Drawing.Size(1133, 333);
-            this.splitContainer5.SplitterDistance = 616;
+            this.splitContainer5.SplitterDistance = 544;
             this.splitContainer5.TabIndex = 0;
             // 
             // _docTypeTabControl
@@ -251,7 +264,7 @@
             this._docTypeTabControl.Location = new System.Drawing.Point(0, 0);
             this._docTypeTabControl.Name = "_docTypeTabControl";
             this._docTypeTabControl.SelectedIndex = 0;
-            this._docTypeTabControl.Size = new System.Drawing.Size(616, 333);
+            this._docTypeTabControl.Size = new System.Drawing.Size(544, 333);
             this._docTypeTabControl.TabIndex = 0;
             // 
             // _docBaseTabPage
@@ -284,7 +297,7 @@
             this._docBaseTabPage.Location = new System.Drawing.Point(4, 22);
             this._docBaseTabPage.Name = "_docBaseTabPage";
             this._docBaseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._docBaseTabPage.Size = new System.Drawing.Size(608, 307);
+            this._docBaseTabPage.Size = new System.Drawing.Size(536, 307);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "Document Base";
             // 
@@ -523,7 +536,7 @@
             this._emailDocTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailDocTabPage.Name = "_emailDocTabPage";
             this._emailDocTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._emailDocTabPage.Size = new System.Drawing.Size(608, 307);
+            this._emailDocTabPage.Size = new System.Drawing.Size(536, 307);
             this._emailDocTabPage.TabIndex = 1;
             this._emailDocTabPage.Text = "Email Document";
             // 
@@ -536,7 +549,7 @@
             this._emailDocTabControl.Location = new System.Drawing.Point(3, 3);
             this._emailDocTabControl.Name = "_emailDocTabControl";
             this._emailDocTabControl.SelectedIndex = 0;
-            this._emailDocTabControl.Size = new System.Drawing.Size(602, 301);
+            this._emailDocTabControl.Size = new System.Drawing.Size(530, 301);
             this._emailDocTabControl.TabIndex = 75;
             // 
             // _emailInfoTabPage
@@ -569,7 +582,7 @@
             this._emailInfoTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailInfoTabPage.Name = "_emailInfoTabPage";
             this._emailInfoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._emailInfoTabPage.Size = new System.Drawing.Size(594, 275);
+            this._emailInfoTabPage.Size = new System.Drawing.Size(522, 275);
             this._emailInfoTabPage.TabIndex = 1;
             this._emailInfoTabPage.Text = "Info";
             // 
@@ -805,7 +818,7 @@
             this._emailRecipientsTabPage.Controls.Add(this._emailRecipientListView);
             this._emailRecipientsTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailRecipientsTabPage.Name = "_emailRecipientsTabPage";
-            this._emailRecipientsTabPage.Size = new System.Drawing.Size(594, 275);
+            this._emailRecipientsTabPage.Size = new System.Drawing.Size(522, 275);
             this._emailRecipientsTabPage.TabIndex = 2;
             this._emailRecipientsTabPage.Text = "Recipients";
             this._emailRecipientsTabPage.UseVisualStyleBackColor = true;
@@ -823,7 +836,7 @@
             this._emailRecipientListView.HideSelection = false;
             this._emailRecipientListView.Location = new System.Drawing.Point(0, 0);
             this._emailRecipientListView.Name = "_emailRecipientListView";
-            this._emailRecipientListView.Size = new System.Drawing.Size(594, 275);
+            this._emailRecipientListView.Size = new System.Drawing.Size(522, 275);
             this._emailRecipientListView.TabIndex = 67;
             this._emailRecipientListView.UseCompatibleStateImageBehavior = false;
             this._emailRecipientListView.View = System.Windows.Forms.View.Details;
@@ -852,7 +865,7 @@
             this._emailBodiesTabPage.Controls.Add(this._emailBodyTabControl);
             this._emailBodiesTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailBodiesTabPage.Name = "_emailBodiesTabPage";
-            this._emailBodiesTabPage.Size = new System.Drawing.Size(594, 275);
+            this._emailBodiesTabPage.Size = new System.Drawing.Size(522, 275);
             this._emailBodiesTabPage.TabIndex = 3;
             this._emailBodiesTabPage.Text = "Email Body";
             this._emailBodiesTabPage.UseVisualStyleBackColor = true;
@@ -866,7 +879,7 @@
             this._emailBodyTabControl.Location = new System.Drawing.Point(0, 0);
             this._emailBodyTabControl.Name = "_emailBodyTabControl";
             this._emailBodyTabControl.SelectedIndex = 0;
-            this._emailBodyTabControl.Size = new System.Drawing.Size(594, 275);
+            this._emailBodyTabControl.Size = new System.Drawing.Size(522, 275);
             this._emailBodyTabControl.TabIndex = 0;
             // 
             // _textBodyPage
@@ -875,7 +888,7 @@
             this._textBodyPage.Location = new System.Drawing.Point(4, 22);
             this._textBodyPage.Name = "_textBodyPage";
             this._textBodyPage.Padding = new System.Windows.Forms.Padding(3);
-            this._textBodyPage.Size = new System.Drawing.Size(586, 249);
+            this._textBodyPage.Size = new System.Drawing.Size(514, 249);
             this._textBodyPage.TabIndex = 0;
             this._textBodyPage.Text = "Text";
             this._textBodyPage.UseVisualStyleBackColor = true;
@@ -890,7 +903,7 @@
             this._emailTextBodyTextBox.Name = "_emailTextBodyTextBox";
             this._emailTextBodyTextBox.ReadOnly = true;
             this._emailTextBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._emailTextBodyTextBox.Size = new System.Drawing.Size(580, 243);
+            this._emailTextBodyTextBox.Size = new System.Drawing.Size(508, 243);
             this._emailTextBodyTextBox.TabIndex = 0;
             this._emailTextBodyTextBox.WordWrap = false;
             // 
@@ -900,7 +913,7 @@
             this._htmlBodyTabPage.Location = new System.Drawing.Point(4, 22);
             this._htmlBodyTabPage.Name = "_htmlBodyTabPage";
             this._htmlBodyTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._htmlBodyTabPage.Size = new System.Drawing.Size(586, 249);
+            this._htmlBodyTabPage.Size = new System.Drawing.Size(514, 249);
             this._htmlBodyTabPage.TabIndex = 1;
             this._htmlBodyTabPage.Text = "HTML";
             this._htmlBodyTabPage.UseVisualStyleBackColor = true;
@@ -915,7 +928,7 @@
             this._htmlBodyTextBox.Name = "_htmlBodyTextBox";
             this._htmlBodyTextBox.ReadOnly = true;
             this._htmlBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._htmlBodyTextBox.Size = new System.Drawing.Size(580, 243);
+            this._htmlBodyTextBox.Size = new System.Drawing.Size(508, 243);
             this._htmlBodyTextBox.TabIndex = 1;
             this._htmlBodyTextBox.WordWrap = false;
             // 
@@ -924,7 +937,7 @@
             this._rtfBodyTabPage.Controls.Add(this._rtfBodyTextBox);
             this._rtfBodyTabPage.Location = new System.Drawing.Point(4, 22);
             this._rtfBodyTabPage.Name = "_rtfBodyTabPage";
-            this._rtfBodyTabPage.Size = new System.Drawing.Size(586, 249);
+            this._rtfBodyTabPage.Size = new System.Drawing.Size(514, 249);
             this._rtfBodyTabPage.TabIndex = 2;
             this._rtfBodyTabPage.Text = "RTF";
             this._rtfBodyTabPage.UseVisualStyleBackColor = true;
@@ -939,7 +952,7 @@
             this._rtfBodyTextBox.Name = "_rtfBodyTextBox";
             this._rtfBodyTextBox.ReadOnly = true;
             this._rtfBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._rtfBodyTextBox.Size = new System.Drawing.Size(586, 249);
+            this._rtfBodyTextBox.Size = new System.Drawing.Size(514, 249);
             this._rtfBodyTextBox.TabIndex = 2;
             this._rtfBodyTextBox.WordWrap = false;
             // 
@@ -953,7 +966,7 @@
             this._htmlDocTabPage.Controls.Add(this.label20);
             this._htmlDocTabPage.Location = new System.Drawing.Point(4, 22);
             this._htmlDocTabPage.Name = "_htmlDocTabPage";
-            this._htmlDocTabPage.Size = new System.Drawing.Size(608, 307);
+            this._htmlDocTabPage.Size = new System.Drawing.Size(536, 307);
             this._htmlDocTabPage.TabIndex = 2;
             this._htmlDocTabPage.Text = "HTML Document";
             // 
@@ -966,7 +979,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(605, 264);
+            this.tabControl1.Size = new System.Drawing.Size(533, 264);
             this.tabControl1.TabIndex = 73;
             // 
             // _htmlImagesTabPage
@@ -975,7 +988,7 @@
             this._htmlImagesTabPage.Location = new System.Drawing.Point(4, 22);
             this._htmlImagesTabPage.Name = "_htmlImagesTabPage";
             this._htmlImagesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._htmlImagesTabPage.Size = new System.Drawing.Size(597, 238);
+            this._htmlImagesTabPage.Size = new System.Drawing.Size(525, 238);
             this._htmlImagesTabPage.TabIndex = 1;
             this._htmlImagesTabPage.Text = "Images";
             this._htmlImagesTabPage.UseVisualStyleBackColor = true;
@@ -995,7 +1008,7 @@
             this._htmlImagesListView.HideSelection = false;
             this._htmlImagesListView.Location = new System.Drawing.Point(3, 3);
             this._htmlImagesListView.Name = "_htmlImagesListView";
-            this._htmlImagesListView.Size = new System.Drawing.Size(591, 232);
+            this._htmlImagesListView.Size = new System.Drawing.Size(519, 232);
             this._htmlImagesListView.TabIndex = 70;
             this._htmlImagesListView.UseCompatibleStateImageBehavior = false;
             this._htmlImagesListView.View = System.Windows.Forms.View.Details;
@@ -1035,7 +1048,7 @@
             this._htmlBaseUrlLabel.BackColor = System.Drawing.SystemColors.Control;
             this._htmlBaseUrlLabel.Location = new System.Drawing.Point(71, 24);
             this._htmlBaseUrlLabel.Name = "_htmlBaseUrlLabel";
-            this._htmlBaseUrlLabel.Size = new System.Drawing.Size(532, 13);
+            this._htmlBaseUrlLabel.Size = new System.Drawing.Size(460, 13);
             this._htmlBaseUrlLabel.TabIndex = 72;
             this._htmlBaseUrlLabel.Text = " ";
             this._htmlBaseUrlLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1056,7 +1069,7 @@
             this._htmlTitleLabel.BackColor = System.Drawing.SystemColors.Control;
             this._htmlTitleLabel.Location = new System.Drawing.Point(74, 5);
             this._htmlTitleLabel.Name = "_htmlTitleLabel";
-            this._htmlTitleLabel.Size = new System.Drawing.Size(529, 13);
+            this._htmlTitleLabel.Size = new System.Drawing.Size(457, 13);
             this._htmlTitleLabel.TabIndex = 70;
             this._htmlTitleLabel.Text = " ";
             this._htmlTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1078,7 +1091,7 @@
             this._pdfDocTabPage.Controls.Add(this._failedPdfPagesListView);
             this._pdfDocTabPage.Location = new System.Drawing.Point(4, 22);
             this._pdfDocTabPage.Name = "_pdfDocTabPage";
-            this._pdfDocTabPage.Size = new System.Drawing.Size(608, 307);
+            this._pdfDocTabPage.Size = new System.Drawing.Size(536, 307);
             this._pdfDocTabPage.TabIndex = 3;
             this._pdfDocTabPage.Text = "PDF Document";
             // 
@@ -1118,7 +1131,7 @@
             this._failedPdfPagesListView.HideSelection = false;
             this._failedPdfPagesListView.Location = new System.Drawing.Point(3, 23);
             this._failedPdfPagesListView.Name = "_failedPdfPagesListView";
-            this._failedPdfPagesListView.Size = new System.Drawing.Size(602, 281);
+            this._failedPdfPagesListView.Size = new System.Drawing.Size(530, 281);
             this._failedPdfPagesListView.TabIndex = 68;
             this._failedPdfPagesListView.UseCompatibleStateImageBehavior = false;
             this._failedPdfPagesListView.View = System.Windows.Forms.View.Details;
@@ -1159,6 +1172,7 @@
             // 
             this._featuresTabControl.Controls.Add(this._metdataTabPage);
             this._featuresTabControl.Controls.Add(this._attributesTabPage);
+            this._featuresTabControl.Controls.Add(this._piiTabPage);
             this._featuresTabControl.Controls.Add(this._hyperLinksTabPage);
             this._featuresTabControl.Controls.Add(this._languagesTabPage);
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
@@ -1166,7 +1180,7 @@
             this._featuresTabControl.Location = new System.Drawing.Point(0, 0);
             this._featuresTabControl.Name = "_featuresTabControl";
             this._featuresTabControl.SelectedIndex = 0;
-            this._featuresTabControl.Size = new System.Drawing.Size(513, 333);
+            this._featuresTabControl.Size = new System.Drawing.Size(585, 333);
             this._featuresTabControl.TabIndex = 13;
             // 
             // _metdataTabPage
@@ -1175,7 +1189,7 @@
             this._metdataTabPage.Location = new System.Drawing.Point(4, 22);
             this._metdataTabPage.Name = "_metdataTabPage";
             this._metdataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._metdataTabPage.Size = new System.Drawing.Size(505, 307);
+            this._metdataTabPage.Size = new System.Drawing.Size(577, 307);
             this._metdataTabPage.TabIndex = 3;
             this._metdataTabPage.Text = "Metadata (0)";
             this._metdataTabPage.UseVisualStyleBackColor = true;
@@ -1193,7 +1207,7 @@
             this._metadataListView.HideSelection = false;
             this._metadataListView.Location = new System.Drawing.Point(3, 3);
             this._metadataListView.Name = "_metadataListView";
-            this._metadataListView.Size = new System.Drawing.Size(499, 301);
+            this._metadataListView.Size = new System.Drawing.Size(571, 301);
             this._metadataListView.TabIndex = 6;
             this._metadataListView.UseCompatibleStateImageBehavior = false;
             this._metadataListView.View = System.Windows.Forms.View.Details;
@@ -1208,6 +1222,11 @@
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 72;
             // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "IsUserDefined";
+            this.columnHeader23.Width = 89;
+            // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Value";
@@ -1219,7 +1238,7 @@
             this._attributesTabPage.Location = new System.Drawing.Point(4, 22);
             this._attributesTabPage.Name = "_attributesTabPage";
             this._attributesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._attributesTabPage.Size = new System.Drawing.Size(505, 307);
+            this._attributesTabPage.Size = new System.Drawing.Size(577, 307);
             this._attributesTabPage.TabIndex = 1;
             this._attributesTabPage.Text = "Attributes (0)";
             this._attributesTabPage.UseVisualStyleBackColor = true;
@@ -1232,7 +1251,7 @@
             this._attributesTextBox.Multiline = true;
             this._attributesTextBox.Name = "_attributesTextBox";
             this._attributesTextBox.ReadOnly = true;
-            this._attributesTextBox.Size = new System.Drawing.Size(499, 301);
+            this._attributesTextBox.Size = new System.Drawing.Size(571, 301);
             this._attributesTextBox.TabIndex = 0;
             // 
             // _hyperLinksTabPage
@@ -1240,7 +1259,7 @@
             this._hyperLinksTabPage.Controls.Add(this._hyperLinksListView);
             this._hyperLinksTabPage.Location = new System.Drawing.Point(4, 22);
             this._hyperLinksTabPage.Name = "_hyperLinksTabPage";
-            this._hyperLinksTabPage.Size = new System.Drawing.Size(505, 307);
+            this._hyperLinksTabPage.Size = new System.Drawing.Size(577, 307);
             this._hyperLinksTabPage.TabIndex = 4;
             this._hyperLinksTabPage.Text = "HyperLinks (0)";
             this._hyperLinksTabPage.UseVisualStyleBackColor = true;
@@ -1263,7 +1282,7 @@
             this._hyperLinksListView.HideSelection = false;
             this._hyperLinksListView.Location = new System.Drawing.Point(0, 0);
             this._hyperLinksListView.Name = "_hyperLinksListView";
-            this._hyperLinksListView.Size = new System.Drawing.Size(505, 307);
+            this._hyperLinksListView.Size = new System.Drawing.Size(577, 307);
             this._hyperLinksListView.TabIndex = 72;
             this._hyperLinksListView.UseCompatibleStateImageBehavior = false;
             this._hyperLinksListView.View = System.Windows.Forms.View.Details;
@@ -1313,7 +1332,7 @@
             this._languagesTabPage.Controls.Add(this.splitContainer4);
             this._languagesTabPage.Location = new System.Drawing.Point(4, 22);
             this._languagesTabPage.Name = "_languagesTabPage";
-            this._languagesTabPage.Size = new System.Drawing.Size(505, 307);
+            this._languagesTabPage.Size = new System.Drawing.Size(577, 307);
             this._languagesTabPage.TabIndex = 2;
             this._languagesTabPage.Text = "Languages (0)";
             this._languagesTabPage.UseVisualStyleBackColor = true;
@@ -1333,7 +1352,7 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.label5);
             this.splitContainer4.Panel2.Controls.Add(this._langIdRegionsListView);
-            this.splitContainer4.Size = new System.Drawing.Size(505, 307);
+            this.splitContainer4.Size = new System.Drawing.Size(577, 307);
             this.splitContainer4.SplitterDistance = 153;
             this.splitContainer4.TabIndex = 12;
             // 
@@ -1349,7 +1368,7 @@
             this._langIdListView.HideSelection = false;
             this._langIdListView.Location = new System.Drawing.Point(0, 0);
             this._langIdListView.Name = "_langIdListView";
-            this._langIdListView.Size = new System.Drawing.Size(505, 153);
+            this._langIdListView.Size = new System.Drawing.Size(577, 153);
             this._langIdListView.TabIndex = 12;
             this._langIdListView.UseCompatibleStateImageBehavior = false;
             this._langIdListView.View = System.Windows.Forms.View.Details;
@@ -1395,7 +1414,7 @@
             this._langIdRegionsListView.HideSelection = false;
             this._langIdRegionsListView.Location = new System.Drawing.Point(4, 19);
             this._langIdRegionsListView.Name = "_langIdRegionsListView";
-            this._langIdRegionsListView.Size = new System.Drawing.Size(498, 128);
+            this._langIdRegionsListView.Size = new System.Drawing.Size(570, 128);
             this._langIdRegionsListView.TabIndex = 13;
             this._langIdRegionsListView.UseCompatibleStateImageBehavior = false;
             this._langIdRegionsListView.View = System.Windows.Forms.View.Details;
@@ -1422,7 +1441,7 @@
             this._childrenTabPage.Location = new System.Drawing.Point(4, 22);
             this._childrenTabPage.Name = "_childrenTabPage";
             this._childrenTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._childrenTabPage.Size = new System.Drawing.Size(505, 307);
+            this._childrenTabPage.Size = new System.Drawing.Size(577, 307);
             this._childrenTabPage.TabIndex = 0;
             this._childrenTabPage.Text = "Children (0)";
             this._childrenTabPage.UseVisualStyleBackColor = true;
@@ -1441,7 +1460,7 @@
             this._childDocsListView.HideSelection = false;
             this._childDocsListView.Location = new System.Drawing.Point(3, 3);
             this._childDocsListView.Name = "_childDocsListView";
-            this._childDocsListView.Size = new System.Drawing.Size(499, 301);
+            this._childDocsListView.Size = new System.Drawing.Size(571, 301);
             this._childDocsListView.TabIndex = 10;
             this._childDocsListView.UseCompatibleStateImageBehavior = false;
             this._childDocsListView.View = System.Windows.Forms.View.Details;
@@ -1529,10 +1548,88 @@
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
             // 
-            // columnHeader23
+            // _piiTabPage
             // 
-            this.columnHeader23.Text = "IsUserDefined";
-            this.columnHeader23.Width = 89;
+            this._piiTabPage.Controls.Add(this._piiListView);
+            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
+            this._piiTabPage.Name = "_piiTabPage";
+            this._piiTabPage.Size = new System.Drawing.Size(577, 307);
+            this._piiTabPage.TabIndex = 5;
+            this._piiTabPage.Text = "PII (0)";
+            this._piiTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _piiListView
+            // 
+            this._piiListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._piiListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader44,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader48,
+            this.columnHeader49,
+            this.columnHeader52,
+            this.columnHeader53,
+            this.columnHeader50,
+            this.columnHeader51});
+            this._piiListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._piiListView.FullRowSelect = true;
+            this._piiListView.HideSelection = false;
+            this._piiListView.Location = new System.Drawing.Point(0, 0);
+            this._piiListView.Name = "_piiListView";
+            this._piiListView.Size = new System.Drawing.Size(577, 307);
+            this._piiListView.TabIndex = 8;
+            this._piiListView.UseCompatibleStateImageBehavior = false;
+            this._piiListView.View = System.Windows.Forms.View.Details;
+            this._piiListView.SelectedIndexChanged += new System.EventHandler(this._piiListView_SelectedIndexChanged);
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "PIIType";
+            this.columnHeader44.Width = 88;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "MatchType";
+            this.columnHeader45.Width = 82;
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "ProximityIdentifier";
+            this.columnHeader46.Width = 104;
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "Line";
+            this.columnHeader47.Width = 40;
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "Start";
+            this.columnHeader48.Width = 40;
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Text = "End";
+            this.columnHeader49.Width = 40;
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Text = "IsMetadata";
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "MetadataName";
+            this.columnHeader53.Width = 70;
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "Extra";
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "Text";
+            this.columnHeader51.Width = 150;
             // 
             // ContentView
             // 
@@ -1588,6 +1685,7 @@
             this._textTabPage.PerformLayout();
             this._imageViewTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
+            this._piiTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1732,5 +1830,17 @@
         private System.Windows.Forms.ColumnHeader columnHeader43;
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader23;
+        private System.Windows.Forms.TabPage _piiTabPage;
+        private System.Windows.Forms.ListView _piiListView;
+        private System.Windows.Forms.ColumnHeader columnHeader44;
+        private System.Windows.Forms.ColumnHeader columnHeader45;
+        private System.Windows.Forms.ColumnHeader columnHeader46;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader48;
+        private System.Windows.Forms.ColumnHeader columnHeader49;
+        private System.Windows.Forms.ColumnHeader columnHeader52;
+        private System.Windows.Forms.ColumnHeader columnHeader53;
+        private System.Windows.Forms.ColumnHeader columnHeader50;
+        private System.Windows.Forms.ColumnHeader columnHeader51;
     }
 }
