@@ -112,6 +112,7 @@ namespace SdkAPIWinFormClient
             _errorMessageLabel.Text    = "";
             _sha1BinaryHashLabel.Text  = "";
             _sha1ContentHashLabel.Text = "";
+            _fileEntropyLabel.Text     = "";
             _isEncryptedLabel.Text     = "";
 
             _fromNameLabel.Text        = "";
@@ -164,6 +165,7 @@ namespace SdkAPIWinFormClient
             _errorMessageLabel.Text    = docContent.ErrorMessage    != null ? docContent.ErrorMessage    : "";
             _sha1BinaryHashLabel.Text  = docContent.SHA1BinaryHash  != null ? docContent.SHA1BinaryHash  : "";
             _sha1ContentHashLabel.Text = docContent.SHA1ContentHash != null ? docContent.SHA1ContentHash : "";
+            _fileEntropyLabel.Text     = docContent.FileEntropy     != null ? docContent.FileEntropy.Value.ToString("F7") : "";
             _isEncryptedLabel.Text     = docContent.FormatId.IsEncrypted.ToString();
 
             //

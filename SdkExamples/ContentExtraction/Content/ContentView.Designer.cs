@@ -132,6 +132,18 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
+            this._piiTabPage = new System.Windows.Forms.TabPage();
+            this._piiListView = new System.Windows.Forms.ListView();
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
             this._hyperLinksListView = new System.Windows.Forms.ListView();
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -167,18 +179,8 @@
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._piiTabPage = new System.Windows.Forms.TabPage();
-            this._piiListView = new System.Windows.Forms.ListView();
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -205,6 +207,7 @@
             this._featuresTabControl.SuspendLayout();
             this._metdataTabPage.SuspendLayout();
             this._attributesTabPage.SuspendLayout();
+            this._piiTabPage.SuspendLayout();
             this._hyperLinksTabPage.SuspendLayout();
             this._languagesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -216,7 +219,6 @@
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
-            this._piiTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -270,6 +272,8 @@
             // _docBaseTabPage
             // 
             this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this._docBaseTabPage.Controls.Add(this._fileEntropyLabel);
+            this._docBaseTabPage.Controls.Add(this.label27);
             this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
             this._docBaseTabPage.Controls.Add(this.label19);
             this._docBaseTabPage.Controls.Add(this._totalTextCharsLabel);
@@ -324,7 +328,7 @@
             // _totalTextCharsLabel
             // 
             this._totalTextCharsLabel.AutoSize = true;
-            this._totalTextCharsLabel.Location = new System.Drawing.Point(101, 243);
+            this._totalTextCharsLabel.Location = new System.Drawing.Point(101, 242);
             this._totalTextCharsLabel.Name = "_totalTextCharsLabel";
             this._totalTextCharsLabel.Size = new System.Drawing.Size(13, 13);
             this._totalTextCharsLabel.TabIndex = 62;
@@ -332,7 +336,7 @@
             // 
             // _saveTextButton
             // 
-            this._saveTextButton.Location = new System.Drawing.Point(8, 238);
+            this._saveTextButton.Location = new System.Drawing.Point(8, 237);
             this._saveTextButton.Name = "_saveTextButton";
             this._saveTextButton.Size = new System.Drawing.Size(87, 23);
             this._saveTextButton.TabIndex = 61;
@@ -417,7 +421,7 @@
             // 
             this._sha1ContentHashLabel.BackColor = System.Drawing.SystemColors.Control;
             this._sha1ContentHashLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._sha1ContentHashLabel.Location = new System.Drawing.Point(116, 209);
+            this._sha1ContentHashLabel.Location = new System.Drawing.Point(116, 202);
             this._sha1ContentHashLabel.Name = "_sha1ContentHashLabel";
             this._sha1ContentHashLabel.Size = new System.Drawing.Size(397, 13);
             this._sha1ContentHashLabel.TabIndex = 50;
@@ -427,7 +431,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 209);
+            this.label7.Location = new System.Drawing.Point(4, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 13);
             this.label7.TabIndex = 49;
@@ -437,7 +441,7 @@
             // 
             this._sha1BinaryHashLabel.BackColor = System.Drawing.SystemColors.Control;
             this._sha1BinaryHashLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._sha1BinaryHashLabel.Location = new System.Drawing.Point(116, 190);
+            this._sha1BinaryHashLabel.Location = new System.Drawing.Point(116, 183);
             this._sha1BinaryHashLabel.Name = "_sha1BinaryHashLabel";
             this._sha1BinaryHashLabel.Size = new System.Drawing.Size(397, 13);
             this._sha1BinaryHashLabel.TabIndex = 48;
@@ -447,7 +451,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 190);
+            this.label2.Location = new System.Drawing.Point(4, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 47;
@@ -1253,6 +1257,89 @@
             this._attributesTextBox.Size = new System.Drawing.Size(499, 301);
             this._attributesTextBox.TabIndex = 0;
             // 
+            // _piiTabPage
+            // 
+            this._piiTabPage.Controls.Add(this._piiListView);
+            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
+            this._piiTabPage.Name = "_piiTabPage";
+            this._piiTabPage.Size = new System.Drawing.Size(505, 307);
+            this._piiTabPage.TabIndex = 5;
+            this._piiTabPage.Text = "PII (0)";
+            this._piiTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _piiListView
+            // 
+            this._piiListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._piiListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader23,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader48,
+            this.columnHeader49,
+            this.columnHeader52,
+            this.columnHeader53,
+            this.columnHeader50,
+            this.columnHeader51});
+            this._piiListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._piiListView.FullRowSelect = true;
+            this._piiListView.HideSelection = false;
+            this._piiListView.Location = new System.Drawing.Point(0, 0);
+            this._piiListView.Name = "_piiListView";
+            this._piiListView.Size = new System.Drawing.Size(505, 307);
+            this._piiListView.TabIndex = 8;
+            this._piiListView.UseCompatibleStateImageBehavior = false;
+            this._piiListView.View = System.Windows.Forms.View.Details;
+            this._piiListView.SelectedIndexChanged += new System.EventHandler(this._piiListView_SelectedIndexChanged);
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "PIIType";
+            this.columnHeader23.Width = 88;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "MatchType";
+            this.columnHeader45.Width = 82;
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "ProximityIdentifier";
+            this.columnHeader46.Width = 98;
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "Line";
+            this.columnHeader47.Width = 40;
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "Start";
+            this.columnHeader48.Width = 40;
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Text = "End";
+            this.columnHeader49.Width = 40;
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Text = "IsMetadata";
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "MetadataName";
+            this.columnHeader53.Width = 70;
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "Extra";
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "Text";
+            this.columnHeader51.Width = 150;
+            // 
             // _hyperLinksTabPage
             // 
             this._hyperLinksTabPage.Controls.Add(this._hyperLinksListView);
@@ -1547,88 +1634,25 @@
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
             // 
-            // _piiTabPage
+            // _fileEntropyLabel
             // 
-            this._piiTabPage.Controls.Add(this._piiListView);
-            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
-            this._piiTabPage.Name = "_piiTabPage";
-            this._piiTabPage.Size = new System.Drawing.Size(505, 307);
-            this._piiTabPage.TabIndex = 5;
-            this._piiTabPage.Text = "PII (0)";
-            this._piiTabPage.UseVisualStyleBackColor = true;
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 220);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(397, 13);
+            this._fileEntropyLabel.TabIndex = 68;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // _piiListView
+            // label27
             // 
-            this._piiListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._piiListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader23,
-            this.columnHeader45,
-            this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader48,
-            this.columnHeader49,
-            this.columnHeader52,
-            this.columnHeader53,
-            this.columnHeader50,
-            this.columnHeader51});
-            this._piiListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._piiListView.FullRowSelect = true;
-            this._piiListView.HideSelection = false;
-            this._piiListView.Location = new System.Drawing.Point(0, 0);
-            this._piiListView.Name = "_piiListView";
-            this._piiListView.Size = new System.Drawing.Size(505, 307);
-            this._piiListView.TabIndex = 8;
-            this._piiListView.UseCompatibleStateImageBehavior = false;
-            this._piiListView.View = System.Windows.Forms.View.Details;
-            this._piiListView.SelectedIndexChanged += new System.EventHandler(this._piiListView_SelectedIndexChanged);
-            // 
-            // columnHeader23
-            // 
-            this.columnHeader23.Text = "PIIType";
-            this.columnHeader23.Width = 88;
-            // 
-            // columnHeader45
-            // 
-            this.columnHeader45.Text = "MatchType";
-            this.columnHeader45.Width = 82;
-            // 
-            // columnHeader46
-            // 
-            this.columnHeader46.Text = "ProximityIdentifier";
-            this.columnHeader46.Width = 98;
-            // 
-            // columnHeader47
-            // 
-            this.columnHeader47.Text = "Line";
-            this.columnHeader47.Width = 40;
-            // 
-            // columnHeader48
-            // 
-            this.columnHeader48.Text = "Start";
-            this.columnHeader48.Width = 40;
-            // 
-            // columnHeader49
-            // 
-            this.columnHeader49.Text = "End";
-            this.columnHeader49.Width = 40;
-            // 
-            // columnHeader52
-            // 
-            this.columnHeader52.Text = "IsMetadata";
-            // 
-            // columnHeader53
-            // 
-            this.columnHeader53.Text = "MetadataName";
-            this.columnHeader53.Width = 70;
-            // 
-            // columnHeader50
-            // 
-            this.columnHeader50.Text = "Extra";
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Text = "Text";
-            this.columnHeader51.Width = 150;
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(5, 220);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 67;
+            this.label27.Text = "File Entropy:";
             // 
             // ContentView
             // 
@@ -1671,6 +1695,7 @@
             this._metdataTabPage.ResumeLayout(false);
             this._attributesTabPage.ResumeLayout(false);
             this._attributesTabPage.PerformLayout();
+            this._piiTabPage.ResumeLayout(false);
             this._hyperLinksTabPage.ResumeLayout(false);
             this._languagesTabPage.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -1684,7 +1709,6 @@
             this._textTabPage.PerformLayout();
             this._imageViewTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
-            this._piiTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1841,5 +1865,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader53;
         private System.Windows.Forms.ColumnHeader columnHeader50;
         private System.Windows.Forms.ColumnHeader columnHeader51;
+        private System.Windows.Forms.Label _fileEntropyLabel;
+        private System.Windows.Forms.Label label27;
     }
 }

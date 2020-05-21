@@ -689,7 +689,8 @@ namespace ContentExtractionExample
 
             _extractionSettings.Hashing.HashingType      = (HashingType)_hashingTypeComboBox.SelectedIndex;
             var maxHashLen = _maxBinaryHashLengthComboBox.Text.Substring(0, _maxBinaryHashLengthComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
-            _extractionSettings.Hashing.MaxBinaryHashLength = int.Parse(maxHashLen);
+            _extractionSettings.Hashing.MaxBinaryHashLength  = int.Parse(maxHashLen);
+            _extractionSettings.Hashing.CalculateFileEntropy = _calculateFileEntropyCheckBox.Checked;
 
             _extractionSettings.PdfDocument.ImageExtraction           = (PdfImageExtraction)_pdfImageExtractionComboBox.SelectedIndex;
             _extractionSettings.PdfDocument.PageExtractedTextCriteria = int.Parse(_pdfPageExtractedTextCriteriaComboBox.Text);
@@ -854,5 +855,10 @@ namespace ContentExtractionExample
             }
         }
         #endregion
+
+        private void _UserMapiPropertyRequestsButton_Click(object sender, EventArgs e)
+        {
+            //TODO
+        }
     }
 }

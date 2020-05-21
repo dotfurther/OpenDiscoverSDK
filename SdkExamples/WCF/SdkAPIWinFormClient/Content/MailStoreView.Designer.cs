@@ -62,12 +62,14 @@
             this._metadataListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._foldersTreeView = new System.Windows.Forms.TreeView();
             this._messageCountLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -139,6 +141,8 @@
             // _docBaseTabPage
             // 
             this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this._docBaseTabPage.Controls.Add(this._fileEntropyLabel);
+            this._docBaseTabPage.Controls.Add(this.label27);
             this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
             this._docBaseTabPage.Controls.Add(this.label19);
             this._docBaseTabPage.Controls.Add(this._isEncryptedLabel);
@@ -423,6 +427,11 @@
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 72;
             // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "IsUserDefined";
+            this.columnHeader2.Width = 87;
+            // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Value";
@@ -467,10 +476,25 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Message Count:";
             // 
-            // columnHeader2
+            // _fileEntropyLabel
             // 
-            this.columnHeader2.Text = "IsUserDefined";
-            this.columnHeader2.Width = 87;
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(116, 228);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(305, 13);
+            this._fileEntropyLabel.TabIndex = 72;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(4, 228);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 71;
+            this.label27.Text = "File Entropy:";
             // 
             // MailStoreView
             // 
@@ -536,5 +560,7 @@
         private System.Windows.Forms.Label _errorMessageLabel;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label _fileEntropyLabel;
+        private System.Windows.Forms.Label label27;
     }
 }

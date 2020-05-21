@@ -73,6 +73,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -149,6 +151,8 @@
             // _docBaseTabPage
             // 
             this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this._docBaseTabPage.Controls.Add(this._fileEntropyLabel);
+            this._docBaseTabPage.Controls.Add(this.label27);
             this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
             this._docBaseTabPage.Controls.Add(this.label19);
             this._docBaseTabPage.Controls.Add(this._isEncryptedLabel);
@@ -533,6 +537,26 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "Email Output Folder:";
             // 
+            // _fileEntropyLabel
+            // 
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(116, 229);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(305, 13);
+            this._fileEntropyLabel.TabIndex = 72;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(4, 229);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 71;
+            this.label27.Text = "File Entropy:";
+            // 
             // MailStoreView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,5 +626,7 @@
         private System.Windows.Forms.Label _errorMessageLabel;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label _fileEntropyLabel;
+        private System.Windows.Forms.Label label27;
     }
 }

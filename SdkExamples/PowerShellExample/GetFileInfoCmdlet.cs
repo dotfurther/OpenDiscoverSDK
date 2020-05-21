@@ -6,7 +6,6 @@
 // 
 // ***************************************************************************************
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Management.Automation;
 using System.Text;
@@ -333,6 +332,19 @@ namespace OpenDiscoverSDK.PowerShell
                     }
                 }
                 strBuilder.AppendLine();
+
+                strBuilder.AppendLine();
+                strBuilder.AppendLine("Detected PII:");
+                strBuilder.AppendLine("---------------");
+                if (content.PIICheckResult.PIIResults.Count > 0)
+                {
+                    foreach (var piiItem in content.PIICheckResult.PIIResults)
+                    {
+                        strBuilder.AppendLine(string.Format("   {0,-35} {1:-20}  {2}", piiItem.PIIType.ToString(),  piiItem.MatchType.ToString(), piiItem.Text));
+                    }
+                }
+                strBuilder.AppendLine();
+
 
                 if (ShowText)
                 {

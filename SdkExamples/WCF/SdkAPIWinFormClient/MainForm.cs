@@ -235,6 +235,8 @@ namespace SdkAPIWinFormClient
             //
             _filteringTypeComboBox.SelectedIndex       = (int)_extractionSettings.UnsupportedFiltering.FilteringType;  //FilteringType.Unsupported
             _filterMinWordLengthComboBox.SelectedIndex = _extractionSettings.UnsupportedFiltering.FilterMinWordLength - 1; // 1 char 
+            _largeUnsupportedMaxFilteredCharsComboBox.SelectedIndex = 2; //3M filtered chars max
+
             //
             // Hashing controls:
             //
@@ -376,7 +378,8 @@ namespace SdkAPIWinFormClient
 
             _extractionSettings.Hashing.HashingType = (HashingType)_hashingTypeComboBox.SelectedIndex;
             var maxHashLen = _maxBinaryHashLengthComboBox.Text.Substring(0, _maxBinaryHashLengthComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
-            _extractionSettings.Hashing.MaxBinaryHashLength = int.Parse(maxHashLen);
+            _extractionSettings.Hashing.MaxBinaryHashLength  = int.Parse(maxHashLen);
+            _extractionSettings.Hashing.CalculateFileEntropy = _calculateFileEntropyCheckBox.Checked;
 
             _extractionSettings.PdfDocument.ImageExtraction = (PdfImageExtraction)_pdfImageExtractionComboBox.SelectedIndex;
             _extractionSettings.PdfDocument.PageExtractedTextCriteria = int.Parse(_pdfPageExtractedTextCriteriaComboBox.Text);
@@ -388,6 +391,7 @@ namespace SdkAPIWinFormClient
 
             _extractionSettings.UnsupportedFiltering.FilteringType       = (UnsupportedFilterType)_filteringTypeComboBox.SelectedIndex;
             _extractionSettings.UnsupportedFiltering.FilterMinWordLength = int.Parse(_filterMinWordLengthComboBox.Text);
+            _extractionSettings.UnsupportedFiltering.LargeUnsupportedMaxFilteredChars = long.Parse(_largeUnsupportedMaxFilteredCharsComboBox.Text.Replace(",", "").Trim());
 
             _extractionSettings.TimeZoneAndEmail.CollectionTimeZone      = (TimeZoneInfo)_selectedTimeZoneComboBox.SelectedItem;
             _extractionSettings.TimeZoneAndEmail.ApplyTimeZoneToMetadata = _setDateTimeUnspecifiedMetaToUtcCheckBox.Checked;
@@ -736,5 +740,10 @@ namespace SdkAPIWinFormClient
             }
         }
         #endregion
+
+        private void _UserMapiPropertyRequestsButton_Click(object sender, EventArgs e)
+        {
+            //TODO:
+        }
     }
 }

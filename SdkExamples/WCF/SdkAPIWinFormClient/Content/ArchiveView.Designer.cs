@@ -62,6 +62,7 @@
             this._metadataListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
@@ -83,7 +84,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this._foldersTreeView = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -156,6 +159,8 @@
             // _docBaseTabPage
             // 
             this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this._docBaseTabPage.Controls.Add(this._fileEntropyLabel);
+            this._docBaseTabPage.Controls.Add(this.label27);
             this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
             this._docBaseTabPage.Controls.Add(this.label19);
             this._docBaseTabPage.Controls.Add(this._isEncryptedLabel);
@@ -443,6 +448,11 @@
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 72;
             // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "IsUserDefined";
+            this.columnHeader13.Width = 98;
+            // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Value";
@@ -453,7 +463,7 @@
             this._attributesTabPage.Controls.Add(this._attributesTextBox);
             this._attributesTabPage.Location = new System.Drawing.Point(4, 22);
             this._attributesTabPage.Name = "_attributesTabPage";
-            this._attributesTabPage.Size = new System.Drawing.Size(527, 290);
+            this._attributesTabPage.Size = new System.Drawing.Size(565, 290);
             this._attributesTabPage.TabIndex = 4;
             this._attributesTabPage.Text = "Attributes (0)";
             this._attributesTabPage.UseVisualStyleBackColor = true;
@@ -466,7 +476,7 @@
             this._attributesTextBox.Multiline = true;
             this._attributesTextBox.Name = "_attributesTextBox";
             this._attributesTextBox.ReadOnly = true;
-            this._attributesTextBox.Size = new System.Drawing.Size(527, 290);
+            this._attributesTextBox.Size = new System.Drawing.Size(565, 290);
             this._attributesTextBox.TabIndex = 1;
             // 
             // tabControl1
@@ -497,6 +507,7 @@
             this._archiveItemInfoListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader8,
+            this.columnHeader14,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader12,
@@ -616,10 +627,30 @@
             this._foldersTreeView.Size = new System.Drawing.Size(598, 284);
             this._foldersTreeView.TabIndex = 14;
             // 
-            // columnHeader13
+            // columnHeader14
             // 
-            this.columnHeader13.Text = "IsUserDefined";
-            this.columnHeader13.Width = 98;
+            this.columnHeader14.Text = "Modified";
+            this.columnHeader14.Width = 97;
+            // 
+            // _fileEntropyLabel
+            // 
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 224);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(219, 13);
+            this._fileEntropyLabel.TabIndex = 70;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(5, 224);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 69;
+            this.label27.Text = "File Entropy:";
             // 
             // ArchiveView
             // 
@@ -706,5 +737,8 @@
         private System.Windows.Forms.Label _errorMessageLabel;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.Label _fileEntropyLabel;
+        private System.Windows.Forms.Label label27;
     }
 }

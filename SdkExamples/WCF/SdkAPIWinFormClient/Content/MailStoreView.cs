@@ -54,6 +54,7 @@ namespace SdkAPIWinFormClient
             _errorMessageLabel.Text    = "";
             _sha1BinaryHashLabel.Text  = "";
             _sha1ContentHashLabel.Text = "";
+            _fileEntropyLabel.Text     = "";
             _isEncryptedLabel.Text     = "";
         }
         #endregion
@@ -85,9 +86,10 @@ namespace SdkAPIWinFormClient
                 _idMatchTypeLabel.Text     = _mailStoreContent.FormatId.MatchType.ToString();
                 _textSourceLabel.Text      = _mailStoreContent.TextSourceType.ToString();
                 _contentResultLabel.Text   = _mailStoreContent.Result.ToString();
-                _errorMessageLabel.Text    = _mailStoreContent.ErrorMessage    != null ? _mailStoreContent.ErrorMessage : "";
-                _sha1BinaryHashLabel.Text  = _mailStoreContent.SHA1BinaryHash  != null ? _mailStoreContent.SHA1BinaryHash : "";
+                _errorMessageLabel.Text    = _mailStoreContent.ErrorMessage    != null ? _mailStoreContent.ErrorMessage    : "";
+                _sha1BinaryHashLabel.Text  = _mailStoreContent.SHA1BinaryHash  != null ? _mailStoreContent.SHA1BinaryHash  : "";
                 _sha1ContentHashLabel.Text = _mailStoreContent.SHA1ContentHash != null ? _mailStoreContent.SHA1ContentHash : "";
+                _fileEntropyLabel.Text     = _mailStoreContent.FileEntropy     != null ? _mailStoreContent.FileEntropy.Value.ToString("F7") : "";
                 _isEncryptedLabel.Text     = _mailStoreContent.FormatId.IsEncrypted.ToString();
 
                 _messageCountLabel.Text = _mailStoreContent.MessageCount.ToString();

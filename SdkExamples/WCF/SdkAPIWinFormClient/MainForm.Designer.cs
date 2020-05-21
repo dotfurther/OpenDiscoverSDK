@@ -77,6 +77,8 @@
             this._selectedTimeZoneComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this._setDateTimeUnspecifiedMetaToUtcCheckBox = new System.Windows.Forms.CheckBox();
+            this._piiTabPage = new System.Windows.Forms.TabPage();
+            this._enablePiiItemsCheckCheckBox = new System.Windows.Forms.CheckBox();
             this._embeddedObjExtractionComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this._extractionTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -88,8 +90,10 @@
             this._logTextBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._piiTabPage = new System.Windows.Forms.TabPage();
-            this._enablePiiItemsCheckCheckBox = new System.Windows.Forms.CheckBox();
+            this._calculateFileEntropyCheckBox = new System.Windows.Forms.CheckBox();
+            this._largeUnsupportedMaxFilteredCharsComboBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this._UserMapiPropertyRequestsButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -109,9 +113,9 @@
             this._langIdTabPage.SuspendLayout();
             this._unsupportedTabPage.SuspendLayout();
             this._timeZoneTabPage.SuspendLayout();
+            this._piiTabPage.SuspendLayout();
             this._tabControl.SuspendLayout();
             this._logTabPage.SuspendLayout();
-            this._piiTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -147,7 +151,7 @@
             this._filesListBox.FormattingEnabled = true;
             this._filesListBox.Location = new System.Drawing.Point(0, 0);
             this._filesListBox.Name = "_filesListBox";
-            this._filesListBox.Size = new System.Drawing.Size(390, 246);
+            this._filesListBox.Size = new System.Drawing.Size(390, 212);
             this._filesListBox.TabIndex = 7;
             this._filesListBox.ValueMember = "Path";
             this._filesListBox.SelectedIndexChanged += new System.EventHandler(this._filesListBox_SelectedIndexChanged);
@@ -213,7 +217,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer2.Size = new System.Drawing.Size(390, 641);
-            this.splitContainer2.SplitterDistance = 246;
+            this.splitContainer2.SplitterDistance = 212;
             this.splitContainer2.SplitterWidth = 6;
             this.splitContainer2.TabIndex = 15;
             // 
@@ -224,7 +228,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(390, 389);
+            this.tabControl1.Size = new System.Drawing.Size(390, 423);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -233,7 +237,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(382, 363);
+            this.tabPage1.Size = new System.Drawing.Size(382, 397);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Extraction Settings";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -252,13 +256,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 357);
+            this.panel1.Size = new System.Drawing.Size(376, 391);
             this.panel1.TabIndex = 13;
             // 
             // _useLargeDocumentUTF16EncodingCheckBox
             // 
             this._useLargeDocumentUTF16EncodingCheckBox.AutoSize = true;
-            this._useLargeDocumentUTF16EncodingCheckBox.Location = new System.Drawing.Point(5, 328);
+            this._useLargeDocumentUTF16EncodingCheckBox.Location = new System.Drawing.Point(5, 360);
             this._useLargeDocumentUTF16EncodingCheckBox.Name = "_useLargeDocumentUTF16EncodingCheckBox";
             this._useLargeDocumentUTF16EncodingCheckBox.Size = new System.Drawing.Size(199, 17);
             this._useLargeDocumentUTF16EncodingCheckBox.TabIndex = 37;
@@ -279,7 +283,7 @@
             "419,430,400 (400 MB)",
             "524,288,000 (500 MB)",
             "1,073,741,824 (1000 MB)"});
-            this._largeDocumentCriteraComboBox.Location = new System.Drawing.Point(123, 301);
+            this._largeDocumentCriteraComboBox.Location = new System.Drawing.Point(123, 333);
             this._largeDocumentCriteraComboBox.Name = "_largeDocumentCriteraComboBox";
             this._largeDocumentCriteraComboBox.Size = new System.Drawing.Size(194, 21);
             this._largeDocumentCriteraComboBox.TabIndex = 36;
@@ -288,7 +292,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 305);
+            this.label3.Location = new System.Drawing.Point(2, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 35;
@@ -305,11 +309,12 @@
             this._subSettingsTabControl.Location = new System.Drawing.Point(5, 67);
             this._subSettingsTabControl.Name = "_subSettingsTabControl";
             this._subSettingsTabControl.SelectedIndex = 0;
-            this._subSettingsTabControl.Size = new System.Drawing.Size(368, 226);
+            this._subSettingsTabControl.Size = new System.Drawing.Size(368, 262);
             this._subSettingsTabControl.TabIndex = 24;
             // 
             // _hashingTabPage
             // 
+            this._hashingTabPage.Controls.Add(this._calculateFileEntropyCheckBox);
             this._hashingTabPage.Controls.Add(this._includeBccRecipientsInEmailContentHashCheckBox);
             this._hashingTabPage.Controls.Add(this._maxBinaryHashLengthComboBox);
             this._hashingTabPage.Controls.Add(this.label11);
@@ -326,7 +331,7 @@
             // _includeBccRecipientsInEmailContentHashCheckBox
             // 
             this._includeBccRecipientsInEmailContentHashCheckBox.AutoSize = true;
-            this._includeBccRecipientsInEmailContentHashCheckBox.Location = new System.Drawing.Point(9, 104);
+            this._includeBccRecipientsInEmailContentHashCheckBox.Location = new System.Drawing.Point(9, 131);
             this._includeBccRecipientsInEmailContentHashCheckBox.Name = "_includeBccRecipientsInEmailContentHashCheckBox";
             this._includeBccRecipientsInEmailContentHashCheckBox.Size = new System.Drawing.Size(226, 17);
             this._includeBccRecipientsInEmailContentHashCheckBox.TabIndex = 30;
@@ -393,7 +398,7 @@
             this._pdfTabPage.Controls.Add(this.label8);
             this._pdfTabPage.Location = new System.Drawing.Point(4, 22);
             this._pdfTabPage.Name = "_pdfTabPage";
-            this._pdfTabPage.Size = new System.Drawing.Size(348, 200);
+            this._pdfTabPage.Size = new System.Drawing.Size(360, 200);
             this._pdfTabPage.TabIndex = 5;
             this._pdfTabPage.Text = "PDF";
             this._pdfTabPage.UseVisualStyleBackColor = true;
@@ -460,7 +465,7 @@
             this._langIdTabPage.Controls.Add(this._identifyLangInExtractedTextCheckBox);
             this._langIdTabPage.Location = new System.Drawing.Point(4, 22);
             this._langIdTabPage.Name = "_langIdTabPage";
-            this._langIdTabPage.Size = new System.Drawing.Size(348, 200);
+            this._langIdTabPage.Size = new System.Drawing.Size(360, 200);
             this._langIdTabPage.TabIndex = 2;
             this._langIdTabPage.Text = "LangId";
             this._langIdTabPage.UseVisualStyleBackColor = true;
@@ -556,13 +561,15 @@
             // 
             // _unsupportedTabPage
             // 
+            this._unsupportedTabPage.Controls.Add(this._largeUnsupportedMaxFilteredCharsComboBox);
+            this._unsupportedTabPage.Controls.Add(this.label15);
             this._unsupportedTabPage.Controls.Add(this._filterMinWordLengthComboBox);
             this._unsupportedTabPage.Controls.Add(this.label13);
             this._unsupportedTabPage.Controls.Add(this._filteringTypeComboBox);
             this._unsupportedTabPage.Controls.Add(this.label14);
             this._unsupportedTabPage.Location = new System.Drawing.Point(4, 22);
             this._unsupportedTabPage.Name = "_unsupportedTabPage";
-            this._unsupportedTabPage.Size = new System.Drawing.Size(348, 200);
+            this._unsupportedTabPage.Size = new System.Drawing.Size(360, 200);
             this._unsupportedTabPage.TabIndex = 4;
             this._unsupportedTabPage.Text = "Unsupported";
             this._unsupportedTabPage.UseVisualStyleBackColor = true;
@@ -617,6 +624,7 @@
             // 
             // _timeZoneTabPage
             // 
+            this._timeZoneTabPage.Controls.Add(this._UserMapiPropertyRequestsButton);
             this._timeZoneTabPage.Controls.Add(this._displayEmailRecipientNameAndSmtpCheckBox);
             this._timeZoneTabPage.Controls.Add(this._showUtcOffsetForTimeCheckBox);
             this._timeZoneTabPage.Controls.Add(this._selectedEmailDateFormatComboBox);
@@ -626,7 +634,7 @@
             this._timeZoneTabPage.Controls.Add(this._setDateTimeUnspecifiedMetaToUtcCheckBox);
             this._timeZoneTabPage.Location = new System.Drawing.Point(4, 22);
             this._timeZoneTabPage.Name = "_timeZoneTabPage";
-            this._timeZoneTabPage.Size = new System.Drawing.Size(348, 200);
+            this._timeZoneTabPage.Size = new System.Drawing.Size(360, 236);
             this._timeZoneTabPage.TabIndex = 3;
             this._timeZoneTabPage.Text = "TimeZoneAndEmail";
             this._timeZoneTabPage.UseVisualStyleBackColor = true;
@@ -702,6 +710,28 @@
             this.toolTip1.SetToolTip(this._setDateTimeUnspecifiedMetaToUtcCheckBox, "Determines if CollectionTimeZone is applied to extracted DateTime metadata with D" +
         "ateTime.Kind equal to DateTimeKind.Unspecified.");
             this._setDateTimeUnspecifiedMetaToUtcCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _piiTabPage
+            // 
+            this._piiTabPage.Controls.Add(this._enablePiiItemsCheckCheckBox);
+            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
+            this._piiTabPage.Name = "_piiTabPage";
+            this._piiTabPage.Size = new System.Drawing.Size(360, 200);
+            this._piiTabPage.TabIndex = 6;
+            this._piiTabPage.Text = "PII";
+            this._piiTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _enablePiiItemsCheckCheckBox
+            // 
+            this._enablePiiItemsCheckCheckBox.AutoSize = true;
+            this._enablePiiItemsCheckCheckBox.Location = new System.Drawing.Point(11, 15);
+            this._enablePiiItemsCheckCheckBox.Name = "_enablePiiItemsCheckCheckBox";
+            this._enablePiiItemsCheckCheckBox.Size = new System.Drawing.Size(137, 17);
+            this._enablePiiItemsCheckCheckBox.TabIndex = 32;
+            this._enablePiiItemsCheckCheckBox.Text = "Enable PII Item Checks";
+            this.toolTip1.SetToolTip(this._enablePiiItemsCheckCheckBox, "If true, includes email \'Bcc\' recipients in the email overall recipient hash (see" +
+        " properties EmailDocumentContent.Sha1RecipientsHash ");
+            this._enablePiiItemsCheckCheckBox.UseVisualStyleBackColor = true;
             // 
             // _embeddedObjExtractionComboBox
             // 
@@ -784,7 +814,7 @@
             this._logTabPage.Controls.Add(this._logTextBox);
             this._logTabPage.Location = new System.Drawing.Point(4, 22);
             this._logTabPage.Name = "_logTabPage";
-            this._logTabPage.Size = new System.Drawing.Size(1009, 615);
+            this._logTabPage.Size = new System.Drawing.Size(959, 615);
             this._logTabPage.TabIndex = 3;
             this._logTabPage.Text = "Log";
             this._logTabPage.UseVisualStyleBackColor = true;
@@ -801,31 +831,60 @@
             this._logTextBox.Name = "_logTextBox";
             this._logTextBox.ReadOnly = true;
             this._logTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._logTextBox.Size = new System.Drawing.Size(1009, 615);
+            this._logTextBox.Size = new System.Drawing.Size(959, 615);
             this._logTextBox.TabIndex = 15;
             this._logTextBox.WordWrap = false;
             // 
-            // _piiTabPage
+            // _calculateFileEntropyCheckBox
             // 
-            this._piiTabPage.Controls.Add(this._enablePiiItemsCheckCheckBox);
-            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
-            this._piiTabPage.Name = "_piiTabPage";
-            this._piiTabPage.Size = new System.Drawing.Size(360, 200);
-            this._piiTabPage.TabIndex = 6;
-            this._piiTabPage.Text = "PII";
-            this._piiTabPage.UseVisualStyleBackColor = true;
+            this._calculateFileEntropyCheckBox.AutoSize = true;
+            this._calculateFileEntropyCheckBox.Location = new System.Drawing.Point(9, 99);
+            this._calculateFileEntropyCheckBox.Name = "_calculateFileEntropyCheckBox";
+            this._calculateFileEntropyCheckBox.Size = new System.Drawing.Size(128, 17);
+            this._calculateFileEntropyCheckBox.TabIndex = 32;
+            this._calculateFileEntropyCheckBox.Text = "Calculate File Entropy";
+            this.toolTip1.SetToolTip(this._calculateFileEntropyCheckBox, "If true, calculates the file\'s Shannon entropy. File entropy is useful in determi" +
+        "ning if an unknown file is compressed or encrypted.");
+            this._calculateFileEntropyCheckBox.UseVisualStyleBackColor = true;
             // 
-            // _enablePiiItemsCheckCheckBox
+            // _largeUnsupportedMaxFilteredCharsComboBox
             // 
-            this._enablePiiItemsCheckCheckBox.AutoSize = true;
-            this._enablePiiItemsCheckCheckBox.Location = new System.Drawing.Point(11, 15);
-            this._enablePiiItemsCheckCheckBox.Name = "_enablePiiItemsCheckCheckBox";
-            this._enablePiiItemsCheckCheckBox.Size = new System.Drawing.Size(137, 17);
-            this._enablePiiItemsCheckCheckBox.TabIndex = 32;
-            this._enablePiiItemsCheckCheckBox.Text = "Enable PII Item Checks";
-            this.toolTip1.SetToolTip(this._enablePiiItemsCheckCheckBox, "If true, includes email \'Bcc\' recipients in the email overall recipient hash (see" +
-        " properties EmailDocumentContent.Sha1RecipientsHash ");
-            this._enablePiiItemsCheckCheckBox.UseVisualStyleBackColor = true;
+            this._largeUnsupportedMaxFilteredCharsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._largeUnsupportedMaxFilteredCharsComboBox.Items.AddRange(new object[] {
+            "1,048,576",
+            "2,000,000",
+            "3,000,000",
+            "4,000,000",
+            "5,000,000",
+            "10,000,000",
+            "20,000,000",
+            "50,000,000",
+            "100,000,000"});
+            this._largeUnsupportedMaxFilteredCharsComboBox.Location = new System.Drawing.Point(8, 113);
+            this._largeUnsupportedMaxFilteredCharsComboBox.Name = "_largeUnsupportedMaxFilteredCharsComboBox";
+            this._largeUnsupportedMaxFilteredCharsComboBox.Size = new System.Drawing.Size(275, 21);
+            this._largeUnsupportedMaxFilteredCharsComboBox.TabIndex = 37;
+            this.toolTip1.SetToolTip(this._largeUnsupportedMaxFilteredCharsComboBox, "Limits the numbers of filtered characters that are written to a stream (should be" +
+        " a FileStream) by ILargeUnsupportedExtractor.ExtractContent(System.IO.Stream).");
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(5, 95);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(214, 13);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "LargeUnsupportedMaxFilteredChars [chars]:";
+            // 
+            // _UserMapiPropertyRequestsButton
+            // 
+            this._UserMapiPropertyRequestsButton.Location = new System.Drawing.Point(22, 197);
+            this._UserMapiPropertyRequestsButton.Name = "_UserMapiPropertyRequestsButton";
+            this._UserMapiPropertyRequestsButton.Size = new System.Drawing.Size(267, 29);
+            this._UserMapiPropertyRequestsButton.TabIndex = 31;
+            this._UserMapiPropertyRequestsButton.Text = "Add/Remove UserMapiPropertyRequests";
+            this._UserMapiPropertyRequestsButton.UseVisualStyleBackColor = true;
+            this._UserMapiPropertyRequestsButton.Click += new System.EventHandler(this._UserMapiPropertyRequestsButton_Click);
             // 
             // MainForm
             // 
@@ -864,11 +923,11 @@
             this._unsupportedTabPage.ResumeLayout(false);
             this._unsupportedTabPage.PerformLayout();
             this._timeZoneTabPage.ResumeLayout(false);
+            this._piiTabPage.ResumeLayout(false);
+            this._piiTabPage.PerformLayout();
             this._tabControl.ResumeLayout(false);
             this._logTabPage.ResumeLayout(false);
             this._logTabPage.PerformLayout();
-            this._piiTabPage.ResumeLayout(false);
-            this._piiTabPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -936,6 +995,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage _piiTabPage;
         private System.Windows.Forms.CheckBox _enablePiiItemsCheckCheckBox;
+        private System.Windows.Forms.CheckBox _calculateFileEntropyCheckBox;
+        private System.Windows.Forms.ComboBox _largeUnsupportedMaxFilteredCharsComboBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button _UserMapiPropertyRequestsButton;
     }
 }
 

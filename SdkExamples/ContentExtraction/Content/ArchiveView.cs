@@ -57,6 +57,7 @@ namespace ContentExtractionExample.Content
             _errorMessageLabel.Text    = "";
             _sha1BinaryHashLabel.Text  = "";
             _sha1ContentHashLabel.Text = "";
+            _fileEntropyLabel.Text     = "";
             _isEncryptedLabel.Text     = "";
             _attributesTextBox.Text    = "";
 
@@ -94,6 +95,7 @@ namespace ContentExtractionExample.Content
             _errorMessageLabel.Text    = archiveContent.ErrorMessage    != null ? archiveContent.ErrorMessage    : "";
             _sha1BinaryHashLabel.Text  = archiveContent.SHA1BinaryHash  != null ? archiveContent.SHA1BinaryHash  : "";
             _sha1ContentHashLabel.Text = archiveContent.SHA1ContentHash != null ? archiveContent.SHA1ContentHash : "";
+            _fileEntropyLabel.Text     = archiveContent.FileEntropy     != null ? archiveContent.FileEntropy.Value.ToString("F7") : "";
             _isEncryptedLabel.Text     = archiveContent.FormatId.IsEncrypted.ToString();
 
             _totalItemCountLabel.Text = archiveContent.ItemCount.ToString();
@@ -165,9 +167,10 @@ namespace ContentExtractionExample.Content
 
                         item.UseItemStyleForSubItems = false;
 
-                        item.SubItems.Add(child.EncryptedInContainer    ? "true" : "false");
-                        item.SubItems.Add(child.PackedSize.HasValue ? string.Format("{0:###,###,###,###}", child.PackedSize.Value) : "Not set");
-                        item.SubItems.Add(child.Size == 0               ? "0" : string.Format("{0:###,###,###,###}", child.Size));
+                        item.SubItems.Add(child.EncryptedInContainer ? "true" : "false");
+                        item.SubItems.Add(child.LastModifiedTimeFileSystem.HasValue ? string.Format("{0} ({1})", child.LastModifiedTimeFileSystem.Value.ToString(), child.LastModifiedTimeFileSystem.Value.Kind) : "false");
+                        item.SubItems.Add(child.PackedSize.HasValue  ? string.Format("{0:###,###,###,###}", child.PackedSize.Value) : "Not set");
+                        item.SubItems.Add(child.Size == 0            ? "0" : string.Format("{0:###,###,###,###}", child.Size));
 
                         var testedSizeSubItem   = item.SubItems.Add(child.TestedSize.HasValue   ? (child.TestedSize.Value == 0 ? "0" : string.Format("{0:###,###,###,###}", child.TestedSize.Value)) : "Not tested");
                         var testedResultSubItem = item.SubItems.Add(child.TestedResult.HasValue ? child.TestedResult.Value.ToString() : "Not tested");
