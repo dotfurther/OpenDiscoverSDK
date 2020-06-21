@@ -10,7 +10,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - Extracting embedded items/attachments from supported document formats
 - Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 - Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
-- Detecting 9 types of personally identifiable information (PII) and also custom defined PII term sequences in extracted text and metadata.
+- Detecting 14 types of personally identifiable information (PII) and also custom defined PII term sequences in extracted text and metadata.
 
 ## The Open Discover SDK API is purposed for users to develop higher level document processing applications for:
 - Full text indexing/search
