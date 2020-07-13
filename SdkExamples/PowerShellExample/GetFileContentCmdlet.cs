@@ -56,7 +56,7 @@ namespace OpenDiscoverSDK.PowerShell
                 var settings = new ContentExtractionSettings();
                 settings.ExtractionType           = ExtractionType.TextAndMetadata;
                 settings.EmbeddedObjectExtraction = EmbeddedExtractionType.EmbeddedDocumentsAndMedia;
-                settings.PII.Check                = true; // Enable PII item checks
+                settings.SensitiveItemCheck.Check = true; // Enable sensitive item checks
                 settings.Hashing.HashingType      = HashingType.BinaryAndContentHash;
                 settings.LargeDocumentCritera     = 100 * 1024 * 1024; // Define a 'large' file as >= 100MB (this determines when 
                                                                        // ContentExtractorType.LargeUnsupported and ContentExtractorType.LargeEncodedText

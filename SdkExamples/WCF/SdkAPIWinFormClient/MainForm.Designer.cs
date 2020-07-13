@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this._subSettingsTabControl = new System.Windows.Forms.TabControl();
             this._hashingTabPage = new System.Windows.Forms.TabPage();
+            this._calculateFileEntropyCheckBox = new System.Windows.Forms.CheckBox();
             this._includeBccRecipientsInEmailContentHashCheckBox = new System.Windows.Forms.CheckBox();
             this._maxBinaryHashLengthComboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,11 +65,43 @@
             this.label4 = new System.Windows.Forms.Label();
             this._identifyLangInExtractedTextCheckBox = new System.Windows.Forms.CheckBox();
             this._unsupportedTabPage = new System.Windows.Forms.TabPage();
+            this._largeUnsupportedMaxFilteredCharsComboBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this._filterMinWordLengthComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this._filteringTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
+            this._sensitiveItemTabPage = new System.Windows.Forms.TabPage();
+            this._sensitiveItemTabControl = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this._socialMediaCheckBox = new System.Windows.Forms.CheckBox();
+            this._ipv4CheckBox = new System.Windows.Forms.CheckBox();
+            this._addressCheckBox = new System.Windows.Forms.CheckBox();
+            this._maidenNameCheckBox = new System.Windows.Forms.CheckBox();
+            this._dateOfBirthCheckBox = new System.Windows.Forms.CheckBox();
+            this._passportCheckBox = new System.Windows.Forms.CheckBox();
+            this._driversLicenseCheckBox = new System.Windows.Forms.CheckBox();
+            this._emailAddressCheckBox = new System.Windows.Forms.CheckBox();
+            this._phoneNumberCheckBox = new System.Windows.Forms.CheckBox();
+            this._investmentAccountCheckBox = new System.Windows.Forms.CheckBox();
+            this._ibanCheckBox = new System.Windows.Forms.CheckBox();
+            this._bankAccountCheckBox = new System.Windows.Forms.CheckBox();
+            this._creditCardCheckBox = new System.Windows.Forms.CheckBox();
+            this._socSecurityCheckBox = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this._databaseCredentialsCheckBox = new System.Windows.Forms.CheckBox();
+            this._networkNameCheckBox = new System.Windows.Forms.CheckBox();
+            this._usernameCheckBox = new System.Windows.Forms.CheckBox();
+            this._passwordCheckBox4 = new System.Windows.Forms.CheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this._generalUrlCheckBox = new System.Windows.Forms.CheckBox();
+            this._genIdentificationCheckBox = new System.Windows.Forms.CheckBox();
+            this._generalAccountCheckBox = new System.Windows.Forms.CheckBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this._enableSensitiveItemsCheckCheckBox = new System.Windows.Forms.CheckBox();
             this._timeZoneTabPage = new System.Windows.Forms.TabPage();
+            this._UserMapiPropertyRequestsButton = new System.Windows.Forms.Button();
             this._displayEmailRecipientNameAndSmtpCheckBox = new System.Windows.Forms.CheckBox();
             this._showUtcOffsetForTimeCheckBox = new System.Windows.Forms.CheckBox();
             this._selectedEmailDateFormatComboBox = new System.Windows.Forms.ComboBox();
@@ -77,8 +109,6 @@
             this._selectedTimeZoneComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this._setDateTimeUnspecifiedMetaToUtcCheckBox = new System.Windows.Forms.CheckBox();
-            this._piiTabPage = new System.Windows.Forms.TabPage();
-            this._enablePiiItemsCheckCheckBox = new System.Windows.Forms.CheckBox();
             this._embeddedObjExtractionComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this._extractionTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -89,11 +119,10 @@
             this._logTabPage = new System.Windows.Forms.TabPage();
             this._logTextBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._calculateFileEntropyCheckBox = new System.Windows.Forms.CheckBox();
-            this._largeUnsupportedMaxFilteredCharsComboBox = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this._UserMapiPropertyRequestsButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this._licensePlateNumCheckBox = new System.Windows.Forms.CheckBox();
+            this._vinCheckBox = new System.Windows.Forms.CheckBox();
+            this._healthCareNumberCheckBox = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -112,8 +141,12 @@
             this._pdfTabPage.SuspendLayout();
             this._langIdTabPage.SuspendLayout();
             this._unsupportedTabPage.SuspendLayout();
+            this._sensitiveItemTabPage.SuspendLayout();
+            this._sensitiveItemTabControl.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this._timeZoneTabPage.SuspendLayout();
-            this._piiTabPage.SuspendLayout();
             this._tabControl.SuspendLayout();
             this._logTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -151,7 +184,7 @@
             this._filesListBox.FormattingEnabled = true;
             this._filesListBox.Location = new System.Drawing.Point(0, 0);
             this._filesListBox.Name = "_filesListBox";
-            this._filesListBox.Size = new System.Drawing.Size(390, 212);
+            this._filesListBox.Size = new System.Drawing.Size(390, 197);
             this._filesListBox.TabIndex = 7;
             this._filesListBox.ValueMember = "Path";
             this._filesListBox.SelectedIndexChanged += new System.EventHandler(this._filesListBox_SelectedIndexChanged);
@@ -217,7 +250,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer2.Size = new System.Drawing.Size(390, 641);
-            this.splitContainer2.SplitterDistance = 212;
+            this.splitContainer2.SplitterDistance = 197;
             this.splitContainer2.SplitterWidth = 6;
             this.splitContainer2.TabIndex = 15;
             // 
@@ -228,7 +261,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(390, 423);
+            this.tabControl1.Size = new System.Drawing.Size(390, 438);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -237,7 +270,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(382, 397);
+            this.tabPage1.Size = new System.Drawing.Size(382, 412);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Extraction Settings";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -256,13 +289,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 391);
+            this.panel1.Size = new System.Drawing.Size(376, 406);
             this.panel1.TabIndex = 13;
             // 
             // _useLargeDocumentUTF16EncodingCheckBox
             // 
             this._useLargeDocumentUTF16EncodingCheckBox.AutoSize = true;
-            this._useLargeDocumentUTF16EncodingCheckBox.Location = new System.Drawing.Point(5, 360);
+            this._useLargeDocumentUTF16EncodingCheckBox.Location = new System.Drawing.Point(5, 370);
             this._useLargeDocumentUTF16EncodingCheckBox.Name = "_useLargeDocumentUTF16EncodingCheckBox";
             this._useLargeDocumentUTF16EncodingCheckBox.Size = new System.Drawing.Size(199, 17);
             this._useLargeDocumentUTF16EncodingCheckBox.TabIndex = 37;
@@ -283,7 +316,7 @@
             "419,430,400 (400 MB)",
             "524,288,000 (500 MB)",
             "1,073,741,824 (1000 MB)"});
-            this._largeDocumentCriteraComboBox.Location = new System.Drawing.Point(123, 333);
+            this._largeDocumentCriteraComboBox.Location = new System.Drawing.Point(123, 343);
             this._largeDocumentCriteraComboBox.Name = "_largeDocumentCriteraComboBox";
             this._largeDocumentCriteraComboBox.Size = new System.Drawing.Size(194, 21);
             this._largeDocumentCriteraComboBox.TabIndex = 36;
@@ -292,7 +325,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(2, 337);
+            this.label3.Location = new System.Drawing.Point(2, 347);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 35;
@@ -304,12 +337,12 @@
             this._subSettingsTabControl.Controls.Add(this._pdfTabPage);
             this._subSettingsTabControl.Controls.Add(this._langIdTabPage);
             this._subSettingsTabControl.Controls.Add(this._unsupportedTabPage);
+            this._subSettingsTabControl.Controls.Add(this._sensitiveItemTabPage);
             this._subSettingsTabControl.Controls.Add(this._timeZoneTabPage);
-            this._subSettingsTabControl.Controls.Add(this._piiTabPage);
             this._subSettingsTabControl.Location = new System.Drawing.Point(5, 67);
             this._subSettingsTabControl.Name = "_subSettingsTabControl";
             this._subSettingsTabControl.SelectedIndex = 0;
-            this._subSettingsTabControl.Size = new System.Drawing.Size(368, 262);
+            this._subSettingsTabControl.Size = new System.Drawing.Size(368, 272);
             this._subSettingsTabControl.TabIndex = 24;
             // 
             // _hashingTabPage
@@ -323,10 +356,22 @@
             this._hashingTabPage.Location = new System.Drawing.Point(4, 22);
             this._hashingTabPage.Name = "_hashingTabPage";
             this._hashingTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._hashingTabPage.Size = new System.Drawing.Size(360, 200);
+            this._hashingTabPage.Size = new System.Drawing.Size(360, 246);
             this._hashingTabPage.TabIndex = 1;
             this._hashingTabPage.Text = "Hashing";
             this._hashingTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _calculateFileEntropyCheckBox
+            // 
+            this._calculateFileEntropyCheckBox.AutoSize = true;
+            this._calculateFileEntropyCheckBox.Location = new System.Drawing.Point(9, 99);
+            this._calculateFileEntropyCheckBox.Name = "_calculateFileEntropyCheckBox";
+            this._calculateFileEntropyCheckBox.Size = new System.Drawing.Size(128, 17);
+            this._calculateFileEntropyCheckBox.TabIndex = 32;
+            this._calculateFileEntropyCheckBox.Text = "Calculate File Entropy";
+            this.toolTip1.SetToolTip(this._calculateFileEntropyCheckBox, "If true, calculates the file\'s Shannon entropy. File entropy is useful in determi" +
+        "ning if an unknown file is compressed or encrypted.");
+            this._calculateFileEntropyCheckBox.UseVisualStyleBackColor = true;
             // 
             // _includeBccRecipientsInEmailContentHashCheckBox
             // 
@@ -398,7 +443,7 @@
             this._pdfTabPage.Controls.Add(this.label8);
             this._pdfTabPage.Location = new System.Drawing.Point(4, 22);
             this._pdfTabPage.Name = "_pdfTabPage";
-            this._pdfTabPage.Size = new System.Drawing.Size(360, 200);
+            this._pdfTabPage.Size = new System.Drawing.Size(360, 246);
             this._pdfTabPage.TabIndex = 5;
             this._pdfTabPage.Text = "PDF";
             this._pdfTabPage.UseVisualStyleBackColor = true;
@@ -465,7 +510,7 @@
             this._langIdTabPage.Controls.Add(this._identifyLangInExtractedTextCheckBox);
             this._langIdTabPage.Location = new System.Drawing.Point(4, 22);
             this._langIdTabPage.Name = "_langIdTabPage";
-            this._langIdTabPage.Size = new System.Drawing.Size(360, 200);
+            this._langIdTabPage.Size = new System.Drawing.Size(360, 246);
             this._langIdTabPage.TabIndex = 2;
             this._langIdTabPage.Text = "LangId";
             this._langIdTabPage.UseVisualStyleBackColor = true;
@@ -569,10 +614,39 @@
             this._unsupportedTabPage.Controls.Add(this.label14);
             this._unsupportedTabPage.Location = new System.Drawing.Point(4, 22);
             this._unsupportedTabPage.Name = "_unsupportedTabPage";
-            this._unsupportedTabPage.Size = new System.Drawing.Size(360, 200);
+            this._unsupportedTabPage.Size = new System.Drawing.Size(360, 246);
             this._unsupportedTabPage.TabIndex = 4;
             this._unsupportedTabPage.Text = "Unsupported";
             this._unsupportedTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _largeUnsupportedMaxFilteredCharsComboBox
+            // 
+            this._largeUnsupportedMaxFilteredCharsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._largeUnsupportedMaxFilteredCharsComboBox.Items.AddRange(new object[] {
+            "1,048,576",
+            "2,000,000",
+            "3,000,000",
+            "4,000,000",
+            "5,000,000",
+            "10,000,000",
+            "20,000,000",
+            "50,000,000",
+            "100,000,000"});
+            this._largeUnsupportedMaxFilteredCharsComboBox.Location = new System.Drawing.Point(8, 113);
+            this._largeUnsupportedMaxFilteredCharsComboBox.Name = "_largeUnsupportedMaxFilteredCharsComboBox";
+            this._largeUnsupportedMaxFilteredCharsComboBox.Size = new System.Drawing.Size(275, 21);
+            this._largeUnsupportedMaxFilteredCharsComboBox.TabIndex = 37;
+            this.toolTip1.SetToolTip(this._largeUnsupportedMaxFilteredCharsComboBox, "Limits the numbers of filtered characters that are written to a stream (should be" +
+        " a FileStream) by ILargeUnsupportedExtractor.ExtractContent(System.IO.Stream).");
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(5, 95);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(214, 13);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "LargeUnsupportedMaxFilteredChars [chars]:";
             // 
             // _filterMinWordLengthComboBox
             // 
@@ -622,6 +696,324 @@
             this.label14.TabIndex = 30;
             this.label14.Text = "FilteringType:";
             // 
+            // _sensitiveItemTabPage
+            // 
+            this._sensitiveItemTabPage.Controls.Add(this._sensitiveItemTabControl);
+            this._sensitiveItemTabPage.Controls.Add(this._enableSensitiveItemsCheckCheckBox);
+            this._sensitiveItemTabPage.Location = new System.Drawing.Point(4, 22);
+            this._sensitiveItemTabPage.Name = "_sensitiveItemTabPage";
+            this._sensitiveItemTabPage.Size = new System.Drawing.Size(360, 246);
+            this._sensitiveItemTabPage.TabIndex = 6;
+            this._sensitiveItemTabPage.Text = "Sensitive Items";
+            this._sensitiveItemTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _sensitiveItemTabControl
+            // 
+            this._sensitiveItemTabControl.Controls.Add(this.tabPage2);
+            this._sensitiveItemTabControl.Controls.Add(this.tabPage3);
+            this._sensitiveItemTabControl.Controls.Add(this.tabPage4);
+            this._sensitiveItemTabControl.Controls.Add(this.tabPage5);
+            this._sensitiveItemTabControl.Enabled = false;
+            this._sensitiveItemTabControl.Location = new System.Drawing.Point(3, 23);
+            this._sensitiveItemTabControl.Name = "_sensitiveItemTabControl";
+            this._sensitiveItemTabControl.SelectedIndex = 0;
+            this._sensitiveItemTabControl.Size = new System.Drawing.Size(354, 220);
+            this._sensitiveItemTabControl.TabIndex = 34;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this._healthCareNumberCheckBox);
+            this.tabPage2.Controls.Add(this._vinCheckBox);
+            this.tabPage2.Controls.Add(this._licensePlateNumCheckBox);
+            this.tabPage2.Controls.Add(this._socialMediaCheckBox);
+            this.tabPage2.Controls.Add(this._ipv4CheckBox);
+            this.tabPage2.Controls.Add(this._addressCheckBox);
+            this.tabPage2.Controls.Add(this._maidenNameCheckBox);
+            this.tabPage2.Controls.Add(this._dateOfBirthCheckBox);
+            this.tabPage2.Controls.Add(this._passportCheckBox);
+            this.tabPage2.Controls.Add(this._driversLicenseCheckBox);
+            this.tabPage2.Controls.Add(this._emailAddressCheckBox);
+            this.tabPage2.Controls.Add(this._phoneNumberCheckBox);
+            this.tabPage2.Controls.Add(this._investmentAccountCheckBox);
+            this.tabPage2.Controls.Add(this._ibanCheckBox);
+            this.tabPage2.Controls.Add(this._bankAccountCheckBox);
+            this.tabPage2.Controls.Add(this._creditCardCheckBox);
+            this.tabPage2.Controls.Add(this._socSecurityCheckBox);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(346, 194);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Personal";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // _socialMediaCheckBox
+            // 
+            this._socialMediaCheckBox.AutoSize = true;
+            this._socialMediaCheckBox.Location = new System.Drawing.Point(157, 46);
+            this._socialMediaCheckBox.Name = "_socialMediaCheckBox";
+            this._socialMediaCheckBox.Size = new System.Drawing.Size(130, 17);
+            this._socialMediaCheckBox.TabIndex = 19;
+            this._socialMediaCheckBox.Text = "Social Media Account";
+            this._socialMediaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _ipv4CheckBox
+            // 
+            this._ipv4CheckBox.AutoSize = true;
+            this._ipv4CheckBox.Location = new System.Drawing.Point(157, 149);
+            this._ipv4CheckBox.Name = "_ipv4CheckBox";
+            this._ipv4CheckBox.Size = new System.Drawing.Size(89, 17);
+            this._ipv4CheckBox.TabIndex = 14;
+            this._ipv4CheckBox.Text = "IPv4 Address";
+            this._ipv4CheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _addressCheckBox
+            // 
+            this._addressCheckBox.AutoSize = true;
+            this._addressCheckBox.Location = new System.Drawing.Point(157, 130);
+            this._addressCheckBox.Name = "_addressCheckBox";
+            this._addressCheckBox.Size = new System.Drawing.Size(64, 17);
+            this._addressCheckBox.TabIndex = 13;
+            this._addressCheckBox.Text = "Address";
+            this._addressCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _maidenNameCheckBox
+            // 
+            this._maidenNameCheckBox.AutoSize = true;
+            this._maidenNameCheckBox.Location = new System.Drawing.Point(157, 27);
+            this._maidenNameCheckBox.Name = "_maidenNameCheckBox";
+            this._maidenNameCheckBox.Size = new System.Drawing.Size(92, 17);
+            this._maidenNameCheckBox.TabIndex = 12;
+            this._maidenNameCheckBox.Text = "Maiden Name";
+            this._maidenNameCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _dateOfBirthCheckBox
+            // 
+            this._dateOfBirthCheckBox.AutoSize = true;
+            this._dateOfBirthCheckBox.Location = new System.Drawing.Point(157, 7);
+            this._dateOfBirthCheckBox.Name = "_dateOfBirthCheckBox";
+            this._dateOfBirthCheckBox.Size = new System.Drawing.Size(85, 17);
+            this._dateOfBirthCheckBox.TabIndex = 11;
+            this._dateOfBirthCheckBox.Text = "Date of Birth";
+            this._dateOfBirthCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _passportCheckBox
+            // 
+            this._passportCheckBox.AutoSize = true;
+            this._passportCheckBox.Location = new System.Drawing.Point(12, 158);
+            this._passportCheckBox.Name = "_passportCheckBox";
+            this._passportCheckBox.Size = new System.Drawing.Size(67, 17);
+            this._passportCheckBox.TabIndex = 9;
+            this._passportCheckBox.Text = "Passport";
+            this._passportCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _driversLicenseCheckBox
+            // 
+            this._driversLicenseCheckBox.AutoSize = true;
+            this._driversLicenseCheckBox.Location = new System.Drawing.Point(12, 141);
+            this._driversLicenseCheckBox.Name = "_driversLicenseCheckBox";
+            this._driversLicenseCheckBox.Size = new System.Drawing.Size(101, 17);
+            this._driversLicenseCheckBox.TabIndex = 8;
+            this._driversLicenseCheckBox.Text = "Driver\'s License";
+            this._driversLicenseCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _emailAddressCheckBox
+            // 
+            this._emailAddressCheckBox.AutoSize = true;
+            this._emailAddressCheckBox.Location = new System.Drawing.Point(12, 123);
+            this._emailAddressCheckBox.Name = "_emailAddressCheckBox";
+            this._emailAddressCheckBox.Size = new System.Drawing.Size(92, 17);
+            this._emailAddressCheckBox.TabIndex = 7;
+            this._emailAddressCheckBox.Text = "Email Address";
+            this._emailAddressCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _phoneNumberCheckBox
+            // 
+            this._phoneNumberCheckBox.AutoSize = true;
+            this._phoneNumberCheckBox.Location = new System.Drawing.Point(12, 104);
+            this._phoneNumberCheckBox.Name = "_phoneNumberCheckBox";
+            this._phoneNumberCheckBox.Size = new System.Drawing.Size(97, 17);
+            this._phoneNumberCheckBox.TabIndex = 6;
+            this._phoneNumberCheckBox.Text = "Phone Number";
+            this._phoneNumberCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _investmentAccountCheckBox
+            // 
+            this._investmentAccountCheckBox.AutoSize = true;
+            this._investmentAccountCheckBox.Location = new System.Drawing.Point(12, 84);
+            this._investmentAccountCheckBox.Name = "_investmentAccountCheckBox";
+            this._investmentAccountCheckBox.Size = new System.Drawing.Size(121, 17);
+            this._investmentAccountCheckBox.TabIndex = 4;
+            this._investmentAccountCheckBox.Text = "Investment Account";
+            this._investmentAccountCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _ibanCheckBox
+            // 
+            this._ibanCheckBox.AutoSize = true;
+            this._ibanCheckBox.Location = new System.Drawing.Point(12, 64);
+            this._ibanCheckBox.Name = "_ibanCheckBox";
+            this._ibanCheckBox.Size = new System.Drawing.Size(94, 17);
+            this._ibanCheckBox.TabIndex = 3;
+            this._ibanCheckBox.Text = "IBAN Account";
+            this._ibanCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _bankAccountCheckBox
+            // 
+            this._bankAccountCheckBox.AutoSize = true;
+            this._bankAccountCheckBox.Location = new System.Drawing.Point(12, 45);
+            this._bankAccountCheckBox.Name = "_bankAccountCheckBox";
+            this._bankAccountCheckBox.Size = new System.Drawing.Size(94, 17);
+            this._bankAccountCheckBox.TabIndex = 2;
+            this._bankAccountCheckBox.Text = "Bank Account";
+            this._bankAccountCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _creditCardCheckBox
+            // 
+            this._creditCardCheckBox.AutoSize = true;
+            this._creditCardCheckBox.Location = new System.Drawing.Point(12, 26);
+            this._creditCardCheckBox.Name = "_creditCardCheckBox";
+            this._creditCardCheckBox.Size = new System.Drawing.Size(78, 17);
+            this._creditCardCheckBox.TabIndex = 1;
+            this._creditCardCheckBox.Text = "Credit Card";
+            this._creditCardCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _socSecurityCheckBox
+            // 
+            this._socSecurityCheckBox.AutoSize = true;
+            this._socSecurityCheckBox.Location = new System.Drawing.Point(12, 7);
+            this._socSecurityCheckBox.Name = "_socSecurityCheckBox";
+            this._socSecurityCheckBox.Size = new System.Drawing.Size(136, 17);
+            this._socSecurityCheckBox.TabIndex = 0;
+            this._socSecurityCheckBox.Text = "Social Security Number";
+            this._socSecurityCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this._databaseCredentialsCheckBox);
+            this.tabPage3.Controls.Add(this._networkNameCheckBox);
+            this.tabPage3.Controls.Add(this._usernameCheckBox);
+            this.tabPage3.Controls.Add(this._passwordCheckBox4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(346, 194);
+            this.tabPage3.TabIndex = 1;
+            this.tabPage3.Text = "Security";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // _databaseCredentialsCheckBox
+            // 
+            this._databaseCredentialsCheckBox.AutoSize = true;
+            this._databaseCredentialsCheckBox.Location = new System.Drawing.Point(12, 59);
+            this._databaseCredentialsCheckBox.Name = "_databaseCredentialsCheckBox";
+            this._databaseCredentialsCheckBox.Size = new System.Drawing.Size(127, 17);
+            this._databaseCredentialsCheckBox.TabIndex = 22;
+            this._databaseCredentialsCheckBox.Text = "Database Credentials";
+            this._databaseCredentialsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _networkNameCheckBox
+            // 
+            this._networkNameCheckBox.AutoSize = true;
+            this._networkNameCheckBox.Location = new System.Drawing.Point(12, 42);
+            this._networkNameCheckBox.Name = "_networkNameCheckBox";
+            this._networkNameCheckBox.Size = new System.Drawing.Size(97, 17);
+            this._networkNameCheckBox.TabIndex = 21;
+            this._networkNameCheckBox.Text = "Network Name";
+            this._networkNameCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _usernameCheckBox
+            // 
+            this._usernameCheckBox.AutoSize = true;
+            this._usernameCheckBox.Location = new System.Drawing.Point(12, 25);
+            this._usernameCheckBox.Name = "_usernameCheckBox";
+            this._usernameCheckBox.Size = new System.Drawing.Size(74, 17);
+            this._usernameCheckBox.TabIndex = 20;
+            this._usernameCheckBox.Text = "Username";
+            this._usernameCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _passwordCheckBox4
+            // 
+            this._passwordCheckBox4.AutoSize = true;
+            this._passwordCheckBox4.Location = new System.Drawing.Point(12, 7);
+            this._passwordCheckBox4.Name = "_passwordCheckBox4";
+            this._passwordCheckBox4.Size = new System.Drawing.Size(72, 17);
+            this._passwordCheckBox4.TabIndex = 19;
+            this._passwordCheckBox4.Text = "Password";
+            this._passwordCheckBox4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this._generalUrlCheckBox);
+            this.tabPage4.Controls.Add(this._genIdentificationCheckBox);
+            this.tabPage4.Controls.Add(this._generalAccountCheckBox);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(346, 194);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "General (Undetermined)";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.Location = new System.Drawing.Point(3, 97);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(328, 68);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "These items are identifications, accounts, or urls of undetermined type due to no" +
+    " context. Select these items to investigate \"false negatives\" or when testing.";
+            // 
+            // _generalUrlCheckBox
+            // 
+            this._generalUrlCheckBox.AutoSize = true;
+            this._generalUrlCheckBox.Location = new System.Drawing.Point(12, 53);
+            this._generalUrlCheckBox.Name = "_generalUrlCheckBox";
+            this._generalUrlCheckBox.Size = new System.Drawing.Size(79, 17);
+            this._generalUrlCheckBox.TabIndex = 13;
+            this._generalUrlCheckBox.Text = "General Url";
+            this._generalUrlCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _genIdentificationCheckBox
+            // 
+            this._genIdentificationCheckBox.AutoSize = true;
+            this._genIdentificationCheckBox.Location = new System.Drawing.Point(12, 7);
+            this._genIdentificationCheckBox.Name = "_genIdentificationCheckBox";
+            this._genIdentificationCheckBox.Size = new System.Drawing.Size(126, 17);
+            this._genIdentificationCheckBox.TabIndex = 12;
+            this._genIdentificationCheckBox.Text = "General Identification";
+            this._genIdentificationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _generalAccountCheckBox
+            // 
+            this._generalAccountCheckBox.AutoSize = true;
+            this._generalAccountCheckBox.Location = new System.Drawing.Point(12, 30);
+            this._generalAccountCheckBox.Name = "_generalAccountCheckBox";
+            this._generalAccountCheckBox.Size = new System.Drawing.Size(106, 17);
+            this._generalAccountCheckBox.TabIndex = 11;
+            this._generalAccountCheckBox.Text = "General Account";
+            this._generalAccountCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(346, 194);
+            this.tabPage5.TabIndex = 3;
+            this.tabPage5.Text = "Custom";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // _enableSensitiveItemsCheckCheckBox
+            // 
+            this._enableSensitiveItemsCheckCheckBox.AutoSize = true;
+            this._enableSensitiveItemsCheckCheckBox.Location = new System.Drawing.Point(11, 4);
+            this._enableSensitiveItemsCheckCheckBox.Name = "_enableSensitiveItemsCheckCheckBox";
+            this._enableSensitiveItemsCheckCheckBox.Size = new System.Drawing.Size(167, 17);
+            this._enableSensitiveItemsCheckCheckBox.TabIndex = 33;
+            this._enableSensitiveItemsCheckCheckBox.Text = "Enable Sensitive Item Checks";
+            this.toolTip1.SetToolTip(this._enableSensitiveItemsCheckCheckBox, "Enables or disables all sensitive item checks");
+            this._enableSensitiveItemsCheckCheckBox.UseVisualStyleBackColor = true;
+            this._enableSensitiveItemsCheckCheckBox.CheckedChanged += new System.EventHandler(this._enableSensitiveItemsCheckCheckBox_CheckedChanged);
+            // 
             // _timeZoneTabPage
             // 
             this._timeZoneTabPage.Controls.Add(this._UserMapiPropertyRequestsButton);
@@ -634,10 +1026,20 @@
             this._timeZoneTabPage.Controls.Add(this._setDateTimeUnspecifiedMetaToUtcCheckBox);
             this._timeZoneTabPage.Location = new System.Drawing.Point(4, 22);
             this._timeZoneTabPage.Name = "_timeZoneTabPage";
-            this._timeZoneTabPage.Size = new System.Drawing.Size(360, 236);
+            this._timeZoneTabPage.Size = new System.Drawing.Size(360, 246);
             this._timeZoneTabPage.TabIndex = 3;
             this._timeZoneTabPage.Text = "TimeZoneAndEmail";
             this._timeZoneTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _UserMapiPropertyRequestsButton
+            // 
+            this._UserMapiPropertyRequestsButton.Location = new System.Drawing.Point(22, 197);
+            this._UserMapiPropertyRequestsButton.Name = "_UserMapiPropertyRequestsButton";
+            this._UserMapiPropertyRequestsButton.Size = new System.Drawing.Size(267, 29);
+            this._UserMapiPropertyRequestsButton.TabIndex = 31;
+            this._UserMapiPropertyRequestsButton.Text = "Add/Remove UserMapiPropertyRequests";
+            this._UserMapiPropertyRequestsButton.UseVisualStyleBackColor = true;
+            this._UserMapiPropertyRequestsButton.Click += new System.EventHandler(this._UserMapiPropertyRequestsButton_Click);
             // 
             // _displayEmailRecipientNameAndSmtpCheckBox
             // 
@@ -710,28 +1112,6 @@
             this.toolTip1.SetToolTip(this._setDateTimeUnspecifiedMetaToUtcCheckBox, "Determines if CollectionTimeZone is applied to extracted DateTime metadata with D" +
         "ateTime.Kind equal to DateTimeKind.Unspecified.");
             this._setDateTimeUnspecifiedMetaToUtcCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // _piiTabPage
-            // 
-            this._piiTabPage.Controls.Add(this._enablePiiItemsCheckCheckBox);
-            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
-            this._piiTabPage.Name = "_piiTabPage";
-            this._piiTabPage.Size = new System.Drawing.Size(360, 200);
-            this._piiTabPage.TabIndex = 6;
-            this._piiTabPage.Text = "PII";
-            this._piiTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _enablePiiItemsCheckCheckBox
-            // 
-            this._enablePiiItemsCheckCheckBox.AutoSize = true;
-            this._enablePiiItemsCheckCheckBox.Location = new System.Drawing.Point(11, 15);
-            this._enablePiiItemsCheckCheckBox.Name = "_enablePiiItemsCheckCheckBox";
-            this._enablePiiItemsCheckCheckBox.Size = new System.Drawing.Size(137, 17);
-            this._enablePiiItemsCheckCheckBox.TabIndex = 32;
-            this._enablePiiItemsCheckCheckBox.Text = "Enable PII Item Checks";
-            this.toolTip1.SetToolTip(this._enablePiiItemsCheckCheckBox, "If true, includes email \'Bcc\' recipients in the email overall recipient hash (see" +
-        " properties EmailDocumentContent.Sha1RecipientsHash ");
-            this._enablePiiItemsCheckCheckBox.UseVisualStyleBackColor = true;
             // 
             // _embeddedObjExtractionComboBox
             // 
@@ -835,56 +1215,35 @@
             this._logTextBox.TabIndex = 15;
             this._logTextBox.WordWrap = false;
             // 
-            // _calculateFileEntropyCheckBox
+            // _licensePlateNumCheckBox
             // 
-            this._calculateFileEntropyCheckBox.AutoSize = true;
-            this._calculateFileEntropyCheckBox.Location = new System.Drawing.Point(9, 99);
-            this._calculateFileEntropyCheckBox.Name = "_calculateFileEntropyCheckBox";
-            this._calculateFileEntropyCheckBox.Size = new System.Drawing.Size(128, 17);
-            this._calculateFileEntropyCheckBox.TabIndex = 32;
-            this._calculateFileEntropyCheckBox.Text = "Calculate File Entropy";
-            this.toolTip1.SetToolTip(this._calculateFileEntropyCheckBox, "If true, calculates the file\'s Shannon entropy. File entropy is useful in determi" +
-        "ning if an unknown file is compressed or encrypted.");
-            this._calculateFileEntropyCheckBox.UseVisualStyleBackColor = true;
+            this._licensePlateNumCheckBox.AutoSize = true;
+            this._licensePlateNumCheckBox.Location = new System.Drawing.Point(157, 67);
+            this._licensePlateNumCheckBox.Name = "_licensePlateNumCheckBox";
+            this._licensePlateNumCheckBox.Size = new System.Drawing.Size(130, 17);
+            this._licensePlateNumCheckBox.TabIndex = 20;
+            this._licensePlateNumCheckBox.Text = "License Plate Number";
+            this._licensePlateNumCheckBox.UseVisualStyleBackColor = true;
             // 
-            // _largeUnsupportedMaxFilteredCharsComboBox
+            // _vinCheckBox
             // 
-            this._largeUnsupportedMaxFilteredCharsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this._largeUnsupportedMaxFilteredCharsComboBox.Items.AddRange(new object[] {
-            "1,048,576",
-            "2,000,000",
-            "3,000,000",
-            "4,000,000",
-            "5,000,000",
-            "10,000,000",
-            "20,000,000",
-            "50,000,000",
-            "100,000,000"});
-            this._largeUnsupportedMaxFilteredCharsComboBox.Location = new System.Drawing.Point(8, 113);
-            this._largeUnsupportedMaxFilteredCharsComboBox.Name = "_largeUnsupportedMaxFilteredCharsComboBox";
-            this._largeUnsupportedMaxFilteredCharsComboBox.Size = new System.Drawing.Size(275, 21);
-            this._largeUnsupportedMaxFilteredCharsComboBox.TabIndex = 37;
-            this.toolTip1.SetToolTip(this._largeUnsupportedMaxFilteredCharsComboBox, "Limits the numbers of filtered characters that are written to a stream (should be" +
-        " a FileStream) by ILargeUnsupportedExtractor.ExtractContent(System.IO.Stream).");
+            this._vinCheckBox.AutoSize = true;
+            this._vinCheckBox.Location = new System.Drawing.Point(157, 88);
+            this._vinCheckBox.Name = "_vinCheckBox";
+            this._vinCheckBox.Size = new System.Drawing.Size(164, 17);
+            this._vinCheckBox.TabIndex = 21;
+            this._vinCheckBox.Text = "Vehicle Identification Number";
+            this._vinCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // _healthCareNumberCheckBox
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(5, 95);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(214, 13);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "LargeUnsupportedMaxFilteredChars [chars]:";
-            // 
-            // _UserMapiPropertyRequestsButton
-            // 
-            this._UserMapiPropertyRequestsButton.Location = new System.Drawing.Point(22, 197);
-            this._UserMapiPropertyRequestsButton.Name = "_UserMapiPropertyRequestsButton";
-            this._UserMapiPropertyRequestsButton.Size = new System.Drawing.Size(267, 29);
-            this._UserMapiPropertyRequestsButton.TabIndex = 31;
-            this._UserMapiPropertyRequestsButton.Text = "Add/Remove UserMapiPropertyRequests";
-            this._UserMapiPropertyRequestsButton.UseVisualStyleBackColor = true;
-            this._UserMapiPropertyRequestsButton.Click += new System.EventHandler(this._UserMapiPropertyRequestsButton_Click);
+            this._healthCareNumberCheckBox.AutoSize = true;
+            this._healthCareNumberCheckBox.Location = new System.Drawing.Point(157, 109);
+            this._healthCareNumberCheckBox.Name = "_healthCareNumberCheckBox";
+            this._healthCareNumberCheckBox.Size = new System.Drawing.Size(179, 17);
+            this._healthCareNumberCheckBox.TabIndex = 22;
+            this._healthCareNumberCheckBox.Text = "Health Care Number/Member ID";
+            this._healthCareNumberCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -922,9 +1281,16 @@
             this._langIdTabPage.PerformLayout();
             this._unsupportedTabPage.ResumeLayout(false);
             this._unsupportedTabPage.PerformLayout();
+            this._sensitiveItemTabPage.ResumeLayout(false);
+            this._sensitiveItemTabPage.PerformLayout();
+            this._sensitiveItemTabControl.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this._timeZoneTabPage.ResumeLayout(false);
-            this._piiTabPage.ResumeLayout(false);
-            this._piiTabPage.PerformLayout();
             this._tabControl.ResumeLayout(false);
             this._logTabPage.ResumeLayout(false);
             this._logTabPage.PerformLayout();
@@ -993,12 +1359,42 @@
         private System.Windows.Forms.CheckBox _useLargeDocumentUTF16EncodingCheckBox;
         private System.Windows.Forms.ComboBox _largeDocumentCriteraComboBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabPage _piiTabPage;
-        private System.Windows.Forms.CheckBox _enablePiiItemsCheckCheckBox;
+        private System.Windows.Forms.TabPage _sensitiveItemTabPage;
         private System.Windows.Forms.CheckBox _calculateFileEntropyCheckBox;
         private System.Windows.Forms.ComboBox _largeUnsupportedMaxFilteredCharsComboBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button _UserMapiPropertyRequestsButton;
+        private System.Windows.Forms.TabControl _sensitiveItemTabControl;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox _ipv4CheckBox;
+        private System.Windows.Forms.CheckBox _addressCheckBox;
+        private System.Windows.Forms.CheckBox _maidenNameCheckBox;
+        private System.Windows.Forms.CheckBox _dateOfBirthCheckBox;
+        private System.Windows.Forms.CheckBox _passportCheckBox;
+        private System.Windows.Forms.CheckBox _driversLicenseCheckBox;
+        private System.Windows.Forms.CheckBox _emailAddressCheckBox;
+        private System.Windows.Forms.CheckBox _phoneNumberCheckBox;
+        private System.Windows.Forms.CheckBox _investmentAccountCheckBox;
+        private System.Windows.Forms.CheckBox _ibanCheckBox;
+        private System.Windows.Forms.CheckBox _bankAccountCheckBox;
+        private System.Windows.Forms.CheckBox _creditCardCheckBox;
+        private System.Windows.Forms.CheckBox _socSecurityCheckBox;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox _enableSensitiveItemsCheckCheckBox;
+        private System.Windows.Forms.CheckBox _socialMediaCheckBox;
+        private System.Windows.Forms.CheckBox _databaseCredentialsCheckBox;
+        private System.Windows.Forms.CheckBox _networkNameCheckBox;
+        private System.Windows.Forms.CheckBox _usernameCheckBox;
+        private System.Windows.Forms.CheckBox _passwordCheckBox4;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox _generalUrlCheckBox;
+        private System.Windows.Forms.CheckBox _genIdentificationCheckBox;
+        private System.Windows.Forms.CheckBox _generalAccountCheckBox;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.CheckBox _healthCareNumberCheckBox;
+        private System.Windows.Forms.CheckBox _vinCheckBox;
+        private System.Windows.Forms.CheckBox _licensePlateNumCheckBox;
     }
 }
 

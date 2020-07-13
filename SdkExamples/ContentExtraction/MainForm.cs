@@ -169,8 +169,22 @@ namespace ContentExtractionExample
         {
             InitializeComponent();
 
-            var ver = Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
-            Text = string.Format("{0};      Framework Version = {1}", Text, ver != null ? ver : "Unknown");
+            //
+            // Set application title with Open Discover SDK Version and Framework Version:
+            //
+            var openDiscoverSDKVersion = "unknown";
+            var names = Assembly.GetExecutingAssembly().GetReferencedAssemblies();
+            foreach (var name in names)
+            {
+                if (name.Name.StartsWith("OpenDiscoverSDK"))
+                {
+                    openDiscoverSDKVersion = name.Version.ToString();
+                    break;
+                }
+            }
+
+            var frameworkVer = Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
+            Text = string.Format("{0}          OpenDiscoverSDK Version = {1}         Framework Version = {2}", Text, openDiscoverSDKVersion, frameworkVer != null ? frameworkVer : "Unknown");
 
             _contentView = new ContentView(this);
             _contentView.Dock = DockStyle.Fill;
@@ -232,6 +246,37 @@ namespace ContentExtractionExample
             _filteringTypeComboBox.SelectedIndex       = (int)_extractionSettings.UnsupportedFiltering.FilteringType;  //FilteringType.Unsupported
             _filterMinWordLengthComboBox.SelectedIndex = _extractionSettings.UnsupportedFiltering.FilterMinWordLength - 1; // 1 char 
             _largeUnsupportedMaxFilteredCharsComboBox.SelectedIndex = 2; //3M filtered chars max
+
+            //
+            // Sensitive Item Checks:
+            //
+            _enableSensitiveItemsCheckCheckBox.Checked = _extractionSettings.SensitiveItemCheck.Check;
+
+            _socSecurityCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.SocialSecurityCheck;
+            _creditCardCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.CreditCardCheck;
+            _bankAccountCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.BankAccountCheck;
+            _ibanCheckBox.Checked                = _extractionSettings.SensitiveItemCheck.IBANAccountCheck;
+            _investmentAccountCheckBox.Checked   = _extractionSettings.SensitiveItemCheck.InvestmentAccountCheck;
+            _phoneNumberCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.PhoneNumberCheck;
+            _emailAddressCheckBox.Checked        = _extractionSettings.SensitiveItemCheck.EmailAddressCheck;
+            _driversLicenseCheckBox.Checked      = _extractionSettings.SensitiveItemCheck.DriversLicenseCheck;
+            _passportCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.PassportCheck;
+            _dateOfBirthCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.DateOfBirthCheck;
+            _maidenNameCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.MaidenNameCheck;
+            _socialMediaCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.SocialMediaAccountCheck;
+            _licensePlateNumCheckBox.Checked     = _extractionSettings.SensitiveItemCheck.LicensePlateNumberCheck;
+            _vinCheckBox.Checked                 = _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck;
+            _healthCareNumberCheckBox.Checked    = _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck;
+            _addressCheckBox.Checked             = _extractionSettings.SensitiveItemCheck.AddressCheck;
+            _ipv4CheckBox.Checked                = _extractionSettings.SensitiveItemCheck.IPv4AddressCheck;
+            _passwordCheckBox4.Checked           = _extractionSettings.SensitiveItemCheck.PasswordCheck;
+            _usernameCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.UsernameCheck;
+            _networkNameCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.NetworkNameCheck;
+            _databaseCredentialsCheckBox.Checked = _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck;
+
+            _generalAccountCheckBox.Checked    = _extractionSettings.SensitiveItemCheck.GeneralAccountCheck;
+            _genIdentificationCheckBox.Checked = _extractionSettings.SensitiveItemCheck.GeneralIdentificationCheck;
+            _generalUrlCheckBox.Checked        = _extractionSettings.SensitiveItemCheck.GeneralUrlCheck;
 
             //
             // Hashing controls:
@@ -714,7 +759,36 @@ namespace ContentExtractionExample
             _extractionSettings.LargeDocumentCritera          = int.Parse(largeDocCriteriaText);
             _extractionSettings.UseLargeDocumentUTF16Encoding = _useLargeDocumentUTF16EncodingCheckBox.Checked;
 
-            _extractionSettings.PII.Check = _enablePiiItemsCheckCheckBox.Checked;
+            //
+            // Sensitive Item Checks:
+            //
+            _extractionSettings.SensitiveItemCheck.SocialSecurityCheck        = _socSecurityCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.CreditCardCheck            = _creditCardCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.BankAccountCheck           = _bankAccountCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.IBANAccountCheck           = _ibanCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.InvestmentAccountCheck     = _investmentAccountCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.PhoneNumberCheck           = _phoneNumberCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.EmailAddressCheck          = _emailAddressCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.DriversLicenseCheck        = _driversLicenseCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.PassportCheck              = _passportCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.DateOfBirthCheck           = _dateOfBirthCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.MaidenNameCheck            = _maidenNameCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.SocialMediaAccountCheck    = _socialMediaCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.LicensePlateNumberCheck    = _licensePlateNumCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck = _vinCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck    = _healthCareNumberCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.AddressCheck               = _addressCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.IPv4AddressCheck           = _ipv4CheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.PasswordCheck              = _passwordCheckBox4.Checked;
+            _extractionSettings.SensitiveItemCheck.UsernameCheck              = _usernameCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.NetworkNameCheck           = _networkNameCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck   = _databaseCredentialsCheckBox.Checked;
+
+            _extractionSettings.SensitiveItemCheck.GeneralAccountCheck        = _generalAccountCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.GeneralIdentificationCheck = _genIdentificationCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.GeneralUrlCheck            = _generalUrlCheckBox.Checked;
+
+            _extractionSettings.SensitiveItemCheck.Check = _enableSensitiveItemsCheckCheckBox.Checked;
         }
         #endregion
 
@@ -853,6 +927,13 @@ namespace ContentExtractionExample
             {
                 ctl.Enabled = enable;
             }
+        }
+        #endregion
+
+        #region private void _enableSensitiveItemsCheckCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void _enableSensitiveItemsCheckCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            _sensitiveItemTabControl.Enabled = _enableSensitiveItemsCheckCheckBox.Checked;
         }
         #endregion
 

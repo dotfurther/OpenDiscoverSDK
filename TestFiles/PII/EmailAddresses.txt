@@ -1,0 +1,105 @@
+---------------------------------------------
+Valid email addresses:
+---------------------------------------------
+simple@example.com
+very.common@example.com
+disposable.style.email.with+symbol@example.com
+other.email-with-hyphen@example.com
+fully-qualified-domain@example.com
+example-indeed@strange-example.com
+user.name+tag+sorting@example.com   (may go to user.name@example.com inbox depending on mail server)
+x@example.com                       (one-letter local-part)
+admin@mailserver1                   (local domain name with no TLD, although ICANN highly discourages dotless email addresses)
+example@s.example                   (see the List of Internet top-level domains)
+mailhost!username@example.org       (bangified host route used for uucp mailers)
+user%example.com@example.org        (% escaped mail route to user@example.com via example.org)
+o-yada@hitachiacs.co.jp
+MicrosoftExchange329e71ec88ae4615bbc36ab6ce41109e@onc.org
+<WrightAA@wnc.org>
+info@acck.org;
+info@acck.org!
+info@acck-acck.org.
+<info@acck-acck.org>.
+This is my email info@acck.org. The last period is the end of the previous sentence
+
+_______@example.com
+very.unusual.“@”.unusual.com@example.com
+a(a(b(c)d(e(f))g)h(i)j)@iana.org
+customer/department=shipping@example.com
+$A12345@example.com
+!def!xyz%abc@example.com
+mailto:user%2Bmailbox@example.com
+mailto:joe@example.com
+
+#Emails with quoted strings:
+" "@example.org                     (space between the quotes)
+"\""@example.org                    (delimited inner quote)
+"john..doe"@example.org             (quoted double dot)
+"Les Misérables"@example.com
+"Delimiters: \\ \"delimited\""@example.com
+"...".e@domain1
+hello."...".e@domain1
+"tony"."johns"@domain1
+"1"."2"."3"@example.net
+a.nt.ons.ido.r.3.3.2.5@gmail.com
+an.to.nsidor3.325.@gmail.com
+sidorovdenislvxd@mail.ru
+
+#Emails with comments:
+(comment)john.smith@example.com
+john.smith(comment)@example.com
+john.smith@(comment "hello")example.com
+john.smith@(comment)example.com
+john.smith@example.com(comment)
+email@domain.com (Joe Smith)     
+email@domain.web   
+
+#Emails with IP address domains:
+jsmith@[192.168.2.1]
+jsmith@[1.1.2.1]
+jsmith@[IPv6:2001:db8::1]
+
+# Addresses below would not be handled by RFC 5322 based servers, but are permitted by RFC 6530
+Pelé@example.com
+δοκιμή@παράδειγμα.δοκιμή    (greek alphabet)
+我買@屋企.香港               (Traditional Chinese characters)
+二ノ宮@黒川.日本              (Japanese characters)
+あいうえお@domain.com          Unicode char as address
+медведь@с-балалайкой.рф     (Cyrillic characters)
+संपर्क@डाटामेल.भारत                                         (Devanagari characters -- ask the Indian team if they can tell I reversed the Unicode surrogate pairs correctly)
+
+---------------------------------------------
+Invalid email addresses:
+---------------------------------------------
+info@acck.org-
+info@-acck.org                        (Domain part cannot begin with a hyphen)
+jsmith@[1.1.2]                        (1.0.0.0 and 254.254.254.254 are valid)
+jsmith@[1.1.2.1.254]                  (too many dotted parts)
+"""@example.org                       (Quote not delimited)
+first."".last@iana.org	               Contains a zero-length quoted string (empty part)
+Abc.example.com                        (no @ character)
+A@b@c@example.com                      (only one @ is allowed outside quotation marks)
+A@b@example.com
+a"b(c)d,e:f;g<h>i[j\k]l@example.com    (none of the special characters in this local-part are allowed outside quotation marks)
+just"not"right@example.com             (quoted strings must be dot separated or the only element making up the local-part)
+this is"not\allowed@example.com        (spaces, quotes, and backslashes may only exist when within quoted strings and preceded by a backslash)
+this\ still\"not\\allowed@example.com  (even if escaped (preceded by a backslash), spaces, quotes, and backslashes must still be contained by quotes)
+"Delimiters: \\\ \"delimited\""@example.com   (not evenly matched demiliters for '\' at \\\)
+1234567890123456789012345678901234567890123456789012345678901234+x@example.com (local part is longer than 64 characters)
+first(12345678901234567890123456789012345678901234567890)last@(1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890)iana.org   Too long with comments, not too long without
+first(abc("def".ghi).mno)middle(abc("def".ghi).mno).last@(abc("def".ghi).mno)example(abc("def".ghi).mno).(abc("def".ghi).mno)com(abc("def".ghi).mno)         Can't have comments or white space except at an element boundary
+a(a(b(c)d(e(f))g)(h(i)j)@iana.org     Comment parenthesis are not matched
+#@%^%#$@#$@#.com                 Garbage
+@domain.com                      Missing username
+email.domain.com                 Missing @
+email@domain@domain.com          Two @ sign
+.email@domain.com                Leading dot in address is not allowed
+email.@domain.com                Trailing dot in address is not allowed
+email..email@domain.com          Multiple dots
+
+
+email@domain                     Missing top level domain (.com/.net/.org/etc)
+email@-domain.com                Leading dash in front of domain is invalid
+email@111.222.333.44444          Invalid IP format
+email@domain..com                Multiple dot in the domain portion is invalid
+aaa@[123.123.123.333]            not a valid IP

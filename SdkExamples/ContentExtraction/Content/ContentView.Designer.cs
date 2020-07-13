@@ -33,6 +33,8 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this._docTypeTabControl = new System.Windows.Forms.TabControl();
             this._docBaseTabPage = new System.Windows.Forms.TabPage();
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this._errorMessageLabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this._totalTextCharsLabel = new System.Windows.Forms.Label();
@@ -132,8 +134,8 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
-            this._piiTabPage = new System.Windows.Forms.TabPage();
-            this._piiListView = new System.Windows.Forms.ListView();
+            this._sensitiveItemsTabPage = new System.Windows.Forms.TabPage();
+            this._sensitiveItemsListView = new System.Windows.Forms.ListView();
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -179,8 +181,6 @@
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._fileEntropyLabel = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -207,7 +207,7 @@
             this._featuresTabControl.SuspendLayout();
             this._metdataTabPage.SuspendLayout();
             this._attributesTabPage.SuspendLayout();
-            this._piiTabPage.SuspendLayout();
+            this._sensitiveItemsTabPage.SuspendLayout();
             this._hyperLinksTabPage.SuspendLayout();
             this._languagesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -304,6 +304,26 @@
             this._docBaseTabPage.Size = new System.Drawing.Size(608, 307);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "Document Base";
+            // 
+            // _fileEntropyLabel
+            // 
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 220);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(397, 13);
+            this._fileEntropyLabel.TabIndex = 68;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(5, 220);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 67;
+            this.label27.Text = "File Entropy:";
             // 
             // _errorMessageLabel
             // 
@@ -1175,7 +1195,7 @@
             // 
             this._featuresTabControl.Controls.Add(this._metdataTabPage);
             this._featuresTabControl.Controls.Add(this._attributesTabPage);
-            this._featuresTabControl.Controls.Add(this._piiTabPage);
+            this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
             this._featuresTabControl.Controls.Add(this._hyperLinksTabPage);
             this._featuresTabControl.Controls.Add(this._languagesTabPage);
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
@@ -1257,20 +1277,20 @@
             this._attributesTextBox.Size = new System.Drawing.Size(499, 301);
             this._attributesTextBox.TabIndex = 0;
             // 
-            // _piiTabPage
+            // _sensitiveItemsTabPage
             // 
-            this._piiTabPage.Controls.Add(this._piiListView);
-            this._piiTabPage.Location = new System.Drawing.Point(4, 22);
-            this._piiTabPage.Name = "_piiTabPage";
-            this._piiTabPage.Size = new System.Drawing.Size(505, 307);
-            this._piiTabPage.TabIndex = 5;
-            this._piiTabPage.Text = "PII (0)";
-            this._piiTabPage.UseVisualStyleBackColor = true;
+            this._sensitiveItemsTabPage.Controls.Add(this._sensitiveItemsListView);
+            this._sensitiveItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._sensitiveItemsTabPage.Name = "_sensitiveItemsTabPage";
+            this._sensitiveItemsTabPage.Size = new System.Drawing.Size(505, 307);
+            this._sensitiveItemsTabPage.TabIndex = 5;
+            this._sensitiveItemsTabPage.Text = "Sensitive Items (0)";
+            this._sensitiveItemsTabPage.UseVisualStyleBackColor = true;
             // 
-            // _piiListView
+            // _sensitiveItemsListView
             // 
-            this._piiListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._piiListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this._sensitiveItemsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._sensitiveItemsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader23,
             this.columnHeader45,
             this.columnHeader46,
@@ -1281,20 +1301,20 @@
             this.columnHeader53,
             this.columnHeader50,
             this.columnHeader51});
-            this._piiListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._piiListView.FullRowSelect = true;
-            this._piiListView.HideSelection = false;
-            this._piiListView.Location = new System.Drawing.Point(0, 0);
-            this._piiListView.Name = "_piiListView";
-            this._piiListView.Size = new System.Drawing.Size(505, 307);
-            this._piiListView.TabIndex = 8;
-            this._piiListView.UseCompatibleStateImageBehavior = false;
-            this._piiListView.View = System.Windows.Forms.View.Details;
-            this._piiListView.SelectedIndexChanged += new System.EventHandler(this._piiListView_SelectedIndexChanged);
+            this._sensitiveItemsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._sensitiveItemsListView.FullRowSelect = true;
+            this._sensitiveItemsListView.HideSelection = false;
+            this._sensitiveItemsListView.Location = new System.Drawing.Point(0, 0);
+            this._sensitiveItemsListView.Name = "_sensitiveItemsListView";
+            this._sensitiveItemsListView.Size = new System.Drawing.Size(505, 307);
+            this._sensitiveItemsListView.TabIndex = 8;
+            this._sensitiveItemsListView.UseCompatibleStateImageBehavior = false;
+            this._sensitiveItemsListView.View = System.Windows.Forms.View.Details;
+            this._sensitiveItemsListView.SelectedIndexChanged += new System.EventHandler(this._sensitiveItemListView_SelectedIndexChanged);
             // 
             // columnHeader23
             // 
-            this.columnHeader23.Text = "PIIType";
+            this.columnHeader23.Text = "ItemType";
             this.columnHeader23.Width = 88;
             // 
             // columnHeader45
@@ -1304,7 +1324,7 @@
             // 
             // columnHeader46
             // 
-            this.columnHeader46.Text = "ProximityIdentifier";
+            this.columnHeader46.Text = "ProximityKeywords";
             this.columnHeader46.Width = 98;
             // 
             // columnHeader47
@@ -1324,7 +1344,7 @@
             // 
             // columnHeader52
             // 
-            this.columnHeader52.Text = "IsMetadata";
+            this.columnHeader52.Text = "LocationType";
             // 
             // columnHeader53
             // 
@@ -1634,26 +1654,6 @@
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
             // 
-            // _fileEntropyLabel
-            // 
-            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 220);
-            this._fileEntropyLabel.Name = "_fileEntropyLabel";
-            this._fileEntropyLabel.Size = new System.Drawing.Size(397, 13);
-            this._fileEntropyLabel.TabIndex = 68;
-            this._fileEntropyLabel.Text = " ";
-            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(5, 220);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(65, 13);
-            this.label27.TabIndex = 67;
-            this.label27.Text = "File Entropy:";
-            // 
             // ContentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1695,7 +1695,7 @@
             this._metdataTabPage.ResumeLayout(false);
             this._attributesTabPage.ResumeLayout(false);
             this._attributesTabPage.PerformLayout();
-            this._piiTabPage.ResumeLayout(false);
+            this._sensitiveItemsTabPage.ResumeLayout(false);
             this._hyperLinksTabPage.ResumeLayout(false);
             this._languagesTabPage.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -1853,8 +1853,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader21;
         private System.Windows.Forms.ColumnHeader columnHeader22;
-        private System.Windows.Forms.TabPage _piiTabPage;
-        private System.Windows.Forms.ListView _piiListView;
+        private System.Windows.Forms.TabPage _sensitiveItemsTabPage;
+        private System.Windows.Forms.ListView _sensitiveItemsListView;
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ColumnHeader columnHeader45;
         private System.Windows.Forms.ColumnHeader columnHeader46;

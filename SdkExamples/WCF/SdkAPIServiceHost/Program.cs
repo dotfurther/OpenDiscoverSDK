@@ -26,7 +26,9 @@ namespace SdkAPIServiceHost
         {
             try
             {
-
+                //
+                // Set console title with Framework Version:
+                //
                 var ver = Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
                 Console.Title = string.Format("SdkAPIServiceHost - SDK API Service Host;      Framework Version = {0}", ver != null ? ver : "Unknown");
 

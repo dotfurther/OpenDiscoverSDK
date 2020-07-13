@@ -67,8 +67,24 @@ namespace DocumentIdentifierExample
                 _identificationDirectionsTextBox.Text = textStreamReader.ReadToEnd();
             }
 
-            var ver = Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
-            Title = string.Format("{0};      Framework Version = {1}", Title, ver != null ? ver : "Unknown");
+            //
+            // Set application title with Open Discover SDK Version and Framework Version:
+            //
+            var openDiscoverSDKVersion = "unknown";
+            var names = Assembly.GetExecutingAssembly().GetReferencedAssemblies();
+            foreach (var name in names)
+            {
+                if (name.Name.StartsWith("OpenDiscoverSDK"))
+                {
+                    openDiscoverSDKVersion = name.Version.ToString();
+                    break;
+                }
+            }
+
+            var frameworkVer = Assembly.GetEntryAssembly()?.GetCustomAttribute<TargetFrameworkAttribute>()?.FrameworkName;
+
+            Title = string.Format("{0}          OpenDiscoverSDK Version = {1}         Framework Version = {2}", Title, openDiscoverSDKVersion, 
+                                 frameworkVer != null ? frameworkVer : "Unknown");
         }
         #endregion
 

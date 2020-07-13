@@ -66,7 +66,7 @@ namespace SdkAPIWinFormClient
         public void ClearView()
         {
             _metadataListView.Items.Clear();
-            _piiListView.Items.Clear();
+            _sensitiveItemListView.Items.Clear();
             _attributesTextBox.Text = "";
             _hyperLinksListView.Items.Clear();
             _childDocsListView.Items.Clear();
@@ -97,12 +97,12 @@ namespace SdkAPIWinFormClient
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
             }
 
-            _metdataTabPage.Text    = "Metadata (0)";
-            _piiTabPage.Text        = "PII (0)";
-            _attributesTabPage.Text = "Attributes (0)";
-            _hyperLinksTabPage.Text = "Hyperlinks (0)";
-            _languagesTabPage.Text  = "Languages (0)";
-            _childrenTabPage.Text   = "Children (0)";
+            _metdataTabPage.Text        = "Metadata (0)";
+            _sensitiveItemsTabPage.Text = "Sensitive Items (0)";
+            _attributesTabPage.Text     = "Attributes (0)";
+            _hyperLinksTabPage.Text     = "Hyperlinks (0)";
+            _languagesTabPage.Text      = "Languages (0)";
+            _childrenTabPage.Text       = "Children (0)";
 
             _fileIdLabel.Text          = "";
             _classificationLabel.Text  = "";
@@ -421,53 +421,58 @@ namespace SdkAPIWinFormClient
                 _totalTextCharsLabel.Text = "0 chars of extracted text";
             }
 
-            _metdataTabPage.Text    = string.Format("Metadata ({0})",   _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
-            _piiTabPage.Text        = string.Format("PII ({0})",        _docContent.PIICheckResult != null ? _docContent.PIICheckResult.PIIResults.Count : 0);
-            _attributesTabPage.Text = string.Format("Attributes ({0})", _docContent.Attributes.Count); 
-            _languagesTabPage.Text  = string.Format("Languages ({0})",  _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
-            _childrenTabPage.Text   = string.Format("Children ({0})",   _docContent.ChildDocuments.Count);
+            _metdataTabPage.Text        = string.Format("Metadata ({0})",        _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
+            _sensitiveItemsTabPage.Text = string.Format("Sensitive Items ({0})", _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.Items.Count : 0);
+            _attributesTabPage.Text     = string.Format("Attributes ({0})",      _docContent.Attributes.Count); 
+            _languagesTabPage.Text      = string.Format("Languages ({0})",       _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
+            _childrenTabPage.Text       = string.Format("Children ({0})",        _docContent.ChildDocuments.Count);
 
             //
-            // Set PII:
+            // Set Sensitive Items:
             //
-            if (_docContent.PIICheckResult.PIIResults.Count > 0)
+            if (_docContent.SensitiveItemResult.Items.Count > 0)
             {
                 try
                 {
-                    _piiListView.BeginUpdate();
+                    _sensitiveItemListView.BeginUpdate();
 
-                    foreach (var piiItem in _docContent.PIICheckResult.PIIResults)
+                    foreach (var sensitiveItem in _docContent.SensitiveItemResult.Items)
                     {
-                        var item = new ListViewItem(piiItem.PIIType.ToString());
+                        var item = new ListViewItem(sensitiveItem.ItemType.ToString());
                         item.UseItemStyleForSubItems = false;
 
-                        item.SubItems.Add(piiItem.MatchType.ToString());
-                        item.SubItems.Add(piiItem.ProximityIdentifier != null ? piiItem.ProximityIdentifier : "");
-                        item.SubItems.Add(piiItem.Line.ToString());
-                        item.SubItems.Add(piiItem.Start.ToString());
-                        item.SubItems.Add(piiItem.End.ToString());
+                        item.SubItems.Add(sensitiveItem.MatchType.ToString());
+                        item.SubItems.Add(sensitiveItem.ProximityKeywords != null ? sensitiveItem.ProximityKeywords : "");
+                        item.SubItems.Add(sensitiveItem.Line.ToString());
+                        item.SubItems.Add(sensitiveItem.Start.ToString());
+                        item.SubItems.Add(sensitiveItem.End.ToString());
 
-                        var subItem = item.SubItems.Add(piiItem.IsMetadata.ToString());
-                        if (piiItem.IsMetadata)
+                        var subItem = item.SubItems.Add(sensitiveItem.LocationType.ToString());
+                        if (sensitiveItem.LocationType == SensitiveItemLocationType.Metadata)
                         {
                             subItem.ForeColor = Color.Blue;
                         }
-                        subItem = item.SubItems.Add(piiItem.MetadataName != null ? piiItem.MetadataName : "");
-                        if (piiItem.MetadataName != null)
+                        if (sensitiveItem.LocationType == SensitiveItemLocationType.Hyperlink)
+                        {
+                            subItem.ForeColor = Color.Magenta;
+                        }
+
+                        subItem = item.SubItems.Add(sensitiveItem.MetadataName != null ? sensitiveItem.MetadataName : "");
+                        if (sensitiveItem.MetadataName != null)
                         {
                             subItem.ForeColor = Color.DarkRed;
                         }
 
-                        item.SubItems.Add(piiItem.Extra != null ? piiItem.Extra : "");
-                        item.SubItems.Add(piiItem.Text  != null ? piiItem.Text  : "");
-                        item.Tag = piiItem;
+                        item.SubItems.Add(sensitiveItem.Extra != null ? sensitiveItem.Extra : "");
+                        item.SubItems.Add(sensitiveItem.Text  != null ? sensitiveItem.Text  : "");
+                        item.Tag = sensitiveItem;
 
-                        _piiListView.Items.Add(item);
+                        _sensitiveItemListView.Items.Add(item);
                     }
                 }
                 finally
                 {
-                    _piiListView.EndUpdate();
+                    _sensitiveItemListView.EndUpdate();
                 }
             }
 
@@ -775,22 +780,22 @@ namespace SdkAPIWinFormClient
         }
         #endregion
 
-        #region private void _piiListView_SelectedIndexChanged(object sender, EventArgs e)
-        private void _piiListView_SelectedIndexChanged(object sender, EventArgs e)
+        #region private void _sensitiveItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _sensitiveItemListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                if (_piiListView.SelectedItems.Count == 1)
+                if (_sensitiveItemListView.SelectedItems.Count == 1)
                 {
-                    var piiResult = _piiListView.SelectedItems[0].Tag as PIIResult;
-                    if (piiResult != null)
+                    var result = _sensitiveItemListView.SelectedItems[0].Tag as SensitiveItem;
+                    if (result != null)
                     {
                         _selectedChildInfoTabControl.SelectedTab = _textTabPage;
                         _extractedTextBox.Focus();
-                        _extractedTextBox.SelectionStart  = piiResult.Start;
-                        _extractedTextBox.SelectionLength = piiResult.End - piiResult.Start + 1;
+                        _extractedTextBox.SelectionStart  = result.Start;
+                        _extractedTextBox.SelectionLength = result.End - result.Start + 1;
                         _extractedTextBox.ScrollToCaret();
-                        _piiListView.Focus();
+                        _sensitiveItemListView.Focus();
                     }
                 }
             }
