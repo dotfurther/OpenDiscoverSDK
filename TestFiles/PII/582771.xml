@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</origin>
+<pubdate>20090107</pubdate>
+<title>
+Geophysical data of field activity E-1-80-SP in Southern
+Pacific from 01/23/1980 to 02/19/1980
+</title>
+<pubinfo>
+<publish>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</publish>
+</pubinfo>
+<onlink>http://walrus.wr.usgs.gov/infobank/gos/e-1-80-sp.fmeta.xml</onlink>
+<onlink>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.meta.html</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>
+Chief Scientist: Alan Cooper. Geophysical data (bathymetry,
+gravity, magnetics) of field activity E-1-80-SP in Southern
+Pacific from 01/23/1980 to 02/19/1980,
+http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.meta.html.
+</abstract>
+<purpose>
+These data and information are intended for science
+researchers, students from elementary through
+college, policy makers, and general public.
+</purpose>
+<supplinf>
+
+Equipment Used -
+
+bathymetry
+
+gravity
+
+magnetics                     magnetometer
+
+Notes -
+
+German Geological Survey;
+
+Bundesanstalt fur Geowissenschaften und Rohstoffe (BGR) (german)
+
+&lt;http://www.bgr.de/index.html&gt;
+
+Similar information is available for thousands
+of other USGS/CMG-related Activities.
+
+If known, available are Activity-specific
+navigation, gravity, magnetics, bathymetry,
+seismic, and sampling data; track maps; and
+equipment information; as well as summary
+overviews, crew lists, and information
+about analog materials.
+
+If available, access to physical samples is
+described in the &quot;WR CMG Sample Distribution
+Policy&quot; at:
+http://walrus.wr.usgs.gov/infobank/programs/html/main/sample-dist-policy.html
+
+Primary access to the USGS/CMG Information
+Bank&apos;s digital data, analog data, and
+metadata is provided through...
+http://walrus.wr.usgs.gov/infobank/
+
+This page accomodates a variety of search
+approaches (e.g., by platform, by region,
+by scientist, by equipment type, etc.).
+</supplinf>
+</descript>
+<timeperd>
+<timeinfo>
+<rngdates>
+<begdate>19800123</begdate>
+<enddate>19800219</enddate>
+</rngdates>
+</timeinfo>
+<current>ground condition</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>As needed</update>
+</status>
+<spdom>
+<bounding>
+<westbc>160.71208</westbc>
+<eastbc>-165.16286</eastbc>
+<northbc>-69.08522</northbc>
+<southbc>-78.19536</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>ISO 19115 Topic Category</themekt>
+<themekey>geoscientificinformation</themekey>
+<themekey>oceans</themekey>
+</theme>
+<theme>
+<themekt>USGS CMG InfoBank</themekt>
+<themekey>Marine Geology</themekey>
+<themekey>Marine Geophysics</themekey>
+<themekey>Marine Gravity Field</themekey>
+<themekey>Marine Magnetic Field</themekey>
+<themekey>Magnetic Anomalies</themekey>
+<themekey>Bathymetry</themekey>
+<themekey>Water Depth</themekey>
+<themekey>Seafloor Topography</themekey>
+</theme>
+<place>
+<placekt>USGS CMG InfoBank</placekt>
+<placekey>Ross Sea</placekey>
+<placekey>South Pacific Ocean</placekey>
+<placekey>Southern Pacific</placekey>
+<placekey>Southern Pacific Ocean</placekey>
+</place>
+</keywords>
+<accconst>
+Physical materials are under controlled on-site access.
+
+If available, access to physical samples is described
+in the &quot;WR CMG Sample Distribution Policy&quot; at:
+http://walrus.wr.usgs.gov/infobank/programs/html/main/sample-dist-policy.html
+</accconst>
+<useconst>
+Please recognize the U.S. Geological Survey (USGS) as
+the source of this information.
+
+Physical materials are under controlled on-site access.
+
+Some USGS information accessed through this means
+may be preliminary in nature and presented without
+the approval of the Director of the USGS.  This
+information is provided with the understanding
+that it is not guaranteed to be correct or complete
+and conclusions drawn from such information are
+the responsibility of the user.
+
+This information is not intended for navigational
+purposes.
+
+Any use of trade, firm, or product names is for
+descriptive purposes only and does not imply
+endorsement by the U.S. Government.
+</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</ptcontac>
+<browse>
+<browsen>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.nav.gif</browsen>
+<browsed>Trackline map of E-1-80-SP</browsed>
+<browset>GIF</browset>
+</browse>
+<browse>
+<browsen>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.grav.gif</browsen>
+<browsed>Gravity data trackline map of E-1-80-SP</browsed>
+<browset>GIF</browset>
+</browse>
+<browse>
+<browsen>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.mag.gif</browsen>
+<browsed>Magnetics data trackline map of E-1-80-SP</browsed>
+<browset>GIF</browset>
+</browse>
+<browse>
+<browsen>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.bath.gif</browsen>
+<browsed>Bathymetry data trackline map of E-1-80-SP</browsed>
+<browset>GIF</browset>
+</browse>
+<datacred>
+Alan Cooper (Chief Scientist, USGS Western Region)
+</datacred>
+<native>Digital, ASCII</native>
+<crossref>
+<citeinfo>
+<origin>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</origin>
+<pubdate>Unknown</pubdate>
+<title>USGS/CMG Information Bank</title>
+<pubinfo>
+<publish>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</publish>
+</pubinfo>
+<othercit>Updated daily</othercit>
+<onlink>http://walrus.wr.usgs.gov/infobank/</onlink>
+</citeinfo>
+</crossref>
+</idinfo>
+<dataqual>
+<attracc>
+<attraccr>Identified as best available version.</attraccr>
+</attracc>
+<logic>Unspecified</logic>
+<complete>
+Start and end date/times of data
+&gt;Navigation Data (e-1-80-sp.050 [SINS])
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;198001231310400    198001252048410
+&gt;198001261255390    198001272230570
+&gt;198001280450430    198001282359520
+&gt;198001290007200    198001290549340
+&gt;198001291323410    198001311739130
+&gt;198001312038290    198001312220040
+&gt;198001312244280    198002030244350
+&gt;198002030316080    198002031336460
+&gt;198002031457470    198002051842490
+&gt;198002052023410    198002062349220
+&gt;198002070730580    198002071415030
+&gt;198002071734380    198002082307120
+&gt;198002082349560    198002090451490
+&gt;198002090554490    198002091920160
+&gt;198002110124190    198002120921470
+&gt;198002121114040    198002130834080
+&gt;198002131118270    198002140423290
+&gt;198002140840320    198002150226490
+&gt;198002150348190    198002151848500
+&gt;198002160300210    198002171110180
+&gt;198002171506030    198002180055250
+&gt;198002180247310    198002190921000
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;Gravity Data (e-1-80-sp.160_050)
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;198001231310400    198001252048410
+&gt;198001261255390    198001270217550
+&gt;198001270244290    198001272230570
+&gt;198001280629060    198001282359520
+&gt;198001290007200    198001290549340
+&gt;198001291323410    198001311739130
+&gt;198001312038290    198001312220040
+&gt;198001312244280    198002030244350
+&gt;198002030316080    198002031336460
+&gt;198002031457470    198002051842490
+&gt;198002052023410    198002062349220
+&gt;198002070730580    198002071415030
+&gt;198002071734380    198002082307120
+&gt;198002082349560    198002090451490
+&gt;198002090554490    198002091454050
+&gt;198002091525220    198002091920160
+&gt;198002110124190    198002120921470
+&gt;198002121114040    198002130834080
+&gt;198002131118270    198002140423290
+&gt;198002140840320    198002150226490
+&gt;198002150348190    198002151848500
+&gt;198002160300210    198002171110180
+&gt;198002171506030    198002180055250
+&gt;198002180247310    198002190921000
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;Magnetics Data (e-1-80-sp.200_050)
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;198001240149500    198001241954040
+&gt;198001242059430    198001242131050
+&gt;198001242148320    198001250613580
+&gt;198001250645430    198001250709150
+&gt;198001250752450    198001252048410
+&gt;198001261255390    198001272230570
+&gt;198001280450430    198001282359520
+&gt;198001290007200    198001290549340
+&gt;198001291323410    198001311739130
+&gt;198001312126360    198001312220040
+&gt;198001312244280    198002030244350
+&gt;198002030316080    198002031336460
+&gt;198002031514050    198002051842490
+&gt;198002070730580    198002071415030
+&gt;198002071734380    198002082307120
+&gt;198002082349560    198002090451490
+&gt;198002090554490    198002091920160
+&gt;198002110141040    198002120921470
+&gt;198002121114040    198002130834080
+&gt;198002131118270    198002140423290
+&gt;198002140840320    198002150226490
+&gt;198002150348190    198002151848500
+&gt;198002160300210    198002171110180
+&gt;198002171506030    198002171833400
+&gt;198002171859570    198002180055250
+&gt;198002180247310    198002190921000
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;Bathymetry Data (e-1-80-sp.300_050)
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+&gt;198001270611470    198001272230570
+&gt;198001280450430    198001282359520
+&gt;198001290007200    198001290549340
+&gt;198001291323410    198001301757510
+&gt;198001301807480    198001311739130
+&gt;198001312038290    198001312220040
+&gt;198001312244280    198002030244350
+&gt;198002030316080    198002031336460
+&gt;198002031457470    198002051842490
+&gt;198002052023410    198002061959200
+&gt;198002062008290    198002062349220
+&gt;198002070730580    198002071415030
+&gt;198002071734380    198002082005590
+&gt;198002091031580    198002091920160
+&gt;198002110124190    198002120921470
+&gt;198002121114040    198002130834080
+&gt;198002131118270    198002140423290
+&gt;198002140840320    198002150226490
+&gt;198002150348190    198002151848500
+&gt;198002160547130    198002161517030
+&gt;198002161525320    198002171110180
+&gt;198002171506030    198002180055250
+&gt;198002180247310    198002190437430
+&gt;YYYYMMDDHHMMSST    YYYYMMDDHHMMSST
+</complete>
+<posacc>
+<horizpa>
+<horizpar>Unspecified</horizpar>
+</horizpa>
+<vertacc>
+<vertaccr>Unspecified</vertaccr>
+</vertacc>
+</posacc>
+<lineage>
+<procstep>
+<procdesc>
+Navigation Data
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.050;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+</procdesc>
+<procdate>19951205</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>
+Gravity Data
+&gt;10/31/1998  /lion/e/e180sp/grav/e-1-80-sp.160_050
+&gt;/bear/programs/edit/automerge/automerge
+&gt;
+&gt;Input was...
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.160;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+&gt;Input was...
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.050;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+&gt;time, lat, long, time(sec) to nearest nav fix, data values
+</procdesc>
+<procdate>19981031</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>
+Magnetics Data
+&gt;10/31/1998  /lion/e/e180sp/mag/e-1-80-sp.200_050
+&gt;/bear/programs/edit/automerge/automerge
+&gt;
+&gt;Input was...
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.200;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+&gt;Input was...
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.050;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+&gt;time, lat, long, time(sec) to nearest nav fix, data values
+</procdesc>
+<procdate>19981031</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>
+Bathymetry Data
+&gt;10/31/1998  /lion/e/e180sp/bath/e-1-80-sp.300_050
+&gt;/bear/programs/edit/automerge/automerge
+&gt;
+&gt;Input was...
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.300;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+&gt;Input was...
+&gt;Converted to time format with year at start.
+&gt;
+&gt;03/18/86 CAROLYN DRS$DATA:[CAROLYN]GUT.050;
+&gt;DUA0:[DATA.][CAROLYN]TEMP.EXE;
+&gt;From tape VK5820
+&gt;Original header:
+&gt;  ANTARCTIS CRUISE 1980, ROSS-SEA
+&gt;  BUNDESANSTALT FUER GEOWISSENSCHAFTEN UND ROHSTOFFE,
+&gt;  PRAKLA SEISMOS GMBH, MAY 1982
+&gt;  CDP-POSITION, SATELLITE/DOPPLER SONAR NAV.,
+&gt;  SENSOR SEPERATION ADJUSTED TO CDP,
+&gt;  GRAVITY (MGAL): REF. POINT PUNTA ARENAS,
+&gt;  MAGNETICS (NANOTESLA),
+&gt;  NON-VALUE: -999999
+&gt;  GEOG. COORD. (WGS72), TIME (DAY,HR,MIN,SEC),
+&gt;  EOETV. CORR., OBSERVED GRAV., FREE AIR,
+&gt;  WAT. DEPTH (METR.),
+&gt;  MAGN. TOTAL INT., MAGN. ANOMALY (REG. FIELD IGRF80/1980,1/180E-75S)
+&gt;
+&gt;time, lat, long, time(sec) to nearest nav fix, data values
+</procdesc>
+<procdate>19981031</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</proccont>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<indspref>Southern Pacific</indspref>
+<direct>Point</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>Point</sdtstype>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<spref>
+<horizsys>
+<geograph>
+<latres>0.00001</latres>
+<longres>0.00001</longres>
+<geogunit>Decimal degrees</geogunit>
+</geograph>
+<geodetic>
+<horizdn>North American Datum of 1927</horizdn>
+<ellips>Clarke 1866</ellips>
+<semiaxis>6378206.4</semiaxis>
+<denflat>294.98</denflat>
+</geodetic>
+</horizsys>
+<vertdef>
+<depthsys>
+<depthdn>Local surface</depthdn>
+<depthres>0.1</depthres>
+<depthdu>meters</depthdu>
+<depthem>Attribute values</depthem>
+</depthsys>
+</vertdef>
+</spref>
+<eainfo>
+<overview>
+<eaover>Bathymetry with Time Stamp</eaover>
+<eadetcit>
+Raw depth (bathymetry) data
+&gt;Mnemonic:       (Year, Day, Hour, Min, Sec, Tenths, UncorrDepth)
+&gt;FORTRAN format: (i4.4, i3.3, 3i2.2, i1.1, t16, f7.1)
+&gt;C format:       (%4.4i%3.3i3%2.2i%1.1i %7.1f\\n)
+&gt;Naming:         .300
+</eadetcit>
+</overview>
+<overview>
+<eaover>Gravity with Time Stamp</eaover>
+<eadetcit>
+Free Air Anomaly data
+&gt;Mnemonic:       (Year, Day, Hour, Min, Sec, Tenths, Eotvos, ObsGrv, TheoGrv, FAA)
+&gt;FORTRAN format: (i4.4, i3.3, 3i2.2, i1.1, t16, f6.1, t23, f9.1, t33, f9.1, t43, f8.1)
+&gt;C format:       (%4.4i%3.3i3%2.2i%1.1i %6.1f %9.1f %9.1f %8.1f\\n)
+&gt;Naming:         .160
+</eadetcit>
+</overview>
+<overview>
+<eaover>Magnetics with Time Stamp</eaover>
+<eadetcit>
+Raw magnetics data
+&gt;Mnemonic:       (Year, Day, Hour, Min, Sec, Tenths, MstObs)
+&gt;FORTRAN format: (i4.4, i3.3, 3i2.2, i1.1, t16, f7.1)
+&gt;C format:       (%4.4i%3.3i3%2.2i%1.1i %7.1f\\n)
+&gt;Naming:         .200
+</eadetcit>
+</overview>
+<overview>
+<eaover>Navigation with Time Stamp</eaover>
+<eadetcit>
+Integrated navigation (SINS) data
+&gt;Mnemonic:       (Year, Day, Hour, Min, Sec, Tenths, Latitude, Longitude)
+&gt;FORTRAN format: (i4.4, i3.3, 3i2.2, i1.1, t16, f9.5, t26, f10.5)
+&gt;C format:       (%4.4i%3.3i3%2.2i%1.1i %9.5f %10.5f\\n)
+&gt;Naming:         .050
+</eadetcit>
+</overview>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</distrib>
+<resdesc>Downloadable Data E-1-80-SP data set</resdesc>
+<distliab>
+Please recognize the U.S. Geological Survey (USGS) as
+the source of this information.
+
+Physical materials are under controlled on-site access.
+
+Some USGS information accessed through this means
+may be preliminary in nature and presented without
+the approval of the Director of the USGS.  This
+information is provided with the understanding
+that it is not guaranteed to be correct or complete
+and conclusions drawn from such information are
+the responsibility of the user.
+
+This information is not intended for navigational
+purposes.
+
+Any use of trade, firm, or product names is for
+descriptive purposes only and does not imply
+endorsement by the U.S. Government.
+</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>ASCII</formname>
+<filedec>No compression applied</filedec>
+<transize>2.2</transize>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.nav.html</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<digform>
+<digtinfo>
+<formname>ASCII</formname>
+<filedec>No compression applied</filedec>
+<transize>5.2</transize>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.grav.html</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<digform>
+<digtinfo>
+<formname>ASCII</formname>
+<filedec>No compression applied</filedec>
+<transize>3.2</transize>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.mag.html</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<digform>
+<digtinfo>
+<formname>ASCII</formname>
+<filedec>No compression applied</filedec>
+<transize>2.9</transize>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://walrus.wr.usgs.gov/infobank/e/e180sp/html/e-1-80-sp.bath.html</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<fees>None</fees>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20090107</metd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey (USGS), Coastal and Marine Geology (CMG)</cntorg>
+<cntper>Clint Steele</cntper>
+</cntorgp>
+<cntpos>Data Acquisition, Processing, and Storage (DAPS) Group Leader</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>USGS, MailStop 999, 345 Middlefield Road</address>
+<city>Menlo Park</city>
+<state>CA</state>
+<postal>94025-3561</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>(650) 329-5055</cntvoice>
+<cntfax>(650) 329-5190</cntfax>
+<cntemail>csteele@usgs.gov</cntemail>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>universal time</mettc>
+<metac>none</metac>
+<metuc>none</metuc>
+</metainfo>
+</metadata>

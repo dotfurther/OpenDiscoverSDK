@@ -12,6 +12,7 @@ using System.Text;
 using System.Windows.Forms;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Extractors;
 
 namespace ContentExtractionExample.Content
 {

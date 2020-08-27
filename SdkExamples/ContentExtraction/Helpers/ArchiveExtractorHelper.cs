@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using OpenDiscoverSDK;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Extractors;
 using OpenDiscoverSDK.Interfaces.Metadata;
 
 namespace ContentExtractionExample

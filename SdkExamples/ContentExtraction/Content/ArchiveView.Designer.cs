@@ -37,6 +37,8 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this._docBaseTabPage = new System.Windows.Forms.TabPage();
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this._errorMessageLabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this._testArchiveButton = new System.Windows.Forms.Button();
@@ -74,6 +76,7 @@
             this._archiveItemInfoListView = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -91,9 +94,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this._foldersTreeView = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._fileEntropyLabel = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -212,6 +212,26 @@
             this._docBaseTabPage.Size = new System.Drawing.Size(486, 290);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "ArchiveContent";
+            // 
+            // _fileEntropyLabel
+            // 
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 222);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(397, 13);
+            this._fileEntropyLabel.TabIndex = 70;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(5, 222);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 69;
+            this.label27.Text = "File Entropy:";
             // 
             // _errorMessageLabel
             // 
@@ -571,6 +591,11 @@
             this.columnHeader8.Text = "Encrypted";
             this.columnHeader8.Width = 65;
             // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Modified";
+            this.columnHeader14.Width = 99;
+            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "CompressedSize";
@@ -705,31 +730,6 @@
             this._foldersTreeView.SelectedImageIndex = 0;
             this._foldersTreeView.Size = new System.Drawing.Size(598, 243);
             this._foldersTreeView.TabIndex = 14;
-            // 
-            // _fileEntropyLabel
-            // 
-            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 222);
-            this._fileEntropyLabel.Name = "_fileEntropyLabel";
-            this._fileEntropyLabel.Size = new System.Drawing.Size(397, 13);
-            this._fileEntropyLabel.TabIndex = 70;
-            this._fileEntropyLabel.Text = " ";
-            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(5, 222);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(65, 13);
-            this.label27.TabIndex = 69;
-            this.label27.Text = "File Entropy:";
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Modified";
-            this.columnHeader14.Width = 99;
             // 
             // ArchiveView
             // 

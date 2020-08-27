@@ -10,6 +10,7 @@ using System.IO;
 using OpenDiscoverSDK;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Extractors;
 
 namespace ContentExtractionExample
 {

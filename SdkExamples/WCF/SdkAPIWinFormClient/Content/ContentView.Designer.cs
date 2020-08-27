@@ -139,13 +139,13 @@
             this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
             this._hyperLinksListView = new System.Windows.Forms.ListView();
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -180,7 +180,22 @@
             this._extractedTextBox = new System.Windows.Forms.TextBox();
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
+            this._emailTransportHeaderTraceTabPage = new System.Windows.Forms.TabPage();
+            this._emailHeaderSplitContainer = new System.Windows.Forms.SplitContainer();
+            this._emailHeaderTraceTreeView = new System.Windows.Forms.TreeView();
+            this._transportHeaderValueTextBox = new System.Windows.Forms.TextBox();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this._entityItemsTabPage = new System.Windows.Forms.TabPage();
+            this._entityItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -219,6 +234,12 @@
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
+            this._emailTransportHeaderTraceTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._emailHeaderSplitContainer)).BeginInit();
+            this._emailHeaderSplitContainer.Panel1.SuspendLayout();
+            this._emailHeaderSplitContainer.Panel2.SuspendLayout();
+            this._emailHeaderSplitContainer.SuspendLayout();
+            this._entityItemsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -1196,10 +1217,11 @@
             // 
             this._featuresTabControl.Controls.Add(this._metdataTabPage);
             this._featuresTabControl.Controls.Add(this._attributesTabPage);
-            this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
             this._featuresTabControl.Controls.Add(this._hyperLinksTabPage);
             this._featuresTabControl.Controls.Add(this._languagesTabPage);
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
+            this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
+            this._featuresTabControl.Controls.Add(this._entityItemsTabPage);
             this._featuresTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._featuresTabControl.Location = new System.Drawing.Point(0, 0);
             this._featuresTabControl.Name = "_featuresTabControl";
@@ -1295,13 +1317,13 @@
             this.columnHeader44,
             this.columnHeader45,
             this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader48,
-            this.columnHeader49,
+            this.columnHeader51,
+            this.columnHeader24,
+            this.columnHeader50,
             this.columnHeader52,
             this.columnHeader53,
-            this.columnHeader50,
-            this.columnHeader51});
+            this.columnHeader48,
+            this.columnHeader49});
             this._sensitiveItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sensitiveItemListView.FullRowSelect = true;
             this._sensitiveItemListView.HideSelection = false;
@@ -1325,23 +1347,21 @@
             // 
             // columnHeader46
             // 
-            this.columnHeader46.Text = "ProximityKeywords";
+            this.columnHeader46.Text = "Keywords";
             this.columnHeader46.Width = 104;
             // 
-            // columnHeader47
+            // columnHeader51
             // 
-            this.columnHeader47.Text = "Line";
-            this.columnHeader47.Width = 40;
+            this.columnHeader51.Text = "Text";
+            this.columnHeader51.Width = 150;
             // 
-            // columnHeader48
+            // columnHeader24
             // 
-            this.columnHeader48.Text = "Start";
-            this.columnHeader48.Width = 40;
+            this.columnHeader24.Text = "Context";
             // 
-            // columnHeader49
+            // columnHeader50
             // 
-            this.columnHeader49.Text = "End";
-            this.columnHeader49.Width = 40;
+            this.columnHeader50.Text = "Associated";
             // 
             // columnHeader52
             // 
@@ -1352,14 +1372,15 @@
             this.columnHeader53.Text = "MetadataName";
             this.columnHeader53.Width = 70;
             // 
-            // columnHeader50
+            // columnHeader48
             // 
-            this.columnHeader50.Text = "Extra";
+            this.columnHeader48.Text = "Start";
+            this.columnHeader48.Width = 40;
             // 
-            // columnHeader51
+            // columnHeader49
             // 
-            this.columnHeader51.Text = "Text";
-            this.columnHeader51.Width = 150;
+            this.columnHeader49.Text = "End";
+            this.columnHeader49.Width = 40;
             // 
             // _hyperLinksTabPage
             // 
@@ -1602,6 +1623,7 @@
             // 
             this._selectedChildInfoTabControl.Controls.Add(this._textTabPage);
             this._selectedChildInfoTabControl.Controls.Add(this._imageViewTabPage);
+            this._selectedChildInfoTabControl.Controls.Add(this._emailTransportHeaderTraceTabPage);
             this._selectedChildInfoTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._selectedChildInfoTabControl.Location = new System.Drawing.Point(0, 0);
             this._selectedChildInfoTabControl.Name = "_selectedChildInfoTabControl";
@@ -1654,6 +1676,139 @@
             this._pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
+            // 
+            // _emailTransportHeaderTraceTabPage
+            // 
+            this._emailTransportHeaderTraceTabPage.Controls.Add(this._emailHeaderSplitContainer);
+            this._emailTransportHeaderTraceTabPage.Controls.Add(this.splitter1);
+            this._emailTransportHeaderTraceTabPage.Location = new System.Drawing.Point(4, 22);
+            this._emailTransportHeaderTraceTabPage.Name = "_emailTransportHeaderTraceTabPage";
+            this._emailTransportHeaderTraceTabPage.Size = new System.Drawing.Size(1125, 334);
+            this._emailTransportHeaderTraceTabPage.TabIndex = 3;
+            this._emailTransportHeaderTraceTabPage.Text = "Email Transport Header Trace";
+            this._emailTransportHeaderTraceTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _emailHeaderSplitContainer
+            // 
+            this._emailHeaderSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._emailHeaderSplitContainer.Location = new System.Drawing.Point(3, 0);
+            this._emailHeaderSplitContainer.Name = "_emailHeaderSplitContainer";
+            // 
+            // _emailHeaderSplitContainer.Panel1
+            // 
+            this._emailHeaderSplitContainer.Panel1.Controls.Add(this._emailHeaderTraceTreeView);
+            // 
+            // _emailHeaderSplitContainer.Panel2
+            // 
+            this._emailHeaderSplitContainer.Panel2.Controls.Add(this._transportHeaderValueTextBox);
+            this._emailHeaderSplitContainer.Size = new System.Drawing.Size(1122, 334);
+            this._emailHeaderSplitContainer.SplitterDistance = 374;
+            this._emailHeaderSplitContainer.TabIndex = 1;
+            // 
+            // _emailHeaderTraceTreeView
+            // 
+            this._emailHeaderTraceTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._emailHeaderTraceTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._emailHeaderTraceTreeView.Location = new System.Drawing.Point(0, 0);
+            this._emailHeaderTraceTreeView.Name = "_emailHeaderTraceTreeView";
+            this._emailHeaderTraceTreeView.Size = new System.Drawing.Size(374, 334);
+            this._emailHeaderTraceTreeView.TabIndex = 2;
+            this._emailHeaderTraceTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this._emailHeaderTraceTreeView_AfterSelect);
+            // 
+            // _transportHeaderValueTextBox
+            // 
+            this._transportHeaderValueTextBox.AcceptsReturn = true;
+            this._transportHeaderValueTextBox.AcceptsTab = true;
+            this._transportHeaderValueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._transportHeaderValueTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._transportHeaderValueTextBox.Location = new System.Drawing.Point(0, 0);
+            this._transportHeaderValueTextBox.Multiline = true;
+            this._transportHeaderValueTextBox.Name = "_transportHeaderValueTextBox";
+            this._transportHeaderValueTextBox.ReadOnly = true;
+            this._transportHeaderValueTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this._transportHeaderValueTextBox.Size = new System.Drawing.Size(744, 334);
+            this._transportHeaderValueTextBox.TabIndex = 2;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 334);
+            this.splitter1.TabIndex = 0;
+            this.splitter1.TabStop = false;
+            // 
+            // _entityItemsTabPage
+            // 
+            this._entityItemsTabPage.Controls.Add(this._entityItemListView);
+            this._entityItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._entityItemsTabPage.Name = "_entityItemsTabPage";
+            this._entityItemsTabPage.Size = new System.Drawing.Size(577, 307);
+            this._entityItemsTabPage.TabIndex = 6;
+            this._entityItemsTabPage.Text = "Entity Items (0)";
+            this._entityItemsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _entityItemListView
+            // 
+            this._entityItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._entityItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader47,
+            this.columnHeader55,
+            this.columnHeader56,
+            this.columnHeader57,
+            this.columnHeader60,
+            this.columnHeader61,
+            this.columnHeader62,
+            this.columnHeader63});
+            this._entityItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._entityItemListView.FullRowSelect = true;
+            this._entityItemListView.HideSelection = false;
+            this._entityItemListView.Location = new System.Drawing.Point(0, 0);
+            this._entityItemListView.Name = "_entityItemListView";
+            this._entityItemListView.Size = new System.Drawing.Size(577, 307);
+            this._entityItemListView.TabIndex = 9;
+            this._entityItemListView.UseCompatibleStateImageBehavior = false;
+            this._entityItemListView.View = System.Windows.Forms.View.Details;
+            this._entityItemListView.SelectedIndexChanged += new System.EventHandler(this._entityItemListView_SelectedIndexChanged);
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "ItemType";
+            this.columnHeader47.Width = 78;
+            // 
+            // columnHeader55
+            // 
+            this.columnHeader55.Text = "IdentifierType";
+            this.columnHeader55.Width = 82;
+            // 
+            // columnHeader56
+            // 
+            this.columnHeader56.Text = "Keywords";
+            this.columnHeader56.Width = 104;
+            // 
+            // columnHeader57
+            // 
+            this.columnHeader57.Text = "Text";
+            this.columnHeader57.Width = 118;
+            // 
+            // columnHeader60
+            // 
+            this.columnHeader60.Text = "LocationType";
+            this.columnHeader60.Width = 81;
+            // 
+            // columnHeader61
+            // 
+            this.columnHeader61.Text = "MetadataName";
+            this.columnHeader61.Width = 88;
+            // 
+            // columnHeader62
+            // 
+            this.columnHeader62.Text = "Start";
+            this.columnHeader62.Width = 40;
+            // 
+            // columnHeader63
+            // 
+            this.columnHeader63.Text = "End";
+            this.columnHeader63.Width = 40;
             // 
             // ContentView
             // 
@@ -1710,6 +1865,13 @@
             this._textTabPage.PerformLayout();
             this._imageViewTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
+            this._emailTransportHeaderTraceTabPage.ResumeLayout(false);
+            this._emailHeaderSplitContainer.Panel1.ResumeLayout(false);
+            this._emailHeaderSplitContainer.Panel2.ResumeLayout(false);
+            this._emailHeaderSplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._emailHeaderSplitContainer)).EndInit();
+            this._emailHeaderSplitContainer.ResumeLayout(false);
+            this._entityItemsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1859,7 +2021,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader44;
         private System.Windows.Forms.ColumnHeader columnHeader45;
         private System.Windows.Forms.ColumnHeader columnHeader46;
-        private System.Windows.Forms.ColumnHeader columnHeader47;
         private System.Windows.Forms.ColumnHeader columnHeader48;
         private System.Windows.Forms.ColumnHeader columnHeader49;
         private System.Windows.Forms.ColumnHeader columnHeader52;
@@ -1868,5 +2029,21 @@
         private System.Windows.Forms.ColumnHeader columnHeader51;
         private System.Windows.Forms.Label _fileEntropyLabel;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.TabPage _emailTransportHeaderTraceTabPage;
+        private System.Windows.Forms.SplitContainer _emailHeaderSplitContainer;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.TreeView _emailHeaderTraceTreeView;
+        private System.Windows.Forms.TextBox _transportHeaderValueTextBox;
+        private System.Windows.Forms.TabPage _entityItemsTabPage;
+        private System.Windows.Forms.ListView _entityItemListView;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader55;
+        private System.Windows.Forms.ColumnHeader columnHeader56;
+        private System.Windows.Forms.ColumnHeader columnHeader57;
+        private System.Windows.Forms.ColumnHeader columnHeader60;
+        private System.Windows.Forms.ColumnHeader columnHeader61;
+        private System.Windows.Forms.ColumnHeader columnHeader62;
+        private System.Windows.Forms.ColumnHeader columnHeader63;
     }
 }

@@ -11,6 +11,7 @@ using System.Management.Automation;
 using System.Text;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Extractors;
 using OpenDiscoverSDK.Interfaces.Settings;
 
 namespace OpenDiscoverSDK.PowerShell

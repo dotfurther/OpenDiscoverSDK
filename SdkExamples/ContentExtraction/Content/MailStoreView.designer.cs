@@ -1,4 +1,4 @@
-﻿namespace ContentExtractionExample
+﻿namespace ContentExtractionExample.Content
 {
     partial class MailStoreView
     {
@@ -30,157 +30,113 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailStoreView));
-            this._imageList = new System.Windows.Forms.ImageList(this.components);
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this._docBaseTabPage = new System.Windows.Forms.TabPage();
+            this._selectOutputFolderButton = new System.Windows.Forms.Button();
+            this._messageCountLabel = new System.Windows.Forms.Label();
+            this._emailOutputFolderTextBox = new System.Windows.Forms.TextBox();
+            this._fileEntropyLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this._errorMessageLabel = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._isEncryptedLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this._fileNameLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this._fileSizeLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._saveWithMailStoreFolderStructureCheckBox = new System.Windows.Forms.CheckBox();
+            this._metadataListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._idMatchTypeLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this._sha1ContentHashLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this._sha1BinaryHashLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this._textSourceLabel = new System.Windows.Forms.Label();
+            this._extractAllEmailsButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this._imageList = new System.Windows.Forms.ImageList(this.components);
             this.label10 = new System.Windows.Forms.Label();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this._metdataTabPage = new System.Windows.Forms.TabPage();
             this._contentResultLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this._classificationLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this._fileIdLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this._metdataTabPage = new System.Windows.Forms.TabPage();
-            this._metadataListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this._saveWithMailStoreFolderStructureCheckBox = new System.Windows.Forms.CheckBox();
-            this._selectOutputFolderButton = new System.Windows.Forms.Button();
+            this._toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this._docBaseTabPage = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this._foldersTreeView = new System.Windows.Forms.TreeView();
-            this._messageCountLabel = new System.Windows.Forms.Label();
-            this._emailOutputFolderTextBox = new System.Windows.Forms.TextBox();
-            this._extractAllEmailsButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this._fileEntropyLabel = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this._metdataTabPage.SuspendLayout();
+            this._docBaseTabPage.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this._docBaseTabPage.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this._metdataTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // _imageList
+            // _selectOutputFolderButton
             // 
-            this._imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_imageList.ImageStream")));
-            this._imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this._imageList.Images.SetKeyName(0, "FolderClosed.png");
+            this._selectOutputFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._selectOutputFolderButton.Location = new System.Drawing.Point(616, 344);
+            this._selectOutputFolderButton.Name = "_selectOutputFolderButton";
+            this._selectOutputFolderButton.Size = new System.Drawing.Size(27, 24);
+            this._selectOutputFolderButton.TabIndex = 28;
+            this._selectOutputFolderButton.Text = "...";
+            this._selectOutputFolderButton.UseVisualStyleBackColor = true;
+            this._selectOutputFolderButton.Click += new System.EventHandler(this._selectOutputFolderButton_Click);
             // 
-            // splitContainer1
+            // _messageCountLabel
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this._messageCountLabel.AutoSize = true;
+            this._messageCountLabel.Location = new System.Drawing.Point(708, 24);
+            this._messageCountLabel.Name = "_messageCountLabel";
+            this._messageCountLabel.Size = new System.Drawing.Size(13, 13);
+            this._messageCountLabel.TabIndex = 24;
+            this._messageCountLabel.Text = "0";
             // 
-            // splitContainer1.Panel1
+            // _emailOutputFolderTextBox
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer5);
+            this._emailOutputFolderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._emailOutputFolderTextBox.Location = new System.Drawing.Point(111, 347);
+            this._emailOutputFolderTextBox.Name = "_emailOutputFolderTextBox";
+            this._emailOutputFolderTextBox.Size = new System.Drawing.Size(500, 20);
+            this._emailOutputFolderTextBox.TabIndex = 27;
             // 
-            // splitContainer1.Panel2
+            // _fileEntropyLabel
             // 
-            this.splitContainer1.Panel2.Controls.Add(this._saveWithMailStoreFolderStructureCheckBox);
-            this.splitContainer1.Panel2.Controls.Add(this._selectOutputFolderButton);
-            this.splitContainer1.Panel2.Controls.Add(this._foldersTreeView);
-            this.splitContainer1.Panel2.Controls.Add(this._messageCountLabel);
-            this.splitContainer1.Panel2.Controls.Add(this._emailOutputFolderTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this._extractAllEmailsButton);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Size = new System.Drawing.Size(911, 633);
-            this.splitContainer1.SplitterDistance = 275;
-            this.splitContainer1.TabIndex = 0;
+            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
+            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._fileEntropyLabel.Location = new System.Drawing.Point(117, 230);
+            this._fileEntropyLabel.Name = "_fileEntropyLabel";
+            this._fileEntropyLabel.Size = new System.Drawing.Size(305, 13);
+            this._fileEntropyLabel.TabIndex = 70;
+            this._fileEntropyLabel.Text = " ";
+            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // splitContainer5
+            // label27
             // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.tabControl2);
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.tabControl3);
-            this.splitContainer5.Size = new System.Drawing.Size(911, 275);
-            this.splitContainer5.SplitterDistance = 446;
-            this.splitContainer5.TabIndex = 2;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this._docBaseTabPage);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(446, 275);
-            this.tabControl2.TabIndex = 0;
-            // 
-            // _docBaseTabPage
-            // 
-            this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
-            this._docBaseTabPage.Controls.Add(this._fileEntropyLabel);
-            this._docBaseTabPage.Controls.Add(this.label27);
-            this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
-            this._docBaseTabPage.Controls.Add(this.label19);
-            this._docBaseTabPage.Controls.Add(this._isEncryptedLabel);
-            this._docBaseTabPage.Controls.Add(this.label11);
-            this._docBaseTabPage.Controls.Add(this._fileNameLabel);
-            this._docBaseTabPage.Controls.Add(this.label2);
-            this._docBaseTabPage.Controls.Add(this._fileSizeLabel);
-            this._docBaseTabPage.Controls.Add(this.label12);
-            this._docBaseTabPage.Controls.Add(this._idMatchTypeLabel);
-            this._docBaseTabPage.Controls.Add(this.label8);
-            this._docBaseTabPage.Controls.Add(this._sha1ContentHashLabel);
-            this._docBaseTabPage.Controls.Add(this.label7);
-            this._docBaseTabPage.Controls.Add(this._sha1BinaryHashLabel);
-            this._docBaseTabPage.Controls.Add(this.label5);
-            this._docBaseTabPage.Controls.Add(this._textSourceLabel);
-            this._docBaseTabPage.Controls.Add(this.label10);
-            this._docBaseTabPage.Controls.Add(this._contentResultLabel);
-            this._docBaseTabPage.Controls.Add(this.label9);
-            this._docBaseTabPage.Controls.Add(this._classificationLabel);
-            this._docBaseTabPage.Controls.Add(this.label6);
-            this._docBaseTabPage.Controls.Add(this._fileIdLabel);
-            this._docBaseTabPage.Controls.Add(this.label13);
-            this._docBaseTabPage.Location = new System.Drawing.Point(4, 22);
-            this._docBaseTabPage.Name = "_docBaseTabPage";
-            this._docBaseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._docBaseTabPage.Size = new System.Drawing.Size(438, 249);
-            this._docBaseTabPage.TabIndex = 0;
-            this._docBaseTabPage.Text = "MailStoreContent";
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(5, 230);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 13);
+            this.label27.TabIndex = 69;
+            this.label27.Text = "File Entropy:";
             // 
             // _errorMessageLabel
             // 
@@ -201,6 +157,16 @@
             this.label19.Size = new System.Drawing.Size(75, 13);
             this.label19.TabIndex = 67;
             this.label19.Text = "ErrorMessage:";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Value";
+            this.columnHeader7.Width = 152;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "IsUserDefined";
+            this.columnHeader2.Width = 86;
             // 
             // _isEncryptedLabel
             // 
@@ -256,6 +222,49 @@
             this.label12.TabIndex = 55;
             this.label12.Text = "Size:";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Type";
+            this.columnHeader6.Width = 72;
+            // 
+            // _saveWithMailStoreFolderStructureCheckBox
+            // 
+            this._saveWithMailStoreFolderStructureCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._saveWithMailStoreFolderStructureCheckBox.Location = new System.Drawing.Point(616, 227);
+            this._saveWithMailStoreFolderStructureCheckBox.Name = "_saveWithMailStoreFolderStructureCheckBox";
+            this._saveWithMailStoreFolderStructureCheckBox.Size = new System.Drawing.Size(401, 100);
+            this._saveWithMailStoreFolderStructureCheckBox.TabIndex = 30;
+            this._saveWithMailStoreFolderStructureCheckBox.Text = "Save with mail store folder structure (applies to only mail stores that have inte" +
+    "rnal folders like Outlook PST/OST";
+            this._toolTip2.SetToolTip(this._saveWithMailStoreFolderStructureCheckBox, "WARNING: Potential resulting long file paths are not handled - so be aware of thi" +
+        "s.  In addtion there is no check for illegal path characters in mail store folde" +
+        "rs.\r\n");
+            this._saveWithMailStoreFolderStructureCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _metadataListView
+            // 
+            this._metadataListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._metadataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader6,
+            this.columnHeader2,
+            this.columnHeader7});
+            this._metadataListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._metadataListView.FullRowSelect = true;
+            this._metadataListView.HideSelection = false;
+            this._metadataListView.Location = new System.Drawing.Point(3, 3);
+            this._metadataListView.Name = "_metadataListView";
+            this._metadataListView.Size = new System.Drawing.Size(487, 257);
+            this._metadataListView.TabIndex = 6;
+            this._metadataListView.UseCompatibleStateImageBehavior = false;
+            this._metadataListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 142;
+            // 
             // _idMatchTypeLabel
             // 
             this._idMatchTypeLabel.BackColor = System.Drawing.SystemColors.Control;
@@ -283,15 +292,6 @@
             this._sha1ContentHashLabel.TabIndex = 50;
             this._sha1ContentHashLabel.Text = " ";
             this._sha1ContentHashLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 211);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 13);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "SHA-1 Content Hash:";
             // 
             // _sha1BinaryHashLabel
             // 
@@ -322,6 +322,60 @@
             this._textSourceLabel.Text = " ";
             this._textSourceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // _extractAllEmailsButton
+            // 
+            this._extractAllEmailsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._extractAllEmailsButton.Location = new System.Drawing.Point(649, 343);
+            this._extractAllEmailsButton.Name = "_extractAllEmailsButton";
+            this._extractAllEmailsButton.Size = new System.Drawing.Size(117, 26);
+            this._extractAllEmailsButton.TabIndex = 25;
+            this._extractAllEmailsButton.Text = "Extract All Emails";
+            this._extractAllEmailsButton.UseVisualStyleBackColor = true;
+            this._extractAllEmailsButton.Click += new System.EventHandler(this._selectOutputFolderButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "MailStore Folders:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(617, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Message Count:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 350);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Email Output Folder:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 211);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "SHA-1 Content Hash:";
+            // 
+            // _imageList
+            // 
+            this._imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_imageList.ImageStream")));
+            this._imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this._imageList.Images.SetKeyName(0, "FolderClosed_16x.png");
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -330,6 +384,27 @@
             this.label10.Size = new System.Drawing.Size(89, 13);
             this.label10.TabIndex = 45;
             this.label10.Text = "TextSourceType:";
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Controls.Add(this._metdataTabPage);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(501, 289);
+            this.tabControl3.TabIndex = 13;
+            // 
+            // _metdataTabPage
+            // 
+            this._metdataTabPage.Controls.Add(this._metadataListView);
+            this._metdataTabPage.Location = new System.Drawing.Point(4, 22);
+            this._metdataTabPage.Name = "_metdataTabPage";
+            this._metdataTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this._metdataTabPage.Size = new System.Drawing.Size(493, 263);
+            this._metdataTabPage.TabIndex = 3;
+            this._metdataTabPage.Text = "Metadata (0)";
+            this._metdataTabPage.UseVisualStyleBackColor = true;
             // 
             // _contentResultLabel
             // 
@@ -388,86 +463,92 @@
             this.label13.TabIndex = 39;
             this.label13.Text = "ID:";
             // 
-            // tabControl3
+            // _docBaseTabPage
             // 
-            this.tabControl3.Controls.Add(this._metdataTabPage);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Location = new System.Drawing.Point(0, 0);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(461, 275);
-            this.tabControl3.TabIndex = 13;
+            this._docBaseTabPage.BackColor = System.Drawing.SystemColors.Control;
+            this._docBaseTabPage.Controls.Add(this._fileEntropyLabel);
+            this._docBaseTabPage.Controls.Add(this.label27);
+            this._docBaseTabPage.Controls.Add(this._errorMessageLabel);
+            this._docBaseTabPage.Controls.Add(this.label19);
+            this._docBaseTabPage.Controls.Add(this._isEncryptedLabel);
+            this._docBaseTabPage.Controls.Add(this.label11);
+            this._docBaseTabPage.Controls.Add(this._fileNameLabel);
+            this._docBaseTabPage.Controls.Add(this.label2);
+            this._docBaseTabPage.Controls.Add(this._fileSizeLabel);
+            this._docBaseTabPage.Controls.Add(this.label12);
+            this._docBaseTabPage.Controls.Add(this._idMatchTypeLabel);
+            this._docBaseTabPage.Controls.Add(this.label8);
+            this._docBaseTabPage.Controls.Add(this._sha1ContentHashLabel);
+            this._docBaseTabPage.Controls.Add(this.label7);
+            this._docBaseTabPage.Controls.Add(this._sha1BinaryHashLabel);
+            this._docBaseTabPage.Controls.Add(this.label5);
+            this._docBaseTabPage.Controls.Add(this._textSourceLabel);
+            this._docBaseTabPage.Controls.Add(this.label10);
+            this._docBaseTabPage.Controls.Add(this._contentResultLabel);
+            this._docBaseTabPage.Controls.Add(this.label9);
+            this._docBaseTabPage.Controls.Add(this._classificationLabel);
+            this._docBaseTabPage.Controls.Add(this.label6);
+            this._docBaseTabPage.Controls.Add(this._fileIdLabel);
+            this._docBaseTabPage.Controls.Add(this.label13);
+            this._docBaseTabPage.Location = new System.Drawing.Point(4, 22);
+            this._docBaseTabPage.Name = "_docBaseTabPage";
+            this._docBaseTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this._docBaseTabPage.Size = new System.Drawing.Size(521, 263);
+            this._docBaseTabPage.TabIndex = 0;
+            this._docBaseTabPage.Text = "MailStoreContent";
             // 
-            // _metdataTabPage
+            // tabControl2
             // 
-            this._metdataTabPage.Controls.Add(this._metadataListView);
-            this._metdataTabPage.Location = new System.Drawing.Point(4, 22);
-            this._metdataTabPage.Name = "_metdataTabPage";
-            this._metdataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._metdataTabPage.Size = new System.Drawing.Size(453, 249);
-            this._metdataTabPage.TabIndex = 3;
-            this._metdataTabPage.Text = "Metadata (0)";
-            this._metdataTabPage.UseVisualStyleBackColor = true;
+            this.tabControl2.Controls.Add(this._docBaseTabPage);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(529, 289);
+            this.tabControl2.TabIndex = 0;
             // 
-            // _metadataListView
+            // splitContainer5
             // 
-            this._metadataListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._metadataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader6,
-            this.columnHeader2,
-            this.columnHeader7});
-            this._metadataListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._metadataListView.FullRowSelect = true;
-            this._metadataListView.HideSelection = false;
-            this._metadataListView.Location = new System.Drawing.Point(3, 3);
-            this._metadataListView.Name = "_metadataListView";
-            this._metadataListView.Size = new System.Drawing.Size(447, 243);
-            this._metadataListView.TabIndex = 6;
-            this._metadataListView.UseCompatibleStateImageBehavior = false;
-            this._metadataListView.View = System.Windows.Forms.View.Details;
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
             // 
-            // columnHeader1
+            // splitContainer5.Panel1
             // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 142;
+            this.splitContainer5.Panel1.Controls.Add(this.tabControl2);
             // 
-            // columnHeader6
+            // splitContainer5.Panel2
             // 
-            this.columnHeader6.Text = "Type";
-            this.columnHeader6.Width = 72;
+            this.splitContainer5.Panel2.Controls.Add(this.tabControl3);
+            this.splitContainer5.Size = new System.Drawing.Size(1034, 289);
+            this.splitContainer5.SplitterDistance = 529;
+            this.splitContainer5.TabIndex = 2;
             // 
-            // columnHeader2
+            // splitContainer1
             // 
-            this.columnHeader2.Text = "IsUserDefined";
-            this.columnHeader2.Width = 89;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // columnHeader7
+            // splitContainer1.Panel1
             // 
-            this.columnHeader7.Text = "Value";
-            this.columnHeader7.Width = 152;
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer5);
             // 
-            // _saveWithMailStoreFolderStructureCheckBox
+            // splitContainer1.Panel2
             // 
-            this._saveWithMailStoreFolderStructureCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._saveWithMailStoreFolderStructureCheckBox.Location = new System.Drawing.Point(616, 142);
-            this._saveWithMailStoreFolderStructureCheckBox.Name = "_saveWithMailStoreFolderStructureCheckBox";
-            this._saveWithMailStoreFolderStructureCheckBox.Size = new System.Drawing.Size(288, 172);
-            this._saveWithMailStoreFolderStructureCheckBox.TabIndex = 29;
-            this._saveWithMailStoreFolderStructureCheckBox.Text = resources.GetString("_saveWithMailStoreFolderStructureCheckBox.Text");
-            this._saveWithMailStoreFolderStructureCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // _selectOutputFolderButton
-            // 
-            this._selectOutputFolderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._selectOutputFolderButton.Location = new System.Drawing.Point(616, 321);
-            this._selectOutputFolderButton.Name = "_selectOutputFolderButton";
-            this._selectOutputFolderButton.Size = new System.Drawing.Size(27, 24);
-            this._selectOutputFolderButton.TabIndex = 28;
-            this._selectOutputFolderButton.Text = "...";
-            this._selectOutputFolderButton.UseVisualStyleBackColor = true;
-            this._selectOutputFolderButton.Click += new System.EventHandler(this._selectOutputFolderButton_Click);
+            this.splitContainer1.Panel2.Controls.Add(this._saveWithMailStoreFolderStructureCheckBox);
+            this.splitContainer1.Panel2.Controls.Add(this._selectOutputFolderButton);
+            this.splitContainer1.Panel2.Controls.Add(this._foldersTreeView);
+            this.splitContainer1.Panel2.Controls.Add(this._messageCountLabel);
+            this.splitContainer1.Panel2.Controls.Add(this._emailOutputFolderTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this._extractAllEmailsButton);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Size = new System.Drawing.Size(1034, 670);
+            this.splitContainer1.SplitterDistance = 289;
+            this.splitContainer1.TabIndex = 2;
             // 
             // _foldersTreeView
             // 
@@ -478,155 +559,81 @@
             this._foldersTreeView.Location = new System.Drawing.Point(11, 21);
             this._foldersTreeView.Name = "_foldersTreeView";
             this._foldersTreeView.SelectedImageIndex = 0;
-            this._foldersTreeView.Size = new System.Drawing.Size(600, 297);
+            this._foldersTreeView.Size = new System.Drawing.Size(600, 320);
             this._foldersTreeView.TabIndex = 22;
             // 
-            // _messageCountLabel
-            // 
-            this._messageCountLabel.AutoSize = true;
-            this._messageCountLabel.Location = new System.Drawing.Point(708, 24);
-            this._messageCountLabel.Name = "_messageCountLabel";
-            this._messageCountLabel.Size = new System.Drawing.Size(13, 13);
-            this._messageCountLabel.TabIndex = 24;
-            this._messageCountLabel.Text = "0";
-            // 
-            // _emailOutputFolderTextBox
-            // 
-            this._emailOutputFolderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._emailOutputFolderTextBox.Location = new System.Drawing.Point(111, 324);
-            this._emailOutputFolderTextBox.Name = "_emailOutputFolderTextBox";
-            this._emailOutputFolderTextBox.Size = new System.Drawing.Size(500, 20);
-            this._emailOutputFolderTextBox.TabIndex = 27;
-            // 
-            // _extractAllEmailsButton
-            // 
-            this._extractAllEmailsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._extractAllEmailsButton.Location = new System.Drawing.Point(649, 320);
-            this._extractAllEmailsButton.Name = "_extractAllEmailsButton";
-            this._extractAllEmailsButton.Size = new System.Drawing.Size(117, 26);
-            this._extractAllEmailsButton.TabIndex = 25;
-            this._extractAllEmailsButton.Text = "Extract All Emails";
-            this._extractAllEmailsButton.UseVisualStyleBackColor = true;
-            this._extractAllEmailsButton.Click += new System.EventHandler(this._extractAllEmailsButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "MailStore Folders:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(617, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Message Count:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 327);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Email Output Folder:";
-            // 
-            // _fileEntropyLabel
-            // 
-            this._fileEntropyLabel.BackColor = System.Drawing.SystemColors.Control;
-            this._fileEntropyLabel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._fileEntropyLabel.Location = new System.Drawing.Point(116, 229);
-            this._fileEntropyLabel.Name = "_fileEntropyLabel";
-            this._fileEntropyLabel.Size = new System.Drawing.Size(305, 13);
-            this._fileEntropyLabel.TabIndex = 72;
-            this._fileEntropyLabel.Text = " ";
-            this._fileEntropyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(4, 229);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(65, 13);
-            this.label27.TabIndex = 71;
-            this.label27.Text = "File Entropy:";
-            // 
-            // MailStoreView
+            // MailStoreView2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "MailStoreView";
-            this.Size = new System.Drawing.Size(911, 633);
+            this.Name = "MailStoreView2";
+            this.Size = new System.Drawing.Size(1034, 670);
+            this.tabControl3.ResumeLayout(false);
+            this._metdataTabPage.ResumeLayout(false);
+            this._docBaseTabPage.ResumeLayout(false);
+            this._docBaseTabPage.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this._docBaseTabPage.ResumeLayout(false);
-            this._docBaseTabPage.PerformLayout();
-            this.tabControl3.ResumeLayout(false);
-            this._metdataTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ImageList _imageList;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+
         private System.Windows.Forms.Button _selectOutputFolderButton;
-        private System.Windows.Forms.TreeView _foldersTreeView;
         private System.Windows.Forms.Label _messageCountLabel;
         private System.Windows.Forms.TextBox _emailOutputFolderTextBox;
-        private System.Windows.Forms.Button _extractAllEmailsButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage _docBaseTabPage;
+        private System.Windows.Forms.Label _fileEntropyLabel;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label _errorMessageLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label _isEncryptedLabel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label _fileNameLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label _fileSizeLabel;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.CheckBox _saveWithMailStoreFolderStructureCheckBox;
+        private System.Windows.Forms.ToolTip _toolTip2;
+        private System.Windows.Forms.ListView _metadataListView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label _idMatchTypeLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label _sha1ContentHashLabel;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label _sha1BinaryHashLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label _textSourceLabel;
+        private System.Windows.Forms.Button _extractAllEmailsButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ImageList _imageList;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage _metdataTabPage;
         private System.Windows.Forms.Label _contentResultLabel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label _classificationLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label _fileIdLabel;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TabControl tabControl3;
-        private System.Windows.Forms.TabPage _metdataTabPage;
-        private System.Windows.Forms.ListView _metadataListView;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.CheckBox _saveWithMailStoreFolderStructureCheckBox;
-        private System.Windows.Forms.Label _errorMessageLabel;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Label _fileEntropyLabel;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TabPage _docBaseTabPage;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TreeView _foldersTreeView;
     }
 }

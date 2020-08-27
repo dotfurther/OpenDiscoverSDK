@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +75,12 @@
             this._sensitiveItemTabPage = new System.Windows.Forms.TabPage();
             this._sensitiveItemTabControl = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this._medicalRecordEntityCheckBox = new System.Windows.Forms.CheckBox();
+            this._healthCareNumberCheckBox = new System.Windows.Forms.CheckBox();
+            this._vinCheckBox = new System.Windows.Forms.CheckBox();
+            this._licensePlateNumCheckBox = new System.Windows.Forms.CheckBox();
             this._socialMediaCheckBox = new System.Windows.Forms.CheckBox();
-            this._ipv4CheckBox = new System.Windows.Forms.CheckBox();
+            this._ipAddressCheckBox = new System.Windows.Forms.CheckBox();
             this._addressCheckBox = new System.Windows.Forms.CheckBox();
             this._maidenNameCheckBox = new System.Windows.Forms.CheckBox();
             this._dateOfBirthCheckBox = new System.Windows.Forms.CheckBox();
@@ -93,12 +98,6 @@
             this._networkNameCheckBox = new System.Windows.Forms.CheckBox();
             this._usernameCheckBox = new System.Windows.Forms.CheckBox();
             this._passwordCheckBox4 = new System.Windows.Forms.CheckBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label16 = new System.Windows.Forms.Label();
-            this._generalUrlCheckBox = new System.Windows.Forms.CheckBox();
-            this._genIdentificationCheckBox = new System.Windows.Forms.CheckBox();
-            this._generalAccountCheckBox = new System.Windows.Forms.CheckBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this._enableSensitiveItemsCheckCheckBox = new System.Windows.Forms.CheckBox();
             this._timeZoneTabPage = new System.Windows.Forms.TabPage();
             this._UserMapiPropertyRequestsButton = new System.Windows.Forms.Button();
@@ -119,10 +118,7 @@
             this._logTabPage = new System.Windows.Forms.TabPage();
             this._logTextBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this._licensePlateNumCheckBox = new System.Windows.Forms.CheckBox();
-            this._vinCheckBox = new System.Windows.Forms.CheckBox();
-            this._healthCareNumberCheckBox = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -145,7 +141,6 @@
             this._sensitiveItemTabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this._timeZoneTabPage.SuspendLayout();
             this._tabControl.SuspendLayout();
             this._logTabPage.SuspendLayout();
@@ -711,8 +706,6 @@
             // 
             this._sensitiveItemTabControl.Controls.Add(this.tabPage2);
             this._sensitiveItemTabControl.Controls.Add(this.tabPage3);
-            this._sensitiveItemTabControl.Controls.Add(this.tabPage4);
-            this._sensitiveItemTabControl.Controls.Add(this.tabPage5);
             this._sensitiveItemTabControl.Enabled = false;
             this._sensitiveItemTabControl.Location = new System.Drawing.Point(3, 23);
             this._sensitiveItemTabControl.Name = "_sensitiveItemTabControl";
@@ -722,11 +715,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this._medicalRecordEntityCheckBox);
             this.tabPage2.Controls.Add(this._healthCareNumberCheckBox);
             this.tabPage2.Controls.Add(this._vinCheckBox);
             this.tabPage2.Controls.Add(this._licensePlateNumCheckBox);
             this.tabPage2.Controls.Add(this._socialMediaCheckBox);
-            this.tabPage2.Controls.Add(this._ipv4CheckBox);
+            this.tabPage2.Controls.Add(this._ipAddressCheckBox);
             this.tabPage2.Controls.Add(this._addressCheckBox);
             this.tabPage2.Controls.Add(this._maidenNameCheckBox);
             this.tabPage2.Controls.Add(this._dateOfBirthCheckBox);
@@ -747,6 +741,46 @@
             this.tabPage2.Text = "Personal";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // _medicalRecordEntityCheckBox
+            // 
+            this._medicalRecordEntityCheckBox.AutoSize = true;
+            this._medicalRecordEntityCheckBox.Location = new System.Drawing.Point(157, 124);
+            this._medicalRecordEntityCheckBox.Name = "_medicalRecordEntityCheckBox";
+            this._medicalRecordEntityCheckBox.Size = new System.Drawing.Size(130, 17);
+            this._medicalRecordEntityCheckBox.TabIndex = 25;
+            this._medicalRecordEntityCheckBox.Text = "Medical Record Entity";
+            this._medicalRecordEntityCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _healthCareNumberCheckBox
+            // 
+            this._healthCareNumberCheckBox.AutoSize = true;
+            this._healthCareNumberCheckBox.Location = new System.Drawing.Point(157, 106);
+            this._healthCareNumberCheckBox.Name = "_healthCareNumberCheckBox";
+            this._healthCareNumberCheckBox.Size = new System.Drawing.Size(179, 17);
+            this._healthCareNumberCheckBox.TabIndex = 22;
+            this._healthCareNumberCheckBox.Text = "Health Care Number/Member ID";
+            this._healthCareNumberCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _vinCheckBox
+            // 
+            this._vinCheckBox.AutoSize = true;
+            this._vinCheckBox.Location = new System.Drawing.Point(157, 86);
+            this._vinCheckBox.Name = "_vinCheckBox";
+            this._vinCheckBox.Size = new System.Drawing.Size(164, 17);
+            this._vinCheckBox.TabIndex = 21;
+            this._vinCheckBox.Text = "Vehicle Identification Number";
+            this._vinCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _licensePlateNumCheckBox
+            // 
+            this._licensePlateNumCheckBox.AutoSize = true;
+            this._licensePlateNumCheckBox.Location = new System.Drawing.Point(157, 66);
+            this._licensePlateNumCheckBox.Name = "_licensePlateNumCheckBox";
+            this._licensePlateNumCheckBox.Size = new System.Drawing.Size(130, 17);
+            this._licensePlateNumCheckBox.TabIndex = 20;
+            this._licensePlateNumCheckBox.Text = "License Plate Number";
+            this._licensePlateNumCheckBox.UseVisualStyleBackColor = true;
+            // 
             // _socialMediaCheckBox
             // 
             this._socialMediaCheckBox.AutoSize = true;
@@ -757,20 +791,20 @@
             this._socialMediaCheckBox.Text = "Social Media Account";
             this._socialMediaCheckBox.UseVisualStyleBackColor = true;
             // 
-            // _ipv4CheckBox
+            // _ipAddressCheckBox
             // 
-            this._ipv4CheckBox.AutoSize = true;
-            this._ipv4CheckBox.Location = new System.Drawing.Point(157, 149);
-            this._ipv4CheckBox.Name = "_ipv4CheckBox";
-            this._ipv4CheckBox.Size = new System.Drawing.Size(89, 17);
-            this._ipv4CheckBox.TabIndex = 14;
-            this._ipv4CheckBox.Text = "IPv4 Address";
-            this._ipv4CheckBox.UseVisualStyleBackColor = true;
+            this._ipAddressCheckBox.AutoSize = true;
+            this._ipAddressCheckBox.Location = new System.Drawing.Point(157, 160);
+            this._ipAddressCheckBox.Name = "_ipAddressCheckBox";
+            this._ipAddressCheckBox.Size = new System.Drawing.Size(77, 17);
+            this._ipAddressCheckBox.TabIndex = 14;
+            this._ipAddressCheckBox.Text = "IP Address";
+            this._ipAddressCheckBox.UseVisualStyleBackColor = true;
             // 
             // _addressCheckBox
             // 
             this._addressCheckBox.AutoSize = true;
-            this._addressCheckBox.Location = new System.Drawing.Point(157, 130);
+            this._addressCheckBox.Location = new System.Drawing.Point(157, 142);
             this._addressCheckBox.Name = "_addressCheckBox";
             this._addressCheckBox.Size = new System.Drawing.Size(64, 17);
             this._addressCheckBox.TabIndex = 13;
@@ -940,67 +974,6 @@
             this._passwordCheckBox4.TabIndex = 19;
             this._passwordCheckBox4.Text = "Password";
             this._passwordCheckBox4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.label16);
-            this.tabPage4.Controls.Add(this._generalUrlCheckBox);
-            this.tabPage4.Controls.Add(this._genIdentificationCheckBox);
-            this.tabPage4.Controls.Add(this._generalAccountCheckBox);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(346, 194);
-            this.tabPage4.TabIndex = 2;
-            this.tabPage4.Text = "General (Undetermined)";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.Location = new System.Drawing.Point(3, 97);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(328, 68);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "These items are identifications, accounts, or urls of undetermined type due to no" +
-    " context. Select these items to investigate \"false negatives\" or when testing.";
-            // 
-            // _generalUrlCheckBox
-            // 
-            this._generalUrlCheckBox.AutoSize = true;
-            this._generalUrlCheckBox.Location = new System.Drawing.Point(12, 53);
-            this._generalUrlCheckBox.Name = "_generalUrlCheckBox";
-            this._generalUrlCheckBox.Size = new System.Drawing.Size(79, 17);
-            this._generalUrlCheckBox.TabIndex = 13;
-            this._generalUrlCheckBox.Text = "General Url";
-            this._generalUrlCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // _genIdentificationCheckBox
-            // 
-            this._genIdentificationCheckBox.AutoSize = true;
-            this._genIdentificationCheckBox.Location = new System.Drawing.Point(12, 7);
-            this._genIdentificationCheckBox.Name = "_genIdentificationCheckBox";
-            this._genIdentificationCheckBox.Size = new System.Drawing.Size(126, 17);
-            this._genIdentificationCheckBox.TabIndex = 12;
-            this._genIdentificationCheckBox.Text = "General Identification";
-            this._genIdentificationCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // _generalAccountCheckBox
-            // 
-            this._generalAccountCheckBox.AutoSize = true;
-            this._generalAccountCheckBox.Location = new System.Drawing.Point(12, 30);
-            this._generalAccountCheckBox.Name = "_generalAccountCheckBox";
-            this._generalAccountCheckBox.Size = new System.Drawing.Size(106, 17);
-            this._generalAccountCheckBox.TabIndex = 11;
-            this._generalAccountCheckBox.Text = "General Account";
-            this._generalAccountCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(346, 194);
-            this.tabPage5.TabIndex = 3;
-            this.tabPage5.Text = "Custom";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // _enableSensitiveItemsCheckCheckBox
             // 
@@ -1215,36 +1188,6 @@
             this._logTextBox.TabIndex = 15;
             this._logTextBox.WordWrap = false;
             // 
-            // _licensePlateNumCheckBox
-            // 
-            this._licensePlateNumCheckBox.AutoSize = true;
-            this._licensePlateNumCheckBox.Location = new System.Drawing.Point(157, 67);
-            this._licensePlateNumCheckBox.Name = "_licensePlateNumCheckBox";
-            this._licensePlateNumCheckBox.Size = new System.Drawing.Size(130, 17);
-            this._licensePlateNumCheckBox.TabIndex = 20;
-            this._licensePlateNumCheckBox.Text = "License Plate Number";
-            this._licensePlateNumCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // _vinCheckBox
-            // 
-            this._vinCheckBox.AutoSize = true;
-            this._vinCheckBox.Location = new System.Drawing.Point(157, 88);
-            this._vinCheckBox.Name = "_vinCheckBox";
-            this._vinCheckBox.Size = new System.Drawing.Size(164, 17);
-            this._vinCheckBox.TabIndex = 21;
-            this._vinCheckBox.Text = "Vehicle Identification Number";
-            this._vinCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // _healthCareNumberCheckBox
-            // 
-            this._healthCareNumberCheckBox.AutoSize = true;
-            this._healthCareNumberCheckBox.Location = new System.Drawing.Point(157, 109);
-            this._healthCareNumberCheckBox.Name = "_healthCareNumberCheckBox";
-            this._healthCareNumberCheckBox.Size = new System.Drawing.Size(179, 17);
-            this._healthCareNumberCheckBox.TabIndex = 22;
-            this._healthCareNumberCheckBox.Text = "Health Care Number/Member ID";
-            this._healthCareNumberCheckBox.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1288,8 +1231,6 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this._timeZoneTabPage.ResumeLayout(false);
             this._tabControl.ResumeLayout(false);
             this._logTabPage.ResumeLayout(false);
@@ -1366,7 +1307,7 @@
         private System.Windows.Forms.Button _UserMapiPropertyRequestsButton;
         private System.Windows.Forms.TabControl _sensitiveItemTabControl;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.CheckBox _ipv4CheckBox;
+        private System.Windows.Forms.CheckBox _ipAddressCheckBox;
         private System.Windows.Forms.CheckBox _addressCheckBox;
         private System.Windows.Forms.CheckBox _maidenNameCheckBox;
         private System.Windows.Forms.CheckBox _dateOfBirthCheckBox;
@@ -1386,15 +1327,10 @@
         private System.Windows.Forms.CheckBox _networkNameCheckBox;
         private System.Windows.Forms.CheckBox _usernameCheckBox;
         private System.Windows.Forms.CheckBox _passwordCheckBox4;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox _generalUrlCheckBox;
-        private System.Windows.Forms.CheckBox _genIdentificationCheckBox;
-        private System.Windows.Forms.CheckBox _generalAccountCheckBox;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.CheckBox _healthCareNumberCheckBox;
         private System.Windows.Forms.CheckBox _vinCheckBox;
         private System.Windows.Forms.CheckBox _licensePlateNumCheckBox;
+        private System.Windows.Forms.CheckBox _medicalRecordEntityCheckBox;
     }
 }
 

@@ -254,6 +254,8 @@ namespace SdkAPIWinFormClient
             //
             // Sensitive Item Checks:
             //
+            _enableSensitiveItemsCheckCheckBox.Checked = _extractionSettings.SensitiveItemCheck.Check;
+
             _socSecurityCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.SocialSecurityCheck;
             _creditCardCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.CreditCardCheck;
             _bankAccountCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.BankAccountCheck;
@@ -270,17 +272,11 @@ namespace SdkAPIWinFormClient
             _vinCheckBox.Checked                 = _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck;
             _healthCareNumberCheckBox.Checked    = _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck;
             _addressCheckBox.Checked             = _extractionSettings.SensitiveItemCheck.AddressCheck;
-            _ipv4CheckBox.Checked                = _extractionSettings.SensitiveItemCheck.IPv4AddressCheck;
+            _ipAddressCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.IPAddressCheck;
             _passwordCheckBox4.Checked           = _extractionSettings.SensitiveItemCheck.PasswordCheck;
             _usernameCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.UsernameCheck;
             _networkNameCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.NetworkNameCheck;
             _databaseCredentialsCheckBox.Checked = _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck;
-
-            _generalAccountCheckBox.Checked    = _extractionSettings.SensitiveItemCheck.GeneralAccountCheck;
-            _genIdentificationCheckBox.Checked = _extractionSettings.SensitiveItemCheck.GeneralIdentificationCheck;
-            _generalUrlCheckBox.Checked        = _extractionSettings.SensitiveItemCheck.GeneralUrlCheck;
-
-            _enableSensitiveItemsCheckCheckBox.Checked = _extractionSettings.SensitiveItemCheck.Check;
 
             //
             // Hashing controls:
@@ -467,19 +463,14 @@ namespace SdkAPIWinFormClient
             _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck = _vinCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck    = _healthCareNumberCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.AddressCheck               = _addressCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.IPv4AddressCheck           = _ipv4CheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.IPAddressCheck             = _ipAddressCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.PasswordCheck              = _passwordCheckBox4.Checked;
             _extractionSettings.SensitiveItemCheck.UsernameCheck              = _usernameCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.NetworkNameCheck           = _networkNameCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck   = _databaseCredentialsCheckBox.Checked;
 
-            _extractionSettings.SensitiveItemCheck.GeneralAccountCheck        = _generalAccountCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.GeneralIdentificationCheck = _genIdentificationCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.GeneralUrlCheck            = _generalUrlCheckBox.Checked;
-
             _extractionSettings.SensitiveItemCheck.Check = _enableSensitiveItemsCheckCheckBox.Checked;
             _sensitiveItemTabControl.Enabled             = _enableSensitiveItemsCheckCheckBox.Checked;
-
         }
         #endregion
 

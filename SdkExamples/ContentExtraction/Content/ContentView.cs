@@ -13,6 +13,7 @@ using System.Text;
 using System.Windows.Forms;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Content.Sensitive;
 
 namespace ContentExtractionExample.Content
 {
@@ -66,15 +67,23 @@ namespace ContentExtractionExample.Content
         public void ClearView()
         {
             _metadataListView.Items.Clear();
-            _sensitiveItemsListView.Items.Clear();
             _attributesTextBox.Text = "";
             _hyperLinksListView.Items.Clear();
             _childDocsListView.Items.Clear();
             _langIdListView.Items.Clear();
             _langIdRegionsListView.Items.Clear();
+            _sensitiveItemsListView.Items.Clear();
+            _entityItemListView.Items.Clear();
 
             _extractedTextBox.Text    = "";
             _totalTextCharsLabel.Text = "";
+
+            _emailHeaderTraceTreeView.Nodes.Clear();
+            if (_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
+            {
+                _selectedChildInfoTabControl.TabPages.Remove(_emailTransportHeaderTraceTabPage);
+            }
+
 
             _pictureBox.Image = null;
             if (_selectedChildInfoTabControl.TabPages.Contains(_imageViewTabPage))
@@ -98,11 +107,12 @@ namespace ContentExtractionExample.Content
             }
 
             _metdataTabPage.Text        = "Metadata (0)";
-            _sensitiveItemsTabPage.Text = "Sensitive Items (0)";
             _attributesTabPage.Text     = "Attributes (0)";
             _hyperLinksTabPage.Text     = "Hyperlinks (0)";
             _languagesTabPage.Text      = "Languages (0)";
             _childrenTabPage.Text       = "Children (0)";
+            _sensitiveItemsTabPage.Text = "Sensitive Items (0)";
+            _entityItemsTabPage.Text    = "Entity Items (0)";
 
             _fileIdLabel.Text          = "";
             _classificationLabel.Text  = "";
@@ -421,12 +431,13 @@ namespace ContentExtractionExample.Content
             }
 
             _metdataTabPage.Text        = string.Format("Metadata ({0})",        _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
-            _sensitiveItemsTabPage.Text = string.Format("Sensitive Items ({0})", _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.Items.Count : 0);
             _attributesTabPage.Text     = string.Format("Attributes ({0})",     _docContent.Attributes.Count);
             _hyperLinksTabPage.Text     = string.Format("Hyperlinks ({0})",     _docContent.HyperLinks.Count);
             _languagesTabPage.Text      = string.Format("Languages ({0})",      _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
             _childrenTabPage.Text       = string.Format("Children ({0})",       _docContent.ChildDocuments.Count);
-                                                                                
+            _sensitiveItemsTabPage.Text = string.Format("Sensitive Items ({0})", _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.Items.Count : 0);
+            _entityItemsTabPage.Text    = string.Format("Entity Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.EntityItems.Count : 0);
+
             //
             // Set Sensitive Items:
             //
@@ -441,20 +452,163 @@ namespace ContentExtractionExample.Content
                         var item = new ListViewItem(sensitiveItem.ItemType.ToString());
                         item.UseItemStyleForSubItems = false;
 
+                        switch (sensitiveItem.ItemType)
+                        {
+                            case SensitiveItemType.Address:
+                                item.ImageIndex = 15;
+                                break;
+                            case SensitiveItemType.BankAccount:
+                            case SensitiveItemType.InvestmentAccount:
+                            case SensitiveItemType.IBANAccount:
+                                item.ImageIndex = 14;
+                                break;
+                            case SensitiveItemType.CreditCard:
+                                item.ImageIndex = 19;
+                                break;
+                            case SensitiveItemType.DatabaseCredential:
+                                if (sensitiveItem.Associated != null)
+                                {
+                                    if (sensitiveItem.Associated.StartsWith("azure")      || sensitiveItem.Associated.StartsWith("aws") ||
+                                        sensitiveItem.Associated.StartsWith("sharepoint") || sensitiveItem.Associated.StartsWith("onedrive"))
+                                    {
+                                        item.ImageIndex = 18;
+                                    }
+                                    else
+                                    {
+                                        item.ImageIndex = 20;
+                                    }
+                                }
+                                else
+                                {
+                                    item.ImageIndex = 20;
+                                }
+                                break;
+                            case SensitiveItemType.DateOfBirth:
+                                item.ImageIndex = 16;
+                                break;
+                            case SensitiveItemType.DriversLicense:
+                                item.ImageIndex = 21;
+                                break;
+                            case SensitiveItemType.EmailAddress:
+                                item.ImageIndex = 23;
+                                break;
+                            case SensitiveItemType.EmailAddressAndName:
+                                item.ImageIndex = 22;
+                                break;
+                            case SensitiveItemType.HealthCareNumberID:
+                                item.ImageIndex = 24;
+                                break;
+                            case SensitiveItemType.IPv4Address:
+                            case SensitiveItemType.IPv6Address:
+                                item.ImageIndex = 26;
+                                break;
+                            case SensitiveItemType.LicensePlateNumber:
+                                item.ImageIndex = 27;
+                                break;
+                            case SensitiveItemType.MaidenName:
+                                item.ImageIndex = 28;
+                                break;
+                            case SensitiveItemType.EmailAddressAndIPAddress:
+                                break;
+                            case SensitiveItemType.NetworkName:
+                                if (sensitiveItem.Keywords.StartsWith("wi", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    item.ImageIndex = 31;
+                                }
+                                else
+                                {
+                                    item.ImageIndex = 30;
+                                }
+                                break;
+                            case SensitiveItemType.Passport:
+                                item.ImageIndex = 32;
+                                break;
+                            case SensitiveItemType.Password:
+                                item.ImageIndex = 33;
+                                break;
+                            case SensitiveItemType.PhoneNumber:
+                                item.ImageIndex = 35;
+                                break;
+                            case SensitiveItemType.SocialSecurityNumber:
+                                item.ImageIndex = 37;
+                                break;
+                            case SensitiveItemType.Username:
+                                item.ImageIndex = 42;
+                                break;
+                            case SensitiveItemType.VehicleIdentificationNumber:
+                                item.ImageIndex = 43;
+                                break;
+                            case SensitiveItemType.SocialMediaAccount:
+                                {
+                                    if (sensitiveItem.Associated != null)
+                                    {
+                                        if (sensitiveItem.Associated.StartsWith("facebook"))
+                                        {
+                                            item.ImageIndex = 1;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("instagram"))
+                                        {
+                                            item.ImageIndex = 5;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("pinterest"))
+                                        {
+                                            item.ImageIndex = 6;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("linkedin"))
+                                        {
+                                            item.ImageIndex = 4;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("skype"))
+                                        {
+                                            item.ImageIndex = 8;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("reddit"))
+                                        {
+                                            item.ImageIndex = 7;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("tumblr"))
+                                        {
+                                            item.ImageIndex = 12;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("twitter"))
+                                        {
+                                            item.ImageIndex = 10;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("vimeo"))
+                                        {
+                                            item.ImageIndex = 11;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("youtube"))
+                                        {
+                                            item.ImageIndex = 13;
+                                        }
+                                        else if (sensitiveItem.Associated.StartsWith("snapchat"))
+                                        {
+                                            item.ImageIndex = 9;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+
                         item.SubItems.Add(sensitiveItem.MatchType.ToString());
-                        item.SubItems.Add(sensitiveItem.ProximityKeywords != null ? sensitiveItem.ProximityKeywords : "");
-                        item.SubItems.Add(sensitiveItem.Line.ToString());
-                        item.SubItems.Add(sensitiveItem.Start.ToString());
-                        item.SubItems.Add(sensitiveItem.End.ToString());
+                        item.SubItems.Add(sensitiveItem.Keywords   != null ? sensitiveItem.Keywords : "");
+                        item.SubItems.Add(sensitiveItem.Text       != null ? sensitiveItem.Text     : "");
+                        item.SubItems.Add(sensitiveItem.Context    != null ? sensitiveItem.Context  : "");
+                        item.SubItems.Add(sensitiveItem.Associated != null ? sensitiveItem.Associated : "");
 
                         var subItem = item.SubItems.Add(sensitiveItem.LocationType.ToString());
-                        if (sensitiveItem.LocationType == SensitiveItemLocationType.Metadata)
+                        if (sensitiveItem.LocationType == ItemLocationType.Metadata)
                         {
                             subItem.ForeColor = Color.Blue;
                         }
-                        if (sensitiveItem.LocationType == SensitiveItemLocationType.Hyperlink)
+                        else if (sensitiveItem.LocationType == ItemLocationType.Hyperlink)
                         {
-                            subItem.ForeColor = Color.Magenta;
+                            subItem.ForeColor = Color.DarkMagenta;
+                        }
+                        else if (sensitiveItem.LocationType == ItemLocationType.Content)
+                        {
+                            subItem.ForeColor = Color.DarkOrange;
                         }
 
                         subItem = item.SubItems.Add(sensitiveItem.MetadataName != null ? sensitiveItem.MetadataName : "");
@@ -463,11 +617,12 @@ namespace ContentExtractionExample.Content
                             subItem.ForeColor = Color.DarkRed;
                         }
 
-                        item.SubItems.Add(sensitiveItem.Extra != null ? sensitiveItem.Extra : "");
-                        item.SubItems.Add(sensitiveItem.Text  != null ? sensitiveItem.Text : "");
+                        item.SubItems.Add(sensitiveItem.Start.ToString());
+                        item.SubItems.Add(sensitiveItem.End.ToString());
                         item.Tag = sensitiveItem;
 
                         _sensitiveItemsListView.Items.Add(item);
+
                     }
                 }
                 finally
@@ -475,6 +630,209 @@ namespace ContentExtractionExample.Content
                     _sensitiveItemsListView.EndUpdate();
                 }
             }
+
+            try
+            {
+                _emailHeaderTraceTreeView.BeginUpdate();
+
+                if (_docContent.SensitiveItemResult.EmailTransportHeadersTrace != null &&
+                    _docContent.SensitiveItemResult.EmailTransportHeadersTrace.Count > 0)
+                {
+                    if (!_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
+                    {
+                        _selectedChildInfoTabControl.TabPages.Add(_emailTransportHeaderTraceTabPage);
+                    }
+
+                    var root = _emailHeaderTraceTreeView.Nodes.Add("Headers - Top Down");
+                    root.ImageIndex        = 0;
+                    root.SelectedImageIndex = 0;
+
+                    foreach (var header in _docContent.SensitiveItemResult.EmailTransportHeadersTrace)
+                    {
+                        var item = new TreeNode();
+                        item.Text = header.Name;
+                        item.Tag  = header.Text;
+
+                        if (header.Name.StartsWith("Received"))
+                        {
+                            item.ImageIndex = 4;
+                            item.SelectedImageIndex = 4;
+                        }
+                        else if (header.Name == "Date")
+                        {
+                            item.ImageIndex = 7;
+                            item.SelectedImageIndex = 7;
+                        }
+                        else
+                        {
+                            item.ImageIndex = 1;
+                            item.SelectedImageIndex = 1;
+                        }
+
+                        if (header.Items != null && header.Items.Count > 0)
+                        {
+                            foreach (var hItem in header.Items)
+                            {
+                                var itemChildNode = new TreeNode();
+                                if (hItem.ItemType == SensitiveItemType.EmailAddress)
+                                {
+                                    itemChildNode.Text = hItem.Text;
+                                    itemChildNode.ImageIndex = 5;
+                                    itemChildNode.SelectedImageIndex = 5;
+                                    item.Nodes.Add(itemChildNode);
+                                }
+                                if (hItem.ItemType == SensitiveItemType.IPv4Address ||
+                                    hItem.ItemType == SensitiveItemType.IPv6Address)
+                                {
+                                    itemChildNode.Text = hItem.Text;
+                                    itemChildNode.ImageIndex = 6;
+                                    itemChildNode.SelectedImageIndex = 6;
+                                    item.Nodes.Add(itemChildNode);
+                                }
+                            }
+                        }
+
+                        root.Nodes.Add(item);
+                    }
+                }
+            }
+            finally
+            {
+                _emailHeaderTraceTreeView.EndUpdate();
+                if (_emailHeaderTraceTreeView.Nodes != null && _emailHeaderTraceTreeView.Nodes.Count > 0)
+                {
+                    _emailHeaderTraceTreeView.ExpandAll();
+                    _emailHeaderTraceTreeView.SelectedNode = _emailHeaderTraceTreeView.Nodes[0];
+                }
+            }
+
+            //
+            // Set Entity Items:
+            //
+            if (_docContent.SensitiveItemResult.EntityItems.Count > 0)
+            {
+                try
+                {
+                    _entityItemListView.BeginUpdate();
+
+                    foreach (var entityItem in _docContent.SensitiveItemResult.EntityItems)
+                    {
+                        var item = new ListViewItem(entityItem.ItemType.ToString());
+                        item.UseItemStyleForSubItems = false;
+
+                        item.SubItems.Add(entityItem.IdentifierType.HasValue ? entityItem.IdentifierType.Value.ToString() : "");
+                        item.SubItems.Add(entityItem.Keywords != null ? entityItem.Keywords : "");
+                        item.SubItems.Add(entityItem.Text != null ? entityItem.Text : "");
+
+                        var subItem = item.SubItems.Add(entityItem.LocationType.ToString());
+                        if (entityItem.LocationType == ItemLocationType.Metadata)
+                        {
+                            subItem.ForeColor = Color.Blue;
+                        }
+                        else if (entityItem.LocationType == ItemLocationType.Hyperlink)
+                        {
+                            subItem.ForeColor = Color.DarkMagenta;
+                        }
+                        else if (entityItem.LocationType == ItemLocationType.Content)
+                        {
+                            subItem.ForeColor = Color.DarkOrange;
+                        }
+
+                        subItem = item.SubItems.Add(entityItem.MetadataName != null ? entityItem.MetadataName : "");
+                        if (entityItem.MetadataName != null)
+                        {
+                            subItem.ForeColor = Color.DarkRed;
+                        }
+
+                        item.SubItems.Add(entityItem.Start.ToString());
+                        item.SubItems.Add(entityItem.End.ToString());
+
+                        item.Tag = entityItem;
+
+                        _entityItemListView.Items.Add(item);
+                    }
+                }
+                finally
+                {
+                    _entityItemListView.EndUpdate();
+                }
+
+                try
+                {
+                    _emailHeaderTraceTreeView.BeginUpdate();
+
+                    if (_docContent.SensitiveItemResult.EmailTransportHeadersTrace != null &&
+                        _docContent.SensitiveItemResult.EmailTransportHeadersTrace.Count > 0)
+                    {
+                        if (!_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
+                        {
+                            _selectedChildInfoTabControl.TabPages.Add(_emailTransportHeaderTraceTabPage);
+                        }
+
+                        var root = _emailHeaderTraceTreeView.Nodes.Add("Headers - Top Down");
+                        root.ImageIndex = 0;
+                        root.SelectedImageIndex = 0;
+
+                        foreach (var header in _docContent.SensitiveItemResult.EmailTransportHeadersTrace)
+                        {
+                            var item = new TreeNode();
+                            item.Text = header.Name;
+                            item.Tag = header.Text;
+
+                            if (header.Name.StartsWith("Received"))
+                            {
+                                item.ImageIndex = 4;
+                                item.SelectedImageIndex = 4;
+                            }
+                            else if (header.Name == "Date")
+                            {
+                                item.ImageIndex = 7;
+                                item.SelectedImageIndex = 7;
+                            }
+                            else
+                            {
+                                item.ImageIndex = 1;
+                                item.SelectedImageIndex = 1;
+                            }
+
+                            if (header.Items != null && header.Items.Count > 0)
+                            {
+                                foreach (var hItem in header.Items)
+                                {
+                                    var itemChildNode = new TreeNode();
+                                    if (hItem.ItemType == SensitiveItemType.EmailAddress)
+                                    {
+                                        itemChildNode.Text = hItem.Text;
+                                        itemChildNode.ImageIndex = 5;
+                                        itemChildNode.SelectedImageIndex = 5;
+                                        item.Nodes.Add(itemChildNode);
+                                    }
+                                    if (hItem.ItemType == SensitiveItemType.IPv4Address ||
+                                        hItem.ItemType == SensitiveItemType.IPv6Address)
+                                    {
+                                        itemChildNode.Text = hItem.Text;
+                                        itemChildNode.ImageIndex = 6;
+                                        itemChildNode.SelectedImageIndex = 6;
+                                        item.Nodes.Add(itemChildNode);
+                                    }
+                                }
+                            }
+
+                            root.Nodes.Add(item);
+                        }
+                    }
+                }
+                finally
+                {
+                    _emailHeaderTraceTreeView.EndUpdate();
+                    if (_emailHeaderTraceTreeView.Nodes != null && _emailHeaderTraceTreeView.Nodes.Count > 0)
+                    {
+                        _emailHeaderTraceTreeView.ExpandAll();
+                        _emailHeaderTraceTreeView.SelectedNode = _emailHeaderTraceTreeView.Nodes[0];
+                    }
+                }
+            }
+
 
             //
             // Set metadata:
@@ -777,6 +1135,7 @@ namespace ContentExtractionExample.Content
         }
         #endregion
 
+
         #region private void _sensitiveItemListView_SelectedIndexChanged(object sender, EventArgs e)
         private void _sensitiveItemListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -801,5 +1160,49 @@ namespace ContentExtractionExample.Content
             }
         }
         #endregion
+
+        #region private void _entityItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _entityItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_entityItemListView.SelectedItems.Count == 1)
+                {
+                    var item = _entityItemListView.SelectedItems[0].Tag as EntityItem;
+                    if (item != null)
+                    {
+                        _selectedChildInfoTabControl.SelectedTab = _textTabPage;
+                        _extractedTextBox.Focus();
+                        _extractedTextBox.SelectionStart  = item.Start;
+                        _extractedTextBox.SelectionLength = item.End - item.Start + 1;
+                        _extractedTextBox.ScrollToCaret();
+                        _entityItemListView.Focus();
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+        #endregion
+
+        #region private void _emailHeaderTraceTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        private void _emailHeaderTraceTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            try
+            {
+                if (_emailHeaderTraceTreeView.SelectedNode != null && _emailHeaderTraceTreeView.SelectedNode.Tag != null)
+                {
+                    _transportHeaderValueTextBox.Text = _emailHeaderTraceTreeView.SelectedNode.Tag as string;
+                }
+                else
+                {
+                    _transportHeaderValueTextBox.Text = "";
+                }
+            }
+            catch { }
+        }
+        #endregion
+
     }
 }

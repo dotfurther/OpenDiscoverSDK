@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContentView));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this._docTypeTabControl = new System.Windows.Forms.TabControl();
@@ -139,13 +140,14 @@
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._sensitiveItemsImageList = new System.Windows.Forms.ImageList(this.components);
             this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
             this._hyperLinksListView = new System.Windows.Forms.ListView();
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -180,7 +182,22 @@
             this._extractedTextBox = new System.Windows.Forms.TextBox();
             this._imageViewTabPage = new System.Windows.Forms.TabPage();
             this._pictureBox = new System.Windows.Forms.PictureBox();
+            this._emailTransportHeaderTraceTabPage = new System.Windows.Forms.TabPage();
+            this._transportHeaderSplitContainer = new System.Windows.Forms.SplitContainer();
+            this._emailHeaderTraceTreeView = new System.Windows.Forms.TreeView();
+            this._headersImageList = new System.Windows.Forms.ImageList(this.components);
+            this._transportHeaderValueTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this._entityItemsTabPage = new System.Windows.Forms.TabPage();
+            this._entityItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -219,6 +236,12 @@
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
+            this._emailTransportHeaderTraceTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._transportHeaderSplitContainer)).BeginInit();
+            this._transportHeaderSplitContainer.Panel1.SuspendLayout();
+            this._transportHeaderSplitContainer.Panel2.SuspendLayout();
+            this._transportHeaderSplitContainer.SuspendLayout();
+            this._entityItemsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -1195,10 +1218,11 @@
             // 
             this._featuresTabControl.Controls.Add(this._metdataTabPage);
             this._featuresTabControl.Controls.Add(this._attributesTabPage);
-            this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
             this._featuresTabControl.Controls.Add(this._hyperLinksTabPage);
             this._featuresTabControl.Controls.Add(this._languagesTabPage);
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
+            this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
+            this._featuresTabControl.Controls.Add(this._entityItemsTabPage);
             this._featuresTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._featuresTabControl.Location = new System.Drawing.Point(0, 0);
             this._featuresTabControl.Name = "_featuresTabControl";
@@ -1294,19 +1318,20 @@
             this.columnHeader23,
             this.columnHeader45,
             this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader48,
-            this.columnHeader49,
+            this.columnHeader51,
+            this.columnHeader24,
+            this.columnHeader50,
             this.columnHeader52,
             this.columnHeader53,
-            this.columnHeader50,
-            this.columnHeader51});
+            this.columnHeader48,
+            this.columnHeader49});
             this._sensitiveItemsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._sensitiveItemsListView.FullRowSelect = true;
             this._sensitiveItemsListView.HideSelection = false;
             this._sensitiveItemsListView.Location = new System.Drawing.Point(0, 0);
             this._sensitiveItemsListView.Name = "_sensitiveItemsListView";
             this._sensitiveItemsListView.Size = new System.Drawing.Size(505, 307);
+            this._sensitiveItemsListView.SmallImageList = this._sensitiveItemsImageList;
             this._sensitiveItemsListView.TabIndex = 8;
             this._sensitiveItemsListView.UseCompatibleStateImageBehavior = false;
             this._sensitiveItemsListView.View = System.Windows.Forms.View.Details;
@@ -1324,13 +1349,30 @@
             // 
             // columnHeader46
             // 
-            this.columnHeader46.Text = "ProximityKeywords";
+            this.columnHeader46.Text = "Keywords";
             this.columnHeader46.Width = 98;
             // 
-            // columnHeader47
+            // columnHeader51
             // 
-            this.columnHeader47.Text = "Line";
-            this.columnHeader47.Width = 40;
+            this.columnHeader51.Text = "Text";
+            this.columnHeader51.Width = 150;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Context";
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "Associated";
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Text = "LocationType";
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "MetadataName";
+            this.columnHeader53.Width = 70;
             // 
             // columnHeader48
             // 
@@ -1342,23 +1384,60 @@
             this.columnHeader49.Text = "End";
             this.columnHeader49.Width = 40;
             // 
-            // columnHeader52
+            // _sensitiveItemsImageList
             // 
-            this.columnHeader52.Text = "LocationType";
-            // 
-            // columnHeader53
-            // 
-            this.columnHeader53.Text = "MetadataName";
-            this.columnHeader53.Width = 70;
-            // 
-            // columnHeader50
-            // 
-            this.columnHeader50.Text = "Extra";
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Text = "Text";
-            this.columnHeader51.Width = 150;
+            this._sensitiveItemsImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_sensitiveItemsImageList.ImageStream")));
+            this._sensitiveItemsImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this._sensitiveItemsImageList.Images.SetKeyName(0, "digg.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(1, "facebook.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(2, "flickr.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(3, "google-plus.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(4, "linkedin.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(5, "instagram.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(6, "pinterest.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(7, "reddit.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(8, "skype.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(9, "snapchat.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(10, "twitter.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(11, "vimeo.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(12, "tumblr.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(13, "youtube.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(14, "Account_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(15, "Address_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(16, "Calendar_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(17, "Camera_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(18, "CloudFolder_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(19, "CreditCard.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(20, "Database_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(21, "DriversLicense.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(22, "EmailAddressAndName_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(23, "EmailAddressViewer_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(24, "HealthInsurance.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(25, "HyperLink_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(26, "IPAddressControl_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(27, "LicensePlateNum.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(28, "MaidenName.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(29, "MedicalRecordEntity.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(30, "Network_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(31, "NetworkHub_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(32, "Passport.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(33, "PasswordStrength_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(34, "PhoneHighResolution_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(35, "PhoneNumber.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(36, "RemoteServer_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(37, "SSN.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(38, "TransactionScope_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(39, "URLInputBox_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(40, "UseCaseDiagram_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(41, "User_noHalo_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(42, "UserApplication_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(43, "VIN.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(44, "2020-07-27_16-09-44.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(45, "Certificate_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(46, "Contract_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(47, "EntitySet_16x.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(48, "LicenseNumber.png");
+            this._sensitiveItemsImageList.Images.SetKeyName(49, "Policy_16x.png");
             // 
             // _hyperLinksTabPage
             // 
@@ -1601,6 +1680,7 @@
             // 
             this._selectedChildInfoTabControl.Controls.Add(this._textTabPage);
             this._selectedChildInfoTabControl.Controls.Add(this._imageViewTabPage);
+            this._selectedChildInfoTabControl.Controls.Add(this._emailTransportHeaderTraceTabPage);
             this._selectedChildInfoTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._selectedChildInfoTabControl.Location = new System.Drawing.Point(0, 0);
             this._selectedChildInfoTabControl.Name = "_selectedChildInfoTabControl";
@@ -1653,6 +1733,147 @@
             this._pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
+            // 
+            // _emailTransportHeaderTraceTabPage
+            // 
+            this._emailTransportHeaderTraceTabPage.Controls.Add(this._transportHeaderSplitContainer);
+            this._emailTransportHeaderTraceTabPage.Location = new System.Drawing.Point(4, 22);
+            this._emailTransportHeaderTraceTabPage.Name = "_emailTransportHeaderTraceTabPage";
+            this._emailTransportHeaderTraceTabPage.Size = new System.Drawing.Size(1125, 334);
+            this._emailTransportHeaderTraceTabPage.TabIndex = 3;
+            this._emailTransportHeaderTraceTabPage.Text = "Email Transport Header Trace";
+            this._emailTransportHeaderTraceTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _transportHeaderSplitContainer
+            // 
+            this._transportHeaderSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._transportHeaderSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this._transportHeaderSplitContainer.Name = "_transportHeaderSplitContainer";
+            // 
+            // _transportHeaderSplitContainer.Panel1
+            // 
+            this._transportHeaderSplitContainer.Panel1.Controls.Add(this._emailHeaderTraceTreeView);
+            // 
+            // _transportHeaderSplitContainer.Panel2
+            // 
+            this._transportHeaderSplitContainer.Panel2.Controls.Add(this._transportHeaderValueTextBox);
+            this._transportHeaderSplitContainer.Size = new System.Drawing.Size(1125, 334);
+            this._transportHeaderSplitContainer.SplitterDistance = 375;
+            this._transportHeaderSplitContainer.TabIndex = 0;
+            // 
+            // _emailHeaderTraceTreeView
+            // 
+            this._emailHeaderTraceTreeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._emailHeaderTraceTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._emailHeaderTraceTreeView.ImageIndex = 0;
+            this._emailHeaderTraceTreeView.ImageList = this._headersImageList;
+            this._emailHeaderTraceTreeView.Location = new System.Drawing.Point(0, 0);
+            this._emailHeaderTraceTreeView.Name = "_emailHeaderTraceTreeView";
+            this._emailHeaderTraceTreeView.SelectedImageIndex = 0;
+            this._emailHeaderTraceTreeView.Size = new System.Drawing.Size(375, 334);
+            this._emailHeaderTraceTreeView.TabIndex = 1;
+            this._emailHeaderTraceTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this._emailHeaderTraceTreeView_AfterSelect);
+            // 
+            // _headersImageList
+            // 
+            this._headersImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("_headersImageList.ImageStream")));
+            this._headersImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this._headersImageList.Images.SetKeyName(0, "Accordion_16x.png");
+            this._headersImageList.Images.SetKeyName(1, "AcrylicBrush_16x.png");
+            this._headersImageList.Images.SetKeyName(2, "EmailAddressViewer_16x.png");
+            this._headersImageList.Images.SetKeyName(3, "HeadingOne_16x.png");
+            this._headersImageList.Images.SetKeyName(4, "IPAddressControl_16x.png");
+            this._headersImageList.Images.SetKeyName(5, "ReceiveMail_16x.png");
+            this._headersImageList.Images.SetKeyName(6, "RemoteServer_16x.png");
+            this._headersImageList.Images.SetKeyName(7, "SendEmail_16x.png");
+            // 
+            // _transportHeaderValueTextBox
+            // 
+            this._transportHeaderValueTextBox.AcceptsReturn = true;
+            this._transportHeaderValueTextBox.AcceptsTab = true;
+            this._transportHeaderValueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._transportHeaderValueTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._transportHeaderValueTextBox.Location = new System.Drawing.Point(0, 0);
+            this._transportHeaderValueTextBox.Multiline = true;
+            this._transportHeaderValueTextBox.Name = "_transportHeaderValueTextBox";
+            this._transportHeaderValueTextBox.ReadOnly = true;
+            this._transportHeaderValueTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this._transportHeaderValueTextBox.Size = new System.Drawing.Size(746, 334);
+            this._transportHeaderValueTextBox.TabIndex = 1;
+            // 
+            // _entityItemsTabPage
+            // 
+            this._entityItemsTabPage.Controls.Add(this._entityItemListView);
+            this._entityItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._entityItemsTabPage.Name = "_entityItemsTabPage";
+            this._entityItemsTabPage.Size = new System.Drawing.Size(505, 307);
+            this._entityItemsTabPage.TabIndex = 6;
+            this._entityItemsTabPage.Text = "Entity Items (0)";
+            this._entityItemsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _entityItemListView
+            // 
+            this._entityItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._entityItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader47,
+            this.columnHeader55,
+            this.columnHeader56,
+            this.columnHeader57,
+            this.columnHeader60,
+            this.columnHeader61,
+            this.columnHeader62,
+            this.columnHeader63});
+            this._entityItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._entityItemListView.FullRowSelect = true;
+            this._entityItemListView.HideSelection = false;
+            this._entityItemListView.Location = new System.Drawing.Point(0, 0);
+            this._entityItemListView.Name = "_entityItemListView";
+            this._entityItemListView.Size = new System.Drawing.Size(505, 307);
+            this._entityItemListView.SmallImageList = this._sensitiveItemsImageList;
+            this._entityItemListView.TabIndex = 9;
+            this._entityItemListView.UseCompatibleStateImageBehavior = false;
+            this._entityItemListView.View = System.Windows.Forms.View.Details;
+            this._entityItemListView.SelectedIndexChanged += new System.EventHandler(this._entityItemListView_SelectedIndexChanged);
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "ItemType";
+            this.columnHeader47.Width = 78;
+            // 
+            // columnHeader55
+            // 
+            this.columnHeader55.Text = "IdentifierType";
+            this.columnHeader55.Width = 82;
+            // 
+            // columnHeader56
+            // 
+            this.columnHeader56.Text = "Keywords";
+            this.columnHeader56.Width = 104;
+            // 
+            // columnHeader57
+            // 
+            this.columnHeader57.Text = "Text";
+            this.columnHeader57.Width = 118;
+            // 
+            // columnHeader60
+            // 
+            this.columnHeader60.Text = "LocationType";
+            this.columnHeader60.Width = 81;
+            // 
+            // columnHeader61
+            // 
+            this.columnHeader61.Text = "MetadataName";
+            this.columnHeader61.Width = 88;
+            // 
+            // columnHeader62
+            // 
+            this.columnHeader62.Text = "Start";
+            this.columnHeader62.Width = 40;
+            // 
+            // columnHeader63
+            // 
+            this.columnHeader63.Text = "End";
+            this.columnHeader63.Width = 40;
             // 
             // ContentView
             // 
@@ -1709,6 +1930,13 @@
             this._textTabPage.PerformLayout();
             this._imageViewTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
+            this._emailTransportHeaderTraceTabPage.ResumeLayout(false);
+            this._transportHeaderSplitContainer.Panel1.ResumeLayout(false);
+            this._transportHeaderSplitContainer.Panel2.ResumeLayout(false);
+            this._transportHeaderSplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._transportHeaderSplitContainer)).EndInit();
+            this._transportHeaderSplitContainer.ResumeLayout(false);
+            this._entityItemsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1858,7 +2086,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ColumnHeader columnHeader45;
         private System.Windows.Forms.ColumnHeader columnHeader46;
-        private System.Windows.Forms.ColumnHeader columnHeader47;
         private System.Windows.Forms.ColumnHeader columnHeader48;
         private System.Windows.Forms.ColumnHeader columnHeader49;
         private System.Windows.Forms.ColumnHeader columnHeader52;
@@ -1867,5 +2094,22 @@
         private System.Windows.Forms.ColumnHeader columnHeader51;
         private System.Windows.Forms.Label _fileEntropyLabel;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ColumnHeader columnHeader24;
+        private System.Windows.Forms.ImageList _sensitiveItemsImageList;
+        private System.Windows.Forms.TabPage _emailTransportHeaderTraceTabPage;
+        private System.Windows.Forms.SplitContainer _transportHeaderSplitContainer;
+        private System.Windows.Forms.TreeView _emailHeaderTraceTreeView;
+        private System.Windows.Forms.TextBox _transportHeaderValueTextBox;
+        private System.Windows.Forms.ImageList _headersImageList;
+        private System.Windows.Forms.TabPage _entityItemsTabPage;
+        private System.Windows.Forms.ListView _entityItemListView;
+        private System.Windows.Forms.ColumnHeader columnHeader47;
+        private System.Windows.Forms.ColumnHeader columnHeader55;
+        private System.Windows.Forms.ColumnHeader columnHeader56;
+        private System.Windows.Forms.ColumnHeader columnHeader57;
+        private System.Windows.Forms.ColumnHeader columnHeader60;
+        private System.Windows.Forms.ColumnHeader columnHeader61;
+        private System.Windows.Forms.ColumnHeader columnHeader62;
+        private System.Windows.Forms.ColumnHeader columnHeader63;
     }
 }

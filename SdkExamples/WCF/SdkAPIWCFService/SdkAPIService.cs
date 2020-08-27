@@ -20,6 +20,7 @@ using System.Text;
 using OpenDiscoverSDK;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Extractors;
 using OpenDiscoverSDK.Interfaces.Settings;
 using SdkAPI.Common;
 
