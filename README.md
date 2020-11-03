@@ -10,7 +10,9 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - Extracting embedded items/attachments from supported document formats
 - Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 - Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
-- Detecting 14 types of personally identifiable information (PII) and also custom defined PII term sequences in extracted text and metadata.
+- Detecting 18 types of personally identifiable information (PII) (in extracted text and metadata):
+- Detecting 4 types of sensitive security information (in extracted text and metadata):
+- Detecting custom defined sensitive item search types in extracted text and metadata.
 
 ## The Open Discover SDK API is purposed for users to develop higher level document processing applications for:
 - Full text indexing/search
@@ -19,8 +21,8 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 - Information governance
 - Website crawling/full-text website search
 - Enterprise search and content management
-- IT Departments - identify and de-duplicate documents on file servers. 
-- eDiscovery applications 
+- IT Departments - identify documents with sensitive information and/or de-duplicate documents on file servers. 
+- eDiscovery applications such as early case assessment (ECA) or full processing
 - And more...
 
 ## Open Discover SDK Help:
@@ -46,3 +48,4 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    - Indexing document format classification as fields (ex: WordProcessing, Spreadsheet, etc are file format classifications). Users can limit searches to all "WordProcessing" or all "Spreadsheet" document classifications, for example.
    - Indexing MD5/SHA-1 binary and content based hashes as fields. When searching index, duplicate documents returned by a search can be indicated and grouped together.
    - Indexing languages identified in extracted text as a field to aid in searching for documents that contain foreign languages.
+   - Indexing the sensitive item information (PII) in order to find sensitive documents.
