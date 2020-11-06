@@ -73,6 +73,7 @@ namespace ContentExtractionExample.Content
             _langIdListView.Items.Clear();
             _langIdRegionsListView.Items.Clear();
             _sensitiveItemsListView.Items.Clear();
+            _custSenItemListView.Items.Clear();
             _entityItemListView.Items.Clear();
 
             _extractedTextBox.Text    = "";
@@ -112,6 +113,7 @@ namespace ContentExtractionExample.Content
             _languagesTabPage.Text      = "Languages (0)";
             _childrenTabPage.Text       = "Children (0)";
             _sensitiveItemsTabPage.Text = "Sensitive Items (0)";
+            _customItemsTabPage.Text    = "Custom Items (0)";
             _entityItemsTabPage.Text    = "Entity Items (0)";
 
             _fileIdLabel.Text          = "";
@@ -436,6 +438,7 @@ namespace ContentExtractionExample.Content
             _languagesTabPage.Text      = string.Format("Languages ({0})",      _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
             _childrenTabPage.Text       = string.Format("Children ({0})",       _docContent.ChildDocuments.Count);
             _sensitiveItemsTabPage.Text = string.Format("Sensitive Items ({0})", _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.Items.Count : 0);
+            _customItemsTabPage.Text    = string.Format("Custom Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.CustomItems.Count : 0);
             _entityItemsTabPage.Text    = string.Format("Entity Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.EntityItems.Count : 0);
 
             //
@@ -833,6 +836,54 @@ namespace ContentExtractionExample.Content
                 }
             }
 
+            //
+            // Custom Sensitive Items:
+            //
+            if (_docContent.SensitiveItemResult.CustomItems.Count > 0)
+            {
+                try
+                {
+                    _custSenItemListView.BeginUpdate();
+
+                    foreach (var customItem in _docContent.SensitiveItemResult.CustomItems)
+                    {
+                        var item = new ListViewItem(customItem.ItemType.ToString());
+                        item.UseItemStyleForSubItems = false;
+
+                        item.SubItems.Add(customItem.MatchType.ToString());
+                        item.SubItems.Add(customItem.CustomItemName           != null ? customItem.CustomItemName : "");
+                        item.SubItems.Add(customItem.CustomItemClassification != null ? customItem.CustomItemClassification : "");
+                        item.SubItems.Add(customItem.Keywords != null ? customItem.Keywords : "");
+                        item.SubItems.Add(customItem.Text     != null ? customItem.Text : "");
+
+                        var subItem = item.SubItems.Add(customItem.LocationType.ToString());
+                        if (customItem.LocationType == ItemLocationType.Metadata)
+                        {
+                            subItem.ForeColor = Color.Blue;
+                        }
+                        else if (customItem.LocationType == ItemLocationType.Hyperlink)
+                        {
+                            subItem.ForeColor = Color.DarkMagenta;
+                        }
+                        else if (customItem.LocationType == ItemLocationType.Content)
+                        {
+                            subItem.ForeColor = Color.DarkOrange;
+                        }
+
+                        item.SubItems.Add(customItem.Start.ToString());
+                        item.SubItems.Add(customItem.End.ToString());
+
+                        item.Tag = customItem;
+
+                        _custSenItemListView.Items.Add(item);
+                    }
+                }
+                finally
+                {
+                    _custSenItemListView.EndUpdate();
+                }
+            }
+
 
             //
             // Set metadata:
@@ -1204,5 +1255,29 @@ namespace ContentExtractionExample.Content
         }
         #endregion
 
+        #region private void _custSenItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _custSenItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_custSenItemListView.SelectedItems.Count == 1)
+                {
+                    var result = _custSenItemListView.SelectedItems[0].Tag as SensitiveItem;
+                    if (result != null)
+                    {
+                        _selectedChildInfoTabControl.SelectedTab = _textTabPage;
+                        _extractedTextBox.Focus();
+                        _extractedTextBox.SelectionStart  = result.Start;
+                        _extractedTextBox.SelectionLength = result.End - result.Start + 1;
+                        _extractedTextBox.ScrollToCaret();
+                        _custSenItemListView.Focus();
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+        #endregion
     }
 }

@@ -75,6 +75,7 @@
             this._sensitiveItemTabPage = new System.Windows.Forms.TabPage();
             this._sensitiveItemTabControl = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this._cryptoCurrencyAddressCheckBox = new System.Windows.Forms.CheckBox();
             this._healthCareNumberCheckBox = new System.Windows.Forms.CheckBox();
             this._vinCheckBox = new System.Windows.Forms.CheckBox();
             this._licensePlateNumCheckBox = new System.Windows.Forms.CheckBox();
@@ -97,6 +98,9 @@
             this._networkNameCheckBox = new System.Windows.Forms.CheckBox();
             this._usernameCheckBox = new System.Windows.Forms.CheckBox();
             this._passwordCheckBox4 = new System.Windows.Forms.CheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this._dedupEntityItemsCheckBox = new System.Windows.Forms.CheckBox();
+            this._dedupSensitiveItemsCheckBox = new System.Windows.Forms.CheckBox();
             this._enableSensitiveItemsCheckCheckBox = new System.Windows.Forms.CheckBox();
             this._timeZoneTabPage = new System.Windows.Forms.TabPage();
             this._UserMapiPropertyRequestsButton = new System.Windows.Forms.Button();
@@ -118,6 +122,10 @@
             this._logTextBox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this._numCustItemDefsLoadedLabel = new System.Windows.Forms.Label();
+            this._loadCustomSensitiveItemDefButton = new System.Windows.Forms.Button();
+            this._customSensitiveItemCheckBox = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -140,9 +148,11 @@
             this._sensitiveItemTabControl.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this._timeZoneTabPage.SuspendLayout();
             this._tabControl.SuspendLayout();
             this._logTabPage.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -705,6 +715,8 @@
             // 
             this._sensitiveItemTabControl.Controls.Add(this.tabPage2);
             this._sensitiveItemTabControl.Controls.Add(this.tabPage3);
+            this._sensitiveItemTabControl.Controls.Add(this.tabPage4);
+            this._sensitiveItemTabControl.Controls.Add(this.tabPage5);
             this._sensitiveItemTabControl.Enabled = false;
             this._sensitiveItemTabControl.Location = new System.Drawing.Point(0, 22);
             this._sensitiveItemTabControl.Name = "_sensitiveItemTabControl";
@@ -714,6 +726,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this._cryptoCurrencyAddressCheckBox);
             this.tabPage2.Controls.Add(this._healthCareNumberCheckBox);
             this.tabPage2.Controls.Add(this._vinCheckBox);
             this.tabPage2.Controls.Add(this._licensePlateNumCheckBox);
@@ -738,6 +751,16 @@
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Personal";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // _cryptoCurrencyAddressCheckBox
+            // 
+            this._cryptoCurrencyAddressCheckBox.AutoSize = true;
+            this._cryptoCurrencyAddressCheckBox.Location = new System.Drawing.Point(157, 164);
+            this._cryptoCurrencyAddressCheckBox.Name = "_cryptoCurrencyAddressCheckBox";
+            this._cryptoCurrencyAddressCheckBox.Size = new System.Drawing.Size(138, 17);
+            this._cryptoCurrencyAddressCheckBox.TabIndex = 24;
+            this._cryptoCurrencyAddressCheckBox.Text = "Cryptocurrency Address";
+            this._cryptoCurrencyAddressCheckBox.UseVisualStyleBackColor = true;
             // 
             // _healthCareNumberCheckBox
             // 
@@ -822,7 +845,7 @@
             // _passportCheckBox
             // 
             this._passportCheckBox.AutoSize = true;
-            this._passportCheckBox.Location = new System.Drawing.Point(12, 158);
+            this._passportCheckBox.Location = new System.Drawing.Point(12, 163);
             this._passportCheckBox.Name = "_passportCheckBox";
             this._passportCheckBox.Size = new System.Drawing.Size(67, 17);
             this._passportCheckBox.TabIndex = 9;
@@ -832,7 +855,7 @@
             // _driversLicenseCheckBox
             // 
             this._driversLicenseCheckBox.AutoSize = true;
-            this._driversLicenseCheckBox.Location = new System.Drawing.Point(12, 141);
+            this._driversLicenseCheckBox.Location = new System.Drawing.Point(12, 143);
             this._driversLicenseCheckBox.Name = "_driversLicenseCheckBox";
             this._driversLicenseCheckBox.Size = new System.Drawing.Size(101, 17);
             this._driversLicenseCheckBox.TabIndex = 8;
@@ -842,7 +865,7 @@
             // _emailAddressCheckBox
             // 
             this._emailAddressCheckBox.AutoSize = true;
-            this._emailAddressCheckBox.Location = new System.Drawing.Point(12, 123);
+            this._emailAddressCheckBox.Location = new System.Drawing.Point(12, 125);
             this._emailAddressCheckBox.Name = "_emailAddressCheckBox";
             this._emailAddressCheckBox.Size = new System.Drawing.Size(92, 17);
             this._emailAddressCheckBox.TabIndex = 7;
@@ -852,7 +875,7 @@
             // _phoneNumberCheckBox
             // 
             this._phoneNumberCheckBox.AutoSize = true;
-            this._phoneNumberCheckBox.Location = new System.Drawing.Point(12, 104);
+            this._phoneNumberCheckBox.Location = new System.Drawing.Point(12, 105);
             this._phoneNumberCheckBox.Name = "_phoneNumberCheckBox";
             this._phoneNumberCheckBox.Size = new System.Drawing.Size(97, 17);
             this._phoneNumberCheckBox.TabIndex = 6;
@@ -862,7 +885,7 @@
             // _investmentAccountCheckBox
             // 
             this._investmentAccountCheckBox.AutoSize = true;
-            this._investmentAccountCheckBox.Location = new System.Drawing.Point(12, 84);
+            this._investmentAccountCheckBox.Location = new System.Drawing.Point(12, 85);
             this._investmentAccountCheckBox.Name = "_investmentAccountCheckBox";
             this._investmentAccountCheckBox.Size = new System.Drawing.Size(121, 17);
             this._investmentAccountCheckBox.TabIndex = 4;
@@ -872,7 +895,7 @@
             // _ibanCheckBox
             // 
             this._ibanCheckBox.AutoSize = true;
-            this._ibanCheckBox.Location = new System.Drawing.Point(12, 64);
+            this._ibanCheckBox.Location = new System.Drawing.Point(12, 65);
             this._ibanCheckBox.Name = "_ibanCheckBox";
             this._ibanCheckBox.Size = new System.Drawing.Size(94, 17);
             this._ibanCheckBox.TabIndex = 3;
@@ -962,6 +985,37 @@
             this._passwordCheckBox4.TabIndex = 19;
             this._passwordCheckBox4.Text = "Password";
             this._passwordCheckBox4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this._dedupEntityItemsCheckBox);
+            this.tabPage4.Controls.Add(this._dedupSensitiveItemsCheckBox);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(346, 194);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "More Options";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // _dedupEntityItemsCheckBox
+            // 
+            this._dedupEntityItemsCheckBox.AutoSize = true;
+            this._dedupEntityItemsCheckBox.Location = new System.Drawing.Point(14, 36);
+            this._dedupEntityItemsCheckBox.Name = "_dedupEntityItemsCheckBox";
+            this._dedupEntityItemsCheckBox.Size = new System.Drawing.Size(140, 17);
+            this._dedupEntityItemsCheckBox.TabIndex = 4;
+            this._dedupEntityItemsCheckBox.Text = "Deduplicate Entity Items";
+            this._dedupEntityItemsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // _dedupSensitiveItemsCheckBox
+            // 
+            this._dedupSensitiveItemsCheckBox.AutoSize = true;
+            this._dedupSensitiveItemsCheckBox.Location = new System.Drawing.Point(14, 13);
+            this._dedupSensitiveItemsCheckBox.Name = "_dedupSensitiveItemsCheckBox";
+            this._dedupSensitiveItemsCheckBox.Size = new System.Drawing.Size(157, 17);
+            this._dedupSensitiveItemsCheckBox.TabIndex = 3;
+            this._dedupSensitiveItemsCheckBox.Text = "Deduplicate Sensitive Items";
+            this._dedupSensitiveItemsCheckBox.UseVisualStyleBackColor = true;
             // 
             // _enableSensitiveItemsCheckCheckBox
             // 
@@ -1176,6 +1230,46 @@
             this._logTextBox.TabIndex = 15;
             this._logTextBox.WordWrap = false;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this._numCustItemDefsLoadedLabel);
+            this.tabPage5.Controls.Add(this._loadCustomSensitiveItemDefButton);
+            this.tabPage5.Controls.Add(this._customSensitiveItemCheckBox);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(346, 194);
+            this.tabPage5.TabIndex = 3;
+            this.tabPage5.Text = "Custom Items";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // _numCustItemDefsLoadedLabel
+            // 
+            this._numCustItemDefsLoadedLabel.AutoSize = true;
+            this._numCustItemDefsLoadedLabel.Location = new System.Drawing.Point(14, 67);
+            this._numCustItemDefsLoadedLabel.Name = "_numCustItemDefsLoadedLabel";
+            this._numCustItemDefsLoadedLabel.Size = new System.Drawing.Size(0, 13);
+            this._numCustItemDefsLoadedLabel.TabIndex = 9;
+            // 
+            // _loadCustomSensitiveItemDefButton
+            // 
+            this._loadCustomSensitiveItemDefButton.Location = new System.Drawing.Point(9, 32);
+            this._loadCustomSensitiveItemDefButton.Name = "_loadCustomSensitiveItemDefButton";
+            this._loadCustomSensitiveItemDefButton.Size = new System.Drawing.Size(254, 23);
+            this._loadCustomSensitiveItemDefButton.TabIndex = 8;
+            this._loadCustomSensitiveItemDefButton.Text = "Load File with CustomItemDefinitions...";
+            this._loadCustomSensitiveItemDefButton.UseVisualStyleBackColor = true;
+            this._loadCustomSensitiveItemDefButton.Click += new System.EventHandler(this._loadCustomSensitiveItemDefButton_Click);
+            // 
+            // _customSensitiveItemCheckBox
+            // 
+            this._customSensitiveItemCheckBox.AutoSize = true;
+            this._customSensitiveItemCheckBox.Location = new System.Drawing.Point(9, 9);
+            this._customSensitiveItemCheckBox.Name = "_customSensitiveItemCheckBox";
+            this._customSensitiveItemCheckBox.Size = new System.Drawing.Size(203, 17);
+            this._customSensitiveItemCheckBox.TabIndex = 7;
+            this._customSensitiveItemCheckBox.Text = "Check for custom items (user defined)";
+            this._customSensitiveItemCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1219,10 +1313,14 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this._timeZoneTabPage.ResumeLayout(false);
             this._tabControl.ResumeLayout(false);
             this._logTabPage.ResumeLayout(false);
             this._logTabPage.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1318,6 +1416,14 @@
         private System.Windows.Forms.CheckBox _networkNameCheckBox;
         private System.Windows.Forms.CheckBox _usernameCheckBox;
         private System.Windows.Forms.CheckBox _passwordCheckBox4;
+        private System.Windows.Forms.CheckBox _cryptoCurrencyAddressCheckBox;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.CheckBox _dedupEntityItemsCheckBox;
+        private System.Windows.Forms.CheckBox _dedupSensitiveItemsCheckBox;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label _numCustItemDefsLoadedLabel;
+        private System.Windows.Forms.Button _loadCustomSensitiveItemDefButton;
+        private System.Windows.Forms.CheckBox _customSensitiveItemCheckBox;
     }
 }
 

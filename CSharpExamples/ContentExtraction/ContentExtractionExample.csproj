@@ -32,19 +32,21 @@
     <None Remove="Image5.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\bin\7z64.dll" Link="7z64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="..\..\..\bin\7z64.dll" Link="7z64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="iTextSharp">
-      <HintPath>..\..\..\..\bin\iTextSharp.dll</HintPath>
-    </Reference>
     <Reference Include="OpenDiscoverCWImpl">
-      <HintPath>..\..\..\..\bin\OpenDiscoverCWImpl.dll</HintPath>
+      <HintPath>..\..\..\bin\OpenDiscoverCWImpl.dll</HintPath>
     </Reference>
     <Reference Include="OpenDiscoverSDK">
-      <HintPath>..\..\..\..\bin\OpenDiscoverSDK.dll</HintPath>
+      <HintPath>..\..\..\bin\OpenDiscoverSDK.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="CustomItemDefinitions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -135,19 +135,6 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
-            this._sensitiveItemsTabPage = new System.Windows.Forms.TabPage();
-            this._sensitiveItemsListView = new System.Windows.Forms.ListView();
-            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this._sensitiveItemsImageList = new System.Windows.Forms.ImageList(this.components);
             this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
             this._hyperLinksListView = new System.Windows.Forms.ListView();
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -177,6 +164,40 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._sensitiveItemsTabPage = new System.Windows.Forms.TabPage();
+            this._sensitiveItemsListView = new System.Windows.Forms.ListView();
+            this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._sensitiveItemsImageList = new System.Windows.Forms.ImageList(this.components);
+            this._entityItemsTabPage = new System.Windows.Forms.TabPage();
+            this._entityItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._customItemsTabPage = new System.Windows.Forms.TabPage();
+            this._custSenItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader72 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader64 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader65 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader70 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader71 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._selectedChildInfoTabControl = new System.Windows.Forms.TabControl();
             this._textTabPage = new System.Windows.Forms.TabPage();
             this._extractedTextBox = new System.Windows.Forms.TextBox();
@@ -188,16 +209,6 @@
             this._headersImageList = new System.Windows.Forms.ImageList(this.components);
             this._transportHeaderValueTextBox = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._entityItemsTabPage = new System.Windows.Forms.TabPage();
-            this._entityItemListView = new System.Windows.Forms.ListView();
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -224,7 +235,6 @@
             this._featuresTabControl.SuspendLayout();
             this._metdataTabPage.SuspendLayout();
             this._attributesTabPage.SuspendLayout();
-            this._sensitiveItemsTabPage.SuspendLayout();
             this._hyperLinksTabPage.SuspendLayout();
             this._languagesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -232,6 +242,9 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this._childrenTabPage.SuspendLayout();
+            this._sensitiveItemsTabPage.SuspendLayout();
+            this._entityItemsTabPage.SuspendLayout();
+            this._customItemsTabPage.SuspendLayout();
             this._selectedChildInfoTabControl.SuspendLayout();
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
@@ -241,7 +254,6 @@
             this._transportHeaderSplitContainer.Panel1.SuspendLayout();
             this._transportHeaderSplitContainer.Panel2.SuspendLayout();
             this._transportHeaderSplitContainer.SuspendLayout();
-            this._entityItemsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -276,7 +288,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this._featuresTabControl);
             this.splitContainer5.Size = new System.Drawing.Size(1133, 333);
-            this.splitContainer5.SplitterDistance = 616;
+            this.splitContainer5.SplitterDistance = 553;
             this.splitContainer5.TabIndex = 0;
             // 
             // _docTypeTabControl
@@ -289,7 +301,7 @@
             this._docTypeTabControl.Location = new System.Drawing.Point(0, 0);
             this._docTypeTabControl.Name = "_docTypeTabControl";
             this._docTypeTabControl.SelectedIndex = 0;
-            this._docTypeTabControl.Size = new System.Drawing.Size(616, 333);
+            this._docTypeTabControl.Size = new System.Drawing.Size(553, 333);
             this._docTypeTabControl.TabIndex = 0;
             // 
             // _docBaseTabPage
@@ -324,7 +336,7 @@
             this._docBaseTabPage.Location = new System.Drawing.Point(4, 22);
             this._docBaseTabPage.Name = "_docBaseTabPage";
             this._docBaseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._docBaseTabPage.Size = new System.Drawing.Size(608, 307);
+            this._docBaseTabPage.Size = new System.Drawing.Size(545, 307);
             this._docBaseTabPage.TabIndex = 0;
             this._docBaseTabPage.Text = "Document Base";
             // 
@@ -583,7 +595,7 @@
             this._emailDocTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailDocTabPage.Name = "_emailDocTabPage";
             this._emailDocTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._emailDocTabPage.Size = new System.Drawing.Size(608, 307);
+            this._emailDocTabPage.Size = new System.Drawing.Size(545, 307);
             this._emailDocTabPage.TabIndex = 1;
             this._emailDocTabPage.Text = "Email Document";
             // 
@@ -596,7 +608,7 @@
             this._emailDocTabControl.Location = new System.Drawing.Point(3, 3);
             this._emailDocTabControl.Name = "_emailDocTabControl";
             this._emailDocTabControl.SelectedIndex = 0;
-            this._emailDocTabControl.Size = new System.Drawing.Size(602, 301);
+            this._emailDocTabControl.Size = new System.Drawing.Size(539, 301);
             this._emailDocTabControl.TabIndex = 75;
             // 
             // _emailInfoTabPage
@@ -629,7 +641,7 @@
             this._emailInfoTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailInfoTabPage.Name = "_emailInfoTabPage";
             this._emailInfoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._emailInfoTabPage.Size = new System.Drawing.Size(594, 275);
+            this._emailInfoTabPage.Size = new System.Drawing.Size(531, 275);
             this._emailInfoTabPage.TabIndex = 1;
             this._emailInfoTabPage.Text = "Info";
             // 
@@ -865,7 +877,7 @@
             this._emailRecipientsTabPage.Controls.Add(this._emailRecipientListView);
             this._emailRecipientsTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailRecipientsTabPage.Name = "_emailRecipientsTabPage";
-            this._emailRecipientsTabPage.Size = new System.Drawing.Size(594, 275);
+            this._emailRecipientsTabPage.Size = new System.Drawing.Size(531, 275);
             this._emailRecipientsTabPage.TabIndex = 2;
             this._emailRecipientsTabPage.Text = "Recipients";
             this._emailRecipientsTabPage.UseVisualStyleBackColor = true;
@@ -883,7 +895,7 @@
             this._emailRecipientListView.HideSelection = false;
             this._emailRecipientListView.Location = new System.Drawing.Point(0, 0);
             this._emailRecipientListView.Name = "_emailRecipientListView";
-            this._emailRecipientListView.Size = new System.Drawing.Size(594, 275);
+            this._emailRecipientListView.Size = new System.Drawing.Size(531, 275);
             this._emailRecipientListView.TabIndex = 67;
             this._emailRecipientListView.UseCompatibleStateImageBehavior = false;
             this._emailRecipientListView.View = System.Windows.Forms.View.Details;
@@ -912,7 +924,7 @@
             this._emailBodiesTabPage.Controls.Add(this._emailBodyTabControl);
             this._emailBodiesTabPage.Location = new System.Drawing.Point(4, 22);
             this._emailBodiesTabPage.Name = "_emailBodiesTabPage";
-            this._emailBodiesTabPage.Size = new System.Drawing.Size(594, 275);
+            this._emailBodiesTabPage.Size = new System.Drawing.Size(531, 275);
             this._emailBodiesTabPage.TabIndex = 3;
             this._emailBodiesTabPage.Text = "Email Body";
             this._emailBodiesTabPage.UseVisualStyleBackColor = true;
@@ -926,7 +938,7 @@
             this._emailBodyTabControl.Location = new System.Drawing.Point(0, 0);
             this._emailBodyTabControl.Name = "_emailBodyTabControl";
             this._emailBodyTabControl.SelectedIndex = 0;
-            this._emailBodyTabControl.Size = new System.Drawing.Size(594, 275);
+            this._emailBodyTabControl.Size = new System.Drawing.Size(531, 275);
             this._emailBodyTabControl.TabIndex = 0;
             // 
             // _textBodyPage
@@ -935,7 +947,7 @@
             this._textBodyPage.Location = new System.Drawing.Point(4, 22);
             this._textBodyPage.Name = "_textBodyPage";
             this._textBodyPage.Padding = new System.Windows.Forms.Padding(3);
-            this._textBodyPage.Size = new System.Drawing.Size(586, 249);
+            this._textBodyPage.Size = new System.Drawing.Size(523, 249);
             this._textBodyPage.TabIndex = 0;
             this._textBodyPage.Text = "Text";
             this._textBodyPage.UseVisualStyleBackColor = true;
@@ -950,7 +962,7 @@
             this._emailTextBodyTextBox.Name = "_emailTextBodyTextBox";
             this._emailTextBodyTextBox.ReadOnly = true;
             this._emailTextBodyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this._emailTextBodyTextBox.Size = new System.Drawing.Size(580, 243);
+            this._emailTextBodyTextBox.Size = new System.Drawing.Size(517, 243);
             this._emailTextBodyTextBox.TabIndex = 0;
             this._emailTextBodyTextBox.WordWrap = false;
             // 
@@ -1013,7 +1025,7 @@
             this._htmlDocTabPage.Controls.Add(this.label20);
             this._htmlDocTabPage.Location = new System.Drawing.Point(4, 22);
             this._htmlDocTabPage.Name = "_htmlDocTabPage";
-            this._htmlDocTabPage.Size = new System.Drawing.Size(608, 307);
+            this._htmlDocTabPage.Size = new System.Drawing.Size(545, 307);
             this._htmlDocTabPage.TabIndex = 2;
             this._htmlDocTabPage.Text = "HTML Document";
             // 
@@ -1026,7 +1038,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(605, 264);
+            this.tabControl1.Size = new System.Drawing.Size(542, 264);
             this.tabControl1.TabIndex = 73;
             // 
             // _htmlImagesTabPage
@@ -1035,7 +1047,7 @@
             this._htmlImagesTabPage.Location = new System.Drawing.Point(4, 22);
             this._htmlImagesTabPage.Name = "_htmlImagesTabPage";
             this._htmlImagesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._htmlImagesTabPage.Size = new System.Drawing.Size(597, 238);
+            this._htmlImagesTabPage.Size = new System.Drawing.Size(534, 238);
             this._htmlImagesTabPage.TabIndex = 1;
             this._htmlImagesTabPage.Text = "Images";
             this._htmlImagesTabPage.UseVisualStyleBackColor = true;
@@ -1055,7 +1067,7 @@
             this._htmlImagesListView.HideSelection = false;
             this._htmlImagesListView.Location = new System.Drawing.Point(3, 3);
             this._htmlImagesListView.Name = "_htmlImagesListView";
-            this._htmlImagesListView.Size = new System.Drawing.Size(591, 232);
+            this._htmlImagesListView.Size = new System.Drawing.Size(528, 232);
             this._htmlImagesListView.TabIndex = 70;
             this._htmlImagesListView.UseCompatibleStateImageBehavior = false;
             this._htmlImagesListView.View = System.Windows.Forms.View.Details;
@@ -1095,7 +1107,7 @@
             this._htmlBaseUrlLabel.BackColor = System.Drawing.SystemColors.Control;
             this._htmlBaseUrlLabel.Location = new System.Drawing.Point(71, 24);
             this._htmlBaseUrlLabel.Name = "_htmlBaseUrlLabel";
-            this._htmlBaseUrlLabel.Size = new System.Drawing.Size(532, 13);
+            this._htmlBaseUrlLabel.Size = new System.Drawing.Size(469, 13);
             this._htmlBaseUrlLabel.TabIndex = 72;
             this._htmlBaseUrlLabel.Text = " ";
             this._htmlBaseUrlLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1116,7 +1128,7 @@
             this._htmlTitleLabel.BackColor = System.Drawing.SystemColors.Control;
             this._htmlTitleLabel.Location = new System.Drawing.Point(74, 5);
             this._htmlTitleLabel.Name = "_htmlTitleLabel";
-            this._htmlTitleLabel.Size = new System.Drawing.Size(529, 13);
+            this._htmlTitleLabel.Size = new System.Drawing.Size(466, 13);
             this._htmlTitleLabel.TabIndex = 70;
             this._htmlTitleLabel.Text = " ";
             this._htmlTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1138,7 +1150,7 @@
             this._pdfDocTabPage.Controls.Add(this._failedPdfPagesListView);
             this._pdfDocTabPage.Location = new System.Drawing.Point(4, 22);
             this._pdfDocTabPage.Name = "_pdfDocTabPage";
-            this._pdfDocTabPage.Size = new System.Drawing.Size(608, 307);
+            this._pdfDocTabPage.Size = new System.Drawing.Size(545, 307);
             this._pdfDocTabPage.TabIndex = 3;
             this._pdfDocTabPage.Text = "PDF Document";
             // 
@@ -1178,7 +1190,7 @@
             this._failedPdfPagesListView.HideSelection = false;
             this._failedPdfPagesListView.Location = new System.Drawing.Point(3, 23);
             this._failedPdfPagesListView.Name = "_failedPdfPagesListView";
-            this._failedPdfPagesListView.Size = new System.Drawing.Size(602, 281);
+            this._failedPdfPagesListView.Size = new System.Drawing.Size(539, 281);
             this._failedPdfPagesListView.TabIndex = 68;
             this._failedPdfPagesListView.UseCompatibleStateImageBehavior = false;
             this._failedPdfPagesListView.View = System.Windows.Forms.View.Details;
@@ -1223,11 +1235,12 @@
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
             this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
             this._featuresTabControl.Controls.Add(this._entityItemsTabPage);
+            this._featuresTabControl.Controls.Add(this._customItemsTabPage);
             this._featuresTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._featuresTabControl.Location = new System.Drawing.Point(0, 0);
             this._featuresTabControl.Name = "_featuresTabControl";
             this._featuresTabControl.SelectedIndex = 0;
-            this._featuresTabControl.Size = new System.Drawing.Size(513, 333);
+            this._featuresTabControl.Size = new System.Drawing.Size(576, 333);
             this._featuresTabControl.TabIndex = 13;
             // 
             // _metdataTabPage
@@ -1236,7 +1249,7 @@
             this._metdataTabPage.Location = new System.Drawing.Point(4, 22);
             this._metdataTabPage.Name = "_metdataTabPage";
             this._metdataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._metdataTabPage.Size = new System.Drawing.Size(505, 307);
+            this._metdataTabPage.Size = new System.Drawing.Size(568, 307);
             this._metdataTabPage.TabIndex = 3;
             this._metdataTabPage.Text = "Metadata (0)";
             this._metdataTabPage.UseVisualStyleBackColor = true;
@@ -1254,7 +1267,7 @@
             this._metadataListView.HideSelection = false;
             this._metadataListView.Location = new System.Drawing.Point(3, 3);
             this._metadataListView.Name = "_metadataListView";
-            this._metadataListView.Size = new System.Drawing.Size(499, 301);
+            this._metadataListView.Size = new System.Drawing.Size(562, 301);
             this._metadataListView.TabIndex = 6;
             this._metadataListView.UseCompatibleStateImageBehavior = false;
             this._metadataListView.View = System.Windows.Forms.View.Details;
@@ -1285,7 +1298,7 @@
             this._attributesTabPage.Location = new System.Drawing.Point(4, 22);
             this._attributesTabPage.Name = "_attributesTabPage";
             this._attributesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._attributesTabPage.Size = new System.Drawing.Size(505, 307);
+            this._attributesTabPage.Size = new System.Drawing.Size(568, 307);
             this._attributesTabPage.TabIndex = 1;
             this._attributesTabPage.Text = "Attributes (0)";
             this._attributesTabPage.UseVisualStyleBackColor = true;
@@ -1298,15 +1311,252 @@
             this._attributesTextBox.Multiline = true;
             this._attributesTextBox.Name = "_attributesTextBox";
             this._attributesTextBox.ReadOnly = true;
-            this._attributesTextBox.Size = new System.Drawing.Size(499, 301);
+            this._attributesTextBox.Size = new System.Drawing.Size(562, 301);
             this._attributesTextBox.TabIndex = 0;
+            // 
+            // _hyperLinksTabPage
+            // 
+            this._hyperLinksTabPage.Controls.Add(this._hyperLinksListView);
+            this._hyperLinksTabPage.Location = new System.Drawing.Point(4, 22);
+            this._hyperLinksTabPage.Name = "_hyperLinksTabPage";
+            this._hyperLinksTabPage.Size = new System.Drawing.Size(568, 307);
+            this._hyperLinksTabPage.TabIndex = 4;
+            this._hyperLinksTabPage.Text = "Hyperlinks (0)";
+            this._hyperLinksTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _hyperLinksListView
+            // 
+            this._hyperLinksListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._hyperLinksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader35,
+            this.columnHeader36,
+            this.columnHeader37,
+            this.columnHeader38,
+            this.columnHeader39,
+            this.columnHeader40,
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43});
+            this._hyperLinksListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._hyperLinksListView.FullRowSelect = true;
+            this._hyperLinksListView.HideSelection = false;
+            this._hyperLinksListView.Location = new System.Drawing.Point(0, 0);
+            this._hyperLinksListView.Name = "_hyperLinksListView";
+            this._hyperLinksListView.Size = new System.Drawing.Size(568, 307);
+            this._hyperLinksListView.TabIndex = 71;
+            this._hyperLinksListView.UseCompatibleStateImageBehavior = false;
+            this._hyperLinksListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader35
+            // 
+            this.columnHeader35.Text = "IsExternalLink";
+            this.columnHeader35.Width = 79;
+            // 
+            // columnHeader36
+            // 
+            this.columnHeader36.Text = "Text";
+            this.columnHeader36.Width = 72;
+            // 
+            // columnHeader37
+            // 
+            this.columnHeader37.Text = "Url";
+            this.columnHeader37.Width = 69;
+            // 
+            // columnHeader38
+            // 
+            this.columnHeader38.Text = "Download";
+            this.columnHeader38.Width = 76;
+            // 
+            // columnHeader39
+            // 
+            this.columnHeader39.Text = "Type";
+            // 
+            // columnHeader40
+            // 
+            this.columnHeader40.Text = "Relationship";
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "RefLang";
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "Target";
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "Ping";
+            // 
+            // _languagesTabPage
+            // 
+            this._languagesTabPage.Controls.Add(this.splitContainer4);
+            this._languagesTabPage.Location = new System.Drawing.Point(4, 22);
+            this._languagesTabPage.Name = "_languagesTabPage";
+            this._languagesTabPage.Size = new System.Drawing.Size(568, 307);
+            this._languagesTabPage.TabIndex = 2;
+            this._languagesTabPage.Text = "Languages (0)";
+            this._languagesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this._langIdListView);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.label5);
+            this.splitContainer4.Panel2.Controls.Add(this._langIdRegionsListView);
+            this.splitContainer4.Size = new System.Drawing.Size(568, 307);
+            this.splitContainer4.SplitterDistance = 153;
+            this.splitContainer4.TabIndex = 12;
+            // 
+            // _langIdListView
+            // 
+            this._langIdListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._langIdListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader4,
+            this.columnHeader10});
+            this._langIdListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._langIdListView.FullRowSelect = true;
+            this._langIdListView.HideSelection = false;
+            this._langIdListView.Location = new System.Drawing.Point(0, 0);
+            this._langIdListView.Name = "_langIdListView";
+            this._langIdListView.Size = new System.Drawing.Size(568, 153);
+            this._langIdListView.TabIndex = 12;
+            this._langIdListView.UseCompatibleStateImageBehavior = false;
+            this._langIdListView.View = System.Windows.Forms.View.Details;
+            this._langIdListView.SelectedIndexChanged += new System.EventHandler(this._langIdListView_SelectedIndexChanged);
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Lang. ISO 639-1";
+            this.columnHeader9.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Language";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "PercentOfFullText";
+            this.columnHeader10.Width = 222;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(212, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Associated Regions of Selected Language:";
+            // 
+            // _langIdRegionsListView
+            // 
+            this._langIdRegionsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._langIdRegionsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._langIdRegionsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13});
+            this._langIdRegionsListView.FullRowSelect = true;
+            this._langIdRegionsListView.HideSelection = false;
+            this._langIdRegionsListView.Location = new System.Drawing.Point(4, 19);
+            this._langIdRegionsListView.Name = "_langIdRegionsListView";
+            this._langIdRegionsListView.Size = new System.Drawing.Size(561, 128);
+            this._langIdRegionsListView.TabIndex = 13;
+            this._langIdRegionsListView.UseCompatibleStateImageBehavior = false;
+            this._langIdRegionsListView.View = System.Windows.Forms.View.Details;
+            this._langIdRegionsListView.SelectedIndexChanged += new System.EventHandler(this._langIdRegionsListView_SelectedIndexChanged);
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Script";
+            this.columnHeader11.Width = 130;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "StartIndex";
+            this.columnHeader12.Width = 123;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "EndIndex";
+            this.columnHeader13.Width = 128;
+            // 
+            // _childrenTabPage
+            // 
+            this._childrenTabPage.Controls.Add(this._childDocsListView);
+            this._childrenTabPage.Location = new System.Drawing.Point(4, 22);
+            this._childrenTabPage.Name = "_childrenTabPage";
+            this._childrenTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this._childrenTabPage.Size = new System.Drawing.Size(568, 307);
+            this._childrenTabPage.TabIndex = 0;
+            this._childrenTabPage.Text = "Children (0)";
+            this._childrenTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _childDocsListView
+            // 
+            this._childDocsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._childDocsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader5,
+            this.columnHeader2,
+            this.columnHeader8,
+            this.columnHeader32});
+            this._childDocsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._childDocsListView.FullRowSelect = true;
+            this._childDocsListView.HideSelection = false;
+            this._childDocsListView.Location = new System.Drawing.Point(3, 3);
+            this._childDocsListView.Name = "_childDocsListView";
+            this._childDocsListView.Size = new System.Drawing.Size(562, 301);
+            this._childDocsListView.TabIndex = 10;
+            this._childDocsListView.UseCompatibleStateImageBehavior = false;
+            this._childDocsListView.View = System.Windows.Forms.View.Details;
+            this._childDocsListView.SelectedIndexChanged += new System.EventHandler(this._childDocsListView_SelectedIndexChanged);
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Name";
+            this.columnHeader3.Width = 112;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Size (in bytes)";
+            this.columnHeader5.Width = 87;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ID";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Classification";
+            this.columnHeader8.Width = 100;
+            // 
+            // columnHeader32
+            // 
+            this.columnHeader32.Text = "HasError";
+            this.columnHeader32.Width = 137;
             // 
             // _sensitiveItemsTabPage
             // 
             this._sensitiveItemsTabPage.Controls.Add(this._sensitiveItemsListView);
             this._sensitiveItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this._sensitiveItemsTabPage.Name = "_sensitiveItemsTabPage";
-            this._sensitiveItemsTabPage.Size = new System.Drawing.Size(505, 307);
+            this._sensitiveItemsTabPage.Size = new System.Drawing.Size(568, 307);
             this._sensitiveItemsTabPage.TabIndex = 5;
             this._sensitiveItemsTabPage.Text = "Sensitive Items (0)";
             this._sensitiveItemsTabPage.UseVisualStyleBackColor = true;
@@ -1330,7 +1580,7 @@
             this._sensitiveItemsListView.HideSelection = false;
             this._sensitiveItemsListView.Location = new System.Drawing.Point(0, 0);
             this._sensitiveItemsListView.Name = "_sensitiveItemsListView";
-            this._sensitiveItemsListView.Size = new System.Drawing.Size(505, 307);
+            this._sensitiveItemsListView.Size = new System.Drawing.Size(568, 307);
             this._sensitiveItemsListView.SmallImageList = this._sensitiveItemsImageList;
             this._sensitiveItemsListView.TabIndex = 8;
             this._sensitiveItemsListView.UseCompatibleStateImageBehavior = false;
@@ -1439,242 +1689,157 @@
             this._sensitiveItemsImageList.Images.SetKeyName(48, "LicenseNumber.png");
             this._sensitiveItemsImageList.Images.SetKeyName(49, "Policy_16x.png");
             // 
-            // _hyperLinksTabPage
+            // _entityItemsTabPage
             // 
-            this._hyperLinksTabPage.Controls.Add(this._hyperLinksListView);
-            this._hyperLinksTabPage.Location = new System.Drawing.Point(4, 22);
-            this._hyperLinksTabPage.Name = "_hyperLinksTabPage";
-            this._hyperLinksTabPage.Size = new System.Drawing.Size(505, 307);
-            this._hyperLinksTabPage.TabIndex = 4;
-            this._hyperLinksTabPage.Text = "Hyperlinks (0)";
-            this._hyperLinksTabPage.UseVisualStyleBackColor = true;
+            this._entityItemsTabPage.Controls.Add(this._entityItemListView);
+            this._entityItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._entityItemsTabPage.Name = "_entityItemsTabPage";
+            this._entityItemsTabPage.Size = new System.Drawing.Size(568, 307);
+            this._entityItemsTabPage.TabIndex = 6;
+            this._entityItemsTabPage.Text = "Entity Items (0)";
+            this._entityItemsTabPage.UseVisualStyleBackColor = true;
             // 
-            // _hyperLinksListView
+            // _entityItemListView
             // 
-            this._hyperLinksListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._hyperLinksListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader35,
-            this.columnHeader36,
-            this.columnHeader37,
-            this.columnHeader38,
-            this.columnHeader39,
-            this.columnHeader40,
-            this.columnHeader41,
-            this.columnHeader42,
-            this.columnHeader43});
-            this._hyperLinksListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._hyperLinksListView.FullRowSelect = true;
-            this._hyperLinksListView.HideSelection = false;
-            this._hyperLinksListView.Location = new System.Drawing.Point(0, 0);
-            this._hyperLinksListView.Name = "_hyperLinksListView";
-            this._hyperLinksListView.Size = new System.Drawing.Size(505, 307);
-            this._hyperLinksListView.TabIndex = 71;
-            this._hyperLinksListView.UseCompatibleStateImageBehavior = false;
-            this._hyperLinksListView.View = System.Windows.Forms.View.Details;
+            this._entityItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._entityItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader47,
+            this.columnHeader55,
+            this.columnHeader56,
+            this.columnHeader57,
+            this.columnHeader60,
+            this.columnHeader61,
+            this.columnHeader62,
+            this.columnHeader63});
+            this._entityItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._entityItemListView.FullRowSelect = true;
+            this._entityItemListView.HideSelection = false;
+            this._entityItemListView.Location = new System.Drawing.Point(0, 0);
+            this._entityItemListView.Name = "_entityItemListView";
+            this._entityItemListView.Size = new System.Drawing.Size(568, 307);
+            this._entityItemListView.SmallImageList = this._sensitiveItemsImageList;
+            this._entityItemListView.TabIndex = 9;
+            this._entityItemListView.UseCompatibleStateImageBehavior = false;
+            this._entityItemListView.View = System.Windows.Forms.View.Details;
+            this._entityItemListView.SelectedIndexChanged += new System.EventHandler(this._entityItemListView_SelectedIndexChanged);
             // 
-            // columnHeader35
+            // columnHeader47
             // 
-            this.columnHeader35.Text = "IsExternalLink";
-            this.columnHeader35.Width = 79;
+            this.columnHeader47.Text = "ItemType";
+            this.columnHeader47.Width = 78;
             // 
-            // columnHeader36
+            // columnHeader55
             // 
-            this.columnHeader36.Text = "Text";
-            this.columnHeader36.Width = 72;
+            this.columnHeader55.Text = "IdentifierType";
+            this.columnHeader55.Width = 82;
             // 
-            // columnHeader37
+            // columnHeader56
             // 
-            this.columnHeader37.Text = "Url";
-            this.columnHeader37.Width = 69;
+            this.columnHeader56.Text = "Keywords";
+            this.columnHeader56.Width = 104;
             // 
-            // columnHeader38
+            // columnHeader57
             // 
-            this.columnHeader38.Text = "Download";
-            this.columnHeader38.Width = 76;
+            this.columnHeader57.Text = "Text";
+            this.columnHeader57.Width = 118;
             // 
-            // columnHeader39
+            // columnHeader60
             // 
-            this.columnHeader39.Text = "Type";
+            this.columnHeader60.Text = "LocationType";
+            this.columnHeader60.Width = 81;
             // 
-            // columnHeader40
+            // columnHeader61
             // 
-            this.columnHeader40.Text = "Relationship";
+            this.columnHeader61.Text = "MetadataName";
+            this.columnHeader61.Width = 88;
             // 
-            // columnHeader41
+            // columnHeader62
             // 
-            this.columnHeader41.Text = "RefLang";
+            this.columnHeader62.Text = "Start";
+            this.columnHeader62.Width = 40;
             // 
-            // columnHeader42
+            // columnHeader63
             // 
-            this.columnHeader42.Text = "Target";
+            this.columnHeader63.Text = "End";
+            this.columnHeader63.Width = 40;
             // 
-            // columnHeader43
+            // _customItemsTabPage
             // 
-            this.columnHeader43.Text = "Ping";
+            this._customItemsTabPage.Controls.Add(this._custSenItemListView);
+            this._customItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._customItemsTabPage.Name = "_customItemsTabPage";
+            this._customItemsTabPage.Size = new System.Drawing.Size(568, 307);
+            this._customItemsTabPage.TabIndex = 7;
+            this._customItemsTabPage.Text = "Custom Items";
+            this._customItemsTabPage.UseVisualStyleBackColor = true;
             // 
-            // _languagesTabPage
+            // _custSenItemListView
             // 
-            this._languagesTabPage.Controls.Add(this.splitContainer4);
-            this._languagesTabPage.Location = new System.Drawing.Point(4, 22);
-            this._languagesTabPage.Name = "_languagesTabPage";
-            this._languagesTabPage.Size = new System.Drawing.Size(505, 307);
-            this._languagesTabPage.TabIndex = 2;
-            this._languagesTabPage.Text = "Languages (0)";
-            this._languagesTabPage.UseVisualStyleBackColor = true;
+            this._custSenItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._custSenItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader58,
+            this.columnHeader59,
+            this.columnHeader69,
+            this.columnHeader72,
+            this.columnHeader64,
+            this.columnHeader65,
+            this.columnHeader68,
+            this.columnHeader70,
+            this.columnHeader71});
+            this._custSenItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._custSenItemListView.FullRowSelect = true;
+            this._custSenItemListView.HideSelection = false;
+            this._custSenItemListView.Location = new System.Drawing.Point(0, 0);
+            this._custSenItemListView.Name = "_custSenItemListView";
+            this._custSenItemListView.Size = new System.Drawing.Size(568, 307);
+            this._custSenItemListView.SmallImageList = this._sensitiveItemsImageList;
+            this._custSenItemListView.TabIndex = 9;
+            this._custSenItemListView.UseCompatibleStateImageBehavior = false;
+            this._custSenItemListView.View = System.Windows.Forms.View.Details;
+            this._custSenItemListView.SelectedIndexChanged += new System.EventHandler(this._custSenItemListView_SelectedIndexChanged);
             // 
-            // splitContainer4
+            // columnHeader58
             // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.columnHeader58.Text = "ItemType";
+            this.columnHeader58.Width = 78;
             // 
-            // splitContainer4.Panel1
+            // columnHeader59
             // 
-            this.splitContainer4.Panel1.Controls.Add(this._langIdListView);
+            this.columnHeader59.Text = "MatchType";
+            this.columnHeader59.Width = 74;
             // 
-            // splitContainer4.Panel2
+            // columnHeader69
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.label5);
-            this.splitContainer4.Panel2.Controls.Add(this._langIdRegionsListView);
-            this.splitContainer4.Size = new System.Drawing.Size(505, 307);
-            this.splitContainer4.SplitterDistance = 153;
-            this.splitContainer4.TabIndex = 12;
+            this.columnHeader69.Text = "Name";
+            this.columnHeader69.Width = 70;
             // 
-            // _langIdListView
+            // columnHeader72
             // 
-            this._langIdListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._langIdListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader9,
-            this.columnHeader4,
-            this.columnHeader10});
-            this._langIdListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._langIdListView.FullRowSelect = true;
-            this._langIdListView.HideSelection = false;
-            this._langIdListView.Location = new System.Drawing.Point(0, 0);
-            this._langIdListView.Name = "_langIdListView";
-            this._langIdListView.Size = new System.Drawing.Size(505, 153);
-            this._langIdListView.TabIndex = 12;
-            this._langIdListView.UseCompatibleStateImageBehavior = false;
-            this._langIdListView.View = System.Windows.Forms.View.Details;
-            this._langIdListView.SelectedIndexChanged += new System.EventHandler(this._langIdListView_SelectedIndexChanged);
+            this.columnHeader72.Text = "Classification";
             // 
-            // columnHeader9
+            // columnHeader64
             // 
-            this.columnHeader9.Text = "Lang. ISO 639-1";
-            this.columnHeader9.Width = 100;
+            this.columnHeader64.Text = "Keywords";
+            this.columnHeader64.Width = 104;
             // 
-            // columnHeader4
+            // columnHeader65
             // 
-            this.columnHeader4.Text = "Language";
-            this.columnHeader4.Width = 120;
+            this.columnHeader65.Text = "Text";
+            this.columnHeader65.Width = 125;
             // 
-            // columnHeader10
+            // columnHeader68
             // 
-            this.columnHeader10.Text = "PercentOfFullText";
-            this.columnHeader10.Width = 222;
+            this.columnHeader68.Text = "LocationType";
             // 
-            // label5
+            // columnHeader70
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(212, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Associated Regions of Selected Language:";
+            this.columnHeader70.Text = "Start";
+            this.columnHeader70.Width = 40;
             // 
-            // _langIdRegionsListView
+            // columnHeader71
             // 
-            this._langIdRegionsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._langIdRegionsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._langIdRegionsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13});
-            this._langIdRegionsListView.FullRowSelect = true;
-            this._langIdRegionsListView.HideSelection = false;
-            this._langIdRegionsListView.Location = new System.Drawing.Point(4, 19);
-            this._langIdRegionsListView.Name = "_langIdRegionsListView";
-            this._langIdRegionsListView.Size = new System.Drawing.Size(498, 128);
-            this._langIdRegionsListView.TabIndex = 13;
-            this._langIdRegionsListView.UseCompatibleStateImageBehavior = false;
-            this._langIdRegionsListView.View = System.Windows.Forms.View.Details;
-            this._langIdRegionsListView.SelectedIndexChanged += new System.EventHandler(this._langIdRegionsListView_SelectedIndexChanged);
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Script";
-            this.columnHeader11.Width = 130;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "StartIndex";
-            this.columnHeader12.Width = 123;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "EndIndex";
-            this.columnHeader13.Width = 128;
-            // 
-            // _childrenTabPage
-            // 
-            this._childrenTabPage.Controls.Add(this._childDocsListView);
-            this._childrenTabPage.Location = new System.Drawing.Point(4, 22);
-            this._childrenTabPage.Name = "_childrenTabPage";
-            this._childrenTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._childrenTabPage.Size = new System.Drawing.Size(505, 307);
-            this._childrenTabPage.TabIndex = 0;
-            this._childrenTabPage.Text = "Children (0)";
-            this._childrenTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _childDocsListView
-            // 
-            this._childDocsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._childDocsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader5,
-            this.columnHeader2,
-            this.columnHeader8,
-            this.columnHeader32});
-            this._childDocsListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._childDocsListView.FullRowSelect = true;
-            this._childDocsListView.HideSelection = false;
-            this._childDocsListView.Location = new System.Drawing.Point(3, 3);
-            this._childDocsListView.Name = "_childDocsListView";
-            this._childDocsListView.Size = new System.Drawing.Size(499, 301);
-            this._childDocsListView.TabIndex = 10;
-            this._childDocsListView.UseCompatibleStateImageBehavior = false;
-            this._childDocsListView.View = System.Windows.Forms.View.Details;
-            this._childDocsListView.SelectedIndexChanged += new System.EventHandler(this._childDocsListView_SelectedIndexChanged);
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Name";
-            this.columnHeader3.Width = 112;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Size (in bytes)";
-            this.columnHeader5.Width = 87;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "ID";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Classification";
-            this.columnHeader8.Width = 100;
-            // 
-            // columnHeader32
-            // 
-            this.columnHeader32.Text = "HasError";
-            this.columnHeader32.Width = 137;
+            this.columnHeader71.Text = "End";
+            this.columnHeader71.Width = 40;
             // 
             // _selectedChildInfoTabControl
             // 
@@ -1801,80 +1966,6 @@
             this._transportHeaderValueTextBox.Size = new System.Drawing.Size(746, 334);
             this._transportHeaderValueTextBox.TabIndex = 1;
             // 
-            // _entityItemsTabPage
-            // 
-            this._entityItemsTabPage.Controls.Add(this._entityItemListView);
-            this._entityItemsTabPage.Location = new System.Drawing.Point(4, 22);
-            this._entityItemsTabPage.Name = "_entityItemsTabPage";
-            this._entityItemsTabPage.Size = new System.Drawing.Size(505, 307);
-            this._entityItemsTabPage.TabIndex = 6;
-            this._entityItemsTabPage.Text = "Entity Items (0)";
-            this._entityItemsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _entityItemListView
-            // 
-            this._entityItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._entityItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader47,
-            this.columnHeader55,
-            this.columnHeader56,
-            this.columnHeader57,
-            this.columnHeader60,
-            this.columnHeader61,
-            this.columnHeader62,
-            this.columnHeader63});
-            this._entityItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._entityItemListView.FullRowSelect = true;
-            this._entityItemListView.HideSelection = false;
-            this._entityItemListView.Location = new System.Drawing.Point(0, 0);
-            this._entityItemListView.Name = "_entityItemListView";
-            this._entityItemListView.Size = new System.Drawing.Size(505, 307);
-            this._entityItemListView.SmallImageList = this._sensitiveItemsImageList;
-            this._entityItemListView.TabIndex = 9;
-            this._entityItemListView.UseCompatibleStateImageBehavior = false;
-            this._entityItemListView.View = System.Windows.Forms.View.Details;
-            this._entityItemListView.SelectedIndexChanged += new System.EventHandler(this._entityItemListView_SelectedIndexChanged);
-            // 
-            // columnHeader47
-            // 
-            this.columnHeader47.Text = "ItemType";
-            this.columnHeader47.Width = 78;
-            // 
-            // columnHeader55
-            // 
-            this.columnHeader55.Text = "IdentifierType";
-            this.columnHeader55.Width = 82;
-            // 
-            // columnHeader56
-            // 
-            this.columnHeader56.Text = "Keywords";
-            this.columnHeader56.Width = 104;
-            // 
-            // columnHeader57
-            // 
-            this.columnHeader57.Text = "Text";
-            this.columnHeader57.Width = 118;
-            // 
-            // columnHeader60
-            // 
-            this.columnHeader60.Text = "LocationType";
-            this.columnHeader60.Width = 81;
-            // 
-            // columnHeader61
-            // 
-            this.columnHeader61.Text = "MetadataName";
-            this.columnHeader61.Width = 88;
-            // 
-            // columnHeader62
-            // 
-            this.columnHeader62.Text = "Start";
-            this.columnHeader62.Width = 40;
-            // 
-            // columnHeader63
-            // 
-            this.columnHeader63.Text = "End";
-            this.columnHeader63.Width = 40;
-            // 
             // ContentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1916,7 +2007,6 @@
             this._metdataTabPage.ResumeLayout(false);
             this._attributesTabPage.ResumeLayout(false);
             this._attributesTabPage.PerformLayout();
-            this._sensitiveItemsTabPage.ResumeLayout(false);
             this._hyperLinksTabPage.ResumeLayout(false);
             this._languagesTabPage.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -1925,6 +2015,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this._childrenTabPage.ResumeLayout(false);
+            this._sensitiveItemsTabPage.ResumeLayout(false);
+            this._entityItemsTabPage.ResumeLayout(false);
+            this._customItemsTabPage.ResumeLayout(false);
             this._selectedChildInfoTabControl.ResumeLayout(false);
             this._textTabPage.ResumeLayout(false);
             this._textTabPage.PerformLayout();
@@ -1936,7 +2029,6 @@
             this._transportHeaderSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._transportHeaderSplitContainer)).EndInit();
             this._transportHeaderSplitContainer.ResumeLayout(false);
-            this._entityItemsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2111,5 +2203,16 @@
         private System.Windows.Forms.ColumnHeader columnHeader61;
         private System.Windows.Forms.ColumnHeader columnHeader62;
         private System.Windows.Forms.ColumnHeader columnHeader63;
+        private System.Windows.Forms.TabPage _customItemsTabPage;
+        private System.Windows.Forms.ListView _custSenItemListView;
+        private System.Windows.Forms.ColumnHeader columnHeader58;
+        private System.Windows.Forms.ColumnHeader columnHeader59;
+        private System.Windows.Forms.ColumnHeader columnHeader69;
+        private System.Windows.Forms.ColumnHeader columnHeader72;
+        private System.Windows.Forms.ColumnHeader columnHeader64;
+        private System.Windows.Forms.ColumnHeader columnHeader65;
+        private System.Windows.Forms.ColumnHeader columnHeader68;
+        private System.Windows.Forms.ColumnHeader columnHeader70;
+        private System.Windows.Forms.ColumnHeader columnHeader71;
     }
 }

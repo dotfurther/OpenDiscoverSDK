@@ -4,7 +4,8 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 
 ### ContentExtractionExample.csproj:
 This WinForm UI example shows how to use the Open Discover SDK API to identify file formats and extract content from various
-formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returned interfaces.
+formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returned interfaces. The UI will also display all the
+various extracted document (see images below).
 
 
 ### How to use this example:
@@ -32,10 +33,17 @@ The "Languages" tab page displays the languages identified in the extracted text
 
 <img src="Image4.png">
 
-
 The "Children" tab displays any information on any extracted attachments/embedded objects/embedded media. Child documents have their file formats identified. To save a child item, right mouse-click on a child item and select "Save As...".
 
 <img src="Image5.png">
+
+The "Sensitive Items" tab displays any detected sensitive items in extracted text, metadata, or hyperlinks/urls (note: sensitive item detection must be enabled through ContentExtractionSettings class)
+
+<img src="Image6.png">
+
+The "Entity Items" tab displays any detected entity items in extracted text. 
+
+<img src="Image7.png">
 
 
 ### Note:

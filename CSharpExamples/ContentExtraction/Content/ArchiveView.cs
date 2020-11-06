@@ -249,7 +249,7 @@ namespace ContentExtractionExample.Content
                         {
                             using (var outStream = new FileStream(saveDialog.FileName, FileMode.CreateNew, FileAccess.ReadWrite))
                             {
-                                var result = _archiveExtractor.ExtractItem(child.Index, outStream);
+                                var result = _archiveExtractor.ExtractItem((int)child.Index, outStream);
 
                                 // Archive item is password protected:
                                 if (result == ContentResult.WrongPassword)
@@ -258,7 +258,7 @@ namespace ContentExtractionExample.Content
 
                                     while (_hostUI.RequestPassword(out password) == DialogResult.OK)
                                     {
-                                        result = _archiveExtractor.ExtractItem(child.Index, outStream, password);
+                                        result = _archiveExtractor.ExtractItem((int)child.Index, outStream, password);
 
                                         if (result != ContentResult.WrongPassword)
                                         {

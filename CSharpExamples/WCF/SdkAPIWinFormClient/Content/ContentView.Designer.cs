@@ -134,18 +134,6 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._attributesTabPage = new System.Windows.Forms.TabPage();
             this._attributesTextBox = new System.Windows.Forms.TextBox();
-            this._sensitiveItemsTabPage = new System.Windows.Forms.TabPage();
-            this._sensitiveItemListView = new System.Windows.Forms.ListView();
-            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._hyperLinksTabPage = new System.Windows.Forms.TabPage();
             this._hyperLinksListView = new System.Windows.Forms.ListView();
             this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -175,6 +163,39 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._sensitiveItemsTabPage = new System.Windows.Forms.TabPage();
+            this._sensitiveItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader44 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader45 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader51 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader50 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader52 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader53 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._entityItemsTabPage = new System.Windows.Forms.TabPage();
+            this._entityItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._customItemsTabPage = new System.Windows.Forms.TabPage();
+            this._custSenItemListView = new System.Windows.Forms.ListView();
+            this.columnHeader58 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader59 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader69 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader72 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader64 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader65 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader68 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader70 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader71 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this._selectedChildInfoTabControl = new System.Windows.Forms.TabControl();
             this._textTabPage = new System.Windows.Forms.TabPage();
             this._extractedTextBox = new System.Windows.Forms.TextBox();
@@ -186,16 +207,6 @@
             this._transportHeaderValueTextBox = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this._entityItemsTabPage = new System.Windows.Forms.TabPage();
-            this._entityItemListView = new System.Windows.Forms.ListView();
-            this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader60 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader61 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -222,7 +233,6 @@
             this._featuresTabControl.SuspendLayout();
             this._metdataTabPage.SuspendLayout();
             this._attributesTabPage.SuspendLayout();
-            this._sensitiveItemsTabPage.SuspendLayout();
             this._hyperLinksTabPage.SuspendLayout();
             this._languagesTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -230,6 +240,9 @@
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             this._childrenTabPage.SuspendLayout();
+            this._sensitiveItemsTabPage.SuspendLayout();
+            this._entityItemsTabPage.SuspendLayout();
+            this._customItemsTabPage.SuspendLayout();
             this._selectedChildInfoTabControl.SuspendLayout();
             this._textTabPage.SuspendLayout();
             this._imageViewTabPage.SuspendLayout();
@@ -239,7 +252,6 @@
             this._emailHeaderSplitContainer.Panel1.SuspendLayout();
             this._emailHeaderSplitContainer.Panel2.SuspendLayout();
             this._emailHeaderSplitContainer.SuspendLayout();
-            this._entityItemsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -1222,6 +1234,7 @@
             this._featuresTabControl.Controls.Add(this._childrenTabPage);
             this._featuresTabControl.Controls.Add(this._sensitiveItemsTabPage);
             this._featuresTabControl.Controls.Add(this._entityItemsTabPage);
+            this._featuresTabControl.Controls.Add(this._customItemsTabPage);
             this._featuresTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._featuresTabControl.Location = new System.Drawing.Point(0, 0);
             this._featuresTabControl.Name = "_featuresTabControl";
@@ -1299,88 +1312,6 @@
             this._attributesTextBox.ReadOnly = true;
             this._attributesTextBox.Size = new System.Drawing.Size(571, 301);
             this._attributesTextBox.TabIndex = 0;
-            // 
-            // _sensitiveItemsTabPage
-            // 
-            this._sensitiveItemsTabPage.Controls.Add(this._sensitiveItemListView);
-            this._sensitiveItemsTabPage.Location = new System.Drawing.Point(4, 22);
-            this._sensitiveItemsTabPage.Name = "_sensitiveItemsTabPage";
-            this._sensitiveItemsTabPage.Size = new System.Drawing.Size(577, 307);
-            this._sensitiveItemsTabPage.TabIndex = 5;
-            this._sensitiveItemsTabPage.Text = "Sensitive Items (0)";
-            this._sensitiveItemsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _sensitiveItemListView
-            // 
-            this._sensitiveItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._sensitiveItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader44,
-            this.columnHeader45,
-            this.columnHeader46,
-            this.columnHeader51,
-            this.columnHeader24,
-            this.columnHeader50,
-            this.columnHeader52,
-            this.columnHeader53,
-            this.columnHeader48,
-            this.columnHeader49});
-            this._sensitiveItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._sensitiveItemListView.FullRowSelect = true;
-            this._sensitiveItemListView.HideSelection = false;
-            this._sensitiveItemListView.Location = new System.Drawing.Point(0, 0);
-            this._sensitiveItemListView.Name = "_sensitiveItemListView";
-            this._sensitiveItemListView.Size = new System.Drawing.Size(577, 307);
-            this._sensitiveItemListView.TabIndex = 8;
-            this._sensitiveItemListView.UseCompatibleStateImageBehavior = false;
-            this._sensitiveItemListView.View = System.Windows.Forms.View.Details;
-            this._sensitiveItemListView.SelectedIndexChanged += new System.EventHandler(this._sensitiveItemListView_SelectedIndexChanged);
-            // 
-            // columnHeader44
-            // 
-            this.columnHeader44.Text = "ItemType";
-            this.columnHeader44.Width = 88;
-            // 
-            // columnHeader45
-            // 
-            this.columnHeader45.Text = "MatchType";
-            this.columnHeader45.Width = 82;
-            // 
-            // columnHeader46
-            // 
-            this.columnHeader46.Text = "Keywords";
-            this.columnHeader46.Width = 104;
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Text = "Text";
-            this.columnHeader51.Width = 150;
-            // 
-            // columnHeader24
-            // 
-            this.columnHeader24.Text = "Context";
-            // 
-            // columnHeader50
-            // 
-            this.columnHeader50.Text = "Associated";
-            // 
-            // columnHeader52
-            // 
-            this.columnHeader52.Text = "LocationType";
-            // 
-            // columnHeader53
-            // 
-            this.columnHeader53.Text = "MetadataName";
-            this.columnHeader53.Width = 70;
-            // 
-            // columnHeader48
-            // 
-            this.columnHeader48.Text = "Start";
-            this.columnHeader48.Width = 40;
-            // 
-            // columnHeader49
-            // 
-            this.columnHeader49.Text = "End";
-            this.columnHeader49.Width = 40;
             // 
             // _hyperLinksTabPage
             // 
@@ -1619,6 +1550,238 @@
             this.columnHeader32.Text = "HasError";
             this.columnHeader32.Width = 137;
             // 
+            // _sensitiveItemsTabPage
+            // 
+            this._sensitiveItemsTabPage.Controls.Add(this._sensitiveItemListView);
+            this._sensitiveItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._sensitiveItemsTabPage.Name = "_sensitiveItemsTabPage";
+            this._sensitiveItemsTabPage.Size = new System.Drawing.Size(577, 307);
+            this._sensitiveItemsTabPage.TabIndex = 5;
+            this._sensitiveItemsTabPage.Text = "Sensitive Items (0)";
+            this._sensitiveItemsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _sensitiveItemListView
+            // 
+            this._sensitiveItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._sensitiveItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader44,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader51,
+            this.columnHeader24,
+            this.columnHeader50,
+            this.columnHeader52,
+            this.columnHeader53,
+            this.columnHeader48,
+            this.columnHeader49});
+            this._sensitiveItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._sensitiveItemListView.FullRowSelect = true;
+            this._sensitiveItemListView.HideSelection = false;
+            this._sensitiveItemListView.Location = new System.Drawing.Point(0, 0);
+            this._sensitiveItemListView.Name = "_sensitiveItemListView";
+            this._sensitiveItemListView.Size = new System.Drawing.Size(577, 307);
+            this._sensitiveItemListView.TabIndex = 8;
+            this._sensitiveItemListView.UseCompatibleStateImageBehavior = false;
+            this._sensitiveItemListView.View = System.Windows.Forms.View.Details;
+            this._sensitiveItemListView.SelectedIndexChanged += new System.EventHandler(this._sensitiveItemListView_SelectedIndexChanged);
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "ItemType";
+            this.columnHeader44.Width = 88;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "MatchType";
+            this.columnHeader45.Width = 82;
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "Keywords";
+            this.columnHeader46.Width = 104;
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "Text";
+            this.columnHeader51.Width = 150;
+            // 
+            // columnHeader24
+            // 
+            this.columnHeader24.Text = "Context";
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "Associated";
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Text = "LocationType";
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "MetadataName";
+            this.columnHeader53.Width = 70;
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "Start";
+            this.columnHeader48.Width = 40;
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Text = "End";
+            this.columnHeader49.Width = 40;
+            // 
+            // _entityItemsTabPage
+            // 
+            this._entityItemsTabPage.Controls.Add(this._entityItemListView);
+            this._entityItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._entityItemsTabPage.Name = "_entityItemsTabPage";
+            this._entityItemsTabPage.Size = new System.Drawing.Size(577, 307);
+            this._entityItemsTabPage.TabIndex = 6;
+            this._entityItemsTabPage.Text = "Entity Items (0)";
+            this._entityItemsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _entityItemListView
+            // 
+            this._entityItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._entityItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader47,
+            this.columnHeader55,
+            this.columnHeader56,
+            this.columnHeader57,
+            this.columnHeader60,
+            this.columnHeader61,
+            this.columnHeader62,
+            this.columnHeader63});
+            this._entityItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._entityItemListView.FullRowSelect = true;
+            this._entityItemListView.HideSelection = false;
+            this._entityItemListView.Location = new System.Drawing.Point(0, 0);
+            this._entityItemListView.Name = "_entityItemListView";
+            this._entityItemListView.Size = new System.Drawing.Size(577, 307);
+            this._entityItemListView.TabIndex = 9;
+            this._entityItemListView.UseCompatibleStateImageBehavior = false;
+            this._entityItemListView.View = System.Windows.Forms.View.Details;
+            this._entityItemListView.SelectedIndexChanged += new System.EventHandler(this._entityItemListView_SelectedIndexChanged);
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "ItemType";
+            this.columnHeader47.Width = 78;
+            // 
+            // columnHeader55
+            // 
+            this.columnHeader55.Text = "IdentifierType";
+            this.columnHeader55.Width = 82;
+            // 
+            // columnHeader56
+            // 
+            this.columnHeader56.Text = "Keywords";
+            this.columnHeader56.Width = 104;
+            // 
+            // columnHeader57
+            // 
+            this.columnHeader57.Text = "Text";
+            this.columnHeader57.Width = 118;
+            // 
+            // columnHeader60
+            // 
+            this.columnHeader60.Text = "LocationType";
+            this.columnHeader60.Width = 81;
+            // 
+            // columnHeader61
+            // 
+            this.columnHeader61.Text = "MetadataName";
+            this.columnHeader61.Width = 88;
+            // 
+            // columnHeader62
+            // 
+            this.columnHeader62.Text = "Start";
+            this.columnHeader62.Width = 40;
+            // 
+            // columnHeader63
+            // 
+            this.columnHeader63.Text = "End";
+            this.columnHeader63.Width = 40;
+            // 
+            // _customItemsTabPage
+            // 
+            this._customItemsTabPage.Controls.Add(this._custSenItemListView);
+            this._customItemsTabPage.Location = new System.Drawing.Point(4, 22);
+            this._customItemsTabPage.Name = "_customItemsTabPage";
+            this._customItemsTabPage.Size = new System.Drawing.Size(577, 307);
+            this._customItemsTabPage.TabIndex = 7;
+            this._customItemsTabPage.Text = "Custom Items (0)";
+            this._customItemsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // _custSenItemListView
+            // 
+            this._custSenItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._custSenItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader58,
+            this.columnHeader59,
+            this.columnHeader69,
+            this.columnHeader72,
+            this.columnHeader64,
+            this.columnHeader65,
+            this.columnHeader68,
+            this.columnHeader70,
+            this.columnHeader71});
+            this._custSenItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._custSenItemListView.FullRowSelect = true;
+            this._custSenItemListView.HideSelection = false;
+            this._custSenItemListView.Location = new System.Drawing.Point(0, 0);
+            this._custSenItemListView.Name = "_custSenItemListView";
+            this._custSenItemListView.Size = new System.Drawing.Size(577, 307);
+            this._custSenItemListView.TabIndex = 9;
+            this._custSenItemListView.UseCompatibleStateImageBehavior = false;
+            this._custSenItemListView.View = System.Windows.Forms.View.Details;
+            this._custSenItemListView.SelectedIndexChanged += new System.EventHandler(this._custSenItemListView_SelectedIndexChanged);
+            // 
+            // columnHeader58
+            // 
+            this.columnHeader58.Text = "ItemType";
+            this.columnHeader58.Width = 78;
+            // 
+            // columnHeader59
+            // 
+            this.columnHeader59.Text = "MatchType";
+            this.columnHeader59.Width = 74;
+            // 
+            // columnHeader69
+            // 
+            this.columnHeader69.Text = "Name";
+            this.columnHeader69.Width = 70;
+            // 
+            // columnHeader72
+            // 
+            this.columnHeader72.Text = "Classification";
+            // 
+            // columnHeader64
+            // 
+            this.columnHeader64.Text = "Keywords";
+            this.columnHeader64.Width = 104;
+            // 
+            // columnHeader65
+            // 
+            this.columnHeader65.Text = "Text";
+            this.columnHeader65.Width = 125;
+            // 
+            // columnHeader68
+            // 
+            this.columnHeader68.Text = "LocationType";
+            // 
+            // columnHeader70
+            // 
+            this.columnHeader70.Text = "Start";
+            this.columnHeader70.Width = 40;
+            // 
+            // columnHeader71
+            // 
+            this.columnHeader71.Text = "End";
+            this.columnHeader71.Width = 40;
+            // 
             // _selectedChildInfoTabControl
             // 
             this._selectedChildInfoTabControl.Controls.Add(this._textTabPage);
@@ -1737,79 +1900,6 @@
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
-            // _entityItemsTabPage
-            // 
-            this._entityItemsTabPage.Controls.Add(this._entityItemListView);
-            this._entityItemsTabPage.Location = new System.Drawing.Point(4, 22);
-            this._entityItemsTabPage.Name = "_entityItemsTabPage";
-            this._entityItemsTabPage.Size = new System.Drawing.Size(577, 307);
-            this._entityItemsTabPage.TabIndex = 6;
-            this._entityItemsTabPage.Text = "Entity Items (0)";
-            this._entityItemsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _entityItemListView
-            // 
-            this._entityItemListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._entityItemListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader47,
-            this.columnHeader55,
-            this.columnHeader56,
-            this.columnHeader57,
-            this.columnHeader60,
-            this.columnHeader61,
-            this.columnHeader62,
-            this.columnHeader63});
-            this._entityItemListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._entityItemListView.FullRowSelect = true;
-            this._entityItemListView.HideSelection = false;
-            this._entityItemListView.Location = new System.Drawing.Point(0, 0);
-            this._entityItemListView.Name = "_entityItemListView";
-            this._entityItemListView.Size = new System.Drawing.Size(577, 307);
-            this._entityItemListView.TabIndex = 9;
-            this._entityItemListView.UseCompatibleStateImageBehavior = false;
-            this._entityItemListView.View = System.Windows.Forms.View.Details;
-            this._entityItemListView.SelectedIndexChanged += new System.EventHandler(this._entityItemListView_SelectedIndexChanged);
-            // 
-            // columnHeader47
-            // 
-            this.columnHeader47.Text = "ItemType";
-            this.columnHeader47.Width = 78;
-            // 
-            // columnHeader55
-            // 
-            this.columnHeader55.Text = "IdentifierType";
-            this.columnHeader55.Width = 82;
-            // 
-            // columnHeader56
-            // 
-            this.columnHeader56.Text = "Keywords";
-            this.columnHeader56.Width = 104;
-            // 
-            // columnHeader57
-            // 
-            this.columnHeader57.Text = "Text";
-            this.columnHeader57.Width = 118;
-            // 
-            // columnHeader60
-            // 
-            this.columnHeader60.Text = "LocationType";
-            this.columnHeader60.Width = 81;
-            // 
-            // columnHeader61
-            // 
-            this.columnHeader61.Text = "MetadataName";
-            this.columnHeader61.Width = 88;
-            // 
-            // columnHeader62
-            // 
-            this.columnHeader62.Text = "Start";
-            this.columnHeader62.Width = 40;
-            // 
-            // columnHeader63
-            // 
-            this.columnHeader63.Text = "End";
-            this.columnHeader63.Width = 40;
-            // 
             // ContentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1851,7 +1941,6 @@
             this._metdataTabPage.ResumeLayout(false);
             this._attributesTabPage.ResumeLayout(false);
             this._attributesTabPage.PerformLayout();
-            this._sensitiveItemsTabPage.ResumeLayout(false);
             this._hyperLinksTabPage.ResumeLayout(false);
             this._languagesTabPage.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -1860,6 +1949,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this._childrenTabPage.ResumeLayout(false);
+            this._sensitiveItemsTabPage.ResumeLayout(false);
+            this._entityItemsTabPage.ResumeLayout(false);
+            this._customItemsTabPage.ResumeLayout(false);
             this._selectedChildInfoTabControl.ResumeLayout(false);
             this._textTabPage.ResumeLayout(false);
             this._textTabPage.PerformLayout();
@@ -1871,7 +1963,6 @@
             this._emailHeaderSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._emailHeaderSplitContainer)).EndInit();
             this._emailHeaderSplitContainer.ResumeLayout(false);
-            this._entityItemsTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2045,5 +2136,16 @@
         private System.Windows.Forms.ColumnHeader columnHeader61;
         private System.Windows.Forms.ColumnHeader columnHeader62;
         private System.Windows.Forms.ColumnHeader columnHeader63;
+        private System.Windows.Forms.TabPage _customItemsTabPage;
+        private System.Windows.Forms.ListView _custSenItemListView;
+        private System.Windows.Forms.ColumnHeader columnHeader58;
+        private System.Windows.Forms.ColumnHeader columnHeader59;
+        private System.Windows.Forms.ColumnHeader columnHeader69;
+        private System.Windows.Forms.ColumnHeader columnHeader72;
+        private System.Windows.Forms.ColumnHeader columnHeader64;
+        private System.Windows.Forms.ColumnHeader columnHeader65;
+        private System.Windows.Forms.ColumnHeader columnHeader68;
+        private System.Windows.Forms.ColumnHeader columnHeader70;
+        private System.Windows.Forms.ColumnHeader columnHeader71;
     }
 }

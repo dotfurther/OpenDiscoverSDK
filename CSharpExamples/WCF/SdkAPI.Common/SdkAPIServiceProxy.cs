@@ -13,6 +13,7 @@ using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
 using System.ServiceModel.Channels;
 using OpenDiscoverSDK.Interfaces.Settings;
+using OpenDiscoverSDK.Interfaces.Content.Sensitive;
 
 namespace SdkAPI.Common
 {
@@ -92,7 +93,7 @@ namespace SdkAPI.Common
         //
         // ISdkAPIService Contract:
         //
-        #region public List<FileFormatDefinition> GetSupportedFileFormats()
+
         /// <summary>
         /// Get all supported file formats for file format identification.
         /// </summary>
@@ -101,9 +102,7 @@ namespace SdkAPI.Common
         {
             return _sdkServiceProxy.GetSupportedFileFormats(); 
         }
-        #endregion
 
-        #region public IdResult Identify(string filePath)
         /// <summary>
         /// Identifies the file format of a file.
         /// </summary>
@@ -117,9 +116,7 @@ namespace SdkAPI.Common
             }
             return _sdkServiceProxy.Identify(filePath);
         }
-        #endregion
 
-        #region public void     ExtractContent(string filePath, IdResult idResult, ContentExtractionSettings setting)
         /// <summary>
         /// Asynchronously extracts content from a document. To get extracted content user must sign up to the <see cref="ISdkAPIServiceCallback.ExtractContentCompleted(DocumentContent)"/>
         /// callback (see example test client applications).
@@ -139,7 +136,15 @@ namespace SdkAPI.Common
         {
             _sdkServiceProxy.ExtractContent(filePath, idResult, setting, password);
         }
-        #endregion
+
+        /// <summary>
+        /// Loads CustomItemDefinitions to detect/extract from content extracted text and metadata.
+        /// </summary>
+        /// <param name="customItemDefinitions">List of user defined custom item definitions.</param>
+        public void LoadCustomItemDefinitions(List<CustomItemDefinition> customItemDefinitions)
+        {
+            _sdkServiceProxy.LoadCustomItemDefinitions(customItemDefinitions);
+        }
 
         //
         // Helper Methods:

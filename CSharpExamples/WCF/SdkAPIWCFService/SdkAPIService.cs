@@ -20,6 +20,7 @@ using System.Text;
 using OpenDiscoverSDK;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Content.Sensitive;
 using OpenDiscoverSDK.Interfaces.Extractors;
 using OpenDiscoverSDK.Interfaces.Settings;
 using SdkAPI.Common;
@@ -320,6 +321,25 @@ namespace SdkAPIWCFService
             // Callback the client with the DocumentContent result:
             //
             _callback.ExtractContentCompleted(docContent);
+        }
+        #endregion
+
+        #region public void LoadCustomItemDefinitions(List<CustomItemDefinition> customItemDefinitions)
+        /// <summary>
+        /// Loads CustomItemDefinitions to detect/extract from content extracted text and metadata.
+        /// </summary>
+        /// <param name="customItemDefinitions">List of user defined custom item definitions.</param>
+        public void LoadCustomItemDefinitions(List<CustomItemDefinition> customItemDefinitions)
+        {
+            try
+            {
+                ContentExtractorFactory.LoadCustomItemDefinitions(customItemDefinitions);
+            }
+            catch (Exception ex)
+            {
+                _callback.ServiceException(ex.Message, ex.StackTrace);
+                return;
+            }
         }
         #endregion
 

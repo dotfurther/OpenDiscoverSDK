@@ -129,7 +129,7 @@ namespace ContentExtractionExample
                         long testedSize = -1;
 
                         var stopWatch  = Stopwatch.StartNew();
-                        var testResult = _archiveExtractor.TestItem(childDoc.Index, out testedSize, password);
+                        var testResult = _archiveExtractor.TestItem((int)childDoc.Index, out testedSize, password);
 
                         if (testResult == ContentResult.WrongPassword)
                         {
@@ -137,7 +137,7 @@ namespace ContentExtractionExample
                             while (_hostUI.RequestPassword(out password) == DialogResult.OK)
                             {
                                 stopWatch.Reset();
-                                testResult = _archiveExtractor.TestItem(childDoc.Index, out testedSize, password);
+                                testResult = _archiveExtractor.TestItem((int)childDoc.Index, out testedSize, password);
 
                                 if (testResult != ContentResult.WrongPassword)
                                 {
@@ -288,7 +288,7 @@ namespace ContentExtractionExample
                         {
                             stream = new FileStream(filePath, FileMode.CreateNew, FileAccess.ReadWrite); 
 
-                            var itemExtractResult = _archiveExtractor.ExtractItem(childDoc.Index, stream, password);
+                            var itemExtractResult = _archiveExtractor.ExtractItem((int)childDoc.Index, stream, password);
 
                             if (itemExtractResult == ContentResult.Ok)
                             {
@@ -303,7 +303,7 @@ namespace ContentExtractionExample
                                 // Keep prompting user for passwords until result is not ContentResult.WrongPassword or until user presses "Cancel" button
                                 while (_hostUI.RequestPassword(out password) == DialogResult.OK)
                                 {
-                                    itemExtractResult = _archiveExtractor.ExtractItem(childDoc.Index, stream, password);
+                                    itemExtractResult = _archiveExtractor.ExtractItem((int)childDoc.Index, stream, password);
 
                                     if (itemExtractResult != ContentResult.WrongPassword)
                                     {

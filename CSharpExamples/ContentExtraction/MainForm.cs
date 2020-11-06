@@ -252,24 +252,29 @@ namespace ContentExtractionExample
             // Sensitive Item Checks:
             //
             _enableSensitiveItemsCheckCheckBox.Checked = _extractionSettings.SensitiveItemCheck.Check;
+            _dedupSensitiveItemsCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.DeduplicateSensitiveItems;
+            _dedupEntityItemsCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.DeduplicateEntityItems;
+            _customSensitiveItemCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.CustomItemCheck;
 
-            _socSecurityCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.SocialSecurityCheck;
-            _creditCardCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.CreditCardCheck;
-            _bankAccountCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.BankAccountCheck;
-            _ibanCheckBox.Checked                = _extractionSettings.SensitiveItemCheck.IBANAccountCheck;
-            _investmentAccountCheckBox.Checked   = _extractionSettings.SensitiveItemCheck.InvestmentAccountCheck;
-            _phoneNumberCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.PhoneNumberCheck;
-            _emailAddressCheckBox.Checked        = _extractionSettings.SensitiveItemCheck.EmailAddressCheck;
-            _driversLicenseCheckBox.Checked      = _extractionSettings.SensitiveItemCheck.DriversLicenseCheck;
-            _passportCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.PassportCheck;
-            _dateOfBirthCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.DateOfBirthCheck;
-            _maidenNameCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.MaidenNameCheck;
-            _socialMediaCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.SocialMediaAccountCheck;
-            _licensePlateNumCheckBox.Checked     = _extractionSettings.SensitiveItemCheck.LicensePlateNumberCheck;
-            _vinCheckBox.Checked                 = _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck;
-            _healthCareNumberCheckBox.Checked    = _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck;
-            _addressCheckBox.Checked             = _extractionSettings.SensitiveItemCheck.AddressCheck;
-            _ipAddressCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.IPAddressCheck;
+            _socSecurityCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.SocialSecurityCheck;
+            _creditCardCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.CreditCardCheck;
+            _bankAccountCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.BankAccountCheck;
+            _ibanCheckBox.Checked                  = _extractionSettings.SensitiveItemCheck.IBANAccountCheck;
+            _investmentAccountCheckBox.Checked     = _extractionSettings.SensitiveItemCheck.InvestmentAccountCheck;
+            _phoneNumberCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.PhoneNumberCheck;
+            _emailAddressCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.EmailAddressCheck;
+            _driversLicenseCheckBox.Checked        = _extractionSettings.SensitiveItemCheck.DriversLicenseCheck;
+            _passportCheckBox.Checked              = _extractionSettings.SensitiveItemCheck.PassportCheck;
+            _dateOfBirthCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.DateOfBirthCheck;
+            _maidenNameCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.MaidenNameCheck;
+            _socialMediaCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.SocialMediaAccountCheck;
+            _licensePlateNumCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.LicensePlateNumberCheck;
+            _vinCheckBox.Checked                   = _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck;
+            _healthCareNumberCheckBox.Checked      = _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck;
+            _addressCheckBox.Checked               = _extractionSettings.SensitiveItemCheck.AddressCheck;
+            _ipAddressCheckBox.Checked             = _extractionSettings.SensitiveItemCheck.IPAddressCheck;
+            _cryptoCurrencyAddressCheckBox.Checked = _extractionSettings.SensitiveItemCheck.CryptoCurrencyAddressCheck;
+
             _passwordCheckBox4.Checked           = _extractionSettings.SensitiveItemCheck.PasswordCheck;
             _usernameCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.UsernameCheck;
             _networkNameCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.NetworkNameCheck;
@@ -709,8 +714,14 @@ namespace ContentExtractionExample
             }
             catch (Exception ex)
             {
-                fileNameLabel.Text = String.Empty;
+                fileNameLabel.Text = string.Empty;
                 LogMessage(string.Format("Load error: {0}", ex.Message));
+
+                if (ex.InnerException != null)
+                {
+                    LogMessage(string.Format("   Inner Exception: {0}", ex.InnerException.Message));
+                }
+
                 if (_stream != null)
                 {
                     _stream.Dispose();
@@ -776,13 +787,19 @@ namespace ContentExtractionExample
             _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck    = _healthCareNumberCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.AddressCheck               = _addressCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.IPAddressCheck             = _ipAddressCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.CryptoCurrencyAddressCheck = _cryptoCurrencyAddressCheckBox.Checked;
+
             _extractionSettings.SensitiveItemCheck.PasswordCheck              = _passwordCheckBox4.Checked;
             _extractionSettings.SensitiveItemCheck.UsernameCheck              = _usernameCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.NetworkNameCheck           = _networkNameCheckBox.Checked;
             _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck   = _databaseCredentialsCheckBox.Checked;
 
-            _extractionSettings.SensitiveItemCheck.Check = _enableSensitiveItemsCheckCheckBox.Checked;
-            _sensitiveItemTabControl.Enabled             = _enableSensitiveItemsCheckCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.Check                     = _enableSensitiveItemsCheckCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.DeduplicateSensitiveItems = _dedupSensitiveItemsCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.DeduplicateEntityItems    = _dedupEntityItemsCheckBox.Checked;
+            _extractionSettings.SensitiveItemCheck.CustomItemCheck           =_customSensitiveItemCheckBox.Checked;
+
+            _sensitiveItemTabControl.Enabled = _enableSensitiveItemsCheckCheckBox.Checked;
         }
         #endregion
 
@@ -931,9 +948,35 @@ namespace ContentExtractionExample
         }
         #endregion
 
+
+        #region private void _loadCustomSensitiveItemDefButton_Click(object sender, EventArgs e)
+        private void _loadCustomSensitiveItemDefButton_Click(object sender, EventArgs e)
+        {
+            if (ContentExtractorFactory.CustomItemDefinitionsLoaded)
+            {
+                MessageBox.Show("Custom item definitions have already been loaded.", "Error");
+                _loadCustomSensitiveItemDefButton.Enabled = false;
+            }
+
+            try
+            {
+                var items = CustomItemDefinitionHelper.LoadCustomItemDefinitions();
+
+                ContentExtractorFactory.LoadCustomItemDefinitions(items);
+
+                _numCustItemDefsLoadedLabel.Text = string.Format("{0} CustomItemDefinitions loaded.", items.Count);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+        #endregion
+
         private void _UserMapiPropertyRequestsButton_Click(object sender, EventArgs e)
         {
             //TODO
         }
+
     }
 }

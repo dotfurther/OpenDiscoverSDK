@@ -54,7 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenDiscoverSDK">
-      <HintPath>..\..\..\..\..\bin\OpenDiscoverSDK.dll</HintPath>
+      <HintPath>..\..\..\..\bin\OpenDiscoverSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\ContentExtraction\Helpers\CustomItemDefinitionHelper.cs">
+      <Link>Helpers\CustomItemDefinitionHelper.cs</Link>
+    </Compile>
     <Compile Include="Content\ArchiveView.cs">
       <SubType>UserControl</SubType>
     </Compile>

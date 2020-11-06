@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ServiceModel;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
+using OpenDiscoverSDK.Interfaces.Content.Sensitive;
 using OpenDiscoverSDK.Interfaces.Settings;
 
 namespace SdkAPI.Common
@@ -51,5 +52,12 @@ namespace SdkAPI.Common
         /// <returns>The extracted document content. Note: archive or mailstore formats will only have their metadata returned.</returns>
         [OperationContract(IsOneWay = true)]
         void ExtractContent(string filePath, IdResult idResult, ContentExtractionSettings setting, string password);
+
+        /// <summary>
+        /// Loads CustomItemDefinitions to detect/extract from content extracted text and metadata.
+        /// </summary>
+        /// <param name="customItemDefinitions">List of user defined custom item definitions.</param>
+        [OperationContract(IsOneWay = true)]
+        void LoadCustomItemDefinitions(List<CustomItemDefinition> customItemDefinitions);
     }
 }
