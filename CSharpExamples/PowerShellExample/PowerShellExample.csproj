@@ -78,7 +78,7 @@
     <Compile Include="GetArchiveExpandedSizeCmdlet.cs" />
     <Compile Include="GetFileContentCmdlet.cs" />
     <Compile Include="GetFileInfoCmdlet.cs" />
-    <Compile Include="GetFileFormatCmdlet.cs" />
+    <Compile Include="GetFileFormatIdCmdlet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

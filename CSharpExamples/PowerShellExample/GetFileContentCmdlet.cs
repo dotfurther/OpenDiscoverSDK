@@ -162,17 +162,23 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+                        case ContentExtractorType.Database:
+                            // Ignore for this example 
+                            content        = new DocumentContent(idResult);
+                            content.Result = ContentResult.UnsupportedError;
+                            content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
+                            break;
                         case ContentExtractorType.LargeUnsupported:
                             // Ignore for this example
                             content = new DocumentContent(idResult);
                             content.Result       = ContentResult.UnsupportedError;
-                            content.ErrorMessage = "Not supported for this example.";
+                            content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
                             break;
                         case ContentExtractorType.LargeEncodedText:
                             // Ignore for this example 
                             content = new DocumentContent(idResult);
                             content.Result       = ContentResult.UnsupportedError;
-                            content.ErrorMessage = "Not supported for this example.";
+                            content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
                             break;
                     }
                 }

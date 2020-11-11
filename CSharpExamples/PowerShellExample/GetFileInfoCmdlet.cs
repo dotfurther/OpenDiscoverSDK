@@ -189,6 +189,9 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+                        case ContentExtractorType.Database:
+                            // Ignore for this example
+                            break;
                         case ContentExtractorType.LargeUnsupported:
                             // Ignore for this example
                             break;
@@ -347,6 +350,18 @@ namespace OpenDiscoverSDK.PowerShell
                 }
                 strBuilder.AppendLine();
 
+
+                strBuilder.AppendLine();
+                strBuilder.AppendLine("Detected Languages:");
+                strBuilder.AppendLine("-------------------");
+                if (content.LanguageIdResults.Count > 0)
+                {
+                    foreach (var langIdResult in content.LanguageIdResults)
+                    {
+                        strBuilder.AppendLine(string.Format("   {0,-30} {1,-20}  {2,-15}", langIdResult.Language, langIdResult.LangIso639, langIdResult.PercentOfFullText));
+                    }
+                }
+                strBuilder.AppendLine();
 
                 if (ShowText)
                 {

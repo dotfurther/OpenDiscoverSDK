@@ -55,17 +55,17 @@
             Override
             </summary>
         </member>
-        <member name="T:OpenDiscoverSDK.PowerShell.GetFileFormatCmdlet">
+        <member name="T:OpenDiscoverSDK.PowerShell.GetFileFormatIdCmdlet">
             <summary>
             Identifies a file's format and returns the identification IdResult object.
             </summary>
         </member>
-        <member name="P:OpenDiscoverSDK.PowerShell.GetFileFormatCmdlet.Path">
+        <member name="P:OpenDiscoverSDK.PowerShell.GetFileFormatIdCmdlet.Path">
             <summary>
             Path to file to identify.
             </summary>
         </member>
-        <member name="M:OpenDiscoverSDK.PowerShell.GetFileFormatCmdlet.ProcessRecord">
+        <member name="M:OpenDiscoverSDK.PowerShell.GetFileFormatIdCmdlet.ProcessRecord">
             <summary>
             Override
             </summary>
