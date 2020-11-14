@@ -47,8 +47,7 @@ namespace OpenDiscoverSDK.PowerShell
         {
             IdResult        idResult = null;
             DocumentContent content  = null;
-            var strBuilder = new StringBuilder();
-
+            var strBuilder    = new StringBuilder();
             var extractorType = ContentExtractorType.Document;
 
             using (var stream = File.OpenRead(Path))
@@ -313,7 +312,6 @@ namespace OpenDiscoverSDK.PowerShell
 
                     strBuilder.AppendLine(string.Format("   {0,-35} {1}", meta.Key, value));
                 }
-
 
                 strBuilder.AppendLine();
                 strBuilder.AppendLine("File Attributes:");
