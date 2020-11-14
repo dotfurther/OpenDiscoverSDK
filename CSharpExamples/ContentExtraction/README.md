@@ -45,6 +45,26 @@ The "Entity Items" tab displays any detected entity items in extracted text.
 
 <img src="Image7.png">
 
+### Archive and mail store containers:
+
+Items supported for password decryption will have a password dialog box automatically appear. In this example, we selected a encrypted 7-zip archive: 
+
+<img src="Image8.png">
+
+This screen shot shows the archive item metadata and archive level metadata: 
+
+<img src="Image9.png">
+
+This screen shot shows the archive's internal container folder structure. The example also supports extracting all archive items to a user supplied folder: 
+
+<img src="Image10.png">
+
+This screen shot shows a mail store container's (Microsoft Outlook .pst file) internal folder structure. Note that the mail store container's metadata contains the number
+of email objects in the container ("NumOfContainerItems" field). Users can perform metadata only extraction to get the total number of items contained in archive and mail store
+containers.
+
+<img src="Image11.png">
+
 
 ### Note:
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
