@@ -49,6 +49,9 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 * eDiscovery applications such as early case assessment (ECA) or full processing
 * And more...
 
+In addition to the Open Discover SDK, we also provide higher level APIs built upon the SDK (Open Discover Platform) that help users build
+high volume document processing workflows.
+
 ## Open Discover SDK Help:
 The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
 
