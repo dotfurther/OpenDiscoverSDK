@@ -2,7 +2,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 
 # Welcome to Open Discover® SDK for .NET Code Examples
 At this time, Open Discover SDK and Open Discover Platfrom SDK's are only available for OEMs that are in the eDiscovery and information governance industries or if your company frequently processes large volumes of documents.
-Contact us if your company meets the above requirements and are interested in demo-ing: https://dotfurther.com/contact-us/
+Contact us if your company meets these requirements and are interested in demo-ing: https://dotfurther.com/contact-us/
 
 ## Open Discover SDK is a .NET application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
