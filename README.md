@@ -70,10 +70,5 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
 ### PowerShell Example - shows how to create Cmdlets that use SDK to:
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
-### Indexing Example - illustrates a simple indexing strategy using SDK with Lucene.NET and how to make indexes better by:
-   * Indexing all document extracted metadata as fields.
-   * Indexing document format ID as a field. Users can limit searches for documents with very specific formats.
-   * Indexing document format classification as fields (ex: WordProcessing, Spreadsheet, etc are file format classifications). Users can limit searches to all "WordProcessing" or all "Spreadsheet" document classifications, for example.
-   * Indexing MD5/SHA-1 binary and content based hashes as fields. When searching index, duplicate documents returned by a search can be indicated and grouped together.
-   * Indexing languages identified in extracted text as a field to aid in searching for documents that contain foreign languages.
-   * Indexing the sensitive item information (PII) in order to find sensitive documents. Note: your index will now contain sensitive information and should be protected and/or properly disposed of when done auditing documents for sensitive information is complete.
+### WCF Example - illustrates that the API is serializable
+  * This example is very similar to the "ContentExtraction Example" except for all content extraction is done by a console app hosted WCF service.
