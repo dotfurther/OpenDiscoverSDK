@@ -75,7 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GetArchiveExpandedSizeCmdlet.cs" />
     <Compile Include="GetFileContentCmdlet.cs" />
     <Compile Include="GetFileInfoCmdlet.cs" />
     <Compile Include="GetFileFormatIdCmdlet.cs" />
