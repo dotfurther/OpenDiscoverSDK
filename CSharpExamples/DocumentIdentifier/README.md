@@ -35,7 +35,7 @@ To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article
 ------------------------------------------------------------------------------------------------------------------------
 ### Warning: 
 Watch your anti-virus software in Windows Task Manager (under Task Manager "Details" sort by CPU). Since this example 
-application will identify hundreds to thousands of files a second (opening a FileStream for each file), your anti-virus 
+application will identify hundreds to thousands of files per second (opening a FileStream for each file), your anti-virus 
 software may monitor it very closely and this monitoring may use a lot of the available CPU. The anti-virus program may even 
 kill the process. If this happens you will need to configure your anti-virus to 'trust' this application or any document 
 processing application you build with SDK.
