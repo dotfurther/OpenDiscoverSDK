@@ -56,7 +56,7 @@ high volume document processing workflows.
 The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
-### [DocumentIdentifier Example:](../CSharpExamples/DocumentIdentifier/README.md)
+### [DocumentIdentifier Example:](./CSharpExamples/DocumentIdentifier/README.md)
    * Shows how to use SDK to identify the document file formats of all files under an input directory and its 
      sub-directories. 
 ### [ContentExtraction Example - illustrates the following SDK features:](./CSharpExamples/ContentExtraction/README.md)
@@ -70,5 +70,5 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
 ### [PowerShell Example - shows how to create Cmdlets that use SDK to:](./CSharpExamples/PowerShellExample/README.md)
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
-### WCF Example - illustrates that the API is serializable:](./CSharpExamples/WCF/README.md)
+### [WCF Example - illustrates that the API is serializable:](./CSharpExamples/WCF/README.md)
   * This example is very similar to the "ContentExtraction Example" except for all content extraction is done by a console app hosted WCF service.
