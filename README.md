@@ -56,10 +56,10 @@ high volume document processing workflows.
 The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
-### DocumentIdentifier Example:
+### [DocumentIdentifier Example:](../CSharpExamples/DocumentIdentifier/README.md)
    * Shows how to use SDK to identify the document file formats of all files under an input directory and its 
      sub-directories. 
-### ContentExtraction Example - illustrates the following SDK features:
+### [ContentExtraction Example - illustrates the following SDK features:](../CSharpExamples/ContentExtraction/README.md)
    * How to extract text and metadata from office documents, PDFs, XPS, raster images, vector images, multimedia, and more
    * How to decrypt password protected office documents, PDFs, and archives
    * Identified languages present in extracted text
@@ -67,8 +67,8 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    * How to extract items from archives such as 7ZIP, ZIP, RAR, split archives, self-extracting archives, etc.
    * Extract email objects from PST, OST, and MBOX mail stores
    * Sensitive item detection such as social security, credit card numbers, IBAN, driver's license numbers, license plate numbers, phone numbers, emails, and much more.
-### PowerShell Example - shows how to create Cmdlets that use SDK to:
+### [PowerShell Example - shows how to create Cmdlets that use SDK to:](../CSharpExamples/PowerShellExample/README.md)
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
-### WCF Example - illustrates that the API is serializable
+### WCF Example - illustrates that the API is serializable:](../CSharpExamples/WCF/README.md)
   * This example is very similar to the "ContentExtraction Example" except for all content extraction is done by a console app hosted WCF service.
