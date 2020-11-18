@@ -12,15 +12,15 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK;
-using System.Reflection;
-using System.Runtime.Versioning;
+using OpenDiscoverSDK.Interfaces;
 
 namespace DocumentIdentifierExample
 {
@@ -366,8 +366,6 @@ namespace DocumentIdentifierExample
                 _classificationChart.Dock = System.Windows.Forms.DockStyle.Fill;
                 _idCountChart.Dock        = System.Windows.Forms.DockStyle.Fill;
 
-                //_classificationChart.Legends[0].Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-                //_idCountChart.Legends[0].Docking        = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
                 _classificationChart.Series[0]["PieLabelStyle"] = "Disabled";
                 _idCountChart.Series[0]["PieLabelStyle"]        = "Disabled";
 
@@ -389,10 +387,10 @@ namespace DocumentIdentifierExample
         {
             try
             {
-                var allFiles            = Directory.GetFiles(_rootPath, "*", SearchOption.AllDirectories);
-                var totalFiles          = allFiles.Length;
-                var totalStopWatch      = Stopwatch.StartNew();
-                var uniqueIdSet         = new ConcurrentDictionary<Id,int>(); // No ConcurrenHashSet in .NET so we make use of this
+                var allFiles       = Directory.GetFiles(_rootPath, "*", SearchOption.AllDirectories);
+                var totalFiles     = allFiles.Length;
+                var totalStopWatch = Stopwatch.StartNew();
+                var uniqueIdSet    = new ConcurrentDictionary<Id,int>(); 
 
                 Dispatcher.Invoke((Action)delegate
                 {
@@ -415,7 +413,7 @@ namespace DocumentIdentifierExample
                     {
                         IdResult docFormat = null;
 
-                        // WARNING: This example does not support long path names (> 255) - .NET solutions for getting valid FileStreams for 'long file paths'
+                        // WARNING: This example does not support long path names (> 255 chars) - .NET solutions for getting valid FileStreams for 'long file paths'
                         // can be found on the internet - also .NET 4.6.2 supports long file paths (web search for how to enable)
                         // Note: Minimum recommended buffer size of 16kb for file identification
                         using (var stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 16384))
@@ -438,7 +436,7 @@ namespace DocumentIdentifierExample
                         var percentComplete    = 100.0 * numFilesIdentified / totalFiles;
 
                         // Update progress bar and status every 250 [ms]:
-                        if (lastUpdateStopWatch.ElapsedMilliseconds > 250)
+                        if (lastUpdateStopWatch.ElapsedMilliseconds >= 250)
                         {
                             lastUpdateStopWatch.Restart();
                             Dispatcher.BeginInvoke((Action)delegate
@@ -489,27 +487,27 @@ namespace DocumentIdentifierExample
         private void WorkerCompleted()
         {
             Dispatcher.BeginInvoke((Action)delegate
+            {
+                try
                 {
-                    try
-                    {
-                        _progressBar.Visibility = Visibility.Collapsed;
+                    _progressBar.Visibility = Visibility.Collapsed;
 
-                        var idResults = _resultsQueue.ToList();
-                        _resultsQueue = null;
-                        
-                        _startIdProcessButton.IsEnabled    = true;
-                        _browseFolderButton.IsEnabled      = true;
-                        _fileIdResultsDataGrid.ItemsSource = idResults;
+                    var idResults = _resultsQueue.ToList();
+                    _resultsQueue = null;
+                    
+                    _startIdProcessButton.IsEnabled    = true;
+                    _browseFolderButton.IsEnabled      = true;
+                    _fileIdResultsDataGrid.ItemsSource = idResults;
 
-                        _statusTextBox.Text = string.Format(
-                             "Total files = {0:###,###,###}   |   Total ID Time = {1:F3} [sec]   |   (Avg. ID Time)/File = {2:F4} [ms]   |   Unknown files = {3}   |   Total Unique IDs = {4}   |   Total Exceptions = {5}",
-                             idResults.Count, _totalFileIdTimeMs/1000, _avgTimeToIdFile, _totalUnknownFiles, _totalUniqueFileIds, _totalExceptions);
+                    _statusTextBox.Text = string.Format(
+                         "Total files = {0:###,###,###}   |   Total ID Time = {1:F3} [sec]   |   (Avg. ID Time)/File = {2:F4} [ms]   |   Unknown files = {3}   |   Total Unique IDs = {4}   |   Total Exceptions = {5}",
+                         idResults.Count, _totalFileIdTimeMs/1000, _avgTimeToIdFile, _totalUnknownFiles, _totalUniqueFileIds, _totalExceptions);
 
-                        IdentificationResultsAvailable = true;
-                        UpdateChartingControlsWithResults(idResults);
-                    }
-                    catch { }
-            } );
+                    IdentificationResultsAvailable = true;
+                    UpdateChartingControlsWithResults(idResults);
+                }
+                catch { }
+            });
         }
         #endregion
     }
