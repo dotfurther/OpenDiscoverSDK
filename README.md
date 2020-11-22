@@ -45,8 +45,8 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 * Information governance
 * Website crawling/full-text website search
 * Enterprise search and content management
-* IT Departments - identify documents with sensitive information and/or de-duplicate documents on file servers. 
-* eDiscovery applications such as early case assessment (ECA) or full processing
+* IT Departments - identify documents with sensitive information and/or that are redunant, obsolete, and trivial (ROT). 
+* eDiscovery applications such as early case assessment (ECA) or full processing/indexing
 * And more...
 
 In addition to the Open Discover SDK, we also provide higher level APIs built upon the SDK (Open Discover Platform) that help users build
