@@ -16,6 +16,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
 * Detecting and extracting information on 18 types of personally identifiable information (PII) (in extracted text and metadata):
      * Social security numbers
      * Credit card numbers (13-19 digits)
+     * Bank account numbers
      * IBAN account numbers
      * Investment account numbers
      * Email addresses
@@ -28,6 +29,7 @@ Copyright © 2019-2020 dotFurther Inc. All rights reserved.
      * Health care number/member IDs
      * License plate numbers
      * Vehicle identification numbers (VIN)
+     * Social media accounts
      * IP addresses (IPv4 and IPv6)
      * Cryptocurrency addresses
 * Detecting 4 types of sensitive security information (in extracted text and metadata):
