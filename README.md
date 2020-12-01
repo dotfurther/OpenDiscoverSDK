@@ -67,8 +67,8 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    * Identified languages present in extracted text
    * MD5/SHA-1 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of same document or email whether saved as .msg, .eml, or .emlx.
    * How to extract items from archives such as 7ZIP, ZIP, RAR, split archives, self-extracting archives, etc.
-   * Extract email objects from PST, OST, and MBOX mail stores
-   * Sensitive item detection such as social security, credit card numbers, IBAN, driver's license numbers, license plate numbers, phone numbers, emails, and much more.
+   * How to extract email objects from PST, OST, and MBOX mail stores
+   * Sensitive item detection (PII) such as social security, credit card numbers, IBAN, driver's license numbers, license plate numbers, phone numbers, emails, and much more.
 ### [PowerShell Example - shows how to create Cmdlets that use SDK to:](./CSharpExamples/PowerShellExample/README.md)
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
