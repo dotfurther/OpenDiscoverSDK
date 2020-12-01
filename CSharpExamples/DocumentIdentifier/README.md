@@ -24,7 +24,7 @@ Screen shot of "Identification Details" view (details of each file format identi
 
 <img src="Image3.png">
 
-Screen shot of "All Supported File Formats" view. This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification:
+Screen shot of "All Supported File Formats" view (at this time, Open Discover SDK supports 1,517 file formats for identification). This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification:
 
 <img src="Image4.png">
 
@@ -35,7 +35,7 @@ To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article
 ------------------------------------------------------------------------------------------------------------------------
 ### Warning: 
 Watch your anti-virus software in Windows Task Manager (under Task Manager "Details" sort by CPU). Since this example 
-application will identify hundreds to thousands of files a second (opening a FileStream for each file), your anti-virus 
+application will identify hundreds to thousands of files per second (opening a FileStream for each file), your anti-virus 
 software may monitor it very closely and this monitoring may use a lot of the available CPU. The anti-virus program may even 
 kill the process. If this happens you will need to configure your anti-virus to 'trust' this application or any document 
 processing application you build with SDK.
