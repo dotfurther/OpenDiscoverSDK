@@ -8,9 +8,7 @@ can easily take advantage of the power of Open Discover SDK by expanding on thes
 The Cmdlet derived classes in this example C# project show how to use the Open Discover SDK API to:
 - Identify a file's format (GetFileFormatCmdlet.cs)
 - Display a summary of a file's content (GetFileInfoCmdlet.cs)
-- Extract document content and return the result as a DocumentContent object (GetFileContentCmdlet.cs)
-- Test an archive for true expansion size (GetArchiveExpandedSizeCmdlet.cs) to help detect malicious archives with intentionally malformed container item headers to hide item true expanded (uncompressed) size.
-
+- Extract document text and metadata and return the result as a DocumentContent object (GetFileContentCmdlet.cs)
 
 # Example Cmdlet Usage:
 Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (the full path will be unique to where the user installed the Github examples but the example build output relative path is ".\OpenDiscoverSDK\Examples\SdkExamples\Build"):
