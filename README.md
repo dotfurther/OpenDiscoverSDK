@@ -73,4 +73,4 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
 ### [WCF Example - illustrates that the API is serializable:](./CSharpExamples/WCF/README.md)
-  * This example is very similar to the "ContentExtraction Example" except for all content extraction is done by a console app hosted WCF service.
+  * This example is very similar to the "ContentExtraction Example" except that all content extraction is done by a console hosted WCF service.
