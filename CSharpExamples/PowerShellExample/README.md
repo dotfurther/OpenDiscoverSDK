@@ -56,7 +56,7 @@ It's not hard to see that users using a file path pipeline with this Cmdlet coul
 
 <img src="Image4.png">
 
-### Get a file's format, metadata, attributes, hyperlinks, and [optionaly] display up to the first 1000 characters of extracted text:
+### Get a file's format, metadata, attributes, hyperlinks, and [optionally] display up to the first 1000 characters of extracted text:
 ```powershell
    PS> Get-FileInfo -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf" 
    PS> Get-FileInfo -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf" -ShowText $true
