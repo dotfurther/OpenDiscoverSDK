@@ -24,7 +24,7 @@ Screen shot of "Identification Details" view (details of each file format identi
 
 <img src="Image3.png">
 
-Screen shot of "All Supported File Formats" view (at this time, Open Discover SDK supports 1,517 file formats for identification). This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification:
+Screen shot of "All Supported File Formats" view (at this time, Open Discover SDK supports 1,517 file formats for identification). This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification (IdClassification.Email, IdClassification.WordProcessing, IdClassification.Spreadsheet, etc):
 
 <img src="Image4.png">
 
