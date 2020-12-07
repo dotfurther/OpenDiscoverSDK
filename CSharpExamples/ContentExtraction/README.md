@@ -60,7 +60,7 @@ This screen shot shows the archive's internal container folder structure. The ex
 
 <img src="Image10.png">
 
-This screen shot shows the results of running an archive true expanded size ("Test Archive" button) test on a malicious archive. This particular archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). This archive can be found in the GitHub repository of [archive decompression "bombs"](https://github.com/bones-codes/bombs). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracting items from untrusted archives can potentially ruin your file server's day). Additionally, the Open Discover Platform API has built-in checks for both archive compression bombs and archive recursion bombs.
+This screen shot shows the results of running an archive true expanded size ("Test Archive" button) test a malicious archive. This particular archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). This archive can be found in the GitHub repository of [archive decompression "bombs"](https://github.com/bones-codes/bombs). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracting items from untrusted archives can potentially ruin your file server's day). Additionally, the Open Discover Platform API has built-in checks for both archive compression bombs and archive recursion bombs.
 
 <img src="Image10b.png">
 
