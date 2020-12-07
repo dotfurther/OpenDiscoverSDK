@@ -1,4 +1,4 @@
-Copyright © 2019-2020 dotFurther Inc. All rights reserved.
+Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 
 # Welcome to Open Discover® SDK for .NET Code Examples
 ### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily build high volume/high throughput document processing workflows. See [Early Case Assessment Study using Open Discover Platform and RavenDB document database](https://github.com/dotfurther/OpenDiscoverPlatformCaseStudy).
