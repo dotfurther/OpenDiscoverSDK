@@ -8,7 +8,7 @@ can easily take advantage of the power of Open Discover SDK by expanding on thes
 The Cmdlet derived classes in this example C# project show how to use the Open Discover SDK API to:
 - Identify a file's format (GetFileFormatCmdlet.cs)
 - Display a summary of a file's content (GetFileInfoCmdlet.cs)
-- Extract document text and metadata and return the result as a DocumentContent object (GetFileContentCmdlet.cs)
+- Extract document text, metadata, sensitive items, and return the result as a DocumentContent object (GetFileContentCmdlet.cs)
 
 # Example Cmdlet Usage:
 Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (the full path will be unique to where the user installed the Github examples but the example build output relative path is ".\OpenDiscoverSDK\Examples\SdkExamples\Build"):
@@ -21,21 +21,21 @@ Change PowerShell directory to location of compiled "PowerShellExample.dll" asse
    PS> Import-Module .\PowerShellExample.dll -Force
 ```
 
-<img src="Image1.png">
+<img src="DocumentationImages/Image1.png">
 
 ### Display all Cmdlets in "PowerShellExample.dll" module:
 ```powershell
    PS> Get-Command -Module PowerShellExample       
 ```
 
-<img src="Image2.png">
+<img src="DocumentationImages/Image2.png">
 
 ### Identify a file's format:
 ```powershell
    PS> Get-FileFormat -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"
 ```
 
-<img src="Image3.png">
+<img src="DocumentationImages/Image3.png">
 
 ### Identify a file's format and store the returned IdResult object in a variable:
 ```powershell
@@ -54,7 +54,7 @@ Change PowerShell directory to location of compiled "PowerShellExample.dll" asse
 
 It's not hard to see that users using a file path pipeline with this Cmdlet could search for all documents on a file server that either have certain format Id or IdClassification type.
 
-<img src="Image4.png">
+<img src="DocumentationImages/Image4.png">
 
 ### Get a file's format, metadata, attributes, hyperlinks, and [optionally] display up to the first 1000 characters of extracted text:
 ```powershell
@@ -62,7 +62,7 @@ It's not hard to see that users using a file path pipeline with this Cmdlet coul
    PS> Get-FileInfo -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf" -ShowText $true
 ```
 
-<img src="Image5.png">
+<img src="DocumentationImages/Image5.png">
 
 ### Get a file's extracted content as a DocumentContent object and store it in a variable named "$content":
 ```powershell
@@ -77,7 +77,7 @@ It's not hard to see that users using a file path pipeline with this Cmdlet coul
 ```
 Using a a pipeline that compares both $content.SHA1BinaryHash and $content.SHA1ContentHash and stores document information for documents that have matching hashes, an IT professional or power user could easily find all duplicate documents on a file server.
 
-<img src="Image6.png">
+<img src="DocumentationImages/Image6.png">
 
 
 Save extracted text as HTML using PowerShell 'ConvertTo':
@@ -87,7 +87,7 @@ Save extracted text as HTML using PowerShell 'ConvertTo':
 
 The extracted text converted to HTML (opened in a web browser):
 
-<img src="Image7.png">
+<img src="DocumentationImages/Image7.png">
 
 
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
