@@ -14,7 +14,7 @@ Any higher-level document processing application built upon Open Discover SDK sh
 
 Upon DocumentIdentifierExample.exe app startup, the "Directions" screen is shown. Follow these directions: 
 
-<img src="Image1.png">
+<img src="DocumentationImages/Image1.png">
 
 Screen shot of "Identification Summary" view (visual summary of file format classifications and format IDs):
 
