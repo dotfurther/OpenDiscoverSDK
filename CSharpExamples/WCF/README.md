@@ -1,4 +1,4 @@
-Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
+Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 
 ## The SDK example C# projects contained in this directory show case the use of the Open Discover SDK API in a WCF service.
 

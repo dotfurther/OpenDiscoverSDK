@@ -1,4 +1,4 @@
-Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
+Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 
 ## Document Content Extraction Example
 

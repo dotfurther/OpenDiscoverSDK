@@ -18,7 +18,8 @@ namespace OpenDiscoverSDK.PowerShell
 {
     /// <summary>
     /// Displays the results of file identification and extracted document metadata, attributes, and hyperlinks for the
-    /// document given by the 'Path' argument.
+    /// document given by the 'Path' argument. If parameter 'ShowText' is true, will also display up to the first 1000
+    /// characters of extracted text.
     /// </summary>
     [Cmdlet(VerbsCommon.Get, "FileInfo")]
     [OutputType(typeof(string))]

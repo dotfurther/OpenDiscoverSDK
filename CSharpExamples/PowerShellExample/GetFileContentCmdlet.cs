@@ -1,6 +1,6 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
@@ -19,8 +19,8 @@ namespace OpenDiscoverSDK.PowerShell
     /// </summary>
     /// <remarks>
     /// Note: DocumentContent is also the base class for HtmlDocumentContent, PdfDocumentContent, EmailDocumentContent,
-    ///       MailStoreContent, and ArchiveContent classes. This classes hold extra content for their respective format 
-    ///       types.
+    ///       MailStoreContent, and ArchiveContent classes. These DocumentContent derived classes hold extra content for 
+    ///       their respective format types.
     /// </remarks>
     [Cmdlet(VerbsCommon.Get, "FileContent")]
     [OutputType(typeof(DocumentContent))]
