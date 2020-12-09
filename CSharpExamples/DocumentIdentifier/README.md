@@ -18,15 +18,15 @@ Upon DocumentIdentifierExample.exe app startup, the "Directions" screen is shown
 
 Screen shot of "Identification Summary" view (visual summary of file format classifications and format IDs):
 
-<img src="Image2.png">
+<img src="DocumentationImages/Image2.png">
 
 Screen shot of "Identification Details" view (details of each file format identified):
 
-<img src="Image3.png">
+<img src="DocumentationImages/Image3.png">
 
 Screen shot of "All Supported File Formats" view (at this time, Open Discover SDK supports 1,517 file formats for identification). This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification (IdClassification.Email, IdClassification.WordProcessing, IdClassification.Spreadsheet, etc):
 
-<img src="Image4.png">
+<img src="DocumentationImages/Image4.png">
 
 
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
