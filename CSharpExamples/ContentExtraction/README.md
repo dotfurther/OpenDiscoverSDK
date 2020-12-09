@@ -12,7 +12,7 @@ various extracted document (see images below).
 
 - Set the Visual Studio Startup Project to "ContentExtractionExample.csproj". 
 - Make sure your build Platform is x64 and then menu select Debug/Start Debugging. 
-- Once ContentExtraction WinForm UI is dispalyed select menu File/Open and select one of the test files in the "TestFiles" directory of this repository.
+- Once ContentExtraction WinForm UI is displayed select menu "File/Open" and select a file. All file names in the same directory will be displayed in the left hand side file list. Left mouse-clicking on a displayed file name will cause the contents of the selected file to be extracted and displayed.
 
 Your application should now look something like the image below. There is a panel for document file format identification information, the content extraction result, and document hashes. There is also a panel that contains tab pages for extracted metadata, document attributes, hyperlinks, the languages identified in the extracted text, and all extracted child documents (attachments/embedded objects/embedded media). Notice the bottom right side panel that contains any extracted text. The panels are separated by splitters for easy resizing.
 
