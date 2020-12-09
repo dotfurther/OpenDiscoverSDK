@@ -29,7 +29,7 @@ The "Hyperlinks" tab page displays any extracted hyperlinks for HTML, office for
 <img src="Image3.png">
 
 
-The "Languages" tab page displays the languages identified in the extracted text (if any). Some formats such as spreadsheets or any document that is not mostly sentences (e.g., tables, addresses, names, acronyms) can have poor results for language identification. Non-Latin-based languages yield the best language identification results because of their unique scripts (e.g., CJK). Many languages use Latin script so this poses more of a challenge when the text being identified is not in sentences such as in a report or email:
+The "Languages" tab page displays the languages identified in the extracted text (if any). Some formats such as spreadsheets or any document that is not mostly sentences (e.g., tables, addresses, names, acronyms) can have poor results for language identification. Non-Latin-based languages yield the best language identification results because of their unique scripts (e.g., CJK):
 
 <img src="Image4.png">
 
