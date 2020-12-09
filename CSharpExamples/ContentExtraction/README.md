@@ -12,7 +12,7 @@ various extracted document (see images below).
 
 - Set the Visual Studio Startup Project to "ContentExtractionExample.csproj". 
 - Make sure your build Platform is x64 and then menu select Debug/Start Debugging. 
-- Once ContentExtraction WinForm UI is dispalyed select menu File/Open and select one of the test files in the "TestFiles" directory of this repository.
+- Once ContentExtraction WinForm UI is displayed select menu "File/Open" and select a file. All file names in the same directory will be displayed in the left hand side file list. Left mouse-clicking on a displayed file name will cause the contents of the selected file to be extracted and displayed.
 
 Your application should now look something like the image below. There is a panel for document file format identification information, the content extraction result, and document hashes. There is also a panel that contains tab pages for extracted metadata, document attributes, hyperlinks, the languages identified in the extracted text, and all extracted child documents (attachments/embedded objects/embedded media). Notice the bottom right side panel that contains any extracted text. The panels are separated by splitters for easy resizing.
 
@@ -29,7 +29,7 @@ The "Hyperlinks" tab page displays any extracted hyperlinks for HTML, office for
 <img src="Image3.png">
 
 
-The "Languages" tab page displays the languages identified in the extracted text (if any). Some formats such as spreadsheets or any document that is not mostly sentences (e.g., tables, addresses, names, acronyms) can have poor results for language identification. Non-Latin-based languages usually yield the best language identification results because of their unique scripts (e.g. CJK). Many languages use Latin script so this poses more of a challenge:
+The "Languages" tab page displays the languages identified in the extracted text (if any). Some formats such as spreadsheets or any document that is not mostly sentences (e.g., tables, addresses, names, acronyms) can have poor results for language identification. Non-Latin-based languages yield the best language identification results because of their unique scripts (e.g., CJK):
 
 <img src="Image4.png">
 
@@ -47,11 +47,12 @@ The "Entity Items" tab displays any detected entity items in extracted text.
 
 ### Archive and mail store containers:
 
-Items supported for password decryption will have a password dialog box automatically appear. In this example, we selected a encrypted 7-zip archive: 
+Items supported for password decryption will have a password dialog box automatically appear. In this example, we selected an encrypted 7-zip archive: 
 
 <img src="Image8.png">
 
-This screen shot shows the archive item metadata and archive level metadata: 
+This screen shot shows the archive item metadata and archive level metadata. Note that the archive container's metadata contains the number
+of items in the container ("NumOfContainerItems" field):
 
 <img src="Image9.png">
 
@@ -59,13 +60,12 @@ This screen shot shows the archive's internal container folder structure. The ex
 
 <img src="Image10.png">
 
-This screen shot shows the results of running an archive true expanded size ("Test Archive" button) test on a malicious archive. This particular archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). This archive can be found in the GitHub repository of [archive decompression "bombs"](https://github.com/bones-codes/bombs). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracted items from untrusted archives can ruin your file server's day). Additionally, the Open Discover Platform API has built-in checks for both archive compression bombs and archive recursion bombs.
+This screen shot shows the results of running an archive true expanded size ("Test Archive" button) to test a malicious archive. This particular malicious archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). This archive can be found in the GitHub repository of [archive decompression "bombs"](https://github.com/bones-codes/bombs). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracting items from untrusted archives can potentially ruin your file server's day). Additionally, the Open Discover Platform API has built-in safety checks for detecting both archive compression bombs and archive recursion (self-replicating) bombs.
 
 <img src="Image10b.png">
 
 This screen shot shows a mail store container's (Microsoft Outlook .pst file) internal folder structure. Note that the mail store container's metadata contains the number
-of email objects in the container ("NumOfContainerItems" field). Users can perform metadata only extraction to get the total number of items contained in archive and mail store
-containers.
+of email objects in the container ("NumOfContainerItems" field). Users can perform metadata only extraction to get the total number of items contained in all archive and mail store containers on a file share, for example. 
 
 <img src="Image11.png">
 

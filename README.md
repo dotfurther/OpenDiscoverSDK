@@ -1,15 +1,15 @@
-Copyright © 2019-2020 dotFurther Inc. All rights reserved.
+Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 
 # Welcome to Open Discover® SDK for .NET Code Examples
-### At this time, Open Discover SDK is only available to companies that are in the eDiscovery and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily build high volume/high throughput document processing workflows. See [Early Case Assessment Study using Open Discover Platform and RavenDB document database](https://github.com/dotfurther/OpenDiscoverPlatformCaseStudy).
+### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily build high volume/high throughput document processing workflows. See [Early Case Assessment Study using Open Discover Platform and RavenDB document database](https://github.com/dotfurther/OpenDiscoverPlatformCaseStudy).
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
 ## Open Discover SDK is a .NET application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1500+ file formats 
   supported for identification.
-* Extracting text from supported file formats and optionally identifying languages present in the extracted text
-* Extracting metadata from supported file formats (over 1,350 known and documented metadata fields in total)
+* Extracting text from supported file formats and optionally identifying languages present in the extracted text. [Notable supported file formats](https://dotfurther.com/features/)
+* Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,350 known and documented metadata fields in total)
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
@@ -73,4 +73,4 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
 ### [WCF Example - illustrates that the API is serializable:](./CSharpExamples/WCF/README.md)
-  * This example is very similar to the "ContentExtraction Example" except that all content extraction is done by a console hosted WCF service.
+  * This example is very similar to the "ContentExtraction Example" except that all content extraction is done by a console hosted WCF service. A RESTful web API can easily be developed from this example code. 
