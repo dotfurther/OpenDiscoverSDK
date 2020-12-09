@@ -17,57 +17,57 @@ various extracted document (see images below).
 Your application should now look something like the image below. There is a panel for document file format identification information, the content extraction result, and document hashes. There is also a panel that contains tab pages for extracted metadata, document attributes, hyperlinks, the languages identified in the extracted text, and all extracted child documents (attachments/embedded objects/embedded media). Notice the bottom right side panel that contains any extracted text. The panels are separated by splitters for easy resizing.
 
 
-<img src="Image1.png">
+<img src="DocumentationImages/Image1.png">
 
 The image below shows the document attributes extracted (see "Attributes" tab page) for the selected document in the file list (left panel list box that shows all files in same directory of the originally opened file). Selecting another file in this list box will extract its content.
 
-<img src="Image2.png">
+<img src="DocumentationImages/Image2.png">
 
 
 The "Hyperlinks" tab page displays any extracted hyperlinks for HTML, office formats, and PDF documents:
 
-<img src="Image3.png">
+<img src="DocumentationImages/Image3.png">
 
 
 The "Languages" tab page displays the languages identified in the extracted text (if any). Some formats such as spreadsheets or any document that is not mostly sentences (e.g., tables, addresses, names, acronyms) can have poor results for language identification. Non-Latin-based languages yield the best language identification results because of their unique scripts (e.g., CJK):
 
-<img src="Image4.png">
+<img src="DocumentationImages/Image4.png">
 
 The "Children" tab displays any information on any extracted attachments/embedded objects/embedded media. Child documents have their file formats identified. To save a child item, right mouse-click on a child item and select "Save As...".
 
-<img src="Image5.png">
+<img src="DocumentationImages/Image5.png">
 
 The "Sensitive Items" tab displays any detected sensitive items in extracted text, metadata, or hyperlinks/urls (note: sensitive item detection must be enabled through ContentExtractionSettings class)
 
-<img src="Image6.png">
+<img src="DocumentationImages/Image6.png">
 
 The "Entity Items" tab displays any detected entity items in extracted text. 
 
-<img src="Image7.png">
+<img src="DocumentationImages/Image7.png">
 
 ### Archive and mail store containers:
 
 Items supported for password decryption will have a password dialog box automatically appear. In this example, we selected an encrypted 7-zip archive: 
 
-<img src="Image8.png">
+<img src="DocumentationImages/Image8.png">
 
 This screen shot shows the archive item metadata and archive level metadata. Note that the archive container's metadata contains the number
 of items in the container ("NumOfContainerItems" field):
 
-<img src="Image9.png">
+<img src="DocumentationImages/Image9.png">
 
 This screen shot shows the archive's internal container folder structure. The example also supports extracting all archive items to a user supplied folder: 
 
-<img src="Image10.png">
+<img src="DocumentationImages/Image10.png">
 
 This screen shot shows the results of running an archive true expanded size ("Test Archive" button) to test a malicious archive. This particular malicious archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). This archive can be found in the GitHub repository of [archive decompression "bombs"](https://github.com/bones-codes/bombs). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracting items from untrusted archives can potentially ruin your file server's day). Additionally, the Open Discover Platform API has built-in safety checks for detecting both archive compression bombs and archive recursion (self-replicating) bombs.
 
-<img src="Image10b.png">
+<img src="DocumentationImages/Image10b.png">
 
 This screen shot shows a mail store container's (Microsoft Outlook .pst file) internal folder structure. Note that the mail store container's metadata contains the number
 of email objects in the container ("NumOfContainerItems" field). Users can perform metadata only extraction to get the total number of items contained in all archive and mail store containers on a file share, for example. 
 
-<img src="Image11.png">
+<img src="DocumentationImages/Image11.png">
 
 
 ### Note:
