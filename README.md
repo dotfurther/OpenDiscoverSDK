@@ -9,7 +9,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1500+ file formats 
   supported for identification.
 * Extracting text from supported file formats and optionally identifying languages present in the extracted text. [Notable supported file formats](https://dotfurther.com/features/)
-* Extracting metadata from supported file formats (over 1,350 known and documented metadata fields in total)
+* Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,350 known and documented metadata fields in total)
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
