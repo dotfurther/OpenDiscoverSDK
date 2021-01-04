@@ -1,13 +1,13 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
 // ***************************************************************************************
 // ***************************************************************************************
 // 
-//  Copyright © 2019-2020 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
