@@ -33,7 +33,7 @@ The "Languages" tab page displays the languages identified in the extracted text
 
 <img src="DocumentationImages/Image4.png">
 
-The "Children" tab displays any information on any extracted attachments/embedded objects/embedded media. Child documents have their file formats identified. To save a child item, right mouse-click on a child item and select "Save As...".
+The "Children" tab displays any information on any extracted attachments/embedded objects/embedded media. Child documents automatically have their file formats identified. To save a child item, right mouse-click on a child item and select "Save As...".
 
 <img src="DocumentationImages/Image5.png">
 
