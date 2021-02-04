@@ -44,6 +44,11 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Legal matters
      * General accounts
      * Emojis (and their group, subgroup, and description) 
+     * Gender
+     * Religion
+     * Form entry fields related to sensitive items
+     * Policy Numbers
+     * Insurance
 * Detecting custom defined sensitive item search types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 
