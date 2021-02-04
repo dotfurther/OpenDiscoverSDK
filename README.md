@@ -37,6 +37,13 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Usernames
      * Network names
      * Database credentials
+* Detecting and extracting information on many entity types related to:
+     * Medical records
+     * Health care/insurance
+     * Student records
+     * Legal matters
+     * General accounts
+     * Emojis (and their group, subgroup, and descriptions) 
 * Detecting custom defined sensitive item search types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 
