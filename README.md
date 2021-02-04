@@ -43,7 +43,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Student records
      * Legal matters
      * General accounts
-     * Emojis (and their group, subgroup, and descriptions) 
+     * Emojis (and their group, subgroup, and description) 
 * Detecting custom defined sensitive item search types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 
