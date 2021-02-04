@@ -47,7 +47,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Gender
      * Religion
      * Form entry fields related to sensitive items
-     * Policy Numbers
+     * Policy numbers
      * Insurance
 * Detecting custom defined sensitive item search types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
