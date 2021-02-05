@@ -5,7 +5,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 ### ContentExtractionExample.csproj:
 This WinForm UI example shows how to use the Open Discover SDK API to identify file formats and extract content from various
 formats using the OpenDiscoverSDK.ContentExtractorFactory method and its returned interfaces. The UI will also display all the
-various extracted document (see images below).
+various extracted document content (see images below).
 
 
 ### How to use this example:
@@ -33,7 +33,7 @@ The "Languages" tab page displays the languages identified in the extracted text
 
 <img src="DocumentationImages/Image4.png">
 
-The "Children" tab displays any information on any extracted attachments/embedded objects/embedded media. Child documents have their file formats identified. To save a child item, right mouse-click on a child item and select "Save As...".
+The "Children" tab displays any information on any extracted attachments/embedded objects/embedded media. Child documents automatically have their file formats identified. To save a child item, right mouse-click on a child item and select "Save As...".
 
 <img src="DocumentationImages/Image5.png">
 
@@ -68,6 +68,9 @@ This screen shot shows a mail store container's (Microsoft Outlook .pst file) in
 of email objects in the container ("NumOfContainerItems" field). Users can perform metadata only extraction to get the total number of items contained in all archive and mail store containers on a file share, for example. 
 
 <img src="DocumentationImages/Image11.png">
+
+Microsoft Outlook for Mac (.olm) mail store container internal folder structure (email objects are extracted as MIME files (.eml) for .olm format):
+<img src="DocumentationImages/Image12.png">
 
 
 ### Note:
