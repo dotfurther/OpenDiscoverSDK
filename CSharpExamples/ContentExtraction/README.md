@@ -69,6 +69,9 @@ of email objects in the container ("NumOfContainerItems" field). Users can perfo
 
 <img src="DocumentationImages/Image11.png">
 
+Microsoft Outlook for Mac (.olm) mail store container internal folder structure (email objects are extracted as MIME files (.eml) for .olm format):
+<img src="DocumentationImages/Image12.png">
+
 
 ### Note:
 To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
