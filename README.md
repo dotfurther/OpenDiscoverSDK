@@ -12,7 +12,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 * Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,350 known and documented metadata fields in total)
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
-* Extracting mail store container email objects (PST, OST, OST2013, MBOX, etc)
+* Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
 * Detecting and extracting information on 18 types of personally identifiable information (PII) (in extracted text and metadata):
      * Social security numbers
      * Credit card numbers (13-19 digits)
