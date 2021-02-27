@@ -27,13 +27,14 @@ namespace ContentExtractionExample
     {
         private IdResult            _docIdResult;
         private DocumentContent     _docContent;
+        private IContentExtractor   _contentExtractorBase;
         private ContentView         _contentView;
         private ArchiveView         _archiveView;
         private MailStoreView       _mailStoreView;
         private int                 _numLogMessages;
         private Stream              _stream;
         private string[]            _passwords;
-        private Dictionary<string, Stream> _splitArchiveStreamDict;
+        private Stream[]            _splitSegmentStreamsInOrder;
         private ContentExtractionSettings  _extractionSettings   = new ContentExtractionSettings();
 
         #region internal enum ViewMode
@@ -169,6 +170,8 @@ namespace ContentExtractionExample
         public MainForm()
         {
             InitializeComponent();
+
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
             //
             // Set application title with Open Discover SDK Version and Framework Version:
@@ -364,16 +367,24 @@ namespace ContentExtractionExample
             try
             {
                 //
-                // Disposes open stream from previous document:
+                // Disposes open stream/content extractor/etc from previous document:
                 //
                 if (_stream != null)
                 {
                     _stream.Dispose();
                     _stream = null;
                 }
-                if (_splitArchiveStreamDict != null)
+
+                if (_contentExtractorBase != null)
                 {
-                    foreach (var stream in _splitArchiveStreamDict.Values)
+                    // Disposing of the content extractor is important for some database formats. In this case,
+                    _contentExtractorBase.Dispose();
+                    _contentExtractorBase = null;
+                }
+
+                if (_splitSegmentStreamsInOrder != null)
+                {
+                    foreach (var stream in _splitSegmentStreamsInOrder)
                     {
                         if (stream != null)
                         {
@@ -384,7 +395,7 @@ namespace ContentExtractionExample
                             catch { }
                         }
                     }
-                    _splitArchiveStreamDict = null;
+                    _splitSegmentStreamsInOrder = null;
                 }
 
                 //
@@ -421,8 +432,6 @@ namespace ContentExtractionExample
                 // 2) Extract content from document:
                 //========================================================================================
                 ContentExtractorType extractorType      = ContentExtractorType.Document;
-                IArchiveExtractor    archiveExtractor   = null;
-                IMailStoreExtractor  mailStoreExtractor = null;
                 stopWatch.Restart();
 
                 //
@@ -433,30 +442,30 @@ namespace ContentExtractionExample
                 if (contentExtractorResult.HasError)
                 {
                     LogMessage(string.Format("Error getting content extractor for file ID {0}: {1}", _docIdResult.ID, contentExtractorResult.Error));
-                    _contentView.UpdateContentView(_docContent, Path.GetFileName(filePath), _stream.Length);
+                    _contentView.UpdateContentView(_docContent, Path.GetFileName(filePath), _stream.Length, _contentExtractorBase);
                 }
                 else
                 {
-                    extractorType = contentExtractorResult.ContentExtractor.ContentExtractorType;
+                    extractorType         = contentExtractorResult.ContentExtractor.ContentExtractorType;
+                    _contentExtractorBase = contentExtractorResult.ContentExtractor;
 
                     switch (extractorType)
                     {
                         case ContentExtractorType.Archive:
                             #region Archive Extraction...
                             {
-                                archiveExtractor = (IArchiveExtractor)contentExtractorResult.ContentExtractor;
+                                var archiveExtractor = (IArchiveExtractor)_contentExtractorBase;
 
                                 if (archiveExtractor.IsSplit)
                                 {
                                     // Detected that currently selected file is the main split segment for a split archive. Now we will use archive
                                     // extractor helper method 'GetSplitSegmentStreamsInOrder' to get the other split archive segments (in proper order) 
                                     // in the same directory:
-                                    Stream[] splitSegmentStreamsInOrder = null;
-                                    string[] splitSegmentNameInOrder    = null;
+                                    string[] splitSegmentNameInOrder = null;
 
-                                    archiveExtractor.GetSplitSegmentStreamsInOrder(filePath, out splitSegmentStreamsInOrder, out splitSegmentNameInOrder);
+                                    archiveExtractor.GetSplitSegmentStreamsInOrder(filePath, out _splitSegmentStreamsInOrder, out splitSegmentNameInOrder);
 
-                                    _docContent = archiveExtractor.ExtractContent(splitSegmentStreamsInOrder, splitSegmentNameInOrder);
+                                    _docContent = archiveExtractor.ExtractContent(_splitSegmentStreamsInOrder, splitSegmentNameInOrder);
 
                                     //
                                     // We have an archive level password (versus item level passwords):
@@ -469,7 +478,7 @@ namespace ContentExtractionExample
                                         // until result is not ContentResult.WrongPassword or until user presses "Cancel" button:
                                         while (RequestPassword(out password) == DialogResult.OK)
                                         {
-                                            _docContent = archiveExtractor.ExtractContent(splitSegmentStreamsInOrder, splitSegmentNameInOrder, password);
+                                            _docContent = archiveExtractor.ExtractContent(_splitSegmentStreamsInOrder, splitSegmentNameInOrder, password);
 
                                             if (_docContent.Result != ContentResult.WrongPassword)
                                             {
@@ -506,21 +515,22 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.Document:
                             #region Document Extraction...
                             {
-                                var docExtractor = ((IDocumentContentExtractor)contentExtractorResult.ContentExtractor);
-                                _docContent = docExtractor.ExtractContent();
+                                var documentExtractor = (IDocumentContentExtractor)_contentExtractorBase;
+                                _docContent = documentExtractor.ExtractContent();
 
                                 // We have an encrypted document that is supported for decryption, keep prompting user for passwords until result is not 
                                 // ContentResult.WrongPassword or until user presses "Cancel" button:
-                                if (_docContent.Result == ContentResult.WrongPassword && _docContent.IsEncrypted && docExtractor.SupportsDecryption)
+                                if (_docContent.Result == ContentResult.WrongPassword && _docContent.IsEncrypted && documentExtractor.SupportsDecryption)
                                 {
                                     string password;
 
                                     while (RequestPassword(out password) == DialogResult.OK)
                                     {
-                                        _docContent = ((IDocumentContentExtractor)contentExtractorResult.ContentExtractor).ExtractContent(password);
+                                        _docContent = documentExtractor.ExtractContent(password);
 
                                         if (_docContent.Result != ContentResult.WrongPassword)
                                         {
@@ -532,22 +542,56 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.MailStore:
                             #region MailStore Extraction...
                             {
-                                mailStoreExtractor = ((IMailStoreExtractor)contentExtractorResult.ContentExtractor);
+                                var mailStoreExtractor = (IMailStoreExtractor)_contentExtractorBase;
                                 _docContent = mailStoreExtractor.ExtractContent();
                             }
                             #endregion
                             break;
-                        case ContentExtractorType.DocumentStore:
-                            #region DocumentStore Extraction...
+
+                        case ContentExtractorType.Database:
+                            #region Database Extraction...
                             {
-                                var docExtractor = ((IDocumentContentExtractor)contentExtractorResult.ContentExtractor);
-                                _docContent = docExtractor.ExtractContent();
+                                var databaseExtractor = (IDatabaseExtractor)_contentExtractorBase;
+
+                                // The file path should always be passed as an argument for database formats, some formats can
+                                // only be opened with a file path:
+                                _docContent = databaseExtractor.ExtractContent(filePath);
+
+                                // We have an encrypted document that is supported for decryption, keep prompting user for passwords until result is not 
+                                // ContentResult.WrongPassword or until user presses "Cancel" button:
+                                if (_docContent.Result == ContentResult.WrongPassword && _docContent.IsEncrypted && databaseExtractor.SupportsDecryption)
+                                {
+                                    string password;
+
+                                    while (RequestPassword(out password) == DialogResult.OK)
+                                    {
+                                        _docContent = databaseExtractor.ExtractContent(filePath, password);
+
+                                        if (_docContent.Result != ContentResult.WrongPassword)
+                                        {
+                                            _docContent.Password = password; // Store the valid password
+                                            break;
+                                        }
+                                    }
+                                }
+
                             }
                             #endregion
                             break;
+
+                        case ContentExtractorType.DocumentStore:
+                            #region DocumentStore Extraction...
+                            {
+                                var docStoreExtractor = (IDocumentStoreExtractor)_contentExtractorBase;
+                                _docContent = docStoreExtractor.ExtractContent();
+                            }
+                            #endregion
+                            break;
+
                         case ContentExtractorType.Unsupported:
                             #region Unsupported Type Extraction...
                             {
@@ -557,36 +601,39 @@ namespace ContentExtractionExample
                                 //                            Binary-to-text is not useful for file formats that do not have any textual content (e.g., compressed archives or encrypted files) 
                                 //                            It is up to the user to filter these formats out using either file format Id or file format classification.
                                 //
-                                var docExtractor = ((IUnsupportedExtractor)contentExtractorResult.ContentExtractor);
-                                _docContent = docExtractor.ExtractContent();
+                                var unsupportedExtractor = (IUnsupportedExtractor)_contentExtractorBase;
+                                _docContent = unsupportedExtractor.ExtractContent();
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.LargeUnsupported:
                             #region "Large" Unsupported/Unknown Type Extraction...
                             {
-                                //
                                 // We have a "large" unsupported/unknown file format. User should decide if they want to binary-to-text filter this document
-                                // or not (i.e., bypass this content extractor). User should pay attention to size of the document. Do you want to hash and filter 
-                                // text from a unknown 100GB file server BLOB? Maybe you do if you are doing file forensics.
+                                // or not. And user should pay attention to size of the document. Do you want to hash and filter text from a unknown
+                                // 100GB BLOB? Maybe you do if you are doing file forensics.
                                 // This content extractor interface will do the following:
                                 //   1) binary hash the file (if binary hashing is enabled). ContentExtractionSettings.Hashing.MaxBinaryHashLength property can
                                 //      be set to hash just the first 'MaxBinaryHashLength' bytes of the BLOB (e.g., hash up to the 1st 4GB)
-                                //   2) write the binary-to-text filtered text to either UTF16 or UTF8 to the supplied stream. The stream should be a 
-                                //      FileStream in a real world application because this document is "large" - "large" is defined by 
-                                //      ContentExtractionSettings.LargeDocumentCritera property. 
+                                //   2) write the binary-to-text filtered text to either UTF16 or UTF8 to the supplied stream (the stream should be a 
+                                //      FileStream (with because this document is "large"). 
+                                //   3) If sensitive item detection *** is enabled, then will scan up to the first 100 million bytes for sensitive items and entities
+                                //     (emoji entity detection is disabled for "large" unsupported/unknown binary blobs).
                                 //
                                 // ** For simplicity, this example uses a MemoryStream to simplify this example code, and because of this, we limit the maximum size
                                 //    of the file we filter to < 200MB. 
                                 //   
                                 if (_stream.Length < 200 * 1024 * 1024)
                                 {
-                                    var docExtractor = ((ILargeUnsupportedExtractor)contentExtractorResult.ContentExtractor);
+                                    var largeUnsupporedExtractor = (ILargeUnsupportedExtractor)_contentExtractorBase;
+
                                     using (var textMemStream = new MemoryStream())
                                     {
                                         try
                                         {
-                                            _docContent = docExtractor.ExtractContent(textMemStream);
+                                            _extractionSettings.Hashing.MaxBinaryHashLength = 100 * 1024 * 1024; // limit hash to first 100 MB of bytes
+                                            _docContent = largeUnsupporedExtractor.ExtractContent(textMemStream);
                                             textMemStream.Position = 0;
 
                                             if (_extractionSettings.UseLargeDocumentUTF16Encoding)
@@ -608,37 +655,37 @@ namespace ContentExtractionExample
                                 else
                                 {
                                     _docContent = new DocumentContent();
-                                    _docContent.FormatId     = _docIdResult;
-                                    _docContent.Result       = ContentResult.UnsupportedError; // 'Unsupported' for this test application since we are writting to MemoryStream instead of FileStream
+                                    _docContent.FormatId = _docIdResult;
+                                    _docContent.Result = ContentResult.UnsupportedError; // 'Unsupported' for this test application since we are writting to MemoryStream instead of FileStream
                                     _docContent.ErrorMessage = "File too large for this C# example implementation.";
                                     LogMessage("ILargeUnsupportedExtractor - File too large for this C# example implementation");
                                 }
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.LargeEncodedText:
                             #region "Large" Encoded Text File Extraction...
                             {
-                                //
                                 // We have a "large" encoded text file. If file is already in an easy to index encoding such as
                                 // UTF16 or UTF8 (Id.TextUTF16 or Id.TextUTF8) then user should think about skipping over this content 
                                 // extractor. 
                                 // This content extractor interface will do the following:
                                 //   1) binary hash the file (if binary hashing is enabled). ContentExtractionSettings.Hashing.MaxBinaryHashLength property can
-                                //      be set to hash just the first 'MaxBinaryHashLength' bytes of the BLOB (e.g., hash up to the 1st 4GB)
-                                //   2) write the encoded text to either UTF16 or UTF8 to the supplied stream. The stream should be a 
-                                //      FileStream in a real world application because this document is "large" - "large" is defined by 
-                                //      ContentExtractionSettings.LargeDocumentCritera property. 
+                                //      be set to hash just the first 'MaxBinaryHashLength' bytes of the 'large' text file (e.g., hash up to the 1st 4GB)
+                                //   2) write the encoded text to either UTF16 or UTF8 to the supplied stream (the stream should be a 
+                                //      FileStream because this document is "large") 
+                                //   3) If sensitive item detection is enabled, then will scan up to the first 200 million characters for sensitive items and entities.
                                 //
-                                // ** This example uses a MemoryStream to simplify the example code but also limits the amount of the file 
-                                //    filtered to the first 100MB of the file.
-                                //
+                                // ** For simplicity, this example uses a MemoryStream to simplify the example code, and because of this, we limit the maximum size of the file 
+                                //    to < 200MB. If file size is greater than 200 MB it is skipped. In a real application a FileStream should be used to save the re-encoded 
+                                //    (to UTF/UTF16) text.
                                 if (_stream.Length < 200 * 1024 * 1024)
                                 {
-                                    var docExtractor = ((ILargeEncodedTextExtractor)contentExtractorResult.ContentExtractor);
+                                    var largeEncodedExtractor = (ILargeEncodedTextExtractor)_contentExtractorBase;
                                     using (var textMemStream = new MemoryStream())
                                     {
-                                        _docContent = docExtractor.ExtractContent(textMemStream);
+                                        _docContent = largeEncodedExtractor.ExtractContent(textMemStream);
                                         textMemStream.Position = 0;
 
                                         if (_extractionSettings.UseLargeDocumentUTF16Encoding)
@@ -655,8 +702,8 @@ namespace ContentExtractionExample
                                 else
                                 {
                                     _docContent = new DocumentContent();
-                                    _docContent.FormatId     = _docIdResult;
-                                    _docContent.Result       = ContentResult.UnsupportedError; // 'Unsupported' for this test application since we are writting to MemoryStream instead of FileStream
+                                    _docContent.FormatId = _docIdResult;
+                                    _docContent.Result = ContentResult.UnsupportedError; // 'Unsupported' for this test application since we are writting to MemoryStream instead of FileStream
                                     _docContent.ErrorMessage = "File too large for this C# example implementation.";
                                     LogMessage("ILargeEncodedTextExtractor - File too large for this C# example implementation");
                                 }
@@ -678,29 +725,30 @@ namespace ContentExtractionExample
                 }
 
                 //
-                // Set the appropriate content view:
+                // Set the appropriate content view for the file format:
                 //
                 switch (extractorType)
                 {
                     case ContentExtractorType.Document:
+                    case ContentExtractorType.Database:
                     case ContentExtractorType.DocumentStore:
                     case ContentExtractorType.Unsupported:
                     case ContentExtractorType.LargeUnsupported:
                     case ContentExtractorType.LargeEncodedText:
                         _contentView.Visible = true;
                         _archiveView.Visible = false;
-                        _contentView.UpdateContentView(_docContent, Path.GetFileName(filePath), _stream.Length);
+                        _contentView.UpdateContentView(_docContent, Path.GetFileName(filePath), _stream.Length, _contentExtractorBase);
                         break;
                     case ContentExtractorType.Archive:
                         _contentView.Visible = false;
                         _archiveView.Visible = true;
-                        _archiveView.UpdateContentView(_docContent as ArchiveContent, archiveExtractor, Path.GetFileName(filePath), _stream.Length);
+                        _archiveView.UpdateContentView(_docContent as ArchiveContent, (IArchiveExtractor)_contentExtractorBase, Path.GetFileName(filePath), _stream.Length);
                         break;
                     case ContentExtractorType.MailStore:
                         _contentView.Visible   = false;
                         _archiveView.Visible   = false;
                         _mailStoreView.Visible = true;
-                        _mailStoreView.UpdateContentView((MailStoreContent)_docContent, mailStoreExtractor, Path.GetFileName(filePath), _stream.Length);
+                        _mailStoreView.UpdateContentView((MailStoreContent)_docContent, (IMailStoreExtractor)_contentExtractorBase, Path.GetFileName(filePath), _stream.Length);
                         break;
                 }
 
@@ -977,6 +1025,5 @@ namespace ContentExtractionExample
         {
             //TODO
         }
-
     }
 }

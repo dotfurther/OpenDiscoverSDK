@@ -1,5 +1,8 @@
 Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 
+
+# WARNING: These WCF examples, which were written for .NET Framework version of OpenDiscoverPlatform, will not work with .NET 5 or newer until the https://github.com/CoreWCF/CoreWCF project is production ready. Until then, these example projects are sidelined. See the "IPC" examples instead.
+
 ## The SDK example C# projects contained in this directory show case the use of the Open Discover SDK API in a WCF service.
 
 ### WCF C# Example Projects:

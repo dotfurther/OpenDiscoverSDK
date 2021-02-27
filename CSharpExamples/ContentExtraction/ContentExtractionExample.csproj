@@ -7,7 +7,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net462</TargetFrameworks>
+    <TargetFrameworks>net5.0-windows</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x64</Platforms>
@@ -17,13 +17,10 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
-    <!--<OutputPath>..\Build\</OutputPath>-->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutDir>..\Build\</OutDir>
   </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Remove="Content\MailStoreView - Copy.resx" />
-  </ItemGroup>
+
   <ItemGroup>
     <None Include="..\..\..\bin\7z64.dll" Link="7z64.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -44,5 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DocumentationImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
   </ItemGroup>
 </Project>

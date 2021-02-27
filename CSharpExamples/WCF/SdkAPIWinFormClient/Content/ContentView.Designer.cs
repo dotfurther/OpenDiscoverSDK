@@ -207,6 +207,21 @@
             this._transportHeaderValueTextBox = new System.Windows.Forms.TextBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this._databaseDocTabPage = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this._dbTableListView = new System.Windows.Forms.ListView();
+            this.columnHeader66 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader75 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader73 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader74 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader67 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this._tableColListView = new System.Windows.Forms.ListView();
+            this.columnHeader76 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader80 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader77 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader78 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader79 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -252,6 +267,11 @@
             this._emailHeaderSplitContainer.Panel1.SuspendLayout();
             this._emailHeaderSplitContainer.Panel2.SuspendLayout();
             this._emailHeaderSplitContainer.SuspendLayout();
+            this._databaseDocTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -295,6 +315,7 @@
             this._docTypeTabControl.Controls.Add(this._emailDocTabPage);
             this._docTypeTabControl.Controls.Add(this._htmlDocTabPage);
             this._docTypeTabControl.Controls.Add(this._pdfDocTabPage);
+            this._docTypeTabControl.Controls.Add(this._databaseDocTabPage);
             this._docTypeTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._docTypeTabControl.Location = new System.Drawing.Point(0, 0);
             this._docTypeTabControl.Name = "_docTypeTabControl";
@@ -1900,6 +1921,129 @@
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
+            // _databaseDocTabPage
+            // 
+            this._databaseDocTabPage.Controls.Add(this.label16);
+            this._databaseDocTabPage.Controls.Add(this.splitContainer1);
+            this._databaseDocTabPage.Location = new System.Drawing.Point(4, 22);
+            this._databaseDocTabPage.Name = "_databaseDocTabPage";
+            this._databaseDocTabPage.Size = new System.Drawing.Size(536, 307);
+            this._databaseDocTabPage.TabIndex = 4;
+            this._databaseDocTabPage.Text = "Database Document";
+            this._databaseDocTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(9, 2);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(263, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Database Tables/Columns (select table to extract text)";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Location = new System.Drawing.Point(5, 18);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this._dbTableListView);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this._tableColListView);
+            this.splitContainer1.Size = new System.Drawing.Size(527, 286);
+            this.splitContainer1.SplitterDistance = 175;
+            this.splitContainer1.TabIndex = 2;
+            // 
+            // _dbTableListView
+            // 
+            this._dbTableListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._dbTableListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader66,
+            this.columnHeader75,
+            this.columnHeader73,
+            this.columnHeader74,
+            this.columnHeader67});
+            this._dbTableListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._dbTableListView.FullRowSelect = true;
+            this._dbTableListView.HideSelection = false;
+            this._dbTableListView.Location = new System.Drawing.Point(0, 0);
+            this._dbTableListView.Name = "_dbTableListView";
+            this._dbTableListView.Size = new System.Drawing.Size(175, 286);
+            this._dbTableListView.TabIndex = 7;
+            this._dbTableListView.UseCompatibleStateImageBehavior = false;
+            this._dbTableListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader66
+            // 
+            this.columnHeader66.Text = "Name";
+            this.columnHeader66.Width = 119;
+            // 
+            // columnHeader75
+            // 
+            this.columnHeader75.Text = "RowCount";
+            // 
+            // columnHeader73
+            // 
+            this.columnHeader73.Text = "IsUserDefined";
+            this.columnHeader73.Width = 83;
+            // 
+            // columnHeader74
+            // 
+            this.columnHeader74.Text = "IsSystemTable";
+            this.columnHeader74.Width = 271;
+            // 
+            // columnHeader67
+            // 
+            this.columnHeader67.Text = "IsHiddenTable";
+            this.columnHeader67.Width = 93;
+            // 
+            // _tableColListView
+            // 
+            this._tableColListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this._tableColListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader76,
+            this.columnHeader80,
+            this.columnHeader77,
+            this.columnHeader78,
+            this.columnHeader79});
+            this._tableColListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._tableColListView.HideSelection = false;
+            this._tableColListView.Location = new System.Drawing.Point(0, 0);
+            this._tableColListView.Name = "_tableColListView";
+            this._tableColListView.Size = new System.Drawing.Size(348, 286);
+            this._tableColListView.TabIndex = 0;
+            this._tableColListView.UseCompatibleStateImageBehavior = false;
+            this._tableColListView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader76
+            // 
+            this.columnHeader76.Text = "Name";
+            // 
+            // columnHeader80
+            // 
+            this.columnHeader80.Text = "DataType";
+            this.columnHeader80.Width = 93;
+            // 
+            // columnHeader77
+            // 
+            this.columnHeader77.Text = "Index";
+            this.columnHeader77.Width = 45;
+            // 
+            // columnHeader78
+            // 
+            this.columnHeader78.Text = "ID";
+            // 
+            // columnHeader79
+            // 
+            this.columnHeader79.Text = "CodePage";
+            this.columnHeader79.Width = 70;
+            // 
             // ContentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1963,6 +2107,12 @@
             this._emailHeaderSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._emailHeaderSplitContainer)).EndInit();
             this._emailHeaderSplitContainer.ResumeLayout(false);
+            this._databaseDocTabPage.ResumeLayout(false);
+            this._databaseDocTabPage.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2147,5 +2297,20 @@
         private System.Windows.Forms.ColumnHeader columnHeader68;
         private System.Windows.Forms.ColumnHeader columnHeader70;
         private System.Windows.Forms.ColumnHeader columnHeader71;
+        private System.Windows.Forms.TabPage _databaseDocTabPage;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ListView _dbTableListView;
+        private System.Windows.Forms.ColumnHeader columnHeader66;
+        private System.Windows.Forms.ColumnHeader columnHeader75;
+        private System.Windows.Forms.ColumnHeader columnHeader73;
+        private System.Windows.Forms.ColumnHeader columnHeader74;
+        private System.Windows.Forms.ColumnHeader columnHeader67;
+        private System.Windows.Forms.ListView _tableColListView;
+        private System.Windows.Forms.ColumnHeader columnHeader76;
+        private System.Windows.Forms.ColumnHeader columnHeader80;
+        private System.Windows.Forms.ColumnHeader columnHeader77;
+        private System.Windows.Forms.ColumnHeader columnHeader78;
+        private System.Windows.Forms.ColumnHeader columnHeader79;
     }
 }

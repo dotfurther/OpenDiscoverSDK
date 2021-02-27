@@ -25,6 +25,11 @@ namespace OpenDiscoverSDK.PowerShell
     [OutputType(typeof(string))]
     public class GetFileInfoCmdlet : Cmdlet
     {
+        static GetFileInfoCmdlet()
+        {
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+        }
+
         /// <summary>
         /// Path to file.
         /// </summary>
@@ -133,6 +138,7 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.Document:
                             #region Document Extraction...
                             {
@@ -159,6 +165,7 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.MailStore:
                             #region MailStore Extraction...
                             {
@@ -167,6 +174,17 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
+                        case ContentExtractorType.Database:
+                            #region Database Extraction...
+                            {
+                                // We will only get table/column info (individual table extracted text can be quite large):
+                                var databaseExtractor = ((IDatabaseExtractor)contentExtractorResult.ContentExtractor);
+                                content = databaseExtractor.ExtractContent(Path);
+                            }
+                            #endregion
+                            break;
+
                         case ContentExtractorType.DocumentStore:
                             #region DocumentStore Extraction...
                             {
@@ -175,6 +193,7 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.Unsupported:
                             #region Unsupported Type Extraction...
                             {
@@ -189,12 +208,11 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
-                        case ContentExtractorType.Database:
-                            // Ignore for this example
-                            break;
+
                         case ContentExtractorType.LargeUnsupported:
                             // Ignore for this example
                             break;
+
                         case ContentExtractorType.LargeEncodedText:
                             // Ignore for this example
                             break;
@@ -324,11 +342,31 @@ namespace OpenDiscoverSDK.PowerShell
                         strBuilder.AppendLine(string.Format("   {0}", attr.ToString()));
                     }
                 }
-
                 strBuilder.AppendLine();
+
+
+                if (content is DatabaseContent)
+                {
+                    var dbContent = (DatabaseContent)content;
+
+                    strBuilder.AppendLine("Database Tables:");
+                    strBuilder.AppendLine("----------------");
+                    if (dbContent.Tables != null && dbContent.Tables.Count > 0)
+                    {
+                        strBuilder.AppendLine("   [Name]                        [Row Count]         [Num Columns]  [Is User Table] ");
+
+                        foreach (var table in dbContent.Tables)
+                        {
+                            strBuilder.AppendLine(string.Format("   {0,-30} {1,-20}  {2,-15}  {3}", table.Name, table.RowCount, 
+                                                  table.Columns != null ? table.Columns.Count.ToString() : "0", table.IsUserTable.ToString()));
+                        }
+                    }
+                    strBuilder.AppendLine();
+                }
+
                 strBuilder.AppendLine("File Hyperlinks:");
                 strBuilder.AppendLine("----------------");
-                if (content.HyperLinks.Count > 0)
+                if (content.HyperLinks != null && content.HyperLinks.Count > 0)
                 {
                     foreach (var link in content.HyperLinks)
                     {
@@ -340,7 +378,7 @@ namespace OpenDiscoverSDK.PowerShell
                 strBuilder.AppendLine();
                 strBuilder.AppendLine("Detected Sensitive Items:");
                 strBuilder.AppendLine("-------------------------");
-                if (content.SensitiveItemResult.Items.Count > 0)
+                if (content.SensitiveItemResult != null && content.SensitiveItemResult.Items.Count > 0)
                 {
                     foreach (var item in content.SensitiveItemResult.Items)
                     {
@@ -353,7 +391,7 @@ namespace OpenDiscoverSDK.PowerShell
                 strBuilder.AppendLine();
                 strBuilder.AppendLine("Detected Languages:");
                 strBuilder.AppendLine("-------------------");
-                if (content.LanguageIdResults.Count > 0)
+                if (content.LanguageIdResults != null && content.LanguageIdResults.Count > 0)
                 {
                     foreach (var langIdResult in content.LanguageIdResults)
                     {

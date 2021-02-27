@@ -14,15 +14,17 @@ using System.Windows.Forms;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
 using OpenDiscoverSDK.Interfaces.Content.Sensitive;
+using OpenDiscoverSDK.Interfaces.Extractors;
 
 namespace ContentExtractionExample.Content
 {
     public partial class ContentView : UserControl
     {
-        private IHostUI          _iHostUI;
-        private DocumentContent  _docContent;
-        private MenuItem         _saveAsMenuItem;
-        private TabPage          _lastActivePage;
+        private IHostUI           _iHostUI;
+        private DocumentContent   _docContent;
+        private IContentExtractor _contentExtractorBase;
+        private ToolStripMenuItem _saveAsMenuItem;
+        private TabPage           _lastActivePage;
 
         #region Constructors...
         /// <summary>
@@ -34,11 +36,11 @@ namespace ContentExtractionExample.Content
 
             _iHostUI = host;
 
-            var contextMenu = new ContextMenu();
-            _saveAsMenuItem = new MenuItem("Save As...");
+            var contextMenu = new ContextMenuStrip();
+            _saveAsMenuItem = new ToolStripMenuItem("Save As...");
             _saveAsMenuItem.Click += _saveAsMenuItem_Click;
-            contextMenu.MenuItems.Add(_saveAsMenuItem);
-            _childDocsListView.ContextMenu = contextMenu;
+            contextMenu.Items.Add(_saveAsMenuItem);
+            _childDocsListView.ContextMenuStrip = contextMenu;
 
             _langIdListView.HideSelection        = false;
             _langIdRegionsListView.HideSelection = false;
@@ -55,6 +57,10 @@ namespace ContentExtractionExample.Content
             if (_docTypeTabControl.TabPages.Contains(_pdfDocTabPage))
             {
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
+            }
+            if (_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+            {
+                _docTypeTabControl.TabPages.Remove(_databaseDocTabPage);
             }
         }
         #endregion
@@ -75,6 +81,8 @@ namespace ContentExtractionExample.Content
             _sensitiveItemsListView.Items.Clear();
             _custSenItemListView.Items.Clear();
             _entityItemListView.Items.Clear();
+            _tableColListView.Items.Clear();
+            _dbTableListView.Items.Clear();
 
             _extractedTextBox.Text    = "";
             _totalTextCharsLabel.Text = "";
@@ -105,6 +113,10 @@ namespace ContentExtractionExample.Content
             if (_docTypeTabControl.TabPages.Contains(_pdfDocTabPage))
             {
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
+            }
+            if (_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+            {
+                _docTypeTabControl.TabPages.Remove(_databaseDocTabPage);
             }
 
             _metdataTabPage.Text        = "Metadata (0)";
@@ -155,10 +167,11 @@ namespace ContentExtractionExample.Content
         }
         #endregion
 
-        #region public void UpdateContentView(DocumentContent docContent, string filename, long filelength)
-        public void UpdateContentView(DocumentContent docContent, string filename, long filelength)
+        #region public void UpdateContentView(DocumentContent docContent, string filename, long filelength, IContentExtractor contentExtractorBase)
+        public void UpdateContentView(DocumentContent docContent, string filename, long filelength, IContentExtractor contentExtractorBase)
         {
-            _docContent = docContent;
+            _docContent           = docContent;
+            _contentExtractorBase = contentExtractorBase;
 
             _fileNameLabel.Text = filename;
             _fileSizeLabel.Text = string.Format("{0:###,###,###,###}", filelength);
@@ -395,6 +408,57 @@ namespace ContentExtractionExample.Content
                 finally
                 {
                     _failedPdfPagesListView.EndUpdate();
+                }
+                #endregion
+            }
+            else if (docContent is DatabaseContent)
+            {
+                #region Database Extra Content...
+                //
+                // Database specific extra content:
+                //
+                if (!_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+                {
+                    _docTypeTabControl.TabPages.Add(_databaseDocTabPage);
+                }
+
+                if (_lastActivePage == _databaseDocTabPage)
+                {
+                    _docTypeTabControl.SelectedTab = _databaseDocTabPage;
+                }
+
+                var databaseContent = (DatabaseContent)docContent;
+
+                try
+                {
+                    _dbTableListView.BeginUpdate();
+                    _tableColListView.BeginUpdate();
+
+                    foreach (var table in databaseContent.Tables)
+                    {
+                        var item = new ListViewItem(table.Name);
+                        item.SubItems.Add(table.RowCount.ToString());
+                        item.SubItems.Add(table.IsUserTable.ToString());
+                        item.SubItems.Add(table.IsSystemTable.ToString());
+                        item.SubItems.Add(table.IsHiddenTable.ToString());
+                        item.Tag = table;
+                        _dbTableListView.Items.Add(item);
+
+                        foreach (var col in table.Columns)
+                        {
+                            var colItem = new ListViewItem(col.Name);
+                            colItem.SubItems.Add(col.DataType.ToString());
+                            colItem.SubItems.Add(col.Index.ToString());
+                            colItem.SubItems.Add(col.ID.HasValue ? col.ID.ToString() : "");
+                            colItem.SubItems.Add(col.CodePage.HasValue ? col.CodePage.ToString() : "");
+                            _tableColListView.Items.Add(colItem);
+                        }
+                    }
+                }
+                finally
+                {
+                    _tableColListView.EndUpdate();
+                    _dbTableListView.EndUpdate();
                 }
                 #endregion
             }
@@ -992,6 +1056,9 @@ namespace ContentExtractionExample.Content
         #endregion
 
 
+        //
+        // Event Handlers:
+        //
         #region private void _childDocsListView_SelectedIndexChanged(object sender, EventArgs e)
         private void _childDocsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1279,5 +1346,115 @@ namespace ContentExtractionExample.Content
             }
         }
         #endregion
+
+        #region private void _dbTableListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _dbTableListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_dbTableListView.SelectedItems.Count == 1)
+                {
+                    var table = _dbTableListView.SelectedItems[0].Tag as TableInfo;
+                    if (table != null)
+                    {
+                        ExtractTableText(table);
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+        #endregion
+
+        //
+        // Private Helper Methods:
+        //
+        #region private void ExtractTableText(TableInfo table)
+        private void ExtractTableText(TableInfo table)
+        {
+            try
+            {
+                var databaseExtractor = (IDatabaseExtractor)_contentExtractorBase;
+
+                //
+                // The IDatabaseExtractor is a general database interface that will be expanded to include formats that support very large
+                // maximum databases sizes. This is why method ExtractTableAsText writes text to a Stream argument, this allows the user some 
+                // extracted/stored/indexed. The Stream should be a FileStream. 
+                //
+                var dbContent = (DatabaseContent)_docContent;
+
+                var textBuilder = new StringBuilder();
+
+                if (table.RowCount > 10)
+                {
+                    textBuilder.AppendLine("[[Limited Extracted Text Display to the first 10 rows]]");
+                }
+
+                using (var textMemStream = new MemoryStream())
+                {
+                    // For this example we will limit the the max number of rows to 10 because some databases can have very large text
+                    // columns (user should always extract to a FileStream):
+                    databaseExtractor.ExtractTableAsText(table, textMemStream, 0, 9);
+
+                    textMemStream.Position = 0;
+                    if (textMemStream.Length > 0)
+                    {
+                        // Limit text to 10MB
+                        if (textMemStream.Length <= 10 * 1024 * 1024)
+                        {
+                            textBuilder.AppendLine(Encoding.Unicode.GetString(textMemStream.ToArray()));
+                        }
+                        else
+                        {
+                            textBuilder.AppendLine(Encoding.Unicode.GetString(textMemStream.ToArray(), 0, 10 * 1024 * 1024));
+                        }
+                    }
+
+                    _extractedTextBox.Text = textBuilder.ToString();
+
+                    //// Example EnumerateTableRows: Uncomment to test out
+                    //// For users who want more control over binary columns, very large text columns, or text output, then use the table
+                    //// row enumerator method:
+                    //var rowCount = 1;
+                    //foreach (var rowData in databaseExtractor.EnumerateTableRows(table))
+                    //{
+                    //    // For test, limit to 1st 100 rows of table:
+                    //    if (rowCount > 100)
+                    //    {
+                    //        break;
+                    //    }
+
+                    //    //TODO
+                    //    foreach (var val in rowData)
+                    //    {
+                    //        if (val is string)
+                    //        {
+                    //            var strVal = (string)val;
+                    //            //TODO
+                    //        }
+                    //        else if (val is int)
+                    //        {
+                    //            var intVal = (int)val;
+                    //            //TODO
+                    //        }
+                    //        else if (val is byte[])
+                    //        {
+                    //            var byteVal = (byte[])val;
+                    //            //TODO
+                    //        }
+                    //        // TODO: Do for rest of ColumnDataType supported values 
+                    //    }
+                    //    ++rowCount;
+                    //}
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error getting database table extracted text: " + ex.Message);
+            }
+        }
+        #endregion    
     }
 }

@@ -6,9 +6,14 @@ The classes in this example project show how the Open Discover SDK API can be us
 can easily take advantage of the power of Open Discover SDK by expanding on these examples or creating their own Cmdlets.
 
 The Cmdlet derived classes in this example C# project show how to use the Open Discover SDK API to:
-- Identify a file's format (GetFileFormatCmdlet.cs)
+- Identify a file's format (GetFileFormatIdCmdlet.cs)
 - Display a summary of a file's content (GetFileInfoCmdlet.cs)
 - Extract document text, metadata, sensitive items, and return the result as a DocumentContent object (GetFileContentCmdlet.cs)
+
+See the ExamplePowerShell.ps1 included with project.
+
+# Note:
+These examples requires PowerShell version 7.1.2 or newer for .NET 5 support. PowerShell release can be downloaded from official GitHub repository: https://github.com/PowerShell/PowerShell/releases/
 
 # Example Cmdlet Usage:
 Change PowerShell directory to location of compiled "PowerShellExample.dll" assembly (the full path will be unique to where the user installed the Github examples but the example build output relative path is ".\OpenDiscoverSDK\Examples\SdkExamples\Build"):
@@ -32,14 +37,14 @@ Change PowerShell directory to location of compiled "PowerShellExample.dll" asse
 
 ### Identify a file's format:
 ```powershell
-   PS> Get-FileFormat -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"
+   PS> Get-FileFormatId -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"
 ```
 
 <img src="DocumentationImages/Image3.png">
 
 ### Identify a file's format and store the returned IdResult object in a variable:
 ```powershell
-   PS> $format = Get-FileFormat -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"  
+   PS> $format = Get-FileFormatId -Path "D:\GitHub\OpenDiscoverSDK\Examples\TestFiles\000379.pdf"  
 ```
 
 ### Compare $format.ID enumerated value with SDK's Id.AcrobatPDF enumeration value:

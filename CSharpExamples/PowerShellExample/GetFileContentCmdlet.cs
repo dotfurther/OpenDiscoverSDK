@@ -7,6 +7,7 @@
 // ***************************************************************************************
 using System.IO;
 using System.Management.Automation;
+using System.Text;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
 using OpenDiscoverSDK.Interfaces.Extractors;
@@ -26,6 +27,11 @@ namespace OpenDiscoverSDK.PowerShell
     [OutputType(typeof(DocumentContent))]
     public class GetFileContentCmdlet : Cmdlet
     {
+        static GetFileContentCmdlet()
+        {
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+        }
+
         /// <summary>
         /// Path to file.
         /// </summary>
@@ -119,6 +125,7 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.Document:
                             #region Document Extraction...
                             {
@@ -132,6 +139,7 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.MailStore:
                             #region MailStore Extraction...
                             {
@@ -140,6 +148,17 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
+                        case ContentExtractorType.Database:
+                            #region Database Extraction...
+                            {
+                                // We will only get table/column info (individual table extracted text can be quite large):
+                                var databaseExtractor = ((IDatabaseExtractor)contentExtractorResult.ContentExtractor);
+                                content = databaseExtractor.ExtractContent(Path);
+                            }
+                            #endregion
+                            break;
+
                         case ContentExtractorType.DocumentStore:
                             #region DocumentStore Extraction...
                             {
@@ -148,6 +167,7 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
+
                         case ContentExtractorType.Unsupported:
                             #region Unsupported Type Extraction...
                             {
@@ -162,23 +182,27 @@ namespace OpenDiscoverSDK.PowerShell
                             }
                             #endregion
                             break;
-                        case ContentExtractorType.Database:
-                            // Ignore for this example 
-                            content        = new DocumentContent(idResult);
-                            content.Result = ContentResult.UnsupportedError;
-                            content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
-                            break;
+
                         case ContentExtractorType.LargeUnsupported:
-                            // Ignore for this example
-                            content = new DocumentContent(idResult);
-                            content.Result       = ContentResult.UnsupportedError;
-                            content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
+                            #region 'Large' Unsupported Type Extraction...
+                            {
+                                // Ignore for this example, very 'large' binary-to-text that needs a FileStream could be extracted
+                                content        = new DocumentContent(idResult);
+                                content.Result = ContentResult.UnsupportedError;
+                                content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
+                            }
+                            #endregion
                             break;
+
                         case ContentExtractorType.LargeEncodedText:
-                            // Ignore for this example 
-                            content = new DocumentContent(idResult);
-                            content.Result       = ContentResult.UnsupportedError;
-                            content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
+                            #region 'Large' Encoded Text File Extraction...
+                            {
+                                // Ignore for this example 
+                                content = new DocumentContent(idResult);
+                                content.Result = ContentResult.UnsupportedError;
+                                content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
+                            }
+                            #endregion
                             break;
                     }
                 }

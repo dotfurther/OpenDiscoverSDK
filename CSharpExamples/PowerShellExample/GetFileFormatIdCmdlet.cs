@@ -7,6 +7,7 @@
 // ***************************************************************************************
 using System.IO;
 using System.Management.Automation;
+using System.Text;
 using OpenDiscoverSDK.Interfaces;
 
 namespace OpenDiscoverSDK.PowerShell
@@ -18,6 +19,11 @@ namespace OpenDiscoverSDK.PowerShell
     [OutputType(typeof(IdResult))]
     public class GetFileFormatIdCmdlet : Cmdlet
     {
+        static GetFileFormatIdCmdlet()
+        {
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+        }
+
         /// <summary>
         /// Path to file to identify.
         /// </summary>

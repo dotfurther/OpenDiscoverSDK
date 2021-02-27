@@ -56,6 +56,10 @@ namespace SdkAPIWinFormClient
             {
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
             }
+            if (_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+            {
+                _docTypeTabControl.TabPages.Remove(_databaseDocTabPage);
+            }
         }
         #endregion
 
@@ -105,7 +109,11 @@ namespace SdkAPIWinFormClient
             {
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
             }
-
+            if (_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+            {
+                _docTypeTabControl.TabPages.Remove(_databaseDocTabPage);
+            }
+            
             _metdataTabPage.Text        = "Metadata (0)";
             _attributesTabPage.Text     = "Attributes (0)";
             _hyperLinksTabPage.Text     = "Hyperlinks (0)";
@@ -398,7 +406,57 @@ namespace SdkAPIWinFormClient
                 }
                 #endregion
             }
+            else if (docContent is DatabaseContent)
+            {
+                //
+                // Database format specific extra content:
+                //
+                if (!_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+                {
+                    _docTypeTabControl.TabPages.Add(_databaseDocTabPage);
+                }
 
+                if (_lastActivePage == _databaseDocTabPage)
+                {
+                    _docTypeTabControl.SelectedTab = _databaseDocTabPage;
+                }
+
+                var databaseContent = (DatabaseContent)docContent;
+
+                _extractedTextBox.Text = "Only table/column information for database are returned by service in this example (reason: text for tables can be very 'large')";
+
+                try
+                {
+                    _dbTableListView.BeginUpdate();
+                    _tableColListView.BeginUpdate();
+
+                    foreach (var table in databaseContent.Tables)
+                    {
+                        var item = new ListViewItem(table.Name);
+                        item.SubItems.Add(table.RowCount.ToString());
+                        item.SubItems.Add(table.IsUserTable.ToString());
+                        item.SubItems.Add(table.IsSystemTable.ToString());
+                        item.SubItems.Add(table.IsHiddenTable.ToString());
+                        item.Tag = table;
+                        _dbTableListView.Items.Add(item);
+
+                        foreach (var col in table.Columns)
+                        {
+                            var colItem = new ListViewItem(col.Name);
+                            colItem.SubItems.Add(col.DataType.ToString());
+                            colItem.SubItems.Add(col.Index.ToString());
+                            colItem.SubItems.Add(col.ID.HasValue ? col.ID.ToString() : "");
+                            colItem.SubItems.Add(col.CodePage.HasValue ? col.CodePage.ToString() : "");
+                            _tableColListView.Items.Add(colItem);
+                        }
+                    }
+                }
+                finally
+                {
+                    _tableColListView.EndUpdate();
+                    _dbTableListView.EndUpdate();
+                }
+            }
 
             //
             // Set Extracted Text:
