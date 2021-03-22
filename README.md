@@ -41,9 +41,10 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Medical records
      * Health care/insurance
      * Student records
+     * HR records
      * Legal matters
      * General accounts
-     * Emojis (and their group, subgroup, and description) 
+     * Emojis (and their group, subgroup, and name) 
      * Gender
      * Religion
      * Form entry fields related to sensitive items
