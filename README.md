@@ -31,7 +31,9 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Vehicle identification numbers (VIN)
      * Social media accounts
      * IP addresses (IPv4 and IPv6)
+     * MAC addresses
      * Cryptocurrency addresses
+     * And more...
 * Detecting 4 types of sensitive security information (in extracted text and metadata):
      * Passwords
      * Usernames
