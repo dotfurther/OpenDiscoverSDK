@@ -74,12 +74,12 @@ Microsoft Outlook for Mac (.olm) mail store container internal folder structure 
 
 
 ### Note:
-To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
+To ENABLE long file path support for Windows 10 and .NET 5, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
   
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
-Open Discover SDK is comprised of .NET x64 assemblies due to unmanaged code dependencies
+Open Discover SDK is comprised of .NET 5 x64 assemblies due to unmanaged code dependencies
 
 - Run Microsoft Visual Studio C# examples in x64 solution platform (either Debug or Release)
 - To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows as Visual Studio WinForm designer is a 32-bit process. When done, set solution platform back to x64 before executing in either x64 Debug/Release mode.
