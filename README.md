@@ -24,6 +24,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Street addresses
      * Date of birth
      * Driver's license numbers
+     * State ID card numbers
      * Passport numbers
      * Maiden names
      * Health care number/member IDs
@@ -52,6 +53,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Form entry fields related to sensitive items
      * Policy numbers
      * Insurance
+     * 200+ entity types extracted
 * Detecting custom defined sensitive item search types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 
