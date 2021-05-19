@@ -13,7 +13,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* Detecting and extracting information on 18 types of personally identifiable information (PII) (in extracted text and metadata):
+* Detecting and extracting information on 25 types of personally identifiable information (PII) (in extracted text and metadata):
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
@@ -46,6 +46,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Student records
      * HR records
      * Legal matters
+     * URLs
      * General accounts
      * Emojis (and their group, subgroup, and name) 
      * Gender
