@@ -5,11 +5,9 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentExtractionExample", "ContentExtraction\ContentExtractionExample.csproj", "{A5408867-17BC-472F-88D6-EDE8287F3A93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentIdentifierExample", "DocumentIdentifier\DocumentIdentifierExample.csproj", "{C966D584-0372-4783-9870-BC7C23122CD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentIdentifierExample", "DocumentIdentifier\DocumentIdentifierExample.csproj", "{C966D584-0372-4783-9870-BC7C23122CD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerShellExample", "PowerShellExample\PowerShellExample.csproj", "{72BA88B9-3290-4AEA-BD4A-5720718A6544}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPC", "IPC", "{815C6EB1-B41F-4065-B105-4ECBDE436826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerShellExample", "PowerShellExample\PowerShellExample.csproj", "{72BA88B9-3290-4AEA-BD4A-5720718A6544}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

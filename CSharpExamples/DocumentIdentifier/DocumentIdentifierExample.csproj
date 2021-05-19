@@ -36,13 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\bin_net5\7z64.dll">
-      <Link>7z64.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
   </ItemGroup>
 

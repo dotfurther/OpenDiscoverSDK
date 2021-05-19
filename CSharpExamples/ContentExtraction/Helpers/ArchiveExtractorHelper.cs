@@ -329,9 +329,8 @@ namespace ContentExtractionExample
                                 // Some level of error has occured:
                                 if (itemExtractResult == ContentResult.DataError && stream != null && (stream.Length >= (long)(0.5*childDoc.Size) && stream.Length <= (long)(1.1* childDoc.Size)))
                                 {
-                                    // We have a data error from 7zip but also have at least the expanded size of data extracted from archive - attempt to process this data if 
-                                    // expanded stream is not too much larger than item's 'Size' property. From observation, 7zip sometimes gets documents successfully but with a 
-                                    // DataError flag - the item's data may be truncated but the user still may want to retrieve the data
+                                    // We have a data error but also have at least the expanded size of data extracted from archive - attempt to process this data if 
+                                    // expanded stream is not too much larger than item's 'Size' property. 
                                     ++TotalItemsExtracted;
                                     continue;
                                 }
@@ -442,8 +441,7 @@ namespace ContentExtractionExample
                 {
                     if (result == ContentResult.DataError && stream != null && stream.Length >= childDoc.Size)
                     {
-                        // We have a data error from 7zip but also have at least the expanded size of data extracted from archive - attempt to process this data.
-                        // From observation, 7zip sometimes gets documents successfully that have a DataError flag 
+                        // We have a data error but also have at least the expanded size of data extracted from archive - attempt to process this data.
                         _hostUI.LogMessage(string.Format("Archive item #{0}, had non-'Ok' ContentResult = {1}, but had expanded size bytes (Size) extracted.", index, result));
                     }
                     else

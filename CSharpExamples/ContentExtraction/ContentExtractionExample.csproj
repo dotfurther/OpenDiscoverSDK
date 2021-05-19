@@ -20,12 +20,6 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <OutDir>..\Build\</OutDir>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\bin\7z64.dll" Link="7z64.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenDiscoverCWImpl">
       <HintPath>..\..\..\bin\OpenDiscoverCWImpl.dll</HintPath>
