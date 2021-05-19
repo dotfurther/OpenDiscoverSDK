@@ -24,6 +24,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Street addresses
      * Date of birth
      * Driver's license numbers
+     * State ID card numbers
      * Passport numbers
      * Maiden names
      * Health care number/member IDs
@@ -31,7 +32,9 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Vehicle identification numbers (VIN)
      * Social media accounts
      * IP addresses (IPv4 and IPv6)
+     * MAC addresses
      * Cryptocurrency addresses
+     * And more...
 * Detecting 4 types of sensitive security information (in extracted text and metadata):
      * Passwords
      * Usernames
@@ -41,14 +44,16 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Medical records
      * Health care/insurance
      * Student records
+     * HR records
      * Legal matters
      * General accounts
-     * Emojis (and their group, subgroup, and description) 
+     * Emojis (and their group, subgroup, and name) 
      * Gender
      * Religion
      * Form entry fields related to sensitive items
      * Policy numbers
      * Insurance
+     * 200+ entity types extracted
 * Detecting custom defined sensitive item search types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 

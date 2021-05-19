@@ -60,7 +60,7 @@ This screen shot shows the archive's internal container folder structure. The ex
 
 <img src="DocumentationImages/Image10.png">
 
-This screen shot shows the results of running an archive true expanded size ("Test Archive" button) to test a malicious archive. This particular malicious archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). This archive can be found in the GitHub repository of [archive decompression "bombs"](https://github.com/bones-codes/bombs). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracting items from untrusted archives can potentially ruin your file server's day). Additionally, the Open Discover Platform API has built-in safety checks for detecting both archive compression bombs and archive recursion (self-replicating) bombs.
+This screen shot shows the results of running an archive true expanded size ("Test Archive" button) to test a malicious archive. This particular malicious archive advertises a 1 byte item decompressed size, but in reality it is 10 GB in size (the items header was maliciously modified to hide the true item expanded size). The Open Discover SDK can be used to test untrusted archives for true expansion size before extracting archive items (naively extracting items from untrusted archives can potentially ruin your file server's day). Additionally, the Open Discover Platform API has built-in safety checks for detecting both archive compression bombs and archive recursion (self-replicating) bombs.
 
 <img src="DocumentationImages/Image10b.png">
 
@@ -74,12 +74,12 @@ Microsoft Outlook for Mac (.olm) mail store container internal folder structure 
 
 
 ### Note:
-To ENABLE long file path support for Windows 10 and .NET 4.6.2, see this article:
+To ENABLE long file path support for Windows 10 and .NET 5, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
   
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
-Open Discover SDK is comprised of .NET x64 assemblies due to unmanaged code dependencies
+Open Discover SDK is comprised of .NET 5 x64 assemblies due to unmanaged code dependencies
 
 - Run Microsoft Visual Studio C# examples in x64 solution platform (either Debug or Release)
 - To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows as Visual Studio WinForm designer is a 32-bit process. When done, set solution platform back to x64 before executing in either x64 Debug/Release mode.
