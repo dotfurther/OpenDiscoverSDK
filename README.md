@@ -55,8 +55,9 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Policy numbers
      * Insurance
      * 200+ entity types extracted
-* Detecting custom defined sensitive item search types in extracted text and metadata.
+* Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
+* Open Discover SDK does not use regular expressions for sensitive/entity item detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
 
 ## The Open Discover SDK API is purposed for users to develop higher level document processing applications for:
 * Full text indexing/search
