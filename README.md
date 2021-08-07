@@ -84,7 +84,7 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    * How to extract text and metadata from office documents, PDFs, XPS, raster images, vector images, multimedia, and more
    * How to decrypt password protected office documents, PDFs, and archives
    * Identified languages present in extracted text
-   * MD5/SHA-1 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of same document or email whether saved as .msg, .eml, or .emlx.
+   * MD5/SHA-1/SHA-256 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of the same document or email whether saved as .msg, .eml, or .emlx.
    * How to extract items from archives such as 7ZIP, ZIP, RAR, split archives, self-extracting archives, etc.
    * How to extract email objects from PST, OST, and MBOX mail stores
    * Sensitive item detection (PII) such as social security, credit card numbers, IBAN, driver's license numbers, license plate numbers, phone numbers, emails, and much more.
