@@ -13,7 +13,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* Detecting and extracting information on 18 types of personally identifiable information (PII) (in extracted text and metadata):
+* Detecting and extracting information on 25 types of personally identifiable information (PII) (in extracted text and metadata):
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
@@ -46,6 +46,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Student records
      * HR records
      * Legal matters
+     * URLs
      * General accounts
      * Emojis (and their group, subgroup, and name) 
      * Gender
@@ -54,8 +55,9 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Policy numbers
      * Insurance
      * 200+ entity types extracted
-* Detecting custom defined sensitive item search types in extracted text and metadata.
+* Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
+* Open Discover SDK does not use regular expressions for sensitive/entity item detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
 
 ## The Open Discover SDK API is purposed for users to develop higher level document processing applications for:
 * Full text indexing/search
@@ -82,12 +84,10 @@ The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenD
    * How to extract text and metadata from office documents, PDFs, XPS, raster images, vector images, multimedia, and more
    * How to decrypt password protected office documents, PDFs, and archives
    * Identified languages present in extracted text
-   * MD5/SHA-1 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of same document or email whether saved as .msg, .eml, or .emlx.
+   * MD5/SHA-1/SHA-256 binary hashes and sophisticated content based hashes for emails and office documents. Hashes are useful for de-duplicating copies of the same document or email whether saved as .msg, .eml, or .emlx.
    * How to extract items from archives such as 7ZIP, ZIP, RAR, split archives, self-extracting archives, etc.
    * How to extract email objects from PST, OST, and MBOX mail stores
    * Sensitive item detection (PII) such as social security, credit card numbers, IBAN, driver's license numbers, license plate numbers, phone numbers, emails, and much more.
 ### [PowerShell Example - shows how to create Cmdlets that use SDK to:](./CSharpExamples/PowerShellExample/README.md)
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
-### [WCF Example - illustrates that the API is serializable:](./CSharpExamples/WCF/README.md)
-  * This example is very similar to the above "ContentExtraction Example" except that all content extraction is done by a console hosted WCF service and then the content results serialized back to the WinForm UI for display. A RESTful web API can easily be developed from portions of this example code. 
