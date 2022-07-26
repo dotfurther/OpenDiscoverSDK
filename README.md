@@ -6,7 +6,7 @@ Copyright © 2019-2022 dotFurther Inc. All rights reserved.
 
 ## Open Discover SDK is a .NET application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
-  (versus using unreliable file extensions, especially in embedded objects/attachments). 1,540+ file formats 
+  (versus using unreliable file extensions, especially in embedded objects/attachments). 1,550+ file formats 
   supported for identification.
 * Extracting text from supported file formats and optionally identifying languages present in the extracted text. [Notable supported file formats](https://dotfurther.com/features/)
 * Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,350 known and documented metadata fields in total)
@@ -54,7 +54,7 @@ Copyright © 2019-2022 dotFurther Inc. All rights reserved.
      * Form entry fields related to sensitive items
      * Policy numbers
      * Insurance
-     * 340+ entity types extracted (along with all content, in one simple API call and at a very high performance).
+     * 345+ entity types extracted (along with all content, in one simple API call and at a very high performance).
 * Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 * Open Discover SDK does not use regular expressions for sensitive/entity item detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
