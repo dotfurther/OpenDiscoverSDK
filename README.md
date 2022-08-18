@@ -73,9 +73,6 @@ Copyright © 2019-2022 dotFurther Inc. All rights reserved.
 In addition to the Open Discover SDK, we also provide higher level APIs built upon the SDK (Open Discover Platform) that help users build
 high volume document processing workflows.
 
-## Open Discover® SDK Help:
-The Open Discover® SDK Help is published here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
-
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
 ### [DocumentIdentifier Example:](./CSharpExamples/DocumentIdentifier/README.md)
    * Shows how to use SDK to identify the document file formats of all files under an input directory and its 
