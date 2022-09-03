@@ -4,7 +4,7 @@ Copyright © 2019-2022 dotFurther Inc. All rights reserved.
 ### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows. See [Early Case Assessment Study using Open Discover Platform and RavenDB document database](https://github.com/dotfurther/OpenDiscoverPlatformCaseStudy).
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
-## Open Discover® SDK is a .NET application programming interface (API) that supports:
+## Open Discover® SDK is a .NET 6 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1,550+ file formats 
   supported for identification.
