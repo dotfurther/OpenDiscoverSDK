@@ -41,6 +41,7 @@ Copyright © 2019-2022 dotFurther Inc. All rights reserved.
      * Network names
      * Database credentials
 * Detecting and extracting information on many entity types related to:
+     * Person name
      * Medical records
      * Health care/insurance
      * Student records
