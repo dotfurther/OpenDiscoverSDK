@@ -497,10 +497,10 @@ namespace ContentExtractionExample.Content
             }
 
             _metdataTabPage.Text        = string.Format("Metadata ({0})",        _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
-            _attributesTabPage.Text     = string.Format("Attributes ({0})",     _docContent.Attributes.Count);
-            _hyperLinksTabPage.Text     = string.Format("Hyperlinks ({0})",     _docContent.HyperLinks.Count);
-            _languagesTabPage.Text      = string.Format("Languages ({0})",      _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
-            _childrenTabPage.Text       = string.Format("Children ({0})",       _docContent.ChildDocuments.Count);
+            _attributesTabPage.Text     = string.Format("Attributes ({0})",      _docContent.Attributes.Count);
+            _hyperLinksTabPage.Text     = string.Format("Hyperlinks ({0})",      _docContent.HyperLinks.Count);
+            _languagesTabPage.Text      = string.Format("Languages ({0})",       _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
+            _childrenTabPage.Text       = string.Format("Children ({0})",        _docContent.ChildDocuments.Count);
             _sensitiveItemsTabPage.Text = string.Format("Sensitive Items ({0})", _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.Items.Count : 0);
             _customItemsTabPage.Text    = string.Format("Custom Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.CustomItems.Count : 0);
             _entityItemsTabPage.Text    = string.Format("Entity Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.EntityItems.Count : 0);

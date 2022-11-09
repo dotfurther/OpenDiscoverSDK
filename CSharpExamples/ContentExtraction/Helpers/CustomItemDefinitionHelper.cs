@@ -14,17 +14,30 @@ namespace ContentExtractionExample
         ///  FORMAT of text file:
         ///   - lines starting with '#' are comments
         ///   - lines starting with '[CustomItemDefinition]' are the start of a custom item definition
-        ///   - the next non-comment line must have be of format: Name | Classification | KeywordSequence | ExtractType
-        ///   A keyword sequence is terms and symbols separated by '+' (addition sign). There can be no space between terms, '+', and symbols
-        ///   and a sequence cannot start or end with a '+'. A sequence must begin with a word term.
+        ///   - the next non-comment line must have be of format: 
+        ///   
+        ///         Name | Classification | KeywordSequence | RequireKeywordSequenceAtStartOfLine | ExtractType
+        ///         
+        ///      OR if ExtractType = RegularExpressionAfter, RegularExpressionBefore, or RegularExpressionBeforeAndAfter:
+        ///      
+        ///         Name | Classification | KeywordSequence | RequireKeywordSequenceAtStartOfLine | ExtractType
+        ///         RegularExpression
+        ///         NumRegExSearchChars
+        ///         
+        ///   A keyword sequence is terms and symbols separated by '+' (addition sign). 
+        ///   Rules:
+        ///   - There can be no space between terms, '+', and symbols
+        ///   - All terms must be lower case
+        ///   - A sequence must begin with a word term ('wg12', 'the') and can not begin with a number or symbol.
+        ///   - A sequence cannot start or end with a '+'. 
         /// </summary>
         /// <returns></returns>
         public static List<CustomItemDefinition> LoadCustomItemDefinitions()
         {
             var dlg = new System.Windows.Forms.OpenFileDialog();
-            dlg.Title       = "Load CustomItemDefinition File...";
-            dlg.Multiselect = false;
-            dlg.Filter      = "*.*|*.*";
+            dlg.Title           = "Load CustomItemDefinition File...";
+            dlg.Multiselect     = false;
+            dlg.Filter          = "*.*|*.*";
             dlg.CheckFileExists = true;
 
             var definitionList = new List<CustomItemDefinition>();
@@ -50,8 +63,9 @@ namespace ContentExtractionExample
                     var isCustDefnPropertyBlock = false;
                     var lineCount = 1;
 
-                    foreach (var line in lines)
+                    for (var iLine = 0; iLine < lines.Length; ++iLine)
                     {
+                        var line     = lines[iLine];
                         var trimline = line.Trim();
 
                         if (string.IsNullOrWhiteSpace(trimline) || trimline.StartsWith("#"))
@@ -68,17 +82,48 @@ namespace ContentExtractionExample
                         else if (isCustDefnPropertyBlock)
                         {
                             var parts = trimline.Split(new char[] { '|' });
-                            if (parts == null || parts.Length != 4)
+                            if (parts == null || parts.Length != 5)
                             {
-                                throw new Exception("Line #{0} under [CustomItemDefinition] section requires 4 parts separated by a '|' (Name | Classification | KeywordSequence | ExtractType).");
+                                throw new Exception(string.Format("Line #{0} under [CustomItemDefinition] section requires 5 parts separated by a '|' (Name | Classification | KeywordSequence | RequireKeywordSequenceAtStartOfLine | ExtractType).", lineCount));
                             }
 
                             var name           = parts[0].Trim();
                             var classification = parts[1].Trim();
                             var sequence       = parts[2].Trim();
-                            var extractType    = (CustomItemExtractType)Enum.Parse(typeof(CustomItemExtractType), parts[3].Trim());
+                            var requireKeywordSequenceAtStartOfLine = bool.Parse(parts[3].Trim());
+                            var extractType       = (CustomItemExtractType)Enum.Parse(typeof(CustomItemExtractType), parts[4].Trim());
+                            var regExpression     = "";
+                            var regExSearchLength = 0;
 
-                            definitionList.Add(new CustomItemDefinition(name, classification, sequence, extractType));
+                            if (extractType == CustomItemExtractType.RegularExpressionAfter  ||
+                                extractType == CustomItemExtractType.RegularExpressionBefore ||
+                                extractType == CustomItemExtractType.RegularExpressionBeforeAndAfter)
+                            {
+                                if (iLine + 2 >= lines.Length)
+                                {
+                                    throw new Exception(string.Format("Line #{0} under [CustomItemDefinition] section is missing the regular expression line and/or NumRegExSearchChars.", iLine + 1));
+                                }
+
+                                regExpression      = lines[++iLine].Trim();
+                                var numSearchChars = lines[++iLine].Trim();
+
+                                if (string.IsNullOrWhiteSpace(regExpression) || regExpression.Length < 1)
+                                {
+                                    throw new Exception(string.Format("Line #{0} under [CustomItemDefinition] section RegularExpression.Length < 1.", iLine + 1));
+                                }
+
+                                if (!int.TryParse(numSearchChars, out regExSearchLength))
+                                {
+                                    throw new Exception(string.Format("Line #{0} under [CustomItemDefinition] has invalid RegExSearchLength.", iLine + 1));
+                                }
+
+                                if (regExSearchLength < 1)
+                                {
+                                    throw new Exception(string.Format("Line #{0} under [CustomItemDefinition] RegExSearchLength < 1.", iLine + 1));
+                                }
+                            }
+
+                            definitionList.Add(new CustomItemDefinition(name, classification, sequence, requireKeywordSequenceAtStartOfLine, extractType, regExpression, regExSearchLength));
                             isCustDefnPropertyBlock = false;
                         }
 

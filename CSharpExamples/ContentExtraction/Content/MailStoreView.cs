@@ -275,7 +275,7 @@ namespace ContentExtractionExample.Content
             try
             {
                 this.Enabled = true;
-                this.Cursor = Cursors.Default;
+                this.Cursor  = Cursors.Default;
 
                 MessageBox.Show(this, string.Format("Extracted and wrote {0} emails in {1:F2} [secs]", _totalEmailMessagesWritten, _totalWriteTime_ms / 1000.0), "Finished");
             }

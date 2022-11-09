@@ -7,7 +7,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net5.0-windows</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x64</Platforms>
@@ -37,6 +37,9 @@
     </Reference>
     <Reference Include="OpenDiscoverSDK">
       <HintPath>..\..\..\bin_net5\OpenDiscoverSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenDiscoverSDK.Interfaces">
+      <HintPath>..\..\..\bin_net5\OpenDiscoverSDK.Interfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

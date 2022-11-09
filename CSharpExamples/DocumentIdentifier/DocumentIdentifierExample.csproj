@@ -7,7 +7,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net5.0-windows</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x64</Platforms>
     <ServerGarbageCollection>true</ServerGarbageCollection>
@@ -29,6 +29,9 @@
     </Reference>
     <Reference Include="OpenDiscoverCWImpl">
       <HintPath>..\..\..\bin_net5\OpenDiscoverCWImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenDiscoverSDK.Interfaces">
+      <HintPath>..\..\..\bin_net5\OpenDiscoverSDK.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization">
       <HintPath>..\..\..\bin_net5\System.Windows.Forms.DataVisualization.dll</HintPath>

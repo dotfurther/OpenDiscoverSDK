@@ -422,7 +422,5 @@ namespace ContentExtractionExample.Content
             }
         }
         #endregion
-
-
     }
 }
