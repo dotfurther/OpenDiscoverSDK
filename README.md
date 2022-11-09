@@ -1,12 +1,12 @@
-Copyright © 2019-2021 dotFurther Inc. All rights reserved.
+Copyright © 2019-2022 dotFurther Inc. All rights reserved.
 
 # Welcome to Open Discover® SDK for .NET Code Examples
 ### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows. See [Early Case Assessment Study using Open Discover Platform and RavenDB document database](https://github.com/dotfurther/OpenDiscoverPlatformCaseStudy).
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
-## Open Discover SDK is a .NET application programming interface (API) that supports:
+## Open Discover® SDK is a .NET 6 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
-  (versus using unreliable file extensions, especially in embedded objects/attachments). 1,540+ file formats 
+  (versus using unreliable file extensions, especially in embedded objects/attachments). 1,550+ file formats 
   supported for identification.
 * Extracting text from supported file formats and optionally identifying languages present in the extracted text. [Notable supported file formats](https://dotfurther.com/features/)
 * Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,350 known and documented metadata fields in total)
@@ -41,6 +41,7 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Network names
      * Database credentials
 * Detecting and extracting information on many entity types related to:
+     * Person name
      * Medical records
      * Health care/insurance
      * Student records
@@ -54,12 +55,12 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
      * Form entry fields related to sensitive items
      * Policy numbers
      * Insurance
-     * 200+ entity types extracted
+     * 350+ entity types extracted (along with all content, in one simple API call and at a very high performance).
 * Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 * Open Discover SDK does not use regular expressions for sensitive/entity item detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
 
-## The Open Discover SDK API is purposed for users to develop higher level document processing applications for:
+## The Open Discover® SDK API is purposed for users to develop higher level document processing applications for:
 * Full text indexing/search
 * Machine learning using extracted text and metadata
 * Text analytics and document concept clustering
@@ -72,9 +73,6 @@ Copyright © 2019-2021 dotFurther Inc. All rights reserved.
 
 In addition to the Open Discover SDK, we also provide higher level APIs built upon the SDK (Open Discover Platform) that help users build
 high volume document processing workflows.
-
-## Open Discover SDK Help:
-The Open Discover SDK Help is published here: https://dotfurther.github.io/OpenDiscoverSDKHelp/
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
 ### [DocumentIdentifier Example:](./CSharpExamples/DocumentIdentifier/README.md)
