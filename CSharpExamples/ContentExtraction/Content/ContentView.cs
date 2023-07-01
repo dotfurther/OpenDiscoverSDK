@@ -1,6 +1,6 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2022 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
@@ -13,18 +13,18 @@ using System.Text;
 using System.Windows.Forms;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
-using OpenDiscoverSDK.Interfaces.Content.Sensitive;
+using OpenDiscoverSDK.Interfaces.Content.TextAnalytics;
 using OpenDiscoverSDK.Interfaces.Extractors;
 
 namespace ContentExtractionExample.Content
 {
     public partial class ContentView : UserControl
     {
-        private IHostUI           _iHostUI;
-        private DocumentContent   _docContent;
+        private IHostUI _iHostUI;
+        private DocumentContent _docContent;
         private IContentExtractor _contentExtractorBase;
         private ToolStripMenuItem _saveAsMenuItem;
-        private TabPage           _lastActivePage;
+        private TabPage _lastActivePage;
 
         #region Constructors...
         /// <summary>
@@ -42,9 +42,9 @@ namespace ContentExtractionExample.Content
             contextMenu.Items.Add(_saveAsMenuItem);
             _childDocsListView.ContextMenuStrip = contextMenu;
 
-            _langIdListView.HideSelection        = false;
+            _langIdListView.HideSelection = false;
             _langIdRegionsListView.HideSelection = false;
-            _extractedTextBox.HideSelection      = false;
+            _extractedTextBox.HideSelection = false;
 
             if (_docTypeTabControl.TabPages.Contains(_emailDocTabPage))
             {
@@ -58,10 +58,6 @@ namespace ContentExtractionExample.Content
             {
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
             }
-            if (_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
-            {
-                _docTypeTabControl.TabPages.Remove(_databaseDocTabPage);
-            }
         }
         #endregion
 
@@ -73,26 +69,24 @@ namespace ContentExtractionExample.Content
         public void ClearView()
         {
             _metadataListView.Items.Clear();
-            _attributesTextBox.Text = "";
             _hyperLinksListView.Items.Clear();
             _childDocsListView.Items.Clear();
             _langIdListView.Items.Clear();
             _langIdRegionsListView.Items.Clear();
-            _sensitiveItemsListView.Items.Clear();
-            _custSenItemListView.Items.Clear();
-            _entityItemListView.Items.Clear();
+            _piiListView.Items.Clear();
             _tableColListView.Items.Clear();
             _dbTableListView.Items.Clear();
 
-            _extractedTextBox.Text    = "";
+            _extractedTextBox.Text = "";
             _totalTextCharsLabel.Text = "";
+
+            _childHexEditorControl.ClearSourceData();
 
             _emailHeaderTraceTreeView.Nodes.Clear();
             if (_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
             {
                 _selectedChildInfoTabControl.TabPages.Remove(_emailTransportHeaderTraceTabPage);
             }
-
 
             _pictureBox.Image = null;
             if (_selectedChildInfoTabControl.TabPages.Contains(_imageViewTabPage))
@@ -114,51 +108,50 @@ namespace ContentExtractionExample.Content
             {
                 _docTypeTabControl.TabPages.Remove(_pdfDocTabPage);
             }
-            if (_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+            if (_docTypeTabControl.TabPages.Contains(_tabDatabasePage))
             {
-                _docTypeTabControl.TabPages.Remove(_databaseDocTabPage);
+                _docTypeTabControl.TabPages.Remove(_tabDatabasePage);
             }
 
-            _metdataTabPage.Text        = "Metadata (0)";
-            _attributesTabPage.Text     = "Attributes (0)";
-            _hyperLinksTabPage.Text     = "Hyperlinks (0)";
-            _languagesTabPage.Text      = "Languages (0)";
-            _childrenTabPage.Text       = "Children (0)";
-            _sensitiveItemsTabPage.Text = "Sensitive Items (0)";
-            _customItemsTabPage.Text    = "Custom Items (0)";
-            _entityItemsTabPage.Text    = "Entity Items (0)";
 
-            _fileIdLabel.Text          = "";
-            _classificationLabel.Text  = "";
-            _idMatchTypeLabel.Text     = "";
-            _textSourceLabel.Text      = "";
-            _contentResultLabel.Text   = "";
-            _errorMessageLabel.Text    = "";
-            _sha1BinaryHashLabel.Text  = "";
+            _metdataTabPage.Text = "Metadata";
+            _attributesTabPage.Text = "Attributes";
+            _hyperLinksTabPage.Text = "Hyperlinks";
+            _languagesTabPage.Text = "Languages";
+            _childrenTabPage.Text = "Children";
+            _attributesTextBox.Text = "";
+            _piiTabPage.Text = "Entity Items";
+
+            _fileIdLabel.Text = "";
+            _classificationLabel.Text = "";
+            _idMatchTypeLabel.Text = "";
+            _textSourceLabel.Text = "";
+            _contentResultLabel.Text = "";
+            _errorMessageLabel.Text = "";
+            _sha1BinaryHashLabel.Text = "";
             _sha1ContentHashLabel.Text = "";
-            _fileEntropyLabel.Text     = "";
-            _isEncryptedLabel.Text     = "";
+            _fileEntropyLabel.Text = "";
+            _isEncryptedLabel.Text = "";
 
-            _fromNameLabel.Text               = "";
-            _fromSmtpLabel.Text               = "";
-            _fromX500DNLabel.Text             = "";
-            _senderNameLabel.Text             = "";
-            _senderSmtpLabel.Text             = "";
-            _senderX500DNLabel.Text           = "";
-            _emailSentTimeLabel.Text          = "";
-            _emailCreationTimeLabel.Text      = "";
-            _emailSubjectLabel.Text           = "";
-            _emailBodyTypeLabel.Text          = "";
-            _emailHeaderSha1HashLabel.Text    = "";
+            _fromNameLabel.Text = "";
+            _fromSmtpLabel.Text = "";
+            _fromX500DNLabel.Text = "";
+            _senderNameLabel.Text = "";
+            _senderSmtpLabel.Text = "";
+            _senderX500DNLabel.Text = "";
+            _emailSentTimeLabel.Text = "";
+            _emailCreationTimeLabel.Text = "";
+            _emailSubjectLabel.Text = "";
+            _emailBodyTypeLabel.Text = "";
+            _emailHeaderSha1HashLabel.Text = "";
             _mimePartialMessageInfoLabel.Text = "";
             _emailRecipientListView.Items.Clear();
             _emailTextBodyTextBox.Text = null;
-            _rtfBodyTextBox.Text       = null;
-            _htmlBodyTextBox.Text      = null;
+            _rtfBodyTextBox.Text = null;
+            _htmlBodyTextBox.Text = null;
 
-            _htmlTitleLabel.Text   = "";
+            _htmlTitleLabel.Text = "";
             _htmlBaseUrlLabel.Text = "";
-
             _htmlImagesTabPage.Text = "Images";
             _htmlImagesListView.Items.Clear();
 
@@ -170,7 +163,7 @@ namespace ContentExtractionExample.Content
         #region public void UpdateContentView(DocumentContent docContent, string filename, long filelength, IContentExtractor contentExtractorBase)
         public void UpdateContentView(DocumentContent docContent, string filename, long filelength, IContentExtractor contentExtractorBase)
         {
-            _docContent           = docContent;
+            _docContent = docContent;
             _contentExtractorBase = contentExtractorBase;
 
             _fileNameLabel.Text = filename;
@@ -181,16 +174,16 @@ namespace ContentExtractionExample.Content
                 return;
             }
 
-            _fileIdLabel.Text          = docContent.FormatId.ID.ToString();
-            _classificationLabel.Text  = docContent.FormatId.Classification.ToString();
-            _idMatchTypeLabel.Text     = docContent.FormatId.MatchType.ToString();
-            _textSourceLabel.Text      = docContent.TextSourceType.ToString();
-            _contentResultLabel.Text   = docContent.Result.ToString();
-            _errorMessageLabel.Text    = docContent.ErrorMessage    != null ? docContent.ErrorMessage    : "";
-            _sha1BinaryHashLabel.Text  = docContent.SHA1BinaryHash  != null ? docContent.SHA1BinaryHash  : "";
+            _fileIdLabel.Text = docContent.FormatId.ID.ToString();
+            _classificationLabel.Text = docContent.FormatId.Classification.ToString();
+            _idMatchTypeLabel.Text = docContent.FormatId.MatchType.ToString();
+            _textSourceLabel.Text = docContent.TextSourceType.ToString();
+            _contentResultLabel.Text = docContent.Result.ToString();
+            _errorMessageLabel.Text = docContent.ErrorMessage != null ? docContent.ErrorMessage : "";
+            _sha1BinaryHashLabel.Text = docContent.SHA1BinaryHash != null ? docContent.SHA1BinaryHash : "";
             _sha1ContentHashLabel.Text = docContent.SHA1ContentHash != null ? docContent.SHA1ContentHash : "";
-            _fileEntropyLabel.Text     = docContent.FileEntropy     != null ? docContent.FileEntropy.Value.ToString("F7") : "";
-            _isEncryptedLabel.Text     = docContent.FormatId.IsEncrypted.ToString();
+            _fileEntropyLabel.Text = docContent.FileEntropy != null ? docContent.FileEntropy.Value.ToString("F7") : "";
+            _isEncryptedLabel.Text = docContent.FormatId.IsEncrypted.ToString();
 
             //
             // Check for special document content classes that derive from DocumentContent class and
@@ -217,18 +210,17 @@ namespace ContentExtractionExample.Content
                 if (emailDocContent.From.Count > 0)
                 {
                     var firstFrom = emailDocContent.From[0];
-                    _fromNameLabel.Text   = firstFrom.Name;
-                    _fromSmtpLabel.Text   = firstFrom.SmtpAddress;
+                    _fromNameLabel.Text = firstFrom.Name;
+                    _fromSmtpLabel.Text = firstFrom.SmtpAddress;
                     _fromX500DNLabel.Text = firstFrom.X500DN;
                 }
-
-                _senderNameLabel.Text          = emailDocContent.Sender.Name;
-                _senderSmtpLabel.Text          = emailDocContent.Sender.SmtpAddress;
-                _senderX500DNLabel.Text        = emailDocContent.Sender.X500DN;
-                _emailSentTimeLabel.Text       = emailDocContent.SentDate.HasValue     ? emailDocContent.SentDate.Value.ToString() : "";
-                _emailCreationTimeLabel.Text   = emailDocContent.CreationDate.HasValue ? emailDocContent.CreationDate.Value.ToString() : "";
-                _emailSubjectLabel.Text        = emailDocContent.Subject != null ? emailDocContent.Subject : "";
-                _emailBodyTypeLabel.Text       = emailDocContent.BodyType.ToString();
+                _senderNameLabel.Text = emailDocContent.Sender.Name;
+                _senderSmtpLabel.Text = emailDocContent.Sender.SmtpAddress;
+                _senderX500DNLabel.Text = emailDocContent.Sender.X500DN;
+                _emailSentTimeLabel.Text = emailDocContent.SentDate.HasValue ? emailDocContent.SentDate.Value.ToString() : "";
+                _emailCreationTimeLabel.Text = emailDocContent.CreationDate.HasValue ? emailDocContent.CreationDate.Value.ToString() : "";
+                _emailSubjectLabel.Text = emailDocContent.Subject != null ? emailDocContent.Subject : "";
+                _emailBodyTypeLabel.Text = emailDocContent.BodyType.ToString();
                 _emailHeaderSha1HashLabel.Text = emailDocContent.SHA1HeaderHash != null ? emailDocContent.SHA1HeaderHash : "";
 
                 if (emailDocContent.IsMimePartialMessage)
@@ -298,25 +290,25 @@ namespace ContentExtractionExample.Content
                     foreach (var recip in emailDocContent.ToRecipients)
                     {
                         var item = new ListViewItem(recip.AddressType.ToString());
-                        item.SubItems.Add(recip.Name        != null ? recip.Name : "");
+                        item.SubItems.Add(recip.Name != null ? recip.Name : "");
                         item.SubItems.Add(recip.SmtpAddress != null ? recip.SmtpAddress : "");
-                        item.SubItems.Add(recip.X500DN      != null ? recip.X500DN : "");
+                        item.SubItems.Add(recip.X500DN != null ? recip.X500DN : "");
                         _emailRecipientListView.Items.Add(item);
                     }
                     foreach (var recip in emailDocContent.CcRecipients)
                     {
                         var item = new ListViewItem(recip.AddressType.ToString());
-                        item.SubItems.Add(recip.Name        != null ? recip.Name : "");
+                        item.SubItems.Add(recip.Name != null ? recip.Name : "");
                         item.SubItems.Add(recip.SmtpAddress != null ? recip.SmtpAddress : "");
-                        item.SubItems.Add(recip.X500DN      != null ? recip.X500DN : "");
+                        item.SubItems.Add(recip.X500DN != null ? recip.X500DN : "");
                         _emailRecipientListView.Items.Add(item);
                     }
                     foreach (var recip in emailDocContent.BccRecipients)
                     {
                         var item = new ListViewItem(recip.AddressType.ToString());
-                        item.SubItems.Add(recip.Name        != null ? recip.Name : "");
+                        item.SubItems.Add(recip.Name != null ? recip.Name : "");
                         item.SubItems.Add(recip.SmtpAddress != null ? recip.SmtpAddress : "");
-                        item.SubItems.Add(recip.X500DN      != null ? recip.X500DN : "");
+                        item.SubItems.Add(recip.X500DN != null ? recip.X500DN : "");
                         _emailRecipientListView.Items.Add(item);
                     }
                 }
@@ -345,7 +337,7 @@ namespace ContentExtractionExample.Content
 
                 var htmlDocContent = (HtmlDocumentContent)docContent;
 
-                _htmlTitleLabel.Text   = htmlDocContent.Title   != null ? htmlDocContent.Title : "";
+                _htmlTitleLabel.Text = htmlDocContent.Title != null ? htmlDocContent.Title : "";
                 _htmlBaseUrlLabel.Text = htmlDocContent.BaseUrl != null ? htmlDocContent.BaseUrl : "";
 
                 try
@@ -356,10 +348,10 @@ namespace ContentExtractionExample.Content
                     foreach (var imageTag in htmlDocContent.ImageTags)
                     {
                         var item = new ListViewItem(imageTag.Source != null ? imageTag.Source : "");
-                        item.SubItems.Add(imageTag.AlternateText   != null ? imageTag.AlternateText : "");
-                        item.SubItems.Add(imageTag.Width           != null ? imageTag.Width : "");
-                        item.SubItems.Add(imageTag.Height          != null ? imageTag.Height : "");
-                        item.SubItems.Add(imageTag.SourceSet       != null ? imageTag.SourceSet : "");
+                        item.SubItems.Add(imageTag.AlternateText != null ? imageTag.AlternateText : "");
+                        item.SubItems.Add(imageTag.Width != null ? imageTag.Width : "");
+                        item.SubItems.Add(imageTag.Height != null ? imageTag.Height : "");
+                        item.SubItems.Add(imageTag.SourceSet != null ? imageTag.SourceSet : "");
                         item.SubItems.Add(imageTag.LongDescription != null ? imageTag.LongDescription : "");
                         _htmlImagesListView.Items.Add(item);
                     }
@@ -397,11 +389,11 @@ namespace ContentExtractionExample.Content
                     {
                         var item = new ListViewItem(failedPage.PageNumber.ToString());
                         item.SubItems.Add(failedPage.FailedDueToException.ToString());
-                        item.SubItems.Add(failedPage.ExceptionMessage != null        ? failedPage.ExceptionMessage : "");
-                        item.SubItems.Add(failedPage.NumTextCharsExtracted.HasValue  ? failedPage.NumTextCharsExtracted.Value.ToString() : "");
-                        item.SubItems.Add(failedPage.ContentLength.HasValue          ? failedPage.ContentLength.Value.ToString() : "");
-                        item.SubItems.Add(failedPage.HasImages.HasValue              ? failedPage.HasImages.Value.ToString() : "");
-                        item.SubItems.Add(failedPage.ImageCount.HasValue             ? failedPage.ImageCount.Value.ToString() : "");
+                        item.SubItems.Add(failedPage.ExceptionMessage != null ? failedPage.ExceptionMessage : "");
+                        item.SubItems.Add(failedPage.NumTextCharsExtracted.HasValue ? failedPage.NumTextCharsExtracted.Value.ToString() : "");
+                        item.SubItems.Add(failedPage.ContentLength.HasValue ? failedPage.ContentLength.Value.ToString() : "");
+                        item.SubItems.Add(failedPage.HasImages.HasValue ? failedPage.HasImages.Value.ToString() : "");
+                        item.SubItems.Add(failedPage.ImageCount.HasValue ? failedPage.ImageCount.Value.ToString() : "");
                         _failedPdfPagesListView.Items.Add(item);
                     }
                 }
@@ -413,18 +405,18 @@ namespace ContentExtractionExample.Content
             }
             else if (docContent is DatabaseContent)
             {
-                #region Database Extra Content...
+                #region Database Format Extra Content...
                 //
                 // Database specific extra content:
                 //
-                if (!_docTypeTabControl.TabPages.Contains(_databaseDocTabPage))
+                if (!_docTypeTabControl.TabPages.Contains(_tabDatabasePage))
                 {
-                    _docTypeTabControl.TabPages.Add(_databaseDocTabPage);
+                    _docTypeTabControl.TabPages.Add(_tabDatabasePage);
                 }
 
-                if (_lastActivePage == _databaseDocTabPage)
+                if (_lastActivePage == _tabDatabasePage)
                 {
-                    _docTypeTabControl.SelectedTab = _databaseDocTabPage;
+                    _docTypeTabControl.SelectedTab = _tabDatabasePage;
                 }
 
                 var databaseContent = (DatabaseContent)docContent;
@@ -463,7 +455,6 @@ namespace ContentExtractionExample.Content
                 #endregion
             }
 
-
             //
             // Set Extracted Text:
             //
@@ -473,17 +464,25 @@ namespace ContentExtractionExample.Content
                 {
                     _totalTextCharsLabel.Text = string.Format("{0:###,###,###,###} chars of extracted text", _docContent.ExtractedText.Length);
 
+                    var extractedText = docContent.ExtractedText;
+
+                    // Limit displayed extracted text to 10M characters
+                    if (docContent.ExtractedText.Length > 10 * 1024 * 1024)
+                    {
+                        extractedText = extractedText.Substring(0, 10 * 1024 * 1024);
+                    }
+
                     if (_docContent.TextSourceType == TextSourceType.BinaryToText)
                     {
-                        _extractedTextBox.Text = string.Format("[[Extracted using Binary-To-Text)]]:\r\n\r\n{0}", _docContent.ExtractedText);
+                        _extractedTextBox.Text = string.Format("[[Extracted using Binary-To-Text)]]:\r\n\r\n{0}", extractedText);
                     }
                     else if (_docContent.TextSourceType == TextSourceType.ExtractionFallback)
                     {
-                        _extractedTextBox.Text = string.Format("[[Extracted using secondary 'Fallback' method)]]:\r\n\r\n{0}", _docContent.ExtractedText);
+                        _extractedTextBox.Text = string.Format("[[Extracted using secondary 'Fallback' method)]]:\r\n\r\n{0}", extractedText);
                     }
                     else
                     {
-                        _extractedTextBox.Text = _docContent.ExtractedText;
+                        _extractedTextBox.Text = extractedText;
                     }
                 }
                 catch (Exception ex)
@@ -496,116 +495,116 @@ namespace ContentExtractionExample.Content
                 _totalTextCharsLabel.Text = "0 chars of extracted text";
             }
 
-            _metdataTabPage.Text        = string.Format("Metadata ({0})",        _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
-            _attributesTabPage.Text     = string.Format("Attributes ({0})",      _docContent.Attributes.Count);
-            _hyperLinksTabPage.Text     = string.Format("Hyperlinks ({0})",      _docContent.HyperLinks.Count);
-            _languagesTabPage.Text      = string.Format("Languages ({0})",       _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
-            _childrenTabPage.Text       = string.Format("Children ({0})",        _docContent.ChildDocuments.Count);
-            _sensitiveItemsTabPage.Text = string.Format("Sensitive Items ({0})", _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.Items.Count : 0);
-            _customItemsTabPage.Text    = string.Format("Custom Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.CustomItems.Count : 0);
-            _entityItemsTabPage.Text    = string.Format("Entity Items ({0})",    _docContent.SensitiveItemResult != null ? _docContent.SensitiveItemResult.EntityItems.Count : 0);
+            _metdataTabPage.Text = string.Format("Metadata ({0})", _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
+            _attributesTabPage.Text = string.Format("Attributes ({0})", _docContent.Attributes.Count);
+            _hyperLinksTabPage.Text = string.Format("Hyperlinks ({0})", _docContent.HyperLinks.Count);
+
+            _languagesTabPage.Text = string.Format("Languages ({0})", _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
+            _childrenTabPage.Text = string.Format("Children ({0})", _docContent.ChildDocuments.Count);
+
+            _piiTabPage.Text = string.Format("Entity Items ({0})", _docContent.EntityExtractionResult != null ? _docContent.EntityExtractionResult.Items.Count : 0);
 
             //
             // Set Sensitive Items:
             //
-            if (_docContent.SensitiveItemResult.Items.Count > 0)
+            if (_docContent.EntityExtractionResult.Items.Count > 0)
             {
                 try
                 {
-                    _sensitiveItemsListView.BeginUpdate();
+                    _piiListView.BeginUpdate();
 
-                    foreach (var sensitiveItem in _docContent.SensitiveItemResult.Items)
+                    foreach (var sensitiveItem in _docContent.EntityExtractionResult.Items)
                     {
                         var item = new ListViewItem(sensitiveItem.ItemType.ToString());
                         item.UseItemStyleForSubItems = false;
 
                         switch (sensitiveItem.ItemType)
                         {
-                            case SensitiveItemType.Address:
-                                item.ImageIndex = 15;
+                            case EntityType.Address:
+                                item.ImageIndex = 41;
                                 break;
-                            case SensitiveItemType.BankAccount:
-                            case SensitiveItemType.InvestmentAccount:
-                            case SensitiveItemType.IBANAccount:
+                            case EntityType.BankAccount:
+                            case EntityType.InvestmentAccount:
+                            case EntityType.IBANAccount:
                                 item.ImageIndex = 14;
                                 break;
-                            case SensitiveItemType.CreditCard:
-                                item.ImageIndex = 19;
+                            case EntityType.CreditCard:
+                                item.ImageIndex = 47;
                                 break;
-                            case SensitiveItemType.DatabaseCredential:
+                            case EntityType.DatabaseCredential:
                                 if (sensitiveItem.Associated != null)
                                 {
-                                    if (sensitiveItem.Associated.StartsWith("azure")      || sensitiveItem.Associated.StartsWith("aws") ||
+                                    if (sensitiveItem.Associated.StartsWith("azure") || sensitiveItem.Associated.StartsWith("aws") ||
                                         sensitiveItem.Associated.StartsWith("sharepoint") || sensitiveItem.Associated.StartsWith("onedrive"))
                                     {
-                                        item.ImageIndex = 18;
+                                        item.ImageIndex = 16;
                                     }
                                     else
                                     {
-                                        item.ImageIndex = 20;
+                                        item.ImageIndex = 17;
                                     }
                                 }
                                 else
                                 {
-                                    item.ImageIndex = 20;
+                                    item.ImageIndex = 17;
                                 }
                                 break;
-                            case SensitiveItemType.DateOfBirth:
-                                item.ImageIndex = 16;
+                            case EntityType.DateOfBirth:
+                                item.ImageIndex = 40;
                                 break;
-                            case SensitiveItemType.DriversLicense:
-                                item.ImageIndex = 21;
+                            case EntityType.DriversLicense:
+                                item.ImageIndex = 18;
                                 break;
-                            case SensitiveItemType.EmailAddress:
-                                item.ImageIndex = 23;
+                            case EntityType.EmailAddress:
+                                item.ImageIndex = 20;
                                 break;
-                            case SensitiveItemType.EmailAddressAndName:
+                            case EntityType.EmailAddressAndName:
+                                item.ImageIndex = 19;
+                                break;
+                            case EntityType.HealthCareNumberID:
+                                item.ImageIndex = 48;
+                                break;
+                            case EntityType.IPv4Address:
+                            case EntityType.IPv6Address:
                                 item.ImageIndex = 22;
                                 break;
-                            case SensitiveItemType.HealthCareNumberID:
-                                item.ImageIndex = 24;
+                            case EntityType.LicensePlateNumber:
+                                item.ImageIndex = 23;
                                 break;
-                            case SensitiveItemType.IPv4Address:
-                            case SensitiveItemType.IPv6Address:
-                                item.ImageIndex = 26;
+                            case EntityType.MaidenName:
+                                item.ImageIndex = 43;
                                 break;
-                            case SensitiveItemType.LicensePlateNumber:
-                                item.ImageIndex = 27;
+                            case EntityType.EmailAddressAndIPAddress:
                                 break;
-                            case SensitiveItemType.MaidenName:
-                                item.ImageIndex = 28;
-                                break;
-                            case SensitiveItemType.EmailAddressAndIPAddress:
-                                break;
-                            case SensitiveItemType.NetworkName:
+                            case EntityType.NetworkName:
                                 if (sensitiveItem.Keywords.StartsWith("wi", StringComparison.OrdinalIgnoreCase))
                                 {
-                                    item.ImageIndex = 31;
+                                    item.ImageIndex = 25;
                                 }
                                 else
                                 {
-                                    item.ImageIndex = 30;
+                                    item.ImageIndex = 24;
                                 }
                                 break;
-                            case SensitiveItemType.Passport:
-                                item.ImageIndex = 32;
+                            case EntityType.Passport:
+                                item.ImageIndex = 26;
                                 break;
-                            case SensitiveItemType.Password:
-                                item.ImageIndex = 33;
+                            case EntityType.Password:
+                                item.ImageIndex = 27;
                                 break;
-                            case SensitiveItemType.PhoneNumber:
+                            case EntityType.PhoneNumber:
+                                item.ImageIndex = 30;
+                                break;
+                            case EntityType.SocialSecurityNumber:
+                                item.ImageIndex = 44;
+                                break;
+                            case EntityType.Username:
                                 item.ImageIndex = 35;
                                 break;
-                            case SensitiveItemType.SocialSecurityNumber:
-                                item.ImageIndex = 37;
+                            case EntityType.VehicleIdentificationNumber:
+                                item.ImageIndex = 36;
                                 break;
-                            case SensitiveItemType.Username:
-                                item.ImageIndex = 42;
-                                break;
-                            case SensitiveItemType.VehicleIdentificationNumber:
-                                item.ImageIndex = 43;
-                                break;
-                            case SensitiveItemType.SocialMediaAccount:
+                            case EntityType.SocialMediaAccount:
                                 {
                                     if (sensitiveItem.Associated != null)
                                     {
@@ -615,7 +614,7 @@ namespace ContentExtractionExample.Content
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("instagram"))
                                         {
-                                            item.ImageIndex = 5;
+                                            item.ImageIndex = 4;
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("pinterest"))
                                         {
@@ -623,7 +622,7 @@ namespace ContentExtractionExample.Content
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("linkedin"))
                                         {
-                                            item.ImageIndex = 4;
+                                            item.ImageIndex = 5;
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("skype"))
                                         {
@@ -635,7 +634,7 @@ namespace ContentExtractionExample.Content
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("tumblr"))
                                         {
-                                            item.ImageIndex = 12;
+                                            item.ImageIndex = 9;
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("twitter"))
                                         {
@@ -647,11 +646,11 @@ namespace ContentExtractionExample.Content
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("youtube"))
                                         {
-                                            item.ImageIndex = 13;
+                                            item.ImageIndex = 12;
                                         }
                                         else if (sensitiveItem.Associated.StartsWith("snapchat"))
                                         {
-                                            item.ImageIndex = 9;
+                                            item.ImageIndex = 13;
                                         }
                                     }
                                 }
@@ -659,21 +658,21 @@ namespace ContentExtractionExample.Content
                         }
 
                         item.SubItems.Add(sensitiveItem.MatchType.ToString());
-                        item.SubItems.Add(sensitiveItem.Keywords   != null ? sensitiveItem.Keywords : "");
-                        item.SubItems.Add(sensitiveItem.Text       != null ? sensitiveItem.Text     : "");
-                        item.SubItems.Add(sensitiveItem.Context    != null ? sensitiveItem.Context  : "");
+                        item.SubItems.Add(sensitiveItem.Keywords != null ? sensitiveItem.Keywords : "");
+                        item.SubItems.Add(sensitiveItem.Text != null ? sensitiveItem.Text : "");
+                        item.SubItems.Add(sensitiveItem.Context != null ? sensitiveItem.Context : "");
                         item.SubItems.Add(sensitiveItem.Associated != null ? sensitiveItem.Associated : "");
 
                         var subItem = item.SubItems.Add(sensitiveItem.LocationType.ToString());
-                        if (sensitiveItem.LocationType == ItemLocationType.Metadata)
+                        if (sensitiveItem.LocationType == EntityLocationType.Metadata)
                         {
                             subItem.ForeColor = Color.Blue;
                         }
-                        else if (sensitiveItem.LocationType == ItemLocationType.Hyperlink)
+                        else if (sensitiveItem.LocationType == EntityLocationType.Hyperlink)
                         {
                             subItem.ForeColor = Color.DarkMagenta;
                         }
-                        else if (sensitiveItem.LocationType == ItemLocationType.Content)
+                        else if (sensitiveItem.LocationType == EntityLocationType.Content)
                         {
                             subItem.ForeColor = Color.DarkOrange;
                         }
@@ -686,150 +685,28 @@ namespace ContentExtractionExample.Content
 
                         item.SubItems.Add(sensitiveItem.Start.ToString());
                         item.SubItems.Add(sensitiveItem.End.ToString());
+                        item.SubItems.Add(sensitiveItem.Line.ToString());
+
                         item.Tag = sensitiveItem;
 
-                        _sensitiveItemsListView.Items.Add(item);
-
+                        _piiListView.Items.Add(item);
                     }
                 }
                 finally
                 {
-                    _sensitiveItemsListView.EndUpdate();
+                    _piiListView.EndUpdate();
                 }
+
             }
 
-            try
+            if (_docContent.EntityExtractionResult.EmailTransportHeadersTrace != null)
             {
-                _emailHeaderTraceTreeView.BeginUpdate();
-
-                if (_docContent.SensitiveItemResult.EmailTransportHeadersTrace != null &&
-                    _docContent.SensitiveItemResult.EmailTransportHeadersTrace.Count > 0)
-                {
-                    if (!_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
-                    {
-                        _selectedChildInfoTabControl.TabPages.Add(_emailTransportHeaderTraceTabPage);
-                    }
-
-                    var root = _emailHeaderTraceTreeView.Nodes.Add("Headers - Top Down");
-                    root.ImageIndex        = 0;
-                    root.SelectedImageIndex = 0;
-
-                    foreach (var header in _docContent.SensitiveItemResult.EmailTransportHeadersTrace)
-                    {
-                        var item = new TreeNode();
-                        item.Text = header.Name;
-                        item.Tag  = header.Text;
-
-                        if (header.Name.StartsWith("Received"))
-                        {
-                            item.ImageIndex = 4;
-                            item.SelectedImageIndex = 4;
-                        }
-                        else if (header.Name == "Date")
-                        {
-                            item.ImageIndex = 7;
-                            item.SelectedImageIndex = 7;
-                        }
-                        else
-                        {
-                            item.ImageIndex = 1;
-                            item.SelectedImageIndex = 1;
-                        }
-
-                        if (header.Items != null && header.Items.Count > 0)
-                        {
-                            foreach (var hItem in header.Items)
-                            {
-                                var itemChildNode = new TreeNode();
-                                if (hItem.ItemType == SensitiveItemType.EmailAddress)
-                                {
-                                    itemChildNode.Text = hItem.Text;
-                                    itemChildNode.ImageIndex = 5;
-                                    itemChildNode.SelectedImageIndex = 5;
-                                    item.Nodes.Add(itemChildNode);
-                                }
-                                if (hItem.ItemType == SensitiveItemType.IPv4Address ||
-                                    hItem.ItemType == SensitiveItemType.IPv6Address)
-                                {
-                                    itemChildNode.Text = hItem.Text;
-                                    itemChildNode.ImageIndex = 6;
-                                    itemChildNode.SelectedImageIndex = 6;
-                                    item.Nodes.Add(itemChildNode);
-                                }
-                            }
-                        }
-
-                        root.Nodes.Add(item);
-                    }
-                }
-            }
-            finally
-            {
-                _emailHeaderTraceTreeView.EndUpdate();
-                if (_emailHeaderTraceTreeView.Nodes != null && _emailHeaderTraceTreeView.Nodes.Count > 0)
-                {
-                    _emailHeaderTraceTreeView.ExpandAll();
-                    _emailHeaderTraceTreeView.SelectedNode = _emailHeaderTraceTreeView.Nodes[0];
-                }
-            }
-
-            //
-            // Set Entity Items:
-            //
-            if (_docContent.SensitiveItemResult.EntityItems.Count > 0)
-            {
-                try
-                {
-                    _entityItemListView.BeginUpdate();
-
-                    foreach (var entityItem in _docContent.SensitiveItemResult.EntityItems)
-                    {
-                        var item = new ListViewItem(entityItem.ItemType.ToString());
-                        item.UseItemStyleForSubItems = false;
-
-                        item.SubItems.Add(entityItem.IdentifierType.HasValue ? entityItem.IdentifierType.Value.ToString() : "");
-                        item.SubItems.Add(entityItem.Keywords != null ? entityItem.Keywords : "");
-                        item.SubItems.Add(entityItem.Text != null ? entityItem.Text : "");
-
-                        var subItem = item.SubItems.Add(entityItem.LocationType.ToString());
-                        if (entityItem.LocationType == ItemLocationType.Metadata)
-                        {
-                            subItem.ForeColor = Color.Blue;
-                        }
-                        else if (entityItem.LocationType == ItemLocationType.Hyperlink)
-                        {
-                            subItem.ForeColor = Color.DarkMagenta;
-                        }
-                        else if (entityItem.LocationType == ItemLocationType.Content)
-                        {
-                            subItem.ForeColor = Color.DarkOrange;
-                        }
-
-                        subItem = item.SubItems.Add(entityItem.MetadataName != null ? entityItem.MetadataName : "");
-                        if (entityItem.MetadataName != null)
-                        {
-                            subItem.ForeColor = Color.DarkRed;
-                        }
-
-                        item.SubItems.Add(entityItem.Start.ToString());
-                        item.SubItems.Add(entityItem.End.ToString());
-
-                        item.Tag = entityItem;
-
-                        _entityItemListView.Items.Add(item);
-                    }
-                }
-                finally
-                {
-                    _entityItemListView.EndUpdate();
-                }
-
                 try
                 {
                     _emailHeaderTraceTreeView.BeginUpdate();
 
-                    if (_docContent.SensitiveItemResult.EmailTransportHeadersTrace != null &&
-                        _docContent.SensitiveItemResult.EmailTransportHeadersTrace.Count > 0)
+                    if (_docContent.EntityExtractionResult.EmailTransportHeadersTrace != null &&
+                        _docContent.EntityExtractionResult.EmailTransportHeadersTrace.Count > 0)
                     {
                         if (!_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
                         {
@@ -840,7 +717,7 @@ namespace ContentExtractionExample.Content
                         root.ImageIndex = 0;
                         root.SelectedImageIndex = 0;
 
-                        foreach (var header in _docContent.SensitiveItemResult.EmailTransportHeadersTrace)
+                        foreach (var header in _docContent.EntityExtractionResult.EmailTransportHeadersTrace)
                         {
                             var item = new TreeNode();
                             item.Text = header.Name;
@@ -867,15 +744,15 @@ namespace ContentExtractionExample.Content
                                 foreach (var hItem in header.Items)
                                 {
                                     var itemChildNode = new TreeNode();
-                                    if (hItem.ItemType == SensitiveItemType.EmailAddress)
+                                    if (hItem.ItemType == EntityType.EmailAddress)
                                     {
                                         itemChildNode.Text = hItem.Text;
                                         itemChildNode.ImageIndex = 5;
                                         itemChildNode.SelectedImageIndex = 5;
                                         item.Nodes.Add(itemChildNode);
                                     }
-                                    if (hItem.ItemType == SensitiveItemType.IPv4Address ||
-                                        hItem.ItemType == SensitiveItemType.IPv6Address)
+                                    if (hItem.ItemType == EntityType.IPv4Address ||
+                                        hItem.ItemType == EntityType.IPv6Address)
                                     {
                                         itemChildNode.Text = hItem.Text;
                                         itemChildNode.ImageIndex = 6;
@@ -901,55 +778,6 @@ namespace ContentExtractionExample.Content
             }
 
             //
-            // Custom Sensitive Items:
-            //
-            if (_docContent.SensitiveItemResult.CustomItems.Count > 0)
-            {
-                try
-                {
-                    _custSenItemListView.BeginUpdate();
-
-                    foreach (var customItem in _docContent.SensitiveItemResult.CustomItems)
-                    {
-                        var item = new ListViewItem(customItem.ItemType.ToString());
-                        item.UseItemStyleForSubItems = false;
-
-                        item.SubItems.Add(customItem.MatchType.ToString());
-                        item.SubItems.Add(customItem.CustomItemName           != null ? customItem.CustomItemName : "");
-                        item.SubItems.Add(customItem.CustomItemClassification != null ? customItem.CustomItemClassification : "");
-                        item.SubItems.Add(customItem.Keywords != null ? customItem.Keywords : "");
-                        item.SubItems.Add(customItem.Text     != null ? customItem.Text : "");
-
-                        var subItem = item.SubItems.Add(customItem.LocationType.ToString());
-                        if (customItem.LocationType == ItemLocationType.Metadata)
-                        {
-                            subItem.ForeColor = Color.Blue;
-                        }
-                        else if (customItem.LocationType == ItemLocationType.Hyperlink)
-                        {
-                            subItem.ForeColor = Color.DarkMagenta;
-                        }
-                        else if (customItem.LocationType == ItemLocationType.Content)
-                        {
-                            subItem.ForeColor = Color.DarkOrange;
-                        }
-
-                        item.SubItems.Add(customItem.Start.ToString());
-                        item.SubItems.Add(customItem.End.ToString());
-
-                        item.Tag = customItem;
-
-                        _custSenItemListView.Items.Add(item);
-                    }
-                }
-                finally
-                {
-                    _custSenItemListView.EndUpdate();
-                }
-            }
-
-
-            //
             // Set metadata:
             //
             if (_docContent.Metadata.Count > 0 || _docContent.CustomMetadata.Count > 0)
@@ -973,9 +801,6 @@ namespace ContentExtractionExample.Content
                 _attributesTextBox.Text = "";
             }
 
-            //
-            // Hyperlinks:
-            //
             try
             {
                 _hyperLinksListView.BeginUpdate();
@@ -983,14 +808,15 @@ namespace ContentExtractionExample.Content
                 foreach (var link in _docContent.HyperLinks)
                 {
                     var item = new ListViewItem(link.IsExternalLink.ToString());
-                    item.SubItems.Add(link.Text         != null ? link.Text : "");
-                    item.SubItems.Add(link.Url          != null ? link.Url : "");
-                    item.SubItems.Add(link.Download     != null ? link.Download : "");
-                    item.SubItems.Add(link.Type         != null ? link.Type : "");
+                    item.SubItems.Add(link.Text != null ? link.Text : "");
+                    item.SubItems.Add(link.Url != null ? link.Url : "");
+                    item.SubItems.Add(link.Download != null ? link.Download : "");
+                    item.SubItems.Add(link.Type != null ? link.Type : "");
                     item.SubItems.Add(link.Relationship != null ? link.Relationship : "");
-                    item.SubItems.Add(link.RefLang      != null ? link.RefLang : "");
-                    item.SubItems.Add(link.Target       != null ? link.Target : "");
-                    item.SubItems.Add(link.Ping         != null ? link.Ping : "");
+                    item.SubItems.Add(link.RefLang != null ? link.RefLang : "");
+                    item.SubItems.Add(link.Target != null ? link.Target : "");
+                    item.SubItems.Add(link.Ping != null ? link.Ping : "");
+
                     _hyperLinksListView.Items.Add(item);
                 }
             }
@@ -1025,6 +851,9 @@ namespace ContentExtractionExample.Content
                             item.SubItems.Add("?");
                         }
                         item.SubItems.Add(child.HasError.ToString());
+                        item.SubItems.Add(child.EncryptedInContainer.ToString());
+                        item.SubItems.Add(child.IsInlineEmailImage.ToString());
+                        item.SubItems.Add(child.Index.ToString());
                         _childDocsListView.Items.Add(item);
                     }
                 }
@@ -1056,26 +885,25 @@ namespace ContentExtractionExample.Content
         #endregion
 
 
-        //
-        // Event Handlers:
-        //
         #region private void _childDocsListView_SelectedIndexChanged(object sender, EventArgs e)
         private void _childDocsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _pictureBox.Image            = null;
+            _childHexEditorControl.ClearSourceData();
+            _pictureBox.Image = null;
             _selectedChildInfoTabControl.TabPages.Remove(_imageViewTabPage);
-            
+
             if (_childDocsListView.SelectedItems.Count == 1)
             {
                 _saveAsMenuItem.Enabled = true;
                 var child = _childDocsListView.SelectedItems[0].Tag as ChildDocument;
 
+                if (child != null && child.DocumentBytes != null)
+                {
+                    _childHexEditorControl.SetByteSourceData(child.DocumentBytes);
+                }
+
                 if (child.FormatId != null)
-                { 
-                    //
-                    // If child Id'ed as an image that PictureBox supports, then load the child image
-                    // into the PictureBox:
-                    //
+                {
                     switch (child.FormatId.ID)
                     {
                         case Id.JpegEXIF:
@@ -1095,7 +923,7 @@ namespace ContentExtractionExample.Content
                             {
                                 _pictureBox.SuspendLayout();
                                 _pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                                _pictureBox.Image    = Image.FromStream(new MemoryStream(child.DocumentBytes));
+                                _pictureBox.Image = Image.FromStream(new MemoryStream(child.DocumentBytes));
                                 _pictureBox.ResumeLayout();
                                 _selectedChildInfoTabControl.TabPages.Add(_imageViewTabPage);
                                 _selectedChildInfoTabControl.SelectedTab = _imageViewTabPage;
@@ -1150,10 +978,10 @@ namespace ContentExtractionExample.Content
                     if (child != null && child.DocumentBytes != null)
                     {
                         var saveAsDlg = new SaveFileDialog();
-                        saveAsDlg.Title        = "Save Child Document...";
+                        saveAsDlg.Title = "Save Child Document...";
                         saveAsDlg.AddExtension = true;
-                        saveAsDlg.DefaultExt   = child.Extension;
-                        saveAsDlg.FileName     = child.Name;
+                        saveAsDlg.DefaultExt = child.Extension;
+                        saveAsDlg.FileName = child.Name;
 
                         if (saveAsDlg.ShowDialog() == DialogResult.OK)
                         {
@@ -1216,10 +1044,10 @@ namespace ContentExtractionExample.Content
                     {
                         _selectedChildInfoTabControl.SelectedTab = _textTabPage;
                         _extractedTextBox.Focus();
-                        _extractedTextBox.SelectionStart  = scriptRegion.StartIndex;
+                        _extractedTextBox.SelectionStart = scriptRegion.StartIndex;
                         _extractedTextBox.SelectionLength = scriptRegion.EndIndex - scriptRegion.StartIndex + 1;
                         _extractedTextBox.ScrollToCaret();
-                        //_extractedTextBox.Invalidate();
+                        _langIdRegionsListView.Focus();
                     }
                 }
             }
@@ -1238,7 +1066,7 @@ namespace ContentExtractionExample.Content
                 {
                     var saveDialog = new SaveFileDialog();
                     saveDialog.DefaultExt = ".txt";
-                    saveDialog.FileName   = _fileNameLabel.Text + ".txt";
+                    saveDialog.FileName = _fileNameLabel.Text + ".txt";
 
                     if (saveDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -1253,54 +1081,28 @@ namespace ContentExtractionExample.Content
         }
         #endregion
 
-
-        #region private void _sensitiveItemListView_SelectedIndexChanged(object sender, EventArgs e)
-        private void _sensitiveItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        #region  private void copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Copies metadata ListView item "Value" column to clipboard.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (_sensitiveItemsListView.SelectedItems.Count == 1)
+                if (_metadataListView.SelectedItems != null && _metadataListView.SelectedItems.Count == 1)
                 {
-                    var item = _sensitiveItemsListView.SelectedItems[0].Tag as SensitiveItem;
-                    if (item != null)
-                    {
-                        _selectedChildInfoTabControl.SelectedTab = _textTabPage;
-                        _extractedTextBox.Focus();
-                        _extractedTextBox.SelectionStart  = item.Start;
-                        _extractedTextBox.SelectionLength = item.End - item.Start + 1;
-                        _extractedTextBox.ScrollToCaret();
-                        _sensitiveItemsListView.Focus();
-                    }
-                }
-            }
-            catch
-            {
-            }
-        }
-        #endregion
+                    var item = _metadataListView.SelectedItems[0];
+                    var val = (item.SubItems != null ? item.SubItems[3].Text : null) as string;
 
-        #region private void _entityItemListView_SelectedIndexChanged(object sender, EventArgs e)
-        private void _entityItemListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (_entityItemListView.SelectedItems.Count == 1)
-                {
-                    var item = _entityItemListView.SelectedItems[0].Tag as EntityItem;
-                    if (item != null)
+                    if (val != null)
                     {
-                        _selectedChildInfoTabControl.SelectedTab = _textTabPage;
-                        _extractedTextBox.Focus();
-                        _extractedTextBox.SelectionStart  = item.Start;
-                        _extractedTextBox.SelectionLength = item.End - item.Start + 1;
-                        _extractedTextBox.ScrollToCaret();
-                        _entityItemListView.Focus();
+                        Clipboard.SetText(val);
                     }
                 }
             }
-            catch
-            {
-            }
+            catch { }
         }
         #endregion
 
@@ -1322,28 +1124,79 @@ namespace ContentExtractionExample.Content
         }
         #endregion
 
-        #region private void _custSenItemListView_SelectedIndexChanged(object sender, EventArgs e)
-        private void _custSenItemListView_SelectedIndexChanged(object sender, EventArgs e)
+
+        #region private void _piiListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _piiListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                if (_custSenItemListView.SelectedItems.Count == 1)
+                if (_piiListView.SelectedItems.Count == 1)
                 {
-                    var result = _custSenItemListView.SelectedItems[0].Tag as SensitiveItem;
-                    if (result != null)
+                    var piiResult = _piiListView.SelectedItems[0].Tag as Entity;
+                    if (piiResult != null)
                     {
                         _selectedChildInfoTabControl.SelectedTab = _textTabPage;
                         _extractedTextBox.Focus();
-                        _extractedTextBox.SelectionStart  = result.Start;
-                        _extractedTextBox.SelectionLength = result.End - result.Start + 1;
+                        _extractedTextBox.SelectionStart = piiResult.Start;
+                        _extractedTextBox.SelectionLength = piiResult.End - piiResult.Start + 1;
                         _extractedTextBox.ScrollToCaret();
-                        _custSenItemListView.Focus();
+                        _piiListView.Focus();
                     }
                 }
             }
             catch
             {
             }
+        }
+        #endregion
+
+        #region private void _entityItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _entityItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (_entityItemListView.SelectedItems.Count == 1)
+            //    {
+            //        var entityResult = _entityItemListView.SelectedItems[0].Tag as EntityItem;
+            //        if (entityResult != null)
+            //        {
+            //            _selectedChildInfoTabControl.SelectedTab = _textTabPage;
+            //            _extractedTextBox.Focus();
+            //            _extractedTextBox.SelectionStart  = entityResult.Start;
+            //            _extractedTextBox.SelectionLength = entityResult.End - entityResult.Start + 1;
+            //            _extractedTextBox.ScrollToCaret();
+            //            _entityItemListView.Focus();
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //}
+        }
+        #endregion
+
+        #region private void _custSenItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        private void _custSenItemListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (_custSenItemListView.SelectedItems.Count == 1)
+            //    {
+            //        var result = _custSenItemListView.SelectedItems[0].Tag as SensitiveItem;
+            //        if (result != null)
+            //        {
+            //            _selectedChildInfoTabControl.SelectedTab = _textTabPage;
+            //            _extractedTextBox.Focus();
+            //            _extractedTextBox.SelectionStart  = result.Start;
+            //            _extractedTextBox.SelectionLength = result.End - result.Start + 1;
+            //            _extractedTextBox.ScrollToCaret();
+            //            _custSenItemListView.Focus();
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //}
         }
         #endregion
 
@@ -1367,9 +1220,7 @@ namespace ContentExtractionExample.Content
         }
         #endregion
 
-        //
-        // Private Helper Methods:
-        //
+
         #region private void ExtractTableText(TableInfo table)
         private void ExtractTableText(TableInfo table)
         {
@@ -1455,6 +1306,6 @@ namespace ContentExtractionExample.Content
                 MessageBox.Show("Error getting database table extracted text: " + ex.Message);
             }
         }
-        #endregion    
+        #endregion
     }
 }

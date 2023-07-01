@@ -1,6 +1,6 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2022 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2023 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 

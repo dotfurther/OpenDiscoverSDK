@@ -64,9 +64,9 @@ namespace OpenDiscoverSDK.PowerShell
                 // Content extraction settings:
                 //
                 var settings = new ContentExtractionSettings();
-                settings.ExtractionType      = ExtractionType.TextAndMetadata;
-                settings.Hashing.HashingType = HashingType.BinaryAndContentHash;
-                settings.SensitiveItemCheck.Check = true;
+                settings.ExtractionType                   = ExtractionType.TextAndMetadata;
+                settings.Hashing.HashingType              = HashingType.BinaryAndContentHash;
+                settings.EntityExtractionSettings.Enabled = true;
 
                 //
                 // Get Content Extractor for identified file format type:
@@ -376,11 +376,11 @@ namespace OpenDiscoverSDK.PowerShell
                 strBuilder.AppendLine();
 
                 strBuilder.AppendLine();
-                strBuilder.AppendLine("Detected Sensitive Items:");
+                strBuilder.AppendLine("Detected Entity Items:");
                 strBuilder.AppendLine("-------------------------");
-                if (content.SensitiveItemResult != null && content.SensitiveItemResult.Items.Count > 0)
+                if (content.EntityExtractionResult != null && content.EntityExtractionResult.Items.Count > 0)
                 {
-                    foreach (var item in content.SensitiveItemResult.Items)
+                    foreach (var item in content.EntityExtractionResult.Items)
                     {
                         strBuilder.AppendLine(string.Format("   {0,-30} {1,-20}  {2,-15}  {3}", item.ItemType.ToString(), item.MatchType.ToString(), item.LocationType.ToString(), item.Text));
                     }

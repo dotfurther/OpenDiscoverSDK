@@ -252,7 +252,7 @@ namespace ContentExtractionExample
             _largeUnsupportedMaxFilteredCharsComboBox.SelectedIndex = 2; //3M filtered chars max
 
             //
-            // Sensitive Item Checks:
+            // Entity Item Checks:
             //
             _enableSensitiveItemsCheckCheckBox.Checked = _extractionSettings.SensitiveItemCheck.Check;
             _dedupSensitiveItemsCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.DeduplicateSensitiveItems;
@@ -1008,7 +1008,7 @@ namespace ContentExtractionExample
 
             try
             {
-                var items = CustomItemDefinitionHelper.LoadCustomItemDefinitions();
+                var items = CustomItemDefinitionHelper.LoadCustomEntityDefinitions();
 
                 ContentExtractorFactory.LoadCustomItemDefinitions(items);
 
