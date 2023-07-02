@@ -1,6 +1,6 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2021 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2023 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
@@ -20,11 +20,11 @@ namespace ContentExtractionExample.Content
 {
     public partial class ContentView : UserControl
     {
-        private IHostUI _iHostUI;
-        private DocumentContent _docContent;
+        private IHostUI           _iHostUI;
+        private DocumentContent   _docContent;
         private IContentExtractor _contentExtractorBase;
         private ToolStripMenuItem _saveAsMenuItem;
-        private TabPage _lastActivePage;
+        private TabPage           _lastActivePage;
 
         #region Constructors...
         /// <summary>
@@ -77,10 +77,8 @@ namespace ContentExtractionExample.Content
             _tableColListView.Items.Clear();
             _dbTableListView.Items.Clear();
 
-            _extractedTextBox.Text = "";
+            _extractedTextBox.Text    = "";
             _totalTextCharsLabel.Text = "";
-
-            _childHexEditorControl.ClearSourceData();
 
             _emailHeaderTraceTreeView.Nodes.Clear();
             if (_selectedChildInfoTabControl.TabPages.Contains(_emailTransportHeaderTraceTabPage))
@@ -114,44 +112,44 @@ namespace ContentExtractionExample.Content
             }
 
 
-            _metdataTabPage.Text = "Metadata";
+            _metdataTabPage.Text    = "Metadata";
             _attributesTabPage.Text = "Attributes";
             _hyperLinksTabPage.Text = "Hyperlinks";
-            _languagesTabPage.Text = "Languages";
-            _childrenTabPage.Text = "Children";
+            _languagesTabPage.Text  = "Languages";
+            _childrenTabPage.Text   = "Children";
             _attributesTextBox.Text = "";
-            _piiTabPage.Text = "Entity Items";
+            _piiTabPage.Text        = "Entity Items";
 
-            _fileIdLabel.Text = "";
-            _classificationLabel.Text = "";
-            _idMatchTypeLabel.Text = "";
-            _textSourceLabel.Text = "";
-            _contentResultLabel.Text = "";
-            _errorMessageLabel.Text = "";
-            _sha1BinaryHashLabel.Text = "";
+            _fileIdLabel.Text          = "";
+            _classificationLabel.Text  = "";
+            _idMatchTypeLabel.Text     = "";
+            _textSourceLabel.Text      = "";
+            _contentResultLabel.Text   = "";
+            _errorMessageLabel.Text    = "";
+            _sha1BinaryHashLabel.Text  = "";
             _sha1ContentHashLabel.Text = "";
-            _fileEntropyLabel.Text = "";
-            _isEncryptedLabel.Text = "";
+            _fileEntropyLabel.Text     = "";
+            _isEncryptedLabel.Text     = "";
 
-            _fromNameLabel.Text = "";
-            _fromSmtpLabel.Text = "";
-            _fromX500DNLabel.Text = "";
-            _senderNameLabel.Text = "";
-            _senderSmtpLabel.Text = "";
-            _senderX500DNLabel.Text = "";
+            _fromNameLabel.Text      = "";
+            _fromSmtpLabel.Text      = "";
+            _fromX500DNLabel.Text    = "";
+            _senderNameLabel.Text    = "";
+            _senderSmtpLabel.Text    = "";
+            _senderX500DNLabel.Text  = "";
             _emailSentTimeLabel.Text = "";
             _emailCreationTimeLabel.Text = "";
-            _emailSubjectLabel.Text = "";
+            _emailSubjectLabel.Text  = "";
             _emailBodyTypeLabel.Text = "";
-            _emailHeaderSha1HashLabel.Text = "";
+            _emailHeaderSha1HashLabel.Text    = "";
             _mimePartialMessageInfoLabel.Text = "";
             _emailRecipientListView.Items.Clear();
             _emailTextBodyTextBox.Text = null;
-            _rtfBodyTextBox.Text = null;
-            _htmlBodyTextBox.Text = null;
+            _rtfBodyTextBox.Text       = null;
+            _htmlBodyTextBox.Text      = null;
 
-            _htmlTitleLabel.Text = "";
-            _htmlBaseUrlLabel.Text = "";
+            _htmlTitleLabel.Text    = "";
+            _htmlBaseUrlLabel.Text  = "";
             _htmlImagesTabPage.Text = "Images";
             _htmlImagesListView.Items.Clear();
 
@@ -174,16 +172,16 @@ namespace ContentExtractionExample.Content
                 return;
             }
 
-            _fileIdLabel.Text = docContent.FormatId.ID.ToString();
-            _classificationLabel.Text = docContent.FormatId.Classification.ToString();
-            _idMatchTypeLabel.Text = docContent.FormatId.MatchType.ToString();
-            _textSourceLabel.Text = docContent.TextSourceType.ToString();
-            _contentResultLabel.Text = docContent.Result.ToString();
-            _errorMessageLabel.Text = docContent.ErrorMessage != null ? docContent.ErrorMessage : "";
-            _sha1BinaryHashLabel.Text = docContent.SHA1BinaryHash != null ? docContent.SHA1BinaryHash : "";
+            _fileIdLabel.Text          = docContent.FormatId.ID.ToString();
+            _classificationLabel.Text  = docContent.FormatId.Classification.ToString();
+            _idMatchTypeLabel.Text     = docContent.FormatId.MatchType.ToString();
+            _textSourceLabel.Text      = docContent.TextSourceType.ToString();
+            _contentResultLabel.Text   = docContent.Result.ToString();
+            _errorMessageLabel.Text    = docContent.ErrorMessage    != null ? docContent.ErrorMessage    : "";
+            _sha1BinaryHashLabel.Text  = docContent.SHA1BinaryHash  != null ? docContent.SHA1BinaryHash  : "";
             _sha1ContentHashLabel.Text = docContent.SHA1ContentHash != null ? docContent.SHA1ContentHash : "";
-            _fileEntropyLabel.Text = docContent.FileEntropy != null ? docContent.FileEntropy.Value.ToString("F7") : "";
-            _isEncryptedLabel.Text = docContent.FormatId.IsEncrypted.ToString();
+            _fileEntropyLabel.Text     = docContent.FileEntropy     != null ? docContent.FileEntropy.Value.ToString("F7") : "";
+            _isEncryptedLabel.Text     = docContent.FormatId.IsEncrypted.ToString();
 
             //
             // Check for special document content classes that derive from DocumentContent class and
@@ -210,25 +208,25 @@ namespace ContentExtractionExample.Content
                 if (emailDocContent.From.Count > 0)
                 {
                     var firstFrom = emailDocContent.From[0];
-                    _fromNameLabel.Text = firstFrom.Name;
-                    _fromSmtpLabel.Text = firstFrom.SmtpAddress;
+                    _fromNameLabel.Text   = firstFrom.Name;
+                    _fromSmtpLabel.Text   = firstFrom.SmtpAddress;
                     _fromX500DNLabel.Text = firstFrom.X500DN;
                 }
-                _senderNameLabel.Text = emailDocContent.Sender.Name;
-                _senderSmtpLabel.Text = emailDocContent.Sender.SmtpAddress;
-                _senderX500DNLabel.Text = emailDocContent.Sender.X500DN;
-                _emailSentTimeLabel.Text = emailDocContent.SentDate.HasValue ? emailDocContent.SentDate.Value.ToString() : "";
-                _emailCreationTimeLabel.Text = emailDocContent.CreationDate.HasValue ? emailDocContent.CreationDate.Value.ToString() : "";
-                _emailSubjectLabel.Text = emailDocContent.Subject != null ? emailDocContent.Subject : "";
-                _emailBodyTypeLabel.Text = emailDocContent.BodyType.ToString();
+                _senderNameLabel.Text          = emailDocContent.Sender.Name;
+                _senderSmtpLabel.Text          = emailDocContent.Sender.SmtpAddress;
+                _senderX500DNLabel.Text        = emailDocContent.Sender.X500DN;
+                _emailSentTimeLabel.Text       = emailDocContent.SentDate.HasValue     ? emailDocContent.SentDate.Value.ToString() : "";
+                _emailCreationTimeLabel.Text   = emailDocContent.CreationDate.HasValue ? emailDocContent.CreationDate.Value.ToString() : "";
+                _emailSubjectLabel.Text        = emailDocContent.Subject != null ? emailDocContent.Subject : "";
+                _emailBodyTypeLabel.Text       = emailDocContent.BodyType.ToString();
                 _emailHeaderSha1HashLabel.Text = emailDocContent.SHA1HeaderHash != null ? emailDocContent.SHA1HeaderHash : "";
 
                 if (emailDocContent.IsMimePartialMessage)
                 {
                     _mimePartialMessageInfoLabel.Text = string.Format("number={0}; total={1}; id={2}",
-                        emailDocContent.MimePartialMessagePartNumber.HasValue ? emailDocContent.MimePartialMessagePartNumber.Value.ToString() : "?",
-                        emailDocContent.MimePartialMessageTotalParts.HasValue ? emailDocContent.MimePartialMessageTotalParts.Value.ToString() : "?",
-                        emailDocContent.MimePartialMessageId != null ? emailDocContent.MimePartialMessageId : "?");
+                    emailDocContent.MimePartialMessagePartNumber.HasValue ? emailDocContent.MimePartialMessagePartNumber.Value.ToString() : "?",
+                    emailDocContent.MimePartialMessageTotalParts.HasValue ? emailDocContent.MimePartialMessageTotalParts.Value.ToString() : "?",
+                    emailDocContent.MimePartialMessageId != null ? emailDocContent.MimePartialMessageId : "?");
                 }
 
                 // Eamil bodies:
@@ -290,25 +288,25 @@ namespace ContentExtractionExample.Content
                     foreach (var recip in emailDocContent.ToRecipients)
                     {
                         var item = new ListViewItem(recip.AddressType.ToString());
-                        item.SubItems.Add(recip.Name != null ? recip.Name : "");
+                        item.SubItems.Add(recip.Name        != null ? recip.Name : "");
                         item.SubItems.Add(recip.SmtpAddress != null ? recip.SmtpAddress : "");
-                        item.SubItems.Add(recip.X500DN != null ? recip.X500DN : "");
+                        item.SubItems.Add(recip.X500DN      != null ? recip.X500DN : "");
                         _emailRecipientListView.Items.Add(item);
                     }
                     foreach (var recip in emailDocContent.CcRecipients)
                     {
                         var item = new ListViewItem(recip.AddressType.ToString());
-                        item.SubItems.Add(recip.Name != null ? recip.Name : "");
+                        item.SubItems.Add(recip.Name        != null ? recip.Name : "");
                         item.SubItems.Add(recip.SmtpAddress != null ? recip.SmtpAddress : "");
-                        item.SubItems.Add(recip.X500DN != null ? recip.X500DN : "");
+                        item.SubItems.Add(recip.X500DN      != null ? recip.X500DN : "");
                         _emailRecipientListView.Items.Add(item);
                     }
                     foreach (var recip in emailDocContent.BccRecipients)
                     {
                         var item = new ListViewItem(recip.AddressType.ToString());
-                        item.SubItems.Add(recip.Name != null ? recip.Name : "");
+                        item.SubItems.Add(recip.Name        != null ? recip.Name : "");
                         item.SubItems.Add(recip.SmtpAddress != null ? recip.SmtpAddress : "");
-                        item.SubItems.Add(recip.X500DN != null ? recip.X500DN : "");
+                        item.SubItems.Add(recip.X500DN      != null ? recip.X500DN : "");
                         _emailRecipientListView.Items.Add(item);
                     }
                 }
@@ -348,10 +346,10 @@ namespace ContentExtractionExample.Content
                     foreach (var imageTag in htmlDocContent.ImageTags)
                     {
                         var item = new ListViewItem(imageTag.Source != null ? imageTag.Source : "");
-                        item.SubItems.Add(imageTag.AlternateText != null ? imageTag.AlternateText : "");
-                        item.SubItems.Add(imageTag.Width != null ? imageTag.Width : "");
-                        item.SubItems.Add(imageTag.Height != null ? imageTag.Height : "");
-                        item.SubItems.Add(imageTag.SourceSet != null ? imageTag.SourceSet : "");
+                        item.SubItems.Add(imageTag.AlternateText   != null ? imageTag.AlternateText : "");
+                        item.SubItems.Add(imageTag.Width           != null ? imageTag.Width : "");
+                        item.SubItems.Add(imageTag.Height          != null ? imageTag.Height : "");
+                        item.SubItems.Add(imageTag.SourceSet       != null ? imageTag.SourceSet : "");
                         item.SubItems.Add(imageTag.LongDescription != null ? imageTag.LongDescription : "");
                         _htmlImagesListView.Items.Add(item);
                     }
@@ -389,11 +387,11 @@ namespace ContentExtractionExample.Content
                     {
                         var item = new ListViewItem(failedPage.PageNumber.ToString());
                         item.SubItems.Add(failedPage.FailedDueToException.ToString());
-                        item.SubItems.Add(failedPage.ExceptionMessage != null ? failedPage.ExceptionMessage : "");
+                        item.SubItems.Add(failedPage.ExceptionMessage != null       ? failedPage.ExceptionMessage : "");
                         item.SubItems.Add(failedPage.NumTextCharsExtracted.HasValue ? failedPage.NumTextCharsExtracted.Value.ToString() : "");
                         item.SubItems.Add(failedPage.ContentLength.HasValue ? failedPage.ContentLength.Value.ToString() : "");
-                        item.SubItems.Add(failedPage.HasImages.HasValue ? failedPage.HasImages.Value.ToString() : "");
-                        item.SubItems.Add(failedPage.ImageCount.HasValue ? failedPage.ImageCount.Value.ToString() : "");
+                        item.SubItems.Add(failedPage.HasImages.HasValue     ? failedPage.HasImages.Value.ToString() : "");
+                        item.SubItems.Add(failedPage.ImageCount.HasValue    ? failedPage.ImageCount.Value.ToString() : "");
                         _failedPdfPagesListView.Items.Add(item);
                     }
                 }
@@ -495,17 +493,17 @@ namespace ContentExtractionExample.Content
                 _totalTextCharsLabel.Text = "0 chars of extracted text";
             }
 
-            _metdataTabPage.Text = string.Format("Metadata ({0})", _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
+            _metdataTabPage.Text    = string.Format("Metadata ({0})",   _docContent.Metadata.Count + _docContent.CustomMetadata.Count);
             _attributesTabPage.Text = string.Format("Attributes ({0})", _docContent.Attributes.Count);
             _hyperLinksTabPage.Text = string.Format("Hyperlinks ({0})", _docContent.HyperLinks.Count);
 
             _languagesTabPage.Text = string.Format("Languages ({0})", _docContent.LanguageIdResults != null ? _docContent.LanguageIdResults.Count : 0);
-            _childrenTabPage.Text = string.Format("Children ({0})", _docContent.ChildDocuments.Count);
+            _childrenTabPage.Text  = string.Format("Children ({0})",  _docContent.ChildDocuments.Count);
 
-            _piiTabPage.Text = string.Format("Entity Items ({0})", _docContent.EntityExtractionResult != null ? _docContent.EntityExtractionResult.Items.Count : 0);
+            _piiTabPage.Text = string.Format("Entity Items ({0})",    _docContent.EntityExtractionResult != null ? _docContent.EntityExtractionResult.Items.Count : 0);
 
             //
-            // Set Sensitive Items:
+            // Set Entity Items:
             //
             if (_docContent.EntityExtractionResult.Items.Count > 0)
             {
@@ -513,12 +511,12 @@ namespace ContentExtractionExample.Content
                 {
                     _piiListView.BeginUpdate();
 
-                    foreach (var sensitiveItem in _docContent.EntityExtractionResult.Items)
+                    foreach (var entityItem in _docContent.EntityExtractionResult.Items)
                     {
-                        var item = new ListViewItem(sensitiveItem.ItemType.ToString());
+                        var item = new ListViewItem(entityItem.ItemType.ToString());
                         item.UseItemStyleForSubItems = false;
 
-                        switch (sensitiveItem.ItemType)
+                        switch (entityItem.ItemType)
                         {
                             case EntityType.Address:
                                 item.ImageIndex = 41;
@@ -532,10 +530,10 @@ namespace ContentExtractionExample.Content
                                 item.ImageIndex = 47;
                                 break;
                             case EntityType.DatabaseCredential:
-                                if (sensitiveItem.Associated != null)
+                                if (entityItem.Associated != null)
                                 {
-                                    if (sensitiveItem.Associated.StartsWith("azure") || sensitiveItem.Associated.StartsWith("aws") ||
-                                        sensitiveItem.Associated.StartsWith("sharepoint") || sensitiveItem.Associated.StartsWith("onedrive"))
+                                    if (entityItem.Associated.StartsWith("azure") || entityItem.Associated.StartsWith("aws") ||
+                                        entityItem.Associated.StartsWith("sharepoint") || entityItem.Associated.StartsWith("onedrive"))
                                     {
                                         item.ImageIndex = 16;
                                     }
@@ -577,7 +575,7 @@ namespace ContentExtractionExample.Content
                             case EntityType.EmailAddressAndIPAddress:
                                 break;
                             case EntityType.NetworkName:
-                                if (sensitiveItem.Keywords.StartsWith("wi", StringComparison.OrdinalIgnoreCase))
+                                if (entityItem.Keywords.StartsWith("wi", StringComparison.OrdinalIgnoreCase))
                                 {
                                     item.ImageIndex = 25;
                                 }
@@ -606,49 +604,49 @@ namespace ContentExtractionExample.Content
                                 break;
                             case EntityType.SocialMediaAccount:
                                 {
-                                    if (sensitiveItem.Associated != null)
+                                    if (entityItem.Associated != null)
                                     {
-                                        if (sensitiveItem.Associated.StartsWith("facebook"))
+                                        if (entityItem.Associated.StartsWith("facebook"))
                                         {
                                             item.ImageIndex = 1;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("instagram"))
+                                        else if (entityItem.Associated.StartsWith("instagram"))
                                         {
                                             item.ImageIndex = 4;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("pinterest"))
+                                        else if (entityItem.Associated.StartsWith("pinterest"))
                                         {
                                             item.ImageIndex = 6;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("linkedin"))
+                                        else if (entityItem.Associated.StartsWith("linkedin"))
                                         {
                                             item.ImageIndex = 5;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("skype"))
+                                        else if (entityItem.Associated.StartsWith("skype"))
                                         {
                                             item.ImageIndex = 8;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("reddit"))
+                                        else if (entityItem.Associated.StartsWith("reddit"))
                                         {
                                             item.ImageIndex = 7;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("tumblr"))
+                                        else if (entityItem.Associated.StartsWith("tumblr"))
                                         {
                                             item.ImageIndex = 9;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("twitter"))
+                                        else if (entityItem.Associated.StartsWith("twitter"))
                                         {
                                             item.ImageIndex = 10;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("vimeo"))
+                                        else if (entityItem.Associated.StartsWith("vimeo"))
                                         {
                                             item.ImageIndex = 11;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("youtube"))
+                                        else if (entityItem.Associated.StartsWith("youtube"))
                                         {
                                             item.ImageIndex = 12;
                                         }
-                                        else if (sensitiveItem.Associated.StartsWith("snapchat"))
+                                        else if (entityItem.Associated.StartsWith("snapchat"))
                                         {
                                             item.ImageIndex = 13;
                                         }
@@ -657,37 +655,37 @@ namespace ContentExtractionExample.Content
                                 break;
                         }
 
-                        item.SubItems.Add(sensitiveItem.MatchType.ToString());
-                        item.SubItems.Add(sensitiveItem.Keywords != null ? sensitiveItem.Keywords : "");
-                        item.SubItems.Add(sensitiveItem.Text != null ? sensitiveItem.Text : "");
-                        item.SubItems.Add(sensitiveItem.Context != null ? sensitiveItem.Context : "");
-                        item.SubItems.Add(sensitiveItem.Associated != null ? sensitiveItem.Associated : "");
+                        item.SubItems.Add(entityItem.MatchType.ToString());
+                        item.SubItems.Add(entityItem.Keywords != null ? entityItem.Keywords : "");
+                        item.SubItems.Add(entityItem.Text != null ? entityItem.Text : "");
+                        item.SubItems.Add(entityItem.Context != null ? entityItem.Context : "");
+                        item.SubItems.Add(entityItem.Associated != null ? entityItem.Associated : "");
 
-                        var subItem = item.SubItems.Add(sensitiveItem.LocationType.ToString());
-                        if (sensitiveItem.LocationType == EntityLocationType.Metadata)
+                        var subItem = item.SubItems.Add(entityItem.LocationType.ToString());
+                        if (entityItem.LocationType == EntityLocationType.Metadata)
                         {
                             subItem.ForeColor = Color.Blue;
                         }
-                        else if (sensitiveItem.LocationType == EntityLocationType.Hyperlink)
+                        else if (entityItem.LocationType == EntityLocationType.Hyperlink)
                         {
                             subItem.ForeColor = Color.DarkMagenta;
                         }
-                        else if (sensitiveItem.LocationType == EntityLocationType.Content)
+                        else if (entityItem.LocationType == EntityLocationType.Content)
                         {
                             subItem.ForeColor = Color.DarkOrange;
                         }
 
-                        subItem = item.SubItems.Add(sensitiveItem.MetadataName != null ? sensitiveItem.MetadataName : "");
-                        if (sensitiveItem.MetadataName != null)
+                        subItem = item.SubItems.Add(entityItem.MetadataName != null ? entityItem.MetadataName : "");
+                        if (entityItem.MetadataName != null)
                         {
                             subItem.ForeColor = Color.DarkRed;
                         }
 
-                        item.SubItems.Add(sensitiveItem.Start.ToString());
-                        item.SubItems.Add(sensitiveItem.End.ToString());
-                        item.SubItems.Add(sensitiveItem.Line.ToString());
+                        item.SubItems.Add(entityItem.Start.ToString());
+                        item.SubItems.Add(entityItem.End.ToString());
+                        item.SubItems.Add(entityItem.Line.ToString());
 
-                        item.Tag = sensitiveItem;
+                        item.Tag = entityItem;
 
                         _piiListView.Items.Add(item);
                     }
@@ -808,14 +806,14 @@ namespace ContentExtractionExample.Content
                 foreach (var link in _docContent.HyperLinks)
                 {
                     var item = new ListViewItem(link.IsExternalLink.ToString());
-                    item.SubItems.Add(link.Text != null ? link.Text : "");
-                    item.SubItems.Add(link.Url != null ? link.Url : "");
+                    item.SubItems.Add(link.Text     != null ? link.Text : "");
+                    item.SubItems.Add(link.Url      != null ? link.Url : "");
                     item.SubItems.Add(link.Download != null ? link.Download : "");
-                    item.SubItems.Add(link.Type != null ? link.Type : "");
+                    item.SubItems.Add(link.Type     != null ? link.Type : "");
                     item.SubItems.Add(link.Relationship != null ? link.Relationship : "");
                     item.SubItems.Add(link.RefLang != null ? link.RefLang : "");
-                    item.SubItems.Add(link.Target != null ? link.Target : "");
-                    item.SubItems.Add(link.Ping != null ? link.Ping : "");
+                    item.SubItems.Add(link.Target  != null ? link.Target : "");
+                    item.SubItems.Add(link.Ping    != null ? link.Ping : "");
 
                     _hyperLinksListView.Items.Add(item);
                 }
@@ -888,7 +886,6 @@ namespace ContentExtractionExample.Content
         #region private void _childDocsListView_SelectedIndexChanged(object sender, EventArgs e)
         private void _childDocsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _childHexEditorControl.ClearSourceData();
             _pictureBox.Image = null;
             _selectedChildInfoTabControl.TabPages.Remove(_imageViewTabPage);
 
@@ -896,11 +893,6 @@ namespace ContentExtractionExample.Content
             {
                 _saveAsMenuItem.Enabled = true;
                 var child = _childDocsListView.SelectedItems[0].Tag as ChildDocument;
-
-                if (child != null && child.DocumentBytes != null)
-                {
-                    _childHexEditorControl.SetByteSourceData(child.DocumentBytes);
-                }
 
                 if (child.FormatId != null)
                 {
@@ -923,7 +915,7 @@ namespace ContentExtractionExample.Content
                             {
                                 _pictureBox.SuspendLayout();
                                 _pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                                _pictureBox.Image = Image.FromStream(new MemoryStream(child.DocumentBytes));
+                                _pictureBox.Image    = Image.FromStream(new MemoryStream(child.DocumentBytes));
                                 _pictureBox.ResumeLayout();
                                 _selectedChildInfoTabControl.TabPages.Add(_imageViewTabPage);
                                 _selectedChildInfoTabControl.SelectedTab = _imageViewTabPage;
@@ -944,7 +936,7 @@ namespace ContentExtractionExample.Content
                                     {
                                         deflate.CopyTo(outStream);
                                         outStream.Position = 0;
-                                        _pictureBox.Image = Image.FromStream(new MemoryStream(outStream.ToArray()));
+                                        _pictureBox.Image  = Image.FromStream(new MemoryStream(outStream.ToArray()));
                                     }
                                 }
 

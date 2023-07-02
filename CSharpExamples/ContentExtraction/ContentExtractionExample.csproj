@@ -29,7 +29,8 @@
     <Folder Include="DocumentationImages\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+    <PackageReference Include="System.Security.Permissions" Version="7.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenDiscoverCWImpl">
@@ -42,4 +43,9 @@
       <HintPath>..\..\..\bin_net5\OpenDiscoverSDK.Interfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\..\bin_net5\7z64.dll" Link="7z64.dll">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>	
 </Project>

@@ -1,6 +1,6 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2022 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2023 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
@@ -10,32 +10,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Windows.Forms;
+using ContentExtractionExample.Content;
 using OpenDiscoverSDK;
 using OpenDiscoverSDK.Interfaces;
 using OpenDiscoverSDK.Interfaces.Content;
-using OpenDiscoverSDK.Interfaces.Settings;
-using ContentExtractionExample.Content;
-using System.Reflection;
-using System.Runtime.Versioning;
 using OpenDiscoverSDK.Interfaces.Extractors;
+using OpenDiscoverSDK.Interfaces.Settings;
 
 namespace ContentExtractionExample
 {
     public partial class MainForm : Form, IHostUI
     {
-        private IdResult            _docIdResult;
-        private DocumentContent     _docContent;
-        private IContentExtractor   _contentExtractorBase;
-        private ContentView         _contentView;
-        private ArchiveView         _archiveView;
-        private MailStoreView       _mailStoreView;
-        private int                 _numLogMessages;
-        private Stream              _stream;
-        private string[]            _passwords;
-        private Stream[]            _splitSegmentStreamsInOrder;
-        private ContentExtractionSettings  _extractionSettings   = new ContentExtractionSettings();
+        private IdResult _docIdResult;
+        private DocumentContent _docContent;
+        private IContentExtractor _contentExtractorBase;
+        private ContentView _contentView;
+        private ArchiveView _archiveView;
+        private MailStoreView _mailStoreView;
+        private int _numLogMessages;
+        private Stream _stream;
+        private string[] _passwords;
+        private Stream[] _splitSegmentStreamsInOrder;
+        private ContentExtractionSettings _extractionSettings = new ContentExtractionSettings();
 
         #region internal enum ViewMode
         internal enum ViewMode
@@ -52,11 +52,11 @@ namespace ContentExtractionExample
             public FileItem(FileInfo fInfo)
             {
                 Filename = fInfo.Name;
-                Path     = fInfo.FullName;
+                Path = fInfo.FullName;
             }
 
             public string Filename { get; set; }
-            public string Path     { get; set; }
+            public string Path { get; set; }
         }
         #endregion
 
@@ -171,8 +171,6 @@ namespace ContentExtractionExample
         {
             InitializeComponent();
 
-            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
             //
             // Set application title with Open Discover SDK Version and Framework Version:
             //
@@ -193,12 +191,12 @@ namespace ContentExtractionExample
             _contentView = new ContentView(this);
             _contentView.Dock = DockStyle.Fill;
 
-            _archiveView         = new ArchiveView(this);
-            _archiveView.Dock    = DockStyle.Fill;
+            _archiveView = new ArchiveView(this);
+            _archiveView.Dock = DockStyle.Fill;
             _archiveView.Visible = false;
 
-            _mailStoreView         = new MailStoreView(this);
-            _mailStoreView.Dock    = DockStyle.Fill;
+            _mailStoreView = new MailStoreView(this);
+            _mailStoreView.Dock = DockStyle.Fill;
             _mailStoreView.Visible = false;
 
             _contentTabPage.Controls.Add(_contentView);
@@ -208,7 +206,7 @@ namespace ContentExtractionExample
             //==============================================================
             // Initialize ExtractionSettings controls with default values:
             //==============================================================
-            _extractionTypeComboBox.SelectedIndex        = (int)_extractionSettings.ExtractionType;          // ExtractionType.TextAndMetadata
+            _extractionTypeComboBox.SelectedIndex = (int)_extractionSettings.ExtractionType;          // ExtractionType.TextAndMetadata
             _embeddedObjExtractionComboBox.SelectedIndex = (int)_extractionSettings.EmbeddedObjectExtraction;// EmbeddedExtractionType.EmbeddedDocumentsAndMedia
 
             //
@@ -220,17 +218,17 @@ namespace ContentExtractionExample
             //
             // LanguageId controls:
             //
-            _identifyLangInExtractedTextCheckBox.Checked   = _extractionSettings.LanguageId.IdentifyLanguages; // true
+            _identifyLangInExtractedTextCheckBox.Checked = _extractionSettings.LanguageId.IdentifyLanguages; // true
             _maxLanguageIdCharactersComboBox.SelectedIndex = 6; //500,000 chars
-            _partitionLatinScriptRegionsCheckBox.Checked   = _extractionSettings.LanguageId.PartitionLatinScriptRegions; // false
-            _latinScriptRegionSizeComboBox.SelectedIndex   = 5; //1,000 chars, but above line disables partitioning
+            _partitionLatinScriptRegionsCheckBox.Checked = _extractionSettings.LanguageId.PartitionLatinScriptRegions; // false
+            _latinScriptRegionSizeComboBox.SelectedIndex = 5; //1,000 chars, but above line disables partitioning
 
             //
             // TimeZoneAndEmail controls:
             //
-            _selectedTimeZoneComboBox.DataSource    = TimeZoneInfo.GetSystemTimeZones();
+            _selectedTimeZoneComboBox.DataSource = TimeZoneInfo.GetSystemTimeZones();
             _selectedTimeZoneComboBox.DisplayMember = "DisplayName";
-            _selectedTimeZoneComboBox.SelectedItem  = TimeZoneInfo.Utc;
+            _selectedTimeZoneComboBox.SelectedItem = TimeZoneInfo.Utc;
 
             _selectedEmailDateFormatComboBox.DataSource = new List<string>()
                 {
@@ -240,54 +238,37 @@ namespace ContentExtractionExample
                     "RFC1123  (EX: Thu, 10 Apr 2008 13:30:00 GMT)",
                 };
 
-            _selectedTimeZoneComboBox.SelectedItem         = _extractionSettings.TimeZoneAndEmail.CollectionTimeZone;// TimeZoneInfo.Utc;
+            _selectedTimeZoneComboBox.SelectedItem = _extractionSettings.TimeZoneAndEmail.CollectionTimeZone;// TimeZoneInfo.Utc;
             _selectedEmailDateFormatComboBox.SelectedIndex = (int)_extractionSettings.TimeZoneAndEmail.EmailDateTimeFormat;   // EmailDateTimeFormat.MonthDayYearTime
-            _showUtcOffsetForTimeCheckBox.Checked          = _extractionSettings.TimeZoneAndEmail.ShowUtcOffsetForTime;
+            _showUtcOffsetForTimeCheckBox.Checked = _extractionSettings.TimeZoneAndEmail.ShowUtcOffsetForTime;
+            _extractAllKnownOutlookMAPIPropertiesCheckBox.Checked = _extractionSettings.TimeZoneAndEmail.ExtractAllKnownOutlookMAPIProperties;
+
+            //
+            // Entity Extraction Check:
+            //
+            _enablePiiItemsCheckCheckBox.Checked = _extractionSettings.EntityExtractionSettings.Enabled;
+            _dedupEntityItemsCheckBox.Checked = _extractionSettings.EntityExtractionSettings.DeduplicateEntityItems;
+            _enableEmojiEntityDetectionCheckBox.Checked = _extractionSettings.EntityExtractionSettings.EnableEmojiEntityDetection;
+            _enablePersonNameFinderCheckBox.Checked = _extractionSettings.EntityExtractionSettings.EnablePersonNameFinder;
+            _enableEntityPersonNameChecksInBinaryToTextCheckBox.Checked = _extractionSettings.EntityExtractionSettings.EnablePersonNameFinderInBinaryToText;
+
+            _customSensitiveItemCheckBox.Checked = _extractionSettings.EntityExtractionSettings.CustomEntityExtractionEnabled;
+
+            _extractionSettings.EntityExtractionSettings.DeduplicateEntityItems = false;
 
             //
             // UnsupportedFiltering controls:
             //
-            _filteringTypeComboBox.SelectedIndex       = (int)_extractionSettings.UnsupportedFiltering.FilteringType;  //FilteringType.Unsupported
+            _filteringTypeComboBox.SelectedIndex = (int)_extractionSettings.UnsupportedFiltering.FilteringType;  //FilteringType.Unsupported
             _filterMinWordLengthComboBox.SelectedIndex = _extractionSettings.UnsupportedFiltering.FilterMinWordLength - 1; // 1 char 
             _largeUnsupportedMaxFilteredCharsComboBox.SelectedIndex = 2; //3M filtered chars max
 
             //
-            // Entity Item Checks:
-            //
-            _enableSensitiveItemsCheckCheckBox.Checked = _extractionSettings.SensitiveItemCheck.Check;
-            _dedupSensitiveItemsCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.DeduplicateSensitiveItems;
-            _dedupEntityItemsCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.DeduplicateEntityItems;
-            _customSensitiveItemCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.CustomItemCheck;
-
-            _socSecurityCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.SocialSecurityCheck;
-            _creditCardCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.CreditCardCheck;
-            _bankAccountCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.BankAccountCheck;
-            _ibanCheckBox.Checked                  = _extractionSettings.SensitiveItemCheck.IBANAccountCheck;
-            _investmentAccountCheckBox.Checked     = _extractionSettings.SensitiveItemCheck.InvestmentAccountCheck;
-            _phoneNumberCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.PhoneNumberCheck;
-            _emailAddressCheckBox.Checked          = _extractionSettings.SensitiveItemCheck.EmailAddressCheck;
-            _driversLicenseCheckBox.Checked        = _extractionSettings.SensitiveItemCheck.DriversLicenseCheck;
-            _passportCheckBox.Checked              = _extractionSettings.SensitiveItemCheck.PassportCheck;
-            _dateOfBirthCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.DateOfBirthCheck;
-            _maidenNameCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.MaidenNameCheck;
-            _socialMediaCheckBox.Checked           = _extractionSettings.SensitiveItemCheck.SocialMediaAccountCheck;
-            _licensePlateNumCheckBox.Checked       = _extractionSettings.SensitiveItemCheck.LicensePlateNumberCheck;
-            _vinCheckBox.Checked                   = _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck;
-            _healthCareNumberCheckBox.Checked      = _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck;
-            _addressCheckBox.Checked               = _extractionSettings.SensitiveItemCheck.AddressCheck;
-            _ipAddressCheckBox.Checked             = _extractionSettings.SensitiveItemCheck.IPAddressCheck;
-            _cryptoCurrencyAddressCheckBox.Checked = _extractionSettings.SensitiveItemCheck.CryptoCurrencyAddressCheck;
-
-            _passwordCheckBox4.Checked           = _extractionSettings.SensitiveItemCheck.PasswordCheck;
-            _usernameCheckBox.Checked            = _extractionSettings.SensitiveItemCheck.UsernameCheck;
-            _networkNameCheckBox.Checked         = _extractionSettings.SensitiveItemCheck.NetworkNameCheck;
-            _databaseCredentialsCheckBox.Checked = _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck;
-
-            //
             // Hashing controls:
             //
-            _hashingTypeComboBox.SelectedIndex         = (int)_extractionSettings.Hashing.HashingType; // HashingType.BinaryAndContentHash
+            _hashingTypeComboBox.SelectedIndex = (int)_extractionSettings.Hashing.HashingType;
             _maxBinaryHashLengthComboBox.SelectedIndex = 0; // -1, no hashing byte limit
+
 
             _largeDocumentCriteraComboBox.SelectedIndex = 0; //50 MB
         }
@@ -345,7 +326,7 @@ namespace ContentExtractionExample
         public void ShowBusy(bool isBusy)
         {
             UseWaitCursor = isBusy;
-            Enabled       = !isBusy;
+            Enabled = !isBusy;
         }
         #endregion
 
@@ -367,7 +348,7 @@ namespace ContentExtractionExample
             try
             {
                 //
-                // Disposes open stream/content extractor/etc from previous document:
+                // Disposes open stream from previous document:
                 //
                 if (_stream != null)
                 {
@@ -402,9 +383,9 @@ namespace ContentExtractionExample
                 // Read selected document into MemoryStream if under 100MB, otherwise open FileStream:
                 //
                 var stopWatch = Stopwatch.StartNew();
-                var fInfo     = new FileInfo(filePath);
+                var fInfo = new FileInfo(filePath);
 
-                _stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite, 16384); // Minimum recommended buffer size of 16kb
+                _stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
                 stopWatch.Stop();
                 var loadTime = stopWatch.Elapsed.TotalMilliseconds;
@@ -431,7 +412,7 @@ namespace ContentExtractionExample
                 //========================================================================================
                 // 2) Extract content from document:
                 //========================================================================================
-                ContentExtractorType extractorType      = ContentExtractorType.Document;
+                ContentExtractorType extractorType = ContentExtractorType.Document;
                 stopWatch.Restart();
 
                 //
@@ -446,7 +427,7 @@ namespace ContentExtractionExample
                 }
                 else
                 {
-                    extractorType         = contentExtractorResult.ContentExtractor.ContentExtractorType;
+                    extractorType = contentExtractorResult.ContentExtractor.ContentExtractorType;
                     _contentExtractorBase = contentExtractorResult.ContentExtractor;
 
                     switch (extractorType)
@@ -515,7 +496,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.Document:
                             #region Document Extraction...
                             {
@@ -542,7 +522,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.MailStore:
                             #region MailStore Extraction...
                             {
@@ -551,7 +530,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.Database:
                             #region Database Extraction...
                             {
@@ -582,7 +560,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.DocumentStore:
                             #region DocumentStore Extraction...
                             {
@@ -591,7 +568,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.Unsupported:
                             #region Unsupported Type Extraction...
                             {
@@ -606,7 +582,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.LargeUnsupported:
                             #region "Large" Unsupported/Unknown Type Extraction...
                             {
@@ -663,7 +638,6 @@ namespace ContentExtractionExample
                             }
                             #endregion
                             break;
-
                         case ContentExtractorType.LargeEncodedText:
                             #region "Large" Encoded Text File Extraction...
                             {
@@ -745,8 +719,8 @@ namespace ContentExtractionExample
                         _archiveView.UpdateContentView(_docContent as ArchiveContent, (IArchiveExtractor)_contentExtractorBase, Path.GetFileName(filePath), _stream.Length);
                         break;
                     case ContentExtractorType.MailStore:
-                        _contentView.Visible   = false;
-                        _archiveView.Visible   = false;
+                        _contentView.Visible = false;
+                        _archiveView.Visible = false;
                         _mailStoreView.Visible = true;
                         _mailStoreView.UpdateContentView((MailStoreContent)_docContent, (IMailStoreExtractor)_contentExtractorBase, Path.GetFileName(filePath), _stream.Length);
                         break;
@@ -763,13 +737,14 @@ namespace ContentExtractionExample
             catch (Exception ex)
             {
                 fileNameLabel.Text = string.Empty;
-                LogMessage(string.Format("Load error: {0}", ex.Message));
-
                 if (ex.InnerException != null)
                 {
-                    LogMessage(string.Format("   Inner Exception: {0}", ex.InnerException.Message));
+                    LogMessage(string.Format("Load error: {0}, Inner Exception: {1}", ex.Message, ex.InnerException.Message));
                 }
-
+                else
+                {
+                    LogMessage(string.Format("Load error: {0}", ex.Message));
+                }
                 if (_stream != null)
                 {
                     _stream.Dispose();
@@ -781,73 +756,54 @@ namespace ContentExtractionExample
 
         #region private void UpdateExtractionSettings()
         /// <summary>
-        /// Update ContentExtractionSettings object with user control selected values.
+        /// Update ContentExtractionSettings object with user selected control values.
         /// </summary>
         private void UpdateExtractionSettings()
         {
-            _extractionSettings.ExtractionType           = (ExtractionType)_extractionTypeComboBox.SelectedIndex;
+            _extractionSettings.ExtractionType = (ExtractionType)_extractionTypeComboBox.SelectedIndex;
             _extractionSettings.EmbeddedObjectExtraction = (EmbeddedExtractionType)_embeddedObjExtractionComboBox.SelectedIndex;
 
-            _extractionSettings.Hashing.HashingType      = (HashingType)_hashingTypeComboBox.SelectedIndex;
+            _extractionSettings.Hashing.HashingType = (HashingType)_hashingTypeComboBox.SelectedIndex;
             var maxHashLen = _maxBinaryHashLengthComboBox.Text.Substring(0, _maxBinaryHashLengthComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
-            _extractionSettings.Hashing.MaxBinaryHashLength  = int.Parse(maxHashLen);
+            _extractionSettings.Hashing.MaxBinaryHashLength = 100485760; //‬long.Parse(maxHashLen); 
             _extractionSettings.Hashing.CalculateFileEntropy = _calculateFileEntropyCheckBox.Checked;
 
-            _extractionSettings.PdfDocument.ImageExtraction           = (PdfImageExtraction)_pdfImageExtractionComboBox.SelectedIndex;
+            _extractionSettings.PdfDocument.ImageExtraction = (PdfImageExtraction)_pdfImageExtractionComboBox.SelectedIndex;
             _extractionSettings.PdfDocument.PageExtractedTextCriteria = int.Parse(_pdfPageExtractedTextCriteriaComboBox.Text);
 
-            _extractionSettings.LanguageId.IdentifyLanguages              = _identifyLangInExtractedTextCheckBox.Checked;
-            _extractionSettings.LanguageId.MaxLanguageIdCharacters        = int.Parse(_maxLanguageIdCharactersComboBox.Text);
-            _extractionSettings.LanguageId.PartitionLatinScriptRegions    = _partitionLatinScriptRegionsCheckBox.Checked;
+            _extractionSettings.LanguageId.IdentifyLanguages = _identifyLangInExtractedTextCheckBox.Checked;
+            _extractionSettings.LanguageId.MaxLanguageIdCharacters = int.Parse(_maxLanguageIdCharactersComboBox.Text);
+            _extractionSettings.LanguageId.PartitionLatinScriptRegions = _partitionLatinScriptRegionsCheckBox.Checked;
             _extractionSettings.LanguageId.LatinScriptRegionPartitionSize = int.Parse(_latinScriptRegionSizeComboBox.Text);
 
-            _extractionSettings.UnsupportedFiltering.FilteringType       = (UnsupportedFilterType)_filteringTypeComboBox.SelectedIndex;
+            _extractionSettings.UnsupportedFiltering.FilteringType = (UnsupportedFilterType)_filteringTypeComboBox.SelectedIndex;
             _extractionSettings.UnsupportedFiltering.FilterMinWordLength = int.Parse(_filterMinWordLengthComboBox.Text);
             _extractionSettings.UnsupportedFiltering.LargeUnsupportedMaxFilteredChars = long.Parse(_largeUnsupportedMaxFilteredCharsComboBox.Text.Replace(",", "").Trim());
 
-            _extractionSettings.TimeZoneAndEmail.CollectionTimeZone      = (TimeZoneInfo)_selectedTimeZoneComboBox.SelectedItem;
+            _extractionSettings.TimeZoneAndEmail.CollectionTimeZone = (TimeZoneInfo)_selectedTimeZoneComboBox.SelectedItem;
             _extractionSettings.TimeZoneAndEmail.ApplyTimeZoneToMetadata = _setDateTimeUnspecifiedMetaToUtcCheckBox.Checked;
-            _extractionSettings.TimeZoneAndEmail.EmailDateTimeFormat     = (EmailDateTimeFormat)_selectedEmailDateFormatComboBox.SelectedIndex;
-            _extractionSettings.TimeZoneAndEmail.ShowUtcOffsetForTime    = _showUtcOffsetForTimeCheckBox.Checked;
+            _extractionSettings.TimeZoneAndEmail.EmailDateTimeFormat = (EmailDateTimeFormat)_selectedEmailDateFormatComboBox.SelectedIndex;
+            _extractionSettings.TimeZoneAndEmail.ShowUtcOffsetForTime = _showUtcOffsetForTimeCheckBox.Checked;
             _extractionSettings.TimeZoneAndEmail.DisplayEmailRecipientNameAndSmtp = _displayEmailRecipientNameAndSmtpCheckBox.Checked;
+            _extractionSettings.TimeZoneAndEmail.ExtractAllKnownOutlookMAPIProperties = _extractAllKnownOutlookMAPIPropertiesCheckBox.Checked;
 
             var largeDocCriteriaText = _largeDocumentCriteraComboBox.Text.Substring(0, _largeDocumentCriteraComboBox.Text.IndexOf('(')).Replace(",", "").Trim();
-            _extractionSettings.LargeDocumentCritera          = int.Parse(largeDocCriteriaText);
+            _extractionSettings.LargeDocumentCritera = int.Parse(largeDocCriteriaText);
             _extractionSettings.UseLargeDocumentUTF16Encoding = _useLargeDocumentUTF16EncodingCheckBox.Checked;
 
             //
-            // Sensitive Item Checks:
+            // Entity Item Checks:
             //
-            _extractionSettings.SensitiveItemCheck.SocialSecurityCheck        = _socSecurityCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.CreditCardCheck            = _creditCardCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.BankAccountCheck           = _bankAccountCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.IBANAccountCheck           = _ibanCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.InvestmentAccountCheck     = _investmentAccountCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.PhoneNumberCheck           = _phoneNumberCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.EmailAddressCheck          = _emailAddressCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.DriversLicenseCheck        = _driversLicenseCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.PassportCheck              = _passportCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.DateOfBirthCheck           = _dateOfBirthCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.MaidenNameCheck            = _maidenNameCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.SocialMediaAccountCheck    = _socialMediaCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.LicensePlateNumberCheck    = _licensePlateNumCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.VehicleIdentificationNumberCheck = _vinCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.HealthCareNumberIdCheck    = _healthCareNumberCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.AddressCheck               = _addressCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.IPAddressCheck             = _ipAddressCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.CryptoCurrencyAddressCheck = _cryptoCurrencyAddressCheckBox.Checked;
+            _sensitiveItemTabControl.Enabled = true;
 
-            _extractionSettings.SensitiveItemCheck.PasswordCheck              = _passwordCheckBox4.Checked;
-            _extractionSettings.SensitiveItemCheck.UsernameCheck              = _usernameCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.NetworkNameCheck           = _networkNameCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.DatabaseCredentialsCheck   = _databaseCredentialsCheckBox.Checked;
+            _extractionSettings.EntityExtractionSettings.Enabled = _enablePiiItemsCheckCheckBox.Checked;
+            _extractionSettings.EntityExtractionSettings.DeduplicateEntityItems = _dedupEntityItemsCheckBox.Checked;
+            _extractionSettings.EntityExtractionSettings.EnableEmojiEntityDetection = _enableEmojiEntityDetectionCheckBox.Checked;
+            _extractionSettings.EntityExtractionSettings.CustomEntityExtractionEnabled = _customSensitiveItemCheckBox.Checked;
+            _extractionSettings.EntityExtractionSettings.EnablePersonNameFinder = _enablePersonNameFinderCheckBox.Checked;
+            _extractionSettings.EntityExtractionSettings.EnablePersonNameFinderInBinaryToText = _enableEntityPersonNameChecksInBinaryToTextCheckBox.Checked;
 
-            _extractionSettings.SensitiveItemCheck.Check                     = _enableSensitiveItemsCheckCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.DeduplicateSensitiveItems = _dedupSensitiveItemsCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.DeduplicateEntityItems    = _dedupEntityItemsCheckBox.Checked;
-            _extractionSettings.SensitiveItemCheck.CustomItemCheck           =_customSensitiveItemCheckBox.Checked;
 
-            _sensitiveItemTabControl.Enabled = _enableSensitiveItemsCheckCheckBox.Checked;
         }
         #endregion
 
@@ -861,7 +817,7 @@ namespace ContentExtractionExample
                 //
                 // Display any other files in the parent directory of the input file:
                 //
-                var dir   = Path.GetDirectoryName(filePath);
+                var dir = Path.GetDirectoryName(filePath);
                 var files = Directory.GetFiles(dir);
 
                 if (files != null)
@@ -887,7 +843,7 @@ namespace ContentExtractionExample
         private void openFileMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDlg = new OpenFileDialog();
-            openFileDlg.DefaultExt  = "*.*";
+            openFileDlg.DefaultExt = "*.*";
             openFileDlg.Multiselect = false;
 
             if (openFileDlg.ShowDialog() == DialogResult.OK)
@@ -924,6 +880,38 @@ namespace ContentExtractionExample
         }
         #endregion
 
+        #region private void loadPasswordsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void loadPasswordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var openFileDlg = new OpenFileDialog();
+            openFileDlg.Title = "Load Password List (1 password per line in text file)...";
+            openFileDlg.DefaultExt = "*.*";
+            openFileDlg.Multiselect = false;
+
+            if (openFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var passwordList = new List<string>();
+                    var textLines = File.ReadLines(openFileDlg.FileName);
+                    foreach (var line in textLines)
+                    {
+                        if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            passwordList.Add(line.Trim());
+                        }
+                    }
+
+                    _passwords = passwordList.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading password file: " + ex.Message, "Error..");
+                }
+            }
+        }
+        #endregion
+
         #region private void _filesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         private void _filesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -942,7 +930,6 @@ namespace ContentExtractionExample
         }
         #endregion
 
-
         #region private void _extractionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         private void _extractionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -952,22 +939,22 @@ namespace ContentExtractionExample
 
                 switch (extractionType)
                 {
-                    case  ExtractionType.TextAndMetadata:
+                    case ExtractionType.TextAndMetadata:
                         EnableTabPageControls(_langIdTabPage, true);
                         EnableTabPageControls(_unsupportedTabPage, true);
                         EnableTabPageControls(_pdfTabPage, true);
-                        _embeddedObjExtractionComboBox.Enabled   = true;
+                        _embeddedObjExtractionComboBox.Enabled = true;
                         _selectedEmailDateFormatComboBox.Enabled = true;
-                        _showUtcOffsetForTimeCheckBox.Enabled    = true;
+                        _showUtcOffsetForTimeCheckBox.Enabled = true;
                         _displayEmailRecipientNameAndSmtpCheckBox.Enabled = true;
                         break;
                     case ExtractionType.MetadataOnly:
                         EnableTabPageControls(_langIdTabPage, false);
                         EnableTabPageControls(_unsupportedTabPage, false);
                         EnableTabPageControls(_pdfTabPage, false);
-                        _embeddedObjExtractionComboBox.Enabled   = false;
+                        _embeddedObjExtractionComboBox.Enabled = false;
                         _selectedEmailDateFormatComboBox.Enabled = false;
-                        _showUtcOffsetForTimeCheckBox.Enabled    = false;
+                        _showUtcOffsetForTimeCheckBox.Enabled = false;
                         _displayEmailRecipientNameAndSmtpCheckBox.Enabled = false;
                         break;
                 }
@@ -989,20 +976,12 @@ namespace ContentExtractionExample
         }
         #endregion
 
-        #region private void _enableSensitiveItemsCheckCheckBox_CheckedChanged(object sender, EventArgs e)
-        private void _enableSensitiveItemsCheckCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            _sensitiveItemTabControl.Enabled = _enableSensitiveItemsCheckCheckBox.Checked;
-        }
-        #endregion
-
-
         #region private void _loadCustomSensitiveItemDefButton_Click(object sender, EventArgs e)
         private void _loadCustomSensitiveItemDefButton_Click(object sender, EventArgs e)
         {
-            if (ContentExtractorFactory.CustomItemDefinitionsLoaded)
+            if (ContentExtractorFactory.CustomEntityDefinitionsLoaded)
             {
-                MessageBox.Show("Custom item definitions have already been loaded.", "Error");
+                MessageBox.Show("Custom entity definitions have already been loaded.", "Error");
                 _loadCustomSensitiveItemDefButton.Enabled = false;
             }
 
@@ -1010,9 +989,9 @@ namespace ContentExtractionExample
             {
                 var items = CustomItemDefinitionHelper.LoadCustomEntityDefinitions();
 
-                ContentExtractorFactory.LoadCustomItemDefinitions(items);
+                ContentExtractorFactory.LoadCustomEntityDefinitions(items);
 
-                _numCustItemDefsLoadedLabel.Text = string.Format("{0} CustomItemDefinitions loaded.", items.Count);
+                _numCustItemDefsLoadedLabel.Text = string.Format("{0} CustomEntityDefinitions loaded.", items.Count);
             }
             catch (Exception ex)
             {
@@ -1023,7 +1002,7 @@ namespace ContentExtractionExample
 
         private void _UserMapiPropertyRequestsButton_Click(object sender, EventArgs e)
         {
-            //TODO
+            //TODO:
         }
     }
 }
