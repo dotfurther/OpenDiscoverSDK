@@ -1,9 +1,9 @@
 Copyright © 2019-2024 dotFurther Inc. All rights reserved.
 
 # Welcome to Open Discover® SDK for .NET Code Examples
-### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery, incidence response, data breach, and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows. See [Early Case Assessment Study using Open Discover Platform and RavenDB document database](https://github.com/dotfurther/OpenDiscoverPlatformCaseStudy).
+### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery, incidence response, data breach, and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows. 
 
-### See white paper on Azure performance of a distributed document processing/extraction workflow system built upon the OpenDiscover SDK:  https://github.com/dotfurther/Open-Discover-WhitePaper-1
+### See white paper on Azure performance of a distributed document processing/entity extraction workflow system built upon the OpenDiscover SDK:  https://github.com/dotfurther/Open-Discover-WhitePaper-1
 
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
