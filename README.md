@@ -7,7 +7,7 @@ Copyright © 2019-2024 dotFurther Inc. All rights reserved.
 
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
-## Open Discover® SDK is a .NET 6 application programming interface (API) that supports:
+## Open Discover® SDK is a .NET 8 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1,550+ file formats 
   supported for identification.
