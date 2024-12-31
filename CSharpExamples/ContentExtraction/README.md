@@ -1,4 +1,4 @@
-Copyright © 2019-2023 dotFurther Inc. All rights reserved. 
+Copyright © 2019-2025 dotFurther Inc. All rights reserved. 
 
 ## Document Content Extraction Example
 
@@ -79,7 +79,7 @@ To ENABLE long file path support for Windows 10 and .NET 5, see this article:
   
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
-Open Discover SDK is comprised of .NET 6 x64 assemblies due to unmanaged code dependencies
+Open Discover SDK is comprised of .NET 8 x64 assemblies due to unmanaged code dependencies
 
 - Run Microsoft Visual Studio C# examples in x64 solution platform (either Debug or Release)
 - To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows as Visual Studio WinForm designer is a 32-bit process. When done, set solution platform back to x64 before executing in either x64 Debug/Release mode.
