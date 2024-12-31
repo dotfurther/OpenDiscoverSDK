@@ -7,7 +7,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net8.0-windows</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Platforms>x64</Platforms>
@@ -33,19 +33,22 @@
     <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="OpenDiscoverCWImpl">
-      <HintPath>..\..\..\bin_net5\OpenDiscoverCWImpl.dll</HintPath>
-    </Reference>
     <Reference Include="OpenDiscoverSDK">
-      <HintPath>..\..\..\bin_net5\OpenDiscoverSDK.dll</HintPath>
+      <HintPath>..\..\..\..\OpenDiscoverRelease_2024.4.16\OpenDiscoverSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenDiscoverCWImpl">
+      <HintPath>..\..\..\..\OpenDiscoverRelease_2024.4.16\OpenDiscoverCWImpl.dll</HintPath>
     </Reference>
     <Reference Include="OpenDiscoverSDK.Interfaces">
-      <HintPath>..\..\..\bin_net5\OpenDiscoverSDK.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\..\OpenDiscoverRelease_2024.4.16\OpenDiscoverSDK.Interfaces.dll</HintPath>
     </Reference>
   </ItemGroup>
 	<ItemGroup>
-		<None Include="..\..\..\bin_net5\7z64.dll" Link="7z64.dll">
+		<None Include="..\..\..\..\OpenDiscoverRelease_2024.4.16\7z64.dll" Link="7z64.dll">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="..\..\..\..\OpenDiscoverRelease_2024.4.16\license_key.dat" Link="license_key.dat">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>	
 </Project>

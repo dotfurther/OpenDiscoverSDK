@@ -1,6 +1,6 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2022 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2025 dotFurther Inc. All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
 //   information of dotFurther, inc., and are supplied subject to licence terms.
 // 
@@ -438,8 +438,8 @@ namespace DocumentIdentifierExample
                         var numFilesIdentified = _resultsQueue.Count;
                         var percentComplete    = 100.0 * numFilesIdentified / totalFiles;
 
-                        // Update progress bar and status every 250 [ms]:
-                        if (lastUpdateStopWatch.ElapsedMilliseconds >= 250)
+                        // Update progress bar and status every 500 [ms]:
+                        if (lastUpdateStopWatch.ElapsedMilliseconds >= 500)
                         {
                             lastUpdateStopWatch.Restart();
                             Dispatcher.BeginInvoke((Action)delegate
