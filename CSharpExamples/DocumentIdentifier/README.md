@@ -1,4 +1,4 @@
-Copyright © 2019-2023 dotFurther Inc. All rights reserved.
+Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 
 ## File Format Document Identification Example
 
@@ -24,12 +24,12 @@ Screen shot of "Identification Details" view (details of each file format identi
 
 <img src="DocumentationImages/Image3.png">
 
-Screen shot of "All Supported File Formats" view (at this time, Open Discover SDK supports 1,517 file formats for identification). This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification (IdClassification.Email, IdClassification.WordProcessing, IdClassification.Spreadsheet, etc):
+Screen shot of "All Supported File Formats" view (at this time, Open Discover SDK supports 1,570 file formats for identification). This view allows viewing of all Open Discover SDK supported file formats for identification by file format classification (IdClassification.Email, IdClassification.WordProcessing, IdClassification.Spreadsheet, etc):
 
 <img src="DocumentationImages/Image4.png">
 
 
-To ENABLE long file path support for Windows 10 and .NET 5, see this article:
+To ENABLE long file path support for Windows 10 and .NET 8, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ processing application you build with SDK.
 
 ------------------------------------------------------------------------------------------------------------------------
 ### Note: 
-Open Discover SDK is comprised of .NET 6 x64 assemblies due to unmanaged code dependencies
+Open Discover SDK is comprised of .NET 8 x64 assemblies due to unmanaged code dependencies
 
 - Run Microsoft Visual Studio C# examples in x64 solution platform (either Debug or Release)
 - To edit WinForm forms, set build platform to "Any CPU" and rebuild. This is required to edit WinForm windows as Visual Studio WinForm designer is a 32-bit process. When done, set solution platform back to x64 before executing in either x64 Debug/Release mode.
