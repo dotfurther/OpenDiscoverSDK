@@ -13,8 +13,10 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1,570+ file formats 
   supported for identification.
-* Extracting text from supported file formats and optionally identifying languages present in the extracted text. [Notable supported file formats](https://dotfurther.com/features/)
+* Extracting text from supported file formats and optionally identifying languages present in the extracted text.
+     * Supported file formats for identification and extraction: https://dotfurther.github.io/OpenDiscoverSDK/html/7e782821-dd62-4262-b342-f603ac374bba.htm
 * Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,400 known and documented metadata fields in total)
+    * All known metadata extracted and documented: https://dotfurther.github.io/OpenDiscoverSDK/html/520b27cc-9ac9-4549-2981-558ed96ae428.htm
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
