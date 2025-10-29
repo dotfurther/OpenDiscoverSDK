@@ -78,7 +78,7 @@ In addition to the Open Discover SDK, we also provide higher level APIs built up
 high volume document processing workflows.
 
 ## This GitHub repository hosts the following C# examples that illustrate how to use the Open Discover SDK API
-### [DocumentIdentifier Example:](./CSharpExamples/DocumentIdentifier/README.md)
+### [DocumentIdentifier Example:](./CSharpExamples/DocumentIdentifier/README.md) 
    * Shows how to use SDK to identify the document file formats of all files under an input directory and its 
      sub-directories. 
 ### [ContentExtraction Example - illustrates the following SDK features:](./CSharpExamples/ContentExtraction/README.md)
