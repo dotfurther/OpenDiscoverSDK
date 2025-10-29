@@ -1,0 +1,27 @@
+# IssueDocuments Property
+
+
+All documents that do not have <a href="afc45d77-b73b-c2ea-47d8-95bb69deb137">Result</a> values set to either <a href="ff0037ea-a44f-2c8c-d4c2-7a636e133434">Ok</a>, <a href="ff0037ea-a44f-2c8c-d4c2-7a636e133434">EmptyFile</a>, <a href="ff0037ea-a44f-2c8c-d4c2-7a636e133434">ExcludedType</a>, or <a href="ff0037ea-a44f-2c8c-d4c2-7a636e133434">RequeueAsSeparateTask</a>
+
+
+
+## Definition
+**Namespace:** <a href="8fac0511-5eca-a179-d28a-c0a07e46597f">OpenDiscoverSDK.Platform.Archive</a>  
+**Assembly:** OpenDiscoverSDK (in OpenDiscoverSDK.dll) Version: 2025.4.4.0 (2025.4.4)
+
+**C#**
+``` C#
+public List<Document> IssueDocuments { get; }
+```
+
+
+
+#### Property Value
+List(<a href="1ada9969-add0-f951-f601-f7107618fb9d">Document</a>)
+
+## See Also
+
+
+#### Reference
+<a href="2a65ab11-cb67-f74a-b87a-61814d9c3b11">DocumentDataArchiveReader Class</a>  
+<a href="8fac0511-5eca-a179-d28a-c0a07e46597f">OpenDiscoverSDK.Platform.Archive Namespace</a>  
