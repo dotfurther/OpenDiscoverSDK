@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Platforms>x64</Platforms>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutDir>..\Build\</OutDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="System.Security.Permissions" Version="7.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="OpenDiscoverSDK">
+      <HintPath>..\..\..\..\OpenDiscoverRelease\OpenDiscoverSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenDiscoverCWImpl">
+      <HintPath>..\..\..\..\OpenDiscoverRelease\OpenDiscoverCWImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenDiscoverSDK.Interfaces">
+      <HintPath>..\..\..\..\OpenDiscoverRelease\OpenDiscoverSDK.Interfaces.dll</HintPath>
+    </Reference>
+    <None Include="..\..\..\..\OpenDiscoverRelease\7z64.dll" Link="7z64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\..\..\OpenDiscoverRelease\license_key.dat" Link="license_key.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DocumentationImages\" />
+  </ItemGroup>
+    
+</Project>

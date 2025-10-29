@@ -18,23 +18,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Management.Automation" Version="7.2.0" />
+    <PackageReference Include="System.Security.Permissions" Version="7.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="OpenDiscoverSDK">
-      <HintPath>..\..\..\..\OpenDiscoverRelease_2024.4.16\OpenDiscoverSDK.dll</HintPath>
+      <HintPath>..\..\..\..\OpenDiscoverRelease\OpenDiscoverSDK.dll</HintPath>
     </Reference>
     <Reference Include="OpenDiscoverCWImpl">
-      <HintPath>..\..\..\..\OpenDiscoverRelease_2024.4.16\OpenDiscoverCWImpl.dll</HintPath>
+      <HintPath>..\..\..\..\OpenDiscoverRelease\OpenDiscoverCWImpl.dll</HintPath>
     </Reference>
     <Reference Include="OpenDiscoverSDK.Interfaces">
-      <HintPath>..\..\..\..\OpenDiscoverRelease_2024.4.16\OpenDiscoverSDK.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\..\OpenDiscoverRelease\OpenDiscoverSDK.Interfaces.dll</HintPath>
     </Reference>
-    <None Include="..\..\..\..\OpenDiscoverRelease_2024.4.16\license_key.dat" Link="license_key.dat">
+    <None Include="..\..\..\..\OpenDiscoverRelease\7z64.dll" Link="7z64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>    
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="System.Management.Automation" Version="7.2.0" />
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+    </None>
+    <None Include="..\..\..\..\OpenDiscoverRelease\license_key.dat" Link="license_key.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   
   <ItemGroup>

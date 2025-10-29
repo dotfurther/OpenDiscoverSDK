@@ -96,7 +96,7 @@ namespace OpenDiscoverSDK.PowerShell
                                     // extractor helper method 'GetSplitSegmentStreamsInOrder' to get the other split archive segments (in proper order) 
                                     // in the same directory:
                                     Stream[] splitSegmentStreamsInOrder = null;
-                                    string[] splitSegmentNameInOrder = null;
+                                    string[] splitSegmentNameInOrder    = null;
 
                                     archiveExtractor.GetSplitSegmentStreamsInOrder(Path, out splitSegmentStreamsInOrder, out splitSegmentNameInOrder);
 
@@ -186,7 +186,7 @@ namespace OpenDiscoverSDK.PowerShell
                         case ContentExtractorType.LargeUnsupported:
                             #region 'Large' Unsupported Type Extraction...
                             {
-                                // Ignore for this example, very 'large' binary-to-text that needs a FileStream could be extracted
+                                // Ignore for this example, very 'large' binary-to-text that needs a FileStream to be extracted to
                                 content        = new DocumentContent(idResult);
                                 content.Result = ContentResult.UnsupportedError;
                                 content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
@@ -197,7 +197,7 @@ namespace OpenDiscoverSDK.PowerShell
                         case ContentExtractorType.LargeEncodedText:
                             #region 'Large' Encoded Text File Extraction...
                             {
-                                // Ignore for this example 
+                                // Ignore for this example, very 'large' text that needs a FileStream to be extracted to
                                 content = new DocumentContent(idResult);
                                 content.Result = ContentResult.UnsupportedError;
                                 content.ErrorMessage = "Not supported for this example. Users should write output to a file stream when implemented";
