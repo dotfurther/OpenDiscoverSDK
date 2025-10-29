@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>DocumentAttributes Enumeration</title><meta name="Title" content="DocumentAttributes" /><meta name="Help.Id" content="T:OpenDiscoverSDK.Interfaces.Content.DocumentAttributes" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Content" /><meta name="guid" content="97455b46-6bb8-0e3b-270d-5e3bdde3f3ee" /><meta name="Description" content="Document attributes. Document attributes give extra information about a document such as if it has hidden content, is password protected (encrypted), has macros, is inline image (e.g., image is an inline email image), has external document references, etc." /><meta name="tocFile" content="../toc/IDJ.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Document<wbr />Attributes Enumeration</h1><div class="summary">
+            Document attributes. Document attributes give extra information about a document such as if it has hidden content, is password protected (encrypted), 
+            has macros, is inline image (e.g., image is an inline email image), has external document references, etc.
+            </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Definition</h2><div id="IDBSection"><strong>Namespace:</strong> <a href="79f11d04-c275-b915-db5b-ab2227989555.htm">OpenDiscoverSDK.Interfaces.Content</a><br /><strong>Assembly:</strong> OpenDiscoverSDK.Interfaces (in OpenDiscoverSDK.Interfaces.dll) Version: 2025.4.4.0 (2025.4.4)<div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><span class="buttons"><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></span></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs">[<span class="identifier">DataContractAttribute</span>]
+<span class="keyword">public</span> <span class="keyword">enum</span> <span class="identifier">DocumentAttributes</span></code></pre></div></div></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Members</h2><div id="IDADASection"><table id="enumMemberList" class="table is-hoverable"><tr><td>PasswordProtected</td><td>1</td><td>
+            Document is password protected (encrypted). If document is an archive then this flag means
+            that the archive central directory is encrypted and information on archive items is not
+            available unless decrypted with password.
+            </td></tr><tr><td>DefaultPassword</td><td>2</td><td>
+            Document is password protected (encrypted) with application default password. Some documents, like Excel and PowerPoint, are
+            encrypted with their respective application default password under certain scenarios. To open the document using the application
+            does not require the password (application automatically decrypts), but to extract content using 3rd party software does.
+            </td></tr><tr><td>ArchiveItemsPasswordProtected</td><td>6</td><td>
+            Archive has password protected (encrypted) items.
+            </td></tr><tr><td>PersonName</td><td>7</td><td>
+            Document has author, contributor, last-edited-by, or last-printed-by identifying metadata field(s) (does not include user defined metadata fields).
+            </td></tr><tr><td>Macros</td><td>8</td><td>
+            Office document has macros.
+            </td></tr><tr><td>Comments</td><td>9</td><td>
+            Document has user comments or notes (i.e., non-metadata comment/descriptions). 
+            </td></tr><tr><td>CustomMetadata</td><td>10</td><td>
+            Document has custom (user defined) metadata fields.
+            </td></tr><tr><td>RevisionTracking</td><td>11</td><td>
+            Document has revisions being tracked.
+            </td></tr><tr><td>ExternalFileAttachments</td><td>12</td><td>
+            Document has externally referenced attachments (files such as OneNote2010 can have external attachments (.onebin files)).
+            </td></tr><tr><td>Template</td><td>13</td><td>
+            Document is a template.
+            </td></tr><tr><td>Headers</td><td>14</td><td>
+            Document has page or sheet headers (not set for PowerPoint, all versions; not set for OpenDocument spreadsheets).
+            </td></tr><tr><td>Footers</td><td>15</td><td>
+            Document has page or sheet footers (not set for PowerPoint, all versions; not set for OpenDocument spreadsheets).
+            </td></tr><tr><td>OfficeLinkedContent</td><td>20</td><td>
+            Office 2007 or newer document has externally linked content either as hyperlinks or OLE linked files.
+            Also supported for PDF and Open Document formats.
+            </td></tr><tr><td>OfficeEmbeddedDocuments</td><td>21</td><td>
+            Office document has embedded document(s) (applies to Microsoft Office and OpenDocument formats). 
+            </td></tr><tr><td>OfficeEmbeddedPictures</td><td>22</td><td>
+            Office document has embedded picture(s) (applies to Microsoft Office and OpenDocument formats).
+            </td></tr><tr><td>OfficeEmbeddedMedia</td><td>23</td><td>
+            Office document has embedded media files (applies to Microsoft Office 2007+ and OpenDocument formats).
+            </td></tr><tr><td>OfficePictureLinkedContent</td><td>24</td><td>
+            Office 2007 or newer document has linked picture.
+            </td></tr><tr><td>OfficeExternDataConnections</td><td>25</td><td>
+            Office 2007 or newer document has external data connections.
+            </td></tr><tr><td>OfficeCustomXmlData</td><td>26</td><td>
+            Office 2007 or newer document has custom xml data parts.
+            </td></tr><tr><td>OfficeWebExtensionAddIns</td><td>27</td><td>
+            Office 2007 or newer document has web extensions (e.g., such as task pane add-ins).
+            </td></tr><tr><td>OfficeModernComments</td><td>28</td><td>
+            Office 365 document has user 'modern comments' which allow assigning tasks in comment threads and other features. 
+            </td></tr><tr><td>HiddenText</td><td>35</td><td>
+            Document has text characters or textboxes formatted as hidden.
+            </td></tr><tr><td>WorkbookProtected</td><td>40</td><td>
+            Workbook is protected.
+            </td></tr><tr><td>WorkbookProtectedWorksheets</td><td>41</td><td>
+            Workbook has protected worksheets.
+            </td></tr><tr><td>WorkbookHiddenWorksheets</td><td>42</td><td>
+            Workbook has hidden worksheets.
+            </td></tr><tr><td>WorkbookVeryHiddenWorksheets</td><td>43</td><td>
+            Workbook has very hidden worksheets.
+            </td></tr><tr><td>WorksheetHiddenRows</td><td>44</td><td>
+            Worksheet has hidden rows.
+            </td></tr><tr><td>WorksheetHiddenColumns</td><td>45</td><td>
+            Worksheet has hidden columns.
+            </td></tr><tr><td>WorksheetAutoFilters</td><td>46</td><td>
+            Worksheet has auto-filters.
+            </td></tr><tr><td>WorksheetPivotTables</td><td>47</td><td>
+            Worksheet has pivot tables.
+            </td></tr><tr><td>WorkbookExternalWorkbookReferences</td><td>48</td><td>
+            Workbook has external spreadsheet references.
+            </td></tr><tr><td>WorksheetThreadedComments</td><td>49</td><td>
+            Workbook has threaded comments (this applies to Excel for Office 365 which changed the way comments worked - comments are now threaded discussions).
+            </td></tr><tr><td>PresentationHiddenSlides</td><td>60</td><td>
+            Presentation document has hidden slides.
+            </td></tr><tr><td>PresentationHasSpeakerNotes</td><td>61</td><td>
+            Presentation document has speaker notes.
+            </td></tr><tr><td>PdfPortfolio</td><td>70</td><td>
+            PDF document is a PDF Portfolio/Package (After Acrobat 8.0, the term PDF Portfolio, versus PDF Package, is used 
+            to to describe any document that contains a collection dictionary).
+            </td></tr><tr><td>PdfXFA</td><td>71</td><td>
+            PDF document contains XFA form.
+            </td></tr><tr><td>PdfAcroForm</td><td>72</td><td>
+            PDF document contains AcroForm (non-XFA) form.
+            </td></tr><tr><td>PdfHasFailedPages</td><td>73</td><td>
+            PDF document contains one or more pages where text was not extracted due to a processing exception or the number extracted text characters
+            did not meet the <a href="b38280ef-11f7-aac9-3bc1-f0724146f27a.htm">PageExtractedTextCriteria</a> number of characters.
+            </td></tr><tr><td>DominoXmlHasEncryptedItems</td><td>80</td><td>
+            Domino XML document (.dxl) has 'item' XML elements that are encrypted.
+            </td></tr><tr><td>DominoXmlHasEncryptedAttachments</td><td>81</td><td>
+            Domino XML document (.dxl) has one or more encrypted attachments.
+            </td></tr><tr><td>DominoXmlHasNativeMimeFlag</td><td>82</td><td>
+            Domino XML document (.dxl) has 'item' XML element named $NoteHasNativeMime with value of "1" (true).
+            </td></tr><tr><td>DominoXmlHasNativeMimeElement</td><td>83</td><td>
+            Domino XML document (.dxl) has 'item' element with &lt;mime&gt; child, i.e., exported DXL data primarily stored in &lt;mime&gt; element.
+            </td></tr><tr><td>DominoXmlHasNativeMimeBody</td><td>84</td><td>
+            Domino XML document (.dxl) has item 'body' element with 'rawitemdata' (RFC-822) formatted data.
+            </td></tr><tr><td>OutlookEmailHasRefAttachment</td><td>100</td><td>
+            Outlook email object has attachment(s) that are referenced by a fully qualified file system path (<a href="ed2b1ac1-1184-0e96-ccaf-c02b6402ee58.htm">HasReferenceAttachment</a>)
+            </td></tr><tr><td>OutlookEmailHasRefOnlyAttachment</td><td>101</td><td>
+            Outlook email object has attachment(s) that are referenced by a fully qualified path (<a href="45ee1bab-f294-81ee-933b-892153526594.htm">HasReferenceOnlyAttachment</a>)
+            </td></tr><tr><td>OutlookEmailHasWebRefAttachment</td><td>102</td><td>
+            Outlook email object has an attachment(s) that are by web API reference only (<a href="c2a8ffba-7802-2d80-1a19-d4e442e25750.htm">HasWebReferenceAttachment</a>).
+            </td></tr><tr><td>DetectedSocialSecurityNumber</td><td>200</td><td>
+            Detected possible social security number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedIndividualTaxpayerIdNumber</td><td>201</td><td>
+            Detected possible Individual Taxpayer Identification Number(s) (ITIN) in 
+            extracted text or metadata. An ITIN is a tax processing number only available for certain nonresident and resident aliens, their spouses, and 
+            dependents who cannot get a Social Security Number (SSN).
+            </td></tr><tr><td>DetectedCreditCard</td><td>202</td><td>
+            Detected possible credit card number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedBankAccount</td><td>203</td><td>
+            Detected possible bank account number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedIBAN</td><td>204</td><td>
+            Detected possible international bank account number(s) (IBAN) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedInvestmentAccount</td><td>205</td><td>
+            Ddetected possible investment account number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedEmailAddress</td><td>206</td><td>
+            Detected possible email address(es) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedEmailAddressAndName</td><td>207</td><td>
+            Detected possible email address associated with person's name. 
+            </td></tr><tr><td>DetectedEmailAddressAndIPAddress</td><td>208</td><td>
+            Detected email address and associated IP address. 
+            </td></tr><tr><td>DetectedPhoneNumber</td><td>209</td><td>
+            Detected possible phone number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedAddress</td><td>210</td><td>
+            Detected full physical address(es) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedDateOfBirth</td><td>211</td><td>
+            Detected possible date of birth(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedDriversLicense</td><td>212</td><td>
+            Detected possible driver's license number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedPassport</td><td>213</td><td>
+            Detected possible passport number(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedMaidenName</td><td>214</td><td>
+            Detected possible (mother's) maiden names in extracted text or metadata. 
+            </td></tr><tr><td>DetectedHealthCareNumberID</td><td>215</td><td>
+            Detected possible health care insurance number/member ID in extracted text or metadata. 
+            </td></tr><tr><td>DetectedLicensePlateNumber</td><td>216</td><td>
+            Detected possible vehicle license plate number in extracted text or metadata. 
+            </td></tr><tr><td>DetectedVehicleIdentificationNumber</td><td>217</td><td>
+            Detected possible vehicle identification number (VIN) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedSocialMediaAccount</td><td>218</td><td>
+            Detected possible social media account name in extracted text or metadata. 
+            </td></tr><tr><td>DetectedCryptoCurrencyAddress</td><td>219</td><td>
+            Detected possible cryptocurrency wallet address in extracted text or metadata. 
+            </td></tr><tr><td>DetectedIPv4Address</td><td>230</td><td>
+            Detected IPv4 address(es) in extracted text, hyperlinks, or metadata. 
+            </td></tr><tr><td>DetectedIPv6Address</td><td>231</td><td>
+            Detected IPv6 address(es) in extracted text, hyperlinks, or metadata. 
+            </td></tr><tr><td>DetectedMacAddress</td><td>232</td><td>
+            Detected MAC address(es) in extracted text, hyperlinks, or metadata. 
+            </td></tr><tr><td>DetectedIMEINumber</td><td>233</td><td>
+            Detected IMEI number in extracted text, hyperlinks, or metadata. 
+            </td></tr><tr><td>DetectedPassword</td><td>270</td><td>
+            Detected possible password(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedUsername</td><td>271</td><td>
+            Detected possible login username(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedNetworkName</td><td>272</td><td>
+            Detected possible Network, workstation, desktop, or computer name(s) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedDatabaseCredential</td><td>273</td><td>
+            Detected possible database credential(s) (or url links to Azure, Sharepoint, AWS, etc. storage) in extracted text or metadata. 
+            </td></tr><tr><td>DetectedMachineReadableZone</td><td>274</td><td>
+            Detected machine-readable zone (MRZ) zone used by passports, immigration visas, travel documents and driver's licenses. 
+            </td></tr><tr><td>DetectedCustomEntityItem</td><td>300</td><td>
+            Detected user defined custom <a href="75bf3100-d4b4-0098-46f5-b953923776a9.htm">Entity</a> in extracted text or metadata. 
+            </td></tr><tr><td>TextTruncatedToMaxAllowable</td><td>1,000</td><td>
+            Indicates that extracted text exceeded .NET maximum 2GB string data type total size in bytes (1,073,741,791 UTF-16 characters) and was 
+            truncated to maximum string size.
+            </td></tr><tr><td>TextTruncatedForDocumentStore</td><td>1,001</td><td>
+            RESERVED. Indicates that extracted text exceeded document store's text per document storage limitation. This attributes is not set by Open Discover SDK.
+            It is reserved for user processing workflows that export processed documents into a document database such as Elasticsearch, Ravendb, MongoDB, etc.
+            </td></tr><tr><td>EntityDetectionScanLimited</td><td>1,010</td><td><p>
+            Indicates that entity detection scan on extracted text was limited to a maximum number of bytes (in case of binary blobs) or characters (in case of 'large' 
+            encoded text files).
+            </p><p><ul><li>For "large" text files that exceed 200 million characters, only the first 200 million characters are scanned for entity items.</li><li>For "large" unsupported binary files (blob) that exceed 100 million bytes (100MB), only the first 100 million characters are scanned for entity items.</li></ul></p></td></tr><tr><td>MaxNumberOfDocumentOcrPagesLimited</td><td>2,000</td><td>
+            RESERVED. Optical Character Recognition (OCR) of document was limited to a user defined maximum number of document pages for OCR. This attribute only applies
+            to Adobe PDFs and multi-page documents.
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="79f11d04-c275-b915-db5b-ab2227989555.htm">OpenDiscoverSDK.Interfaces.Content Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Definition</a></li><li><a class="quickLink">Members</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+hljs.highlightAll();
+});</script></body></html>

@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>DocumentTaskSettings Class</title><meta name="Title" content="DocumentTaskSettings" /><meta name="Help.Id" content="T:OpenDiscoverSDK.Interfaces.Platform.Settings.DocumentTaskSettings" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Platform.Settings" /><meta name="guid" content="15834f2e-5778-5912-a2cc-a92e9d2e78fb" /><meta name="Description" content="Represents a document processing task (1 or more documents) that a DocumentTaskEngine instance can process." /><meta name="tocFile" content="../toc/IDS.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Document<wbr />Task<wbr />Settings Class</h1><div class="summary">
+             Represents a document processing task (1 or more documents) that a DocumentTaskEngine instance can process. 
+             </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Definition</h2><div id="IDBSection"><strong>Namespace:</strong> <a href="a4de3d25-b44d-10c7-9f7b-6e96e612f300.htm">OpenDiscoverSDK.Interfaces.Platform.Settings</a><br /><strong>Assembly:</strong> OpenDiscoverSDK.Interfaces (in OpenDiscoverSDK.Interfaces.dll) Version: 2025.4.4.0 (2025.4.4)<div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><span class="buttons"><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></span></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs">[<span class="identifier">DataContractAttribute</span>]
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="identifier">DocumentTaskSettings</span> : <span class="identifier">ContentExtractionSettings</span></code></pre></div></div><dl class="inheritanceHierarchy"><dt>Inheritance</dt><dd><span class="noLink">Object</span>  <span class="icon is-small"><i class="fa fa-arrow-right"></i></span>  <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>  <span class="icon is-small"><i class="fa fa-arrow-right"></i></span>  <span class="selflink">DocumentTaskSettings</span></dd></dl></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Remarks</h2><div id="IDBCSection"><p>
+             This class stores the processing task settings for a document set, single archive, or single mail store that is to be processed by a 
+             DocumentTaskEngine instance. 
+             </p><p>
+             A set of documents, a single archive**, or single mail store ** to process should not have a combined size greater than 5 gigabytes, or else the outputted 
+             document data archive (.dda) could become too large to read into memory.
+             Large document sets should be broken up into 1-2 gigabyte of document subsets to process as tasks. Breaking a large document processing job (e.g., a 100 gigabyte 
+             worth of documents) into 1-2 gigabyte subsets worth of documents aids in distributing a big processing job across multiple desktops or server VMs - each running a 
+             DocumentTaskEngine instance(s).
+             </p><p>
+             ** "Large" archives or mail stores can be processed as a single task, or can also be partitioned into many sub-tasks for distributable processing. See properties 
+             <a href="8721b0d5-6f3d-0bf8-b986-7d8fa6fe0f01.htm">IsPartitioned</a>, <a href="1d41ff0f-8f17-765d-6bdf-204013d938c4.htm">TotalPartitions</a> and <a href="0de2171f-9db9-791a-2c07-76b871dbf46e.htm">PartitionTarget</a>.
+             </p></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Example</h2><div id="IDCCSection">
+             This example code snippet shows how to set up a DocumentTaskSettings object to process a single very "large" archive and how to break up the large archive into
+             4 separate partitions for distributable processing. In the snippet below, this task will only work on the 2nd partition (PartitionTarget) out of the 4 (TotalPartitions)
+             total partitions. The other 3 partitions can be run as separate DocumentTaskEngine tasks with PartitionTarget property set to 1, 3, and 4, respectively.
+             <div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs">var taskSettings = new OpenDiscoverPlatform.DocumentTaskSettings();
+taskSettings.CollectionId = "101";
+taskSettings.TaskId       = Guid.NewGuid().ToString();
+
+taskSettings.ProcessingTaskType = ProcessingType.SingleArchive; // Single (or multi-part) archive processing task
+taskSettings.IsPartitioned   = true; // Archive will be partitioned
+taskSettings.TotalPartitions = 4;    // Archive will be broken up and processed as 4 separate partitions (tasks).
+taskSettings.PartitionTarget = 2;    // The partition # this task will work on (other DocumentTaskEngine instances can process the other partitions simultaneously)
+
+var archivePath    = @"D:\InputDocuments\Archives\VeryLargeArchive.zip";
+var outputRootPath = @"D:\Output\"; // Root path to store task output
+var taskOutputPath = System.IO.Path.Combine(outputRootPath, string.Format(@"CollectionId_{0}\Task_{1}", taskSettings.CollectionId, taskSettings.TaskId));
+
+//
+// For single archive or single mail store tasks, the input document(s) Document.FilePath and Document.FormatId properties should be set:
+//
+var archiveDocument = new Document();
+archiveDocument.FilePath = archivePath;
+using (var docStream = System.IO.File.OpenRead(archivePath))
+{
+    archiveDocument.FormatId = OpenDiscoverSDK.DocumentIdentifier.Identify(docStream, archivePath);
+}
+
+//For a split (multi-part) archive, we would pass in a list of the split segment documents in order:
+taskSettings.Documents      = new List&lt;Document&gt; () { archiveDocument };  
+taskSettings.ProcessingMode = ProcessingMode.TextAndMetadata;
+taskSettings.OutputMode     = OutputMode.IndividualFiles;  // Extracted attachments/ text will be saved as individual (flat) files.
+
+// Set root path for processing output files:
+taskSettings.DocumentArchiveRootPath = taskOutputPath;
+
+taskSettings.Passwords        = null;  // No passwords to cycle through
+taskSettings.PerformNistCheck = false; // No checking document binary hashes against NIST database.
+
+taskSettings.EmbeddedObjectExtraction = EmbeddedExtractionType.EmbeddedDocumentsAndMedia;
+taskSettings.ExcludeInlineEmailImages = true;
+
+taskSettings.PdfDocument.ImageExtraction = PdfImageExtraction.OnlyFailedPdfPages;
+taskSettings.PdfDocument.PageExtractedTextCriteria = 1;
+
+taskSettings.TimeZoneAndEmail.CollectionTimeZone      = TimeZoneInfo.Utc;
+taskSettings.TimeZoneAndEmail.ApplyTimeZoneToMetadata = false;
+taskSettings.TimeZoneAndEmail.EmailDateTimeFormat     = EmailDateTimeFormat.MonthDayYearTime;
+taskSettings.TimeZoneAndEmail.ShowUtcOffsetForTime    = true;
+
+taskSettings.Hashing.HashingType = HashingType.BinaryAndContentHash;
+taskSettings.Hashing.MaxBinaryHashLength = 10*1024*1024*1024;  // Hash up to a maximum of the first 10GB of a file
+taskSettings.Hashing.IncludeBccRecipientsInEmailContentHash = false;
+
+taskSettings.LanguageId.IdentifyLanguages = true;
+
+taskSettings.UnsupportedFiltering.FilteringType = UnsupportedFilterType.Unsupported;
+taskSettings.UnsupportedFiltering.LargeUnsupportedMaxFilteredChars = 1024 * 1024 * 1024; // Binary-to-text filter at max 1 billion chars
+
+//
+// Create a document task engine instance to process the task:
+//
+var documentTaskEngine = new DocumentTaskEngine(taskSettings);
+documentTaskEngine.Completed      += _documentTaskEngine_Completed;
+documentTaskEngine.FatalException += _documentTaskEngine_FatalException;
+documentTaskEngine.LongProcessingDocumentWarning += _documentTaskEngine_LongProcessingDocumentWarning;
+
+//
+// Run task synchronously (blocking):
+//
+documentTaskEngine.RunTaskBlocking();
+
+// TODO: do something with the output, like bulk insert into a document store or an eDiscovery document review system.</code></pre></div></div></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Constructors</h2><div id="IDAEASection"><table id="ConstructorList" class="table is-hoverable"><tr><td><a href="c0222218-ee81-ee70-3965-81e4e97e26f0.htm">DocumentTaskSettings</a></td><td>
+            Constructor.
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Properties</h2><div id="IDFEASection"><table id="PropertyList" class="table is-hoverable"><tr><td><a href="73ef4f49-a909-b1ac-77dd-8f9c3720c62c.htm">AllowLongProcessingDocumentTest</a></td><td>
+            RESERVED - DO NOT USE OR SET THIS PROPERTY. Reserved for internal SDK testing and setting this property to TRUE can lead to unpredictable behavior.
+            </td></tr><tr><td><a href="5a7ab7dd-8bd1-7dd0-05de-9d469dce416f.htm">AttachmentArchiveFilenameFormat</a></td><td>
+            Base string format of attachment archive files and only used when <a href="4334f753-3ce0-61e6-d436-492365ada853.htm">OutputMode</a> is set to <a href="a041a2d2-b2ef-2b6d-56fb-23d653640aec.htm">Archive</a> (read-only).
+            </td></tr><tr><td><a href="68a951d9-e77f-4d5c-8ff2-05e51a40a824.htm">AttachmentArchiveMaxSize</a></td><td>
+            Attachment archive file maximum size (default is 4GB).
+            </td></tr><tr><td><a href="0672eaf5-049e-8328-6441-6ca8e8724eef.htm">ClientId</a></td><td>
+            [Optional] User defined client Id that owns the <a href="5daaae25-c44a-133e-a92d-863639a6ce32.htm">ProjectId</a>.
+            </td></tr><tr><td><a href="c96b0b62-59a1-cd73-b906-23381a2e5297.htm">ClientName</a></td><td>
+            [Optional] A user defined client name. 
+            </td></tr><tr><td><a href="f30dc13a-84bb-8d14-d411-e3b2bf578662.htm">CollectionId</a></td><td>
+            [Required] A user defined document collection (job) Id that uniquely identifies the document processing set that this processing task defined by <a href="b0100621-8ab8-77b5-f320-c4787c9b5061.htm">TaskId</a> belongs to.
+            </td></tr><tr><td><a href="9e748474-817a-68aa-22ec-08e7abf6c230.htm">CollectionName</a></td><td>
+            [Optional] A user defined document collection (job) name. 
+            </td></tr><tr><td><a href="9f3661a0-84a3-63c9-279a-82ecebc7e91b.htm">CollectionSourcePath</a></td><td>
+            The ingestion file path or directory path used as the source for the processing document collection.
+            </td></tr><tr><td><a href="973eb0ee-a208-bbdc-3bcb-2ed7ff1a000c.htm">CollectionStartDateUtc</a></td><td>
+            The processing start DateTime in UTC for this document collection (see <a href="f30dc13a-84bb-8d14-d411-e3b2bf578662.htm">CollectionId</a>).
+            </td></tr><tr><td><a href="55c4e44e-d173-b885-bad6-abff2ba5be00.htm">ControlNumberingType</a></td><td>
+            Determines how <a href="5bf04a4e-5496-1528-2730-041321ca181e.htm">DocControlNumber</a> numbers are formatted. These numbers are only generated when de-serializing a data document 
+            archive (.dda) file using the DocumentDataArchiveReader class. The default control numbering (ID) format type is 
+            <a href="deaf95c6-391d-5375-eba4-d5390244b251.htm">ParentChildWithUnderscoreSeparator</a>.
+            </td></tr><tr><td><a href="6d95fd96-d203-48ec-8ca5-901b3c836d05.htm">CountMailStoreMessageObjects</a></td><td>
+            If property ProcessingTaskType is set to <a href="2182f6cf-90da-71c0-f7fc-a855a4bef198.htm">SingleMailStore</a> and this value is true, then mail store message objects
+            are always counted before processing. If false; mail store message objects are not counted and property <a href="d3743f88-be3b-ade7-3805-ed58ae2b8a01.htm">MailStoreMessageCount</a> must 
+            be set with the number of message objects in the mail store.
+            </td></tr><tr><td><a href="a8fb3c23-06e8-41d2-1e43-1418003b7990.htm">CpuCoreMode</a></td><td>
+            Specifies the DocumentTaskEngine CPU core usage mode. 
+            </td></tr><tr><td><a href="4b0097bb-a8ab-05ba-9114-5255f303ae08.htm">CreateEmptyTextFilesWhenNoTextExtracted</a></td><td>
+            If true (default value) and property <a href="4334f753-3ce0-61e6-d436-492365ada853.htm">OutputMode</a> equals <a href="a041a2d2-b2ef-2b6d-56fb-23d653640aec.htm">IndividualFiles</a>, then the task will write out an empty  
+            extracted text file for any document whose text could not be extracted.
+            </td></tr><tr><td><a href="ad1fdf96-6df0-9c9d-c43f-b4a70d3f872c.htm">CustodianId</a></td><td>
+            [Optional] User defined custodian Id that owns the <a href="f30dc13a-84bb-8d14-d411-e3b2bf578662.htm">CollectionId</a>.
+            </td></tr><tr><td><a href="2f2e3fab-99a5-1b8e-b25e-abb1ccc38fc0.htm">CustodianName</a></td><td>
+            [Optional] A user defined custodian name. 
+            </td></tr><tr><td><a href="8b241db9-b8fa-3749-ece5-ef84b4be18fa.htm">CustomDocumentSource</a></td><td>
+            The custom document source. Only set if <a href="e0d93011-adb5-53ee-9dcc-8da2c468c85d.htm">ProcessingTaskType</a> is set to <a href="2182f6cf-90da-71c0-f7fc-a855a4bef198.htm">CustomDocumentSource</a>.
+            </td></tr><tr><td><a href="e13e4c6b-0004-0d74-f2e8-787e3b25bda9.htm">DebugLogging</a></td><td>
+            If true, verbose debug logging is enabled (default value: false). Setting to true is not a recommended setting unless trying to track down
+            a failed task or related issue. Setting to true degrades task execution performance.
+            </td></tr><tr><td><a href="d77e89b4-a8b2-1504-a45d-d525d0b932ee.htm">DocumentArchiveFilename</a></td><td>
+            Standardized name of all document archive output files (read-only) (.dda).
+            </td></tr><tr><td><a href="4093630f-f80d-4810-8b7e-65a42937d3fb.htm">DocumentArchiveRootPath</a></td><td>
+            Gets or sets the root extracted path for document archive file output.
+            </td></tr><tr><td><a href="b68ae6b1-5941-ef7e-5054-9537863e0856.htm">Documents</a></td><td>
+            The input documents to process. See remarks.
+            </td></tr><tr><td><a href="ad190570-83cd-f2eb-64c6-805810d5a8ca.htm">EmbeddedObjectExtraction</a></td><td>
+            Embedded document/attachment and embedded office media extraction setting.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="5a66d42f-59c5-2455-cf95-a8926129c6fb.htm">EntityExtractionSettings</a></td><td>
+            Options for entity extraction in extracted text, metadata, and URLs.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="3d71175b-1c68-135c-d074-98661a21c0f6.htm">ExcludedDocumentTypes</a></td><td>
+            HashSet of document Ids to "exclude" from content extraction.
+            </td></tr><tr><td><a href="4f43fc36-1911-b8d4-019b-c1da0077785a.htm">ExcludeInlineEmailImages</a></td><td>
+            Exclude all inline email images. The default value is true.
+            </td></tr><tr><td><a href="52e5a2dc-e7b7-f331-5663-b7c3a7d4596b.htm">ExtractionType</a></td><td>
+            Document content extraction type. This property is read-only and this property's value is controlled by the value of property <a href="a5afd366-66ae-bb39-ccae-591a981c2a7d.htm">ProcessingMode</a>.
+            <br />(Overrides <a href="ab3ffa2a-75b2-4b19-57af-5c18921c9d68.htm">ContentExtractionSettings<span id="LST14C3D21C_0" data-languageSpecificText="cs=.|vb=.|cpp=::|nu=.|fs=."></span>ExtractionType</a>)</td></tr><tr><td><a href="24f9266b-085c-c1e1-fbb8-5552de754a35.htm">ExtractOfficeTrackedChanges</a></td><td>
+            If true, appends tracked change information/text from office document formats (that support tracked changes) to the end of the document's extracted text; otherwise, 
+            tracked changes text is not appended to document's extracted text.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="b87b956b-f687-385a-3502-6307e6c7afde.htm">Hashing</a></td><td>
+            Document hashing settings.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="4cb0d223-aad0-3bd9-a050-0b58adca6247.htm">IgnoreCorruptedDocuments</a></td><td>
+            RESERVED. Used by Open Discover Platform Worflow Management System (WMS).
+            </td></tr><tr><td><a href="95a70383-11c5-20d9-5b1d-eaa1b885731e.htm">InMemorySizeMaxCritera</a></td><td>
+            The maximum document size (in bytes) that are processed in-memory.
+            </td></tr><tr><td><a href="8721b0d5-6f3d-0bf8-b986-7d8fa6fe0f01.htm">IsPartitioned</a></td><td>
+            True if this task is to process a partition (subset) of items in a single archive or single mail store; otherwise, if false, this task is 
+            to process all the archive or mail store container items. This property is ignored if <a href="e0d93011-adb5-53ee-9dcc-8da2c468c85d.htm">ProcessingTaskType</a> property is set to 
+            <a href="2182f6cf-90da-71c0-f7fc-a855a4bef198.htm">DocumentSet</a>. See remarks.
+            </td></tr><tr><td><a href="c12c48b2-0ba9-e35a-4959-b7af622c8519.htm">LanguageId</a></td><td>
+            Language identification of extracted text settings.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="90aee97f-a132-9d0b-5c91-d6ac2eb95ace.htm">LargeDocumentCritera</a></td><td>
+            Defines the "large" document criteria, in bytes, that determines what type of content extractor is returned 
+            by the content extractor factory for "large" unknown/unsupported formats and also "large" encoded text based formats.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="d69f9d05-3f0c-43fe-cde3-7830bf31bed1.htm">LongProcessingDocumentCriteriaInSec</a></td><td>
+            Long processing document criteria, in seconds, specifies an elapsed time criteria when the first DocumentTaskEngine.LongProcessingDocumentWarning event 
+            is fired (if at all).
+            </td></tr><tr><td><a href="d3743f88-be3b-ade7-3805-ed58ae2b8a01.htm">MailStoreMessageCount</a></td><td>
+            If <a href="6d95fd96-d203-48ec-8ca5-901b3c836d05.htm">CountMailStoreMessageObjects</a> is false and property ProcessingTaskType is set to <a href="2182f6cf-90da-71c0-f7fc-a855a4bef198.htm">SingleMailStore</a>, then this
+            value must contain the already counted number of message objects in the mail store. Otherwise this property value is ignored.
+            </td></tr><tr><td><a href="85d2f776-9c50-b872-7c08-c2ff9dd4b5e2.htm">MaxArchiveCompressionRatio</a></td><td>
+            Archive maximum compression ratio security feature to help protect against archive compression 'ZIP-bombs'. 
+            </td></tr><tr><td><a href="f76b37d9-1774-c8ea-0afe-b4c361bc1f77.htm">MaxNumDatabaseTableRowsToOutput</a></td><td>
+            Maximum number of database table rows to output to extracted table text. The default value is -1 which means all rows. Database tables can potentially have 10's of 
+            millions of rows so users should use caution when processing databases of unknown origins. If value is 0, only the table name and table column names will be output 
+            to table text file.
+            </td></tr><tr><td><a href="5f96d6e6-f811-88ee-6901-9f868c819666.htm">Metrics</a></td><td>
+            Task execution metrics. Metrics will be populated at end of task execution.
+            </td></tr><tr><td><a href="e86e2d63-a337-20e5-b288-c1aedd5696e9.htm">NistRdsDatabasePath</a></td><td>
+            Full directory path to NIST RDS hash database.
+            </td></tr><tr><td><a href="a00ad719-f672-40a3-281f-6f81d62d4bf5.htm">OutputEmailBodies</a></td><td>
+            If true, for email types, saves all extracted email bodies to the task's outputted document data archive file (DocumentDataArchive.dda).
+            If false (default value), email bodies are not saved.
+            </td></tr><tr><td><a href="4334f753-3ce0-61e6-d436-492365ada853.htm">OutputMode</a></td><td>
+            Output mode for extracted attachments and text. See remarks. 
+            </td></tr><tr><td><a href="0de2171f-9db9-791a-2c07-76b871dbf46e.htm">PartitionTarget</a></td><td>
+            The archive or mail store partition to process out of the <a href="1d41ff0f-8f17-765d-6bdf-204013d938c4.htm">TotalPartitions</a> container partitions.
+            </td></tr><tr><td><a href="6defd87a-3eae-055e-9a8a-98dadbb2e499.htm">Passwords</a></td><td>
+            Gets or sets the password array to use for decryption of supported password-protected formats.
+            </td></tr><tr><td><a href="3bc2756e-88b5-9958-99ed-9e5fb170f7d2.htm">PdfDocument</a></td><td>
+            PDF document extraction settings.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="9a14d9e6-6d58-1163-4789-91d54fe0dded.htm">PerformNistCheck</a></td><td>
+            Perform NIST check on document using <a href="c9a576ae-b132-1356-9d30-abebe16ed30c.htm">SHA1BinaryHash</a> hashes. The default value is true.
+            </td></tr><tr><td><a href="a1499ce2-7d07-bbcf-8669-67ca134764b4.htm">PhysicalProcessorAffinity</a></td><td>
+            Specifies the DocumentTaskEngine physicall processor (CPU) affinity for multi-processor workstations or servers.
+            Do not set for machines with virtual processors (CPU) cores. 
+            </td></tr><tr><td><a href="a5afd366-66ae-bb39-ccae-591a981c2a7d.htm">ProcessingMode</a></td><td>
+            Processing mode.  Determines the type of content that is extracted from documents.
+            </td></tr><tr><td><a href="e0d93011-adb5-53ee-9dcc-8da2c468c85d.htm">ProcessingTaskType</a></td><td>
+            Processing type.  Determines if we are processing a document set, a single archive (or a multi-part archive), or a single mail store.
+            </td></tr><tr><td><a href="5daaae25-c44a-133e-a92d-863639a6ce32.htm">ProjectId</a></td><td>
+            [Optional] User defined project Id that owns the <a href="ad1fdf96-6df0-9c9d-c43f-b4a70d3f872c.htm">CustodianId</a>.
+            </td></tr><tr><td><a href="2dffd09a-64b5-df10-81b2-ea176b436303.htm">ProjectName</a></td><td>
+            [Optional] A user defined project name. 
+            </td></tr><tr><td><a href="dd38c4be-e410-b95f-4cd6-e78706ebfd65.htm">RequeueLargeContainersAsOwnTask</a></td><td>
+            If true, "large" (defined by <a href="749172bf-88fb-de0a-fd34-64ff8492ea43.htm">RequeueLargeContainerSizeCriteria</a>) archive and mail store containers found in <span class="selflink">DocumentTaskSettings</span>
+            input documents (<a href="b68ae6b1-5941-ef7e-5054-9537863e0856.htm">Documents</a>) don't have their container items extracted but get their <a href="afc45d77-b73b-c2ea-47d8-95bb69deb137.htm">Result</a> property 
+            set to <a href="ff0037ea-a44f-2c8c-d4c2-7a636e133434.htm">RequeueAsSeparateTask</a> and are not processed further.
+            </td></tr><tr><td><a href="749172bf-88fb-de0a-fd34-64ff8492ea43.htm">RequeueLargeContainerSizeCriteria</a></td><td>
+            Defines the size, in bytes, criteria for archives and mail store containers found in a <span class="selflink">DocumentTaskSettings</span> task where they are considered too "large"
+            for the task and should get their own task.
+            </td></tr><tr><td><a href="b4bc4951-5842-d3f0-64d6-2c0cb37ab075.htm">SaveAttachments</a></td><td>
+            If true (default value), the task will save extracted attachments, embedded documents, and embedded media. See remarks.
+            </td></tr><tr><td><a href="b0100621-8ab8-77b5-f320-c4787c9b5061.htm">TaskId</a></td><td>
+            [Optional] User defined task Id for this task.
+            </td></tr><tr><td><a href="8bd6b2d0-9c6f-97ad-2eb9-522b7ba70cb9.htm">TaskParameter</a></td><td>
+            [Optional] User defined task parameter.
+            </td></tr><tr><td><a href="f3779721-790e-667c-afca-4374e1ecf67a.htm">TestArchives</a></td><td>
+            Test archives for actual expanded size and actual compression ratio. If false, no expansion test is performed before extracting from archive.
+            </td></tr><tr><td><a href="9d487028-3d54-cffe-83c5-3fd4229fb2a0.htm">TextArchiveFilenameFormat</a></td><td>
+            Base string format of text archive files and only used when <a href="4334f753-3ce0-61e6-d436-492365ada853.htm">OutputMode</a> is set to <a href="a041a2d2-b2ef-2b6d-56fb-23d653640aec.htm">Archive</a> (read-only) .
+            </td></tr><tr><td><a href="93020aaf-5e75-f75b-9aaa-15623684de14.htm">TextArchiveMaxSize</a></td><td>
+            Maximum text BLOB file size (default is 4GB) and only used when <a href="4334f753-3ce0-61e6-d436-492365ada853.htm">OutputMode</a> is set to <a href="a041a2d2-b2ef-2b6d-56fb-23d653640aec.htm">Archive</a>.
+            </td></tr><tr><td><a href="84136914-1f85-78a6-81f1-5d786b2f75a9.htm">TextFileEncoding</a></td><td>
+            If property <a href="4334f753-3ce0-61e6-d436-492365ada853.htm">OutputMode</a> is set to <a href="a041a2d2-b2ef-2b6d-56fb-23d653640aec.htm">IndividualFiles</a>, then this property
+            determines if text files are written out as UTF-16 (default) or UTF-8 encoded (with BOM).
+            </td></tr><tr><td><a href="a2f4fff5-8995-332a-a331-c35a9f138763.htm">TimeZoneAndEmail</a></td><td>
+            Settings for document collection time zone and related extracted DateTime metadata and email extracted text DateTime display.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="1d41ff0f-8f17-765d-6bdf-204013d938c4.htm">TotalPartitions</a></td><td>
+            The total number of processing partition tasks to partition an archive or mail store. This property must be set if
+            property <a href="8721b0d5-6f3d-0bf8-b986-7d8fa6fe0f01.htm">IsPartitioned</a> is set to true and must be greater than or equal to 2.  
+            </td></tr><tr><td><a href="d2e304cb-8803-14fc-d7a8-09c27365c6a0.htm">UnsupportedFiltering</a></td><td>
+            Binary-to-text filtering of unsupported/unknown document file format settings.
+            <br />(Inherited from <a href="b65f5ca9-d476-8b01-b6d2-c47f988ba0a2.htm">ContentExtractionSettings</a>)</td></tr><tr><td><a href="22936405-927b-52b9-0abc-0353562fc30c.htm">UseLargeDocumentUTF16Encoding</a></td><td>
+            'Large' document extracted text encoding (see base class property <a href="90aee97f-a132-9d0b-5c91-d6ac2eb95ace.htm">LargeDocumentCritera</a>). This property is read-only, the base class setter is overriden and this property 
+            value is controlled by the value of property <a href="84136914-1f85-78a6-81f1-5d786b2f75a9.htm">TextFileEncoding</a>.
+            <br />(Overrides <a href="e703d60d-4cc3-b9ae-58df-0a913e95be3e.htm">ContentExtractionSettings<span id="LST14C3D21C_1" data-languageSpecificText="cs=.|vb=.|cpp=::|nu=.|fs=."></span>UseLargeDocumentUTF16Encoding</a>)</td></tr><tr><td><a href="9b3a5e10-bfc8-1f2c-bc62-8b3825791e9e.htm">UserRequeueDocumentTypes</a></td><td>
+            User defined HashSet of document format Id's (<a href="6f1047fb-7367-c09c-5621-ae7632c8404b.htm">Id</a>) to not process further and mark as "requeue" for user custom processing workflow. 
+            If a document is found to have a format Id contained in this hash set, then its <a href="afc45d77-b73b-c2ea-47d8-95bb69deb137.htm">Result</a> gets set to <a href="ff0037ea-a44f-2c8c-d4c2-7a636e133434.htm">UserRequeueAsSeparateTask</a> 
+            and is not processed further. 
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Methods</h2><div id="IDBEASection"><table id="MethodList" class="table is-hoverable"><tr><td><span class="noLink">Equals</span></td><td>Determines whether the specified object is equal to the current object.<br />(Inherited from <span class="noLink">Object</span>)</td></tr><tr><td><span class="noLink">GetHashCode</span></td><td>Serves as the default hash function.<br />(Inherited from <span class="noLink">Object</span>)</td></tr><tr><td><span class="noLink">GetType</span></td><td>Gets the <span class="noLink">Type</span> of the current instance.<br />(Inherited from <span class="noLink">Object</span>)</td></tr><tr><td><span class="noLink">ToString</span></td><td>Returns a string that represents the current object.<br />(Inherited from <span class="noLink">Object</span>)</td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="a4de3d25-b44d-10c7-9f7b-6e96e612f300.htm">OpenDiscoverSDK.Interfaces.Platform.Settings Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Definition</a></li><li><a class="quickLink">Remarks</a></li><li><a class="quickLink">Example</a></li><li><a class="quickLink">Constructors</a></li><li><a class="quickLink">Properties</a></li><li><a class="quickLink">Methods</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+hljs.highlightAll();
+});</script></body></html>

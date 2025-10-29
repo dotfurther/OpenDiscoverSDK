@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>EntityResult Class</title><meta name="Title" content="EntityResult" /><meta name="Help.Id" content="T:OpenDiscoverSDK.Interfaces.Content.TextAnalytics.EntityResult" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Content.TextAnalytics" /><meta name="guid" content="beb60987-3955-e49b-1779-4c0ef283d8cd" /><meta name="Description" content="Entity analysis results." /><meta name="tocFile" content="../toc/IDK.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Entity<wbr />Result Class</h1><div class="summary">
+            Entity analysis results.
+            </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Definition</h2><div id="IDBSection"><strong>Namespace:</strong> <a href="12331b25-bce3-6a9b-929b-46b5cf49471c.htm">OpenDiscoverSDK.Interfaces.Content.TextAnalytics</a><br /><strong>Assembly:</strong> OpenDiscoverSDK.Interfaces (in OpenDiscoverSDK.Interfaces.dll) Version: 2025.4.4.0 (2025.4.4)<div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><span class="buttons"><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></span></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs">[<span class="identifier">DataContractAttribute</span>]
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="identifier">EntityResult</span></code></pre></div></div><dl class="inheritanceHierarchy"><dt>Inheritance</dt><dd><span class="noLink">Object</span>  <span class="icon is-small"><i class="fa fa-arrow-right"></i></span>  <span class="selflink">EntityResult</span></dd></dl></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Constructors</h2><div id="IDAEASection"><table id="ConstructorList" class="table is-hoverable"><tr><td><a href="b12bcb5b-3144-5a54-19b0-9600e3cbde31.htm">EntityResult</a></td><td>Initializes a new instance of the <span class="selflink">EntityResult</span> class</td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Properties</h2><div id="IDFEASection"><table id="PropertyList" class="table is-hoverable"><tr><td><a href="9b5cb9e4-6fad-15b3-2f35-8803465506c2.htm">Attributes</a></td><td>
+            Associated <a href="97455b46-6bb8-0e3b-270d-5e3bdde3f3ee.htm">DocumentAttributes</a> (flags) of any detected entity items.
+            </td></tr><tr><td><a href="8637be83-ed25-c225-60a5-6906cd49e70d.htm">DeviceIdentifierRelatedCounts</a></td><td>
+            Count of device identifier related entity items (e.g., IP address, MAC address, and IMEI number, etc).
+            </td></tr><tr><td><a href="fd55dbda-7241-cbdc-760c-75019e42e56f.htm">EmailRelatedCounts</a></td><td>
+            Count of email related entity items.
+            </td></tr><tr><td><a href="51a77b98-34ed-352d-9533-c35a2544afc1.htm">EmailTransportHeadersTrace</a></td><td>
+            Traces an email's transport headers for MIME, EML, EMLX, and Outlook .msg email file formats. For all other 
+            file formats this property list will not be set (i.e., empty list).
+            </td></tr><tr><td><a href="c665999c-8e4f-dc79-0983-00a620e26e94.htm">EmploymentRelatedCounts</a></td><td>
+            Count of employment related entity items.
+            </td></tr><tr><td><a href="9cf33722-f2d3-9e22-dfa0-a008e34e4872.htm">EntityTypeCounts</a></td><td>
+            Dictionary of all entity types and their number of unique counts (duplicates and filtered entities not counted) found in extracted text, metadata, or hyperlinks.
+            </td></tr><tr><td><a href="8c413e47-9ed7-b03a-f2ce-f5958f345fc5.htm">FerpaRelatedCounts</a></td><td>
+            Count of Family Educational Rights and Privacy Act (FERPA) related sensitive/entity items.
+            </td></tr><tr><td><a href="db317a82-dfa7-b5df-d898-35e6d7ad651b.htm">FinancialRelatedCounts</a></td><td>
+            Count of financial related sensitive items (e.g., bank accounts, investment accounts, credit card numbers, IBAN, cryptocurrency addresses).
+            </td></tr><tr><td><a href="e7acc1ea-b8a4-3a9b-520c-13c96c7bc5fb.htm">IdentificationRelatedCounts</a></td><td>
+            Count of individual identification related sensitive item counts (e.g., SSN, individual taxpayer Id, driver's license number, passport number, date of birth, 
+            state Id card number, health care number id, address, maiden name, etc.).
+            </td></tr><tr><td><a href="ac14cadf-ab8a-56da-7084-b6573546610b.htm">InsuranceRelatedCounts</a></td><td>
+            Count of insurance related entity items.
+            </td></tr><tr><td><a href="1df706a2-2e7b-33a4-06c5-c20fd8fdef20.htm">InvestigationRelatedCounts</a></td><td>
+            Count of investigation related entity items.
+            </td></tr><tr><td><a href="df171504-4e56-94e0-248a-15a2978f734c.htm">Items</a></td><td>
+            List of entity items found in extracted text, metadata, or hyperlinks.
+            </td></tr><tr><td><a href="5c42bba2-c911-4c15-8152-e52efe92ccef.htm">PersonNameRelatedCounts</a></td><td>
+            Count of person name related entity items.
+            </td></tr><tr><td><a href="41cad1a5-bb29-6d70-8169-7f8e92c8ead4.htm">PHIRelatedCounts</a></td><td>
+            Count of Protected health information (PHI) related sensitive/entity items.
+            </td></tr><tr><td><a href="42552825-c44f-a97c-ad17-1dda888f66c6.htm">PhoneNumberRelatedCounts</a></td><td>
+            Count of phone number entity items.
+            </td></tr><tr><td><a href="5f72d389-ba51-53cc-15ad-c5a1e85bc791.htm">SecurityRelatedCounts</a></td><td>
+            Count of security related entity items (e.g., passwords, login/logon IDs, and database credentials).
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Methods</h2><div id="IDBEASection"><table id="MethodList" class="table is-hoverable"><tr><td><span class="noLink">Equals</span></td><td>Determines whether the specified object is equal to the current object.<br />(Inherited from <span class="noLink">Object</span>)</td></tr><tr><td><span class="noLink">GetHashCode</span></td><td>Serves as the default hash function.<br />(Inherited from <span class="noLink">Object</span>)</td></tr><tr><td><span class="noLink">GetType</span></td><td>Gets the <span class="noLink">Type</span> of the current instance.<br />(Inherited from <span class="noLink">Object</span>)</td></tr><tr><td><span class="noLink">ToString</span></td><td>Returns a string that represents the current object.<br />(Inherited from <span class="noLink">Object</span>)</td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="12331b25-bce3-6a9b-929b-46b5cf49471c.htm">OpenDiscoverSDK.Interfaces.Content.TextAnalytics Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Definition</a></li><li><a class="quickLink">Constructors</a></li><li><a class="quickLink">Properties</a></li><li><a class="quickLink">Methods</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+hljs.highlightAll();
+});</script></body></html>

@@ -1,0 +1,752 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>EntityType Enumeration</title><meta name="Title" content="EntityType" /><meta name="Help.Id" content="T:OpenDiscoverSDK.Interfaces.Content.TextAnalytics.EntityType" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Content.TextAnalytics" /><meta name="guid" content="2caef568-f7bd-69fc-89c4-aa0d3e2c497b" /><meta name="Description" content="Entity type found in extracted text or metadata. See remarks." /><meta name="tocFile" content="../toc/IDK.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Entity<wbr />Type Enumeration</h1><div class="summary">
+            Entity type found in extracted text or metadata. See remarks.
+            </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Definition</h2><div id="IDBSection"><strong>Namespace:</strong> <a href="12331b25-bce3-6a9b-929b-46b5cf49471c.htm">OpenDiscoverSDK.Interfaces.Content.TextAnalytics</a><br /><strong>Assembly:</strong> OpenDiscoverSDK.Interfaces (in OpenDiscoverSDK.Interfaces.dll) Version: 2025.4.4.0 (2025.4.4)<div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><span class="buttons"><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></span></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="identifier">EntityType</span></code></pre></div></div></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Remarks</h2><div id="IDBCSection"><p>
+            This enumeration defines the types of entities that the Open Discover SDK can detect and extract in <a href="df171504-4e56-94e0-248a-15a2978f734c.htm">Items</a> property
+            when <a href="5a66d42f-59c5-2455-cf95-a8926129c6fb.htm">EntityExtractionSettings</a> property <a href="8b211298-3c67-3276-3000-5b4f9ded81d6.htm">Enabled</a> is set to true. 
+            </p><p>
+            An entity is a pre-defined keyword or keywords found in text and optionally associated data that follows keyword(s).
+            </p></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Members</h2><div id="IDADASection"><table id="enumMemberList" class="table is-hoverable"><tr><td>PersonName</td><td>20</td><td>
+            Person name. Example:  "John J. Smith"
+            </td></tr><tr><td>Emoji</td><td>21</td><td><p>
+            Emoji entity.
+            </p><p>
+            The <a href="50d6be9d-f0a4-0626-3060-232f92024de2.htm">Keywords</a> property will contain the following emoji information (separated by a pipe '|' character): the emoji group,
+            emoji sub-group, and emoji description (ex:  "Smileys &amp; Emotion|face-smiling|grinning face with big eyes"</p></td></tr><tr><td>CityAndCountry</td><td>27</td><td>
+            An recognized city and country name. Example: "London, England", "London England", "New York USA", "New York, United States"
+            </td></tr><tr><td>CityStateAndZip</td><td>28</td><td>
+            An recognized city, state, and ZIP code. Example: "Tempe, AZ, 85284"
+            </td></tr><tr><td>CityStateProvince</td><td>29</td><td>
+            An recognized city and state/province. Example: "Pleasantville, NY"
+            </td></tr><tr><td>AddressStreetEntry</td><td>30</td><td>
+            An address street part entry (form) entity. Examples: "street:", "street address:"
+            </td></tr><tr><td>AddressCityEntry</td><td>31</td><td>
+            An address city/town part entry (form) entity. Examples: "city:", "city/town:"
+            </td></tr><tr><td>AddressCityAndStateEntry</td><td>32</td><td>
+            An address city/state part entry (form) entity. Examples: "city and state:", "city/state:"
+            </td></tr><tr><td>AddressStateProvinceEntry</td><td>33</td><td>
+            An address state/province part entry (form) entity. Examples: "state/province:", "state:", "province:"
+            </td></tr><tr><td>AddressZipPostalCodeEntry</td><td>34</td><td>
+            An address state/province part entry (form) entity. Examples: "state/province:", "state:", "province:"
+            </td></tr><tr><td>AddressLine1Entry</td><td>35</td><td>
+            Address line 1 entry entity. Found on multiple line address entry forms as "Address Line 1:" 
+            </td></tr><tr><td>AddressLine2Entry</td><td>36</td><td>
+            Address line 2 entry entity. Found on multiple line address entry forms as "Address Line 2:" 
+            </td></tr><tr><td>AddressLine3Entry</td><td>37</td><td>
+            Address line 3 entry entity. Found on multiple line address entry forms as "Address Line 3:" 
+            </td></tr><tr><td>AddressLine4Entry</td><td>38</td><td>
+            Address line 4 entry entity. Found on multiple line address entry forms as "Address Line 4:" 
+            </td></tr><tr><td>AddressStateAndZip</td><td>40</td><td>
+            Recognized state/province and zip/postal code pair entity.
+            </td></tr><tr><td>Url</td><td>50</td><td>
+            URL entity (http, https, etc)
+            </td></tr><tr><td>FileUrl</td><td>51</td><td>
+            File URL entity. A file URL is typically used to retrieve files from within one's own computer (ex: file://host/path).
+            </td></tr><tr><td>FileTransferUrl</td><td>52</td><td>
+            File transfer URL (ex: ftp://public.ftp-servers.example.com/mydirectory/myfile.txt, ftps:\\..., etc).
+            </td></tr><tr><td>LDAPUrl</td><td>53</td><td>
+            LDAP directory request URL.
+            </td></tr><tr><td>IMAPUrl</td><td>54</td><td>
+            IMAP e-mail resource access URL.
+            </td></tr><tr><td>POP3Url</td><td>55</td><td>
+            POP3 mailbox URL.
+            </td></tr><tr><td>InternetRelayChatUrl</td><td>56</td><td>
+            Internet Relay Chat server URL (ex: irc://host:port/channel?password)
+            </td></tr><tr><td>AppleFilingProtocolUrl</td><td>57</td><td>
+            Apple Filing Protocol over TCP/IP URL.
+            </td></tr><tr><td>AppleFaceTimeUrl</td><td>58</td><td>
+            Apple FaceTime video conferencing URL.
+            </td></tr><tr><td>SMBUrl</td><td>59</td><td>
+            Server Message Block (SMB) file sharing URL. SMB protocol is one of the most widely used.
+            </td></tr><tr><td>WebMeetingUrl</td><td>60</td><td>
+            Recognized web meeting URL.
+            </td></tr><tr><td>DomainName</td><td>80</td><td>
+            Domain name entity (Must have prefix www, www2, or www3. Example: www.dotfurther.com, www.en.wikipedia.org, www2.acme.biz)
+            </td></tr><tr><td>ReligionType</td><td>90</td><td>
+            Recognized religion type related entity.
+            </td></tr><tr><td>GenderType</td><td>91</td><td>
+            Recognized gender type entity.
+            </td></tr><tr><td>CryptoCurrencyRelated</td><td>98</td><td>
+            Cryptocurrency related entity.
+            </td></tr><tr><td>CustomEntityItem</td><td>100</td><td>
+            User custom defined sensitive items or entities. See <a href="d7c5aca5-b71b-adf0-af66-e8075f3cb7e1.htm">CustomEntityDefinition</a> class.
+            </td></tr><tr><td>SocialSecurityNumber</td><td>101</td><td>
+            Social security number
+            </td></tr><tr><td>IndividualTaxpayerIdNumber</td><td>102</td><td>
+            Individual Taxpayer Identification Number (ITIN), is a tax processing number only available for certain nonresident and resident aliens, their spouses, and 
+            dependents who cannot get a Social Security Number (SSN). It is a 9-digit number, beginning with the number "9", formatted like an SSN (NNN-NN-NNNN).
+            </td></tr><tr><td>CreditCard</td><td>103</td><td>
+            Credit card
+            </td></tr><tr><td>BankAccount</td><td>104</td><td>
+            Bank account
+            </td></tr><tr><td>IBANAccount</td><td>105</td><td>
+            International Bank Account Number (IBAN) 
+            </td></tr><tr><td>InvestmentAccount</td><td>106</td><td>
+            Investment account 
+            </td></tr><tr><td>EmailAddress</td><td>107</td><td>
+            Email address.
+            </td></tr><tr><td>EmailAddressAndName</td><td>108</td><td>
+            Email address and associated name. Smtp email addresses only.
+            </td></tr><tr><td>EmailAddressAndIPAddress</td><td>109</td><td>
+            Email address and an associated IP address. Associated via email headers, if possible (not always possible)
+            </td></tr><tr><td>PhoneNumber</td><td>110</td><td>
+            Phone number
+            </td></tr><tr><td>Address</td><td>111</td><td>
+            Full address with zip code. See <span class="selflink">EntityType</span> enumeration for partial address types.
+            </td></tr><tr><td>DateOfBirth</td><td>112</td><td>
+            Date of birth
+            </td></tr><tr><td>DriversLicense</td><td>113</td><td>
+            Drivers license
+            </td></tr><tr><td>StateIdCardNumber</td><td>114</td><td>
+            State ID card number (legitimate form of photo identification for those without driver's license).
+            </td></tr><tr><td>Passport</td><td>115</td><td>
+            US passport
+            </td></tr><tr><td>MaidenName</td><td>116</td><td>
+            Maiden name.
+            </td></tr><tr><td>HealthCareNumberID</td><td>117</td><td>
+            Healthcare number (or member) ID.
+            </td></tr><tr><td>LicensePlateNumber</td><td>118</td><td>
+            Vehicle license plate number.
+            </td></tr><tr><td>VehicleIdentificationNumber</td><td>119</td><td>
+            Vehicle identification number (VIN).
+            </td></tr><tr><td>SocialMediaAccount</td><td>120</td><td>
+            Social media account.
+            </td></tr><tr><td>CryptoCurrencyAddress</td><td>121</td><td>
+            Cryptocurrency address.
+            </td></tr><tr><td>IPv4Address</td><td>122</td><td>
+            IPv4 address
+            </td></tr><tr><td>IPv6Address</td><td>123</td><td>
+            IPv6 address
+            </td></tr><tr><td>MacAddress</td><td>124</td><td>
+            MAC Address.
+            </td></tr><tr><td>IMEINumber</td><td>125</td><td>
+            International Mobile Equipment Identity (IMEI and IMEISV) number. 
+            </td></tr><tr><td>Password</td><td>126</td><td>
+            Password
+            </td></tr><tr><td>Username</td><td>127</td><td>
+            Username
+            </td></tr><tr><td>NetworkName</td><td>128</td><td>
+            Network, workstation, desktop, or computer name.
+            </td></tr><tr><td>DatabaseCredential</td><td>129</td><td>
+            Database credentials or url links to Azure, AWS, Sharepoint, etc. storage.
+            </td></tr><tr><td>VisaNumber</td><td>130</td><td>
+            Visa number on an travel or immigration visa.
+            </td></tr><tr><td>IdentityDocumentNumber</td><td>131</td><td>
+            Identification document number that may be used to prove a person's identity (e.g., ID card machine readable zone document number).
+            </td></tr><tr><td>X500DNAddress</td><td>132</td><td>
+            An X500DN (Distinguished Name) address. In the context of Microsoft Exchange, this is an email address that is used to route messages internally, especially when replying to old emails or when migrating mailboxes. 
+            </td></tr><tr><td>MachineReadableTravelDocumentZone</td><td>150</td><td>
+            Machine-readable travel document (MRTD) zone found on a travel document. 
+            </td></tr><tr><td>MachineReadablePassportZone</td><td>151</td><td>
+            A machine-readable passport (MRP) zone, a machine-readable zone for passports.
+            </td></tr><tr><td>MachineReadableVisaZone</td><td>152</td><td>
+            A machine-readable visa (MRV) zone, a machine-readable zone for visas.
+            </td></tr><tr><td>MachineReadableIdentificationZone</td><td>153</td><td>
+            A machine-readable identification document (MRV) zone, a machine-readable zone for identification documents.
+            </td></tr><tr><td>MachineReadableDriversLicenseZone</td><td>154</td><td>
+            A machine-readable driver's license (MRV) zone, a machine-readable identification (MRTD) for driver's licenses.
+            </td></tr><tr><td>PersonAgeEntry</td><td>180</td><td>
+            Person age entry (form) entity. (Example: "Applicant's Age: 85")
+            </td></tr><tr><td>NameEntry</td><td>300</td><td>
+            Name entry (form) entity. Can be a person's name, company name, or other. Examples: "name: John Doe",  "name: ACME Company", etc
+            </td></tr><tr><td>PersonFullNameEntry</td><td>301</td><td>
+            Person full name entry (form) entity. Examples: "name: John Doe",  "first name/last name: John Doe", etc
+            </td></tr><tr><td>PersonFirstNameEntry</td><td>302</td><td>
+            Person last name entry (form) entity.
+            </td></tr><tr><td>PersonLastNameEntry</td><td>303</td><td>
+            Person first name entry (form) entity.
+            </td></tr><tr><td>PersonMiddleNameEntry</td><td>304</td><td>
+            Person middle name entry (form) entity.
+            </td></tr><tr><td>SpouseNameEntry</td><td>305</td><td>
+            Spouse name entry (form) entity.
+            </td></tr><tr><td>PatientNameEntry</td><td>310</td><td>
+            Patient name entry (form) entity.
+            </td></tr><tr><td>EmergencyContactNameEntry</td><td>311</td><td>
+            Emergency contact name entry (form) entity.  Examples: "Subscriber: John Doe", or  "Subscriber's name: Doe, John", etc
+            </td></tr><tr><td>SubscriberNameEntry</td><td>315</td><td>
+            Subscriber name entry (form) entity. "Subscriber" and "Member" are terms often used by health care insurance companies to denote the insured 
+            policy holder. Examples: "Subscriber: John Doe", or  "Subscriber's name: Doe, John", etc
+            </td></tr><tr><td>MemberNameEntry</td><td>316</td><td>
+            Member name entry (form) entity. "Member" and "Subscriber" are terms often used by health care insurance companies to denote the insured 
+            policy holder.Examples: "Member: John Doe", or  "Member name: Doe, John", etc
+            </td></tr><tr><td>InsuredNameEntry</td><td>317</td><td>
+            Insured name entry (form) entity. Examples: "Insured's name: John Doe"
+            </td></tr><tr><td>PolicyHolderNameEntry</td><td>318</td><td>
+            Policy holder name entry (form) entity. Examples: "Policy holder's name: John Doe", or "policy holder's name is "John Doe". "
+            </td></tr><tr><td>AccountHolderNameEntry</td><td>319</td><td>
+            Account holder name entry (form) entity. Examples: "Account holder name: John Doe", or  "Account holder: Doe, John", etc
+            </td></tr><tr><td>CustomerNameEntry</td><td>320</td><td>
+            Customer name entry (form) entity. Examples: "Customer name: John Doe", or  "Customer: Doe, John", etc
+            </td></tr><tr><td>EmployeeNameEntry</td><td>321</td><td>
+            Employee name entry (form) entity. Examples: "Employee name: John Doe", or  "Employee: Doe, John", etc
+            </td></tr><tr><td>ClientNameEntry</td><td>322</td><td>
+            Client name entry (form) entity. Examples: "Client name: John Doe", or  "Client: Doe, John", etc
+            </td></tr><tr><td>StudentNameEntry</td><td>323</td><td>
+            Student name entry (form) entity. Examples: "Student name: John Doe", or  "Student: Doe, John", etc
+            </td></tr><tr><td>EnrolleeNameEntry</td><td>324</td><td>
+            Enrollee name entry (form) entity. Examples: "Enrollee name: John Doe", or  "Enrollee: Doe, John", etc
+            </td></tr><tr><td>ApplicantNameEntry</td><td>325</td><td>
+            Applicant name entry (form) entity. Examples: "Applicant's name: John Doe", or  "Applicant: Doe, John", etc
+            </td></tr><tr><td>ContactNameEntry</td><td>326</td><td>
+            Contact name entry (form) entity. Examples: "Contact's name: John Doe", or  "Contact: Doe, John", etc
+            </td></tr><tr><td>ProviderNameEntry</td><td>327</td><td>
+            Provider name entry (form) entity. Examples: "Provider's name: John Doe, MD", or  "Provider: Doe, John", etc
+            </td></tr><tr><td>BeneficiaryNameEntry</td><td>328</td><td>
+            Beneficiary name entry (form) entity. Examples: "Beneficiary's name: John Doe", or  "Beneficiary: Doe, John", etc
+            </td></tr><tr><td>DoctorOfMedicineNameEntry</td><td>329</td><td>
+            Doctor of Medicine (MD) name entry (form) entity. Examples: "Attending MD: John Doe, MD", etc
+            </td></tr><tr><td>GuarantorNameEntry</td><td>330</td><td>
+            Guarantor (loan) name entry (form) entity. Examples: "Guarantor's name: John Doe", or  "Guarantor: Doe, John", etc
+            </td></tr><tr><td>BuyerNameEntry</td><td>331</td><td>
+            Buyer name entry (form) entity. Examples: "Buyers's name: John Doe", or  "Buyer: Doe, John", etc
+            </td></tr><tr><td>SellerNameEntry</td><td>332</td><td>
+            Seller name entry (form) entity. Examples: "Seller's name: John Doe", or  "Seller: Doe, John", etc
+            </td></tr><tr><td>LessorNameEntry</td><td>333</td><td>
+            Lessor name entry (form) entity. Examples: "Lessor's name: John Doe", or  "Lessor: Doe, John", etc
+            </td></tr><tr><td>LesseeNameEntry</td><td>334</td><td>
+            Lessee name entry (form) entity. Examples: "Lessee name: John Doe", or  "Lessee: Doe, John", etc
+            </td></tr><tr><td>BorrowerNameEntry</td><td>335</td><td>
+            Borrower name entry (form) entity. Examples: "Borrower name: John Doe"
+            </td></tr><tr><td>CitizenshipEntry</td><td>500</td><td>
+            Citizenship entry (form) entity.
+            </td></tr><tr><td>GenderTypeEntry</td><td>501</td><td>
+            Gender type entry (form) entity. Example: "Gender: M", ect.
+            </td></tr><tr><td>DueDateEntry</td><td>600</td><td>
+            General due date entry entity. 
+            </td></tr><tr><td>BillingDateEntry</td><td>601</td><td>
+            Billing date entry entity. 
+            </td></tr><tr><td>PaymentDateEntry</td><td>602</td><td>
+            Payment due date entry entity. 
+            </td></tr><tr><td>BalanceDateEntry</td><td>603</td><td>
+            Balance date entry entity.
+            </td></tr><tr><td>InvoiceDateEntry</td><td>604</td><td>
+            Invoice date entry entity. 
+            </td></tr><tr><td>MaturityDateEntry</td><td>605</td><td>
+            Maturity date entry entity. 
+            </td></tr><tr><td>ContractDateEntry</td><td>606</td><td>
+            Contract date entry entity.
+            </td></tr><tr><td>ExpirationDateEntry</td><td>607</td><td>
+            Expiration date entry entity.
+            </td></tr><tr><td>RenewalDateEntry</td><td>608</td><td>
+            Renewal date entry entity.
+            </td></tr><tr><td>IssuedDateEntry</td><td>609</td><td>
+            Issued date entry entity.
+            </td></tr><tr><td>EffectiveDateEntry</td><td>610</td><td>
+            Effective date entry entity.
+            </td></tr><tr><td>GraduationDateEntry</td><td>611</td><td>
+            Graduation date entry entity.
+            </td></tr><tr><td>EntryDateEntry</td><td>612</td><td>
+            Date of entry date form entry entity.
+            </td></tr><tr><td>SubmittalDateEntry</td><td>613</td><td>
+            Date of submittal entry entity.
+            </td></tr><tr><td>RequestDateEntry</td><td>614</td><td>
+            Date requested entry entity.
+            </td></tr><tr><td>ReportDateEntry</td><td>615</td><td>
+            Report date entry entity.
+            </td></tr><tr><td>ReceiveDateEntry</td><td>616</td><td>
+            Receive date entry entity.
+            </td></tr><tr><td>TestDateEntry</td><td>617</td><td>
+            Test date entry entity.
+            </td></tr><tr><td>EmploymentStartingDateEntry</td><td>618</td><td>
+            Employment starting date entry entity.
+            </td></tr><tr><td>EmploymentEndingDateEntry</td><td>619</td><td>
+            Employment ending date entry entity.
+            </td></tr><tr><td>AdmissionDateEntry</td><td>620</td><td>
+            Admission date entry entity. 
+            </td></tr><tr><td>DischargeDateEntry</td><td>621</td><td>
+            Discharge date entry entity. 
+            </td></tr><tr><td>DateOfDeathEntry</td><td>622</td><td>
+            Date of death entry entity. 
+            </td></tr><tr><td>ReferralDateEntry</td><td>623</td><td>
+            Referral date entry entity. 
+            </td></tr><tr><td>EncounterDateEntry</td><td>624</td><td>
+            Encounter date entry entity. 
+            </td></tr><tr><td>InjuryDateEntry</td><td>625</td><td>
+            Injury date entry entity. 
+            </td></tr><tr><td>ProcedureDateEntry</td><td>626</td><td>
+            Procedure date entry entity.
+            </td></tr><tr><td>AdjudicationDateEntry</td><td>627</td><td>
+            Adjudication date entry entity.
+            </td></tr><tr><td>ServiceDateEntry</td><td>628</td><td>
+            TODO: Service date entry entity.   
+            </td></tr><tr><td>SeriesDateEntry</td><td>629</td><td>
+            Series date entry entity.
+            </td></tr><tr><td>StudyDateEntry</td><td>630</td><td>
+            Study date entry entity.
+            </td></tr><tr><td>AcquisitionDateEntry</td><td>631</td><td>
+            Acquisition date entry entity.
+            </td></tr><tr><td>OtherId</td><td>2,999</td><td>
+            An other (miscellaneous) identifier or number entity.
+            </td></tr><tr><td>AccountId</td><td>3,000</td><td>
+            An account identifier or number entity (that wasn't identified as <span class="selflink">BankAccount</span> or <span class="selflink">InvestmentAccount</span>).
+            </td></tr><tr><td>AccountingId</td><td>3,001</td><td>
+            An accounting identifier or number entity.
+            </td></tr><tr><td>AssemblyId</td><td>3,002</td><td>
+            A assembly identifier or number entity.
+            </td></tr><tr><td>AssignmentId</td><td>3,003</td><td>
+            A assignment identifier or number entity.
+            </td></tr><tr><td>AuditId</td><td>3,004</td><td>
+            A audit identifier or number entity.
+            </td></tr><tr><td>BranchId</td><td>3,005</td><td>
+            A branch identifier or number entity.
+            </td></tr><tr><td>CaseId</td><td>3,006</td><td>
+            A case identifier or number entity.
+            </td></tr><tr><td>CatalogId</td><td>3,007</td><td>
+            A catalog identifier or number entity.
+            </td></tr><tr><td>CatalystId</td><td>3,008</td><td>
+            A catalyst identifier or number entity.
+            </td></tr><tr><td>ChemicalId</td><td>3,009</td><td>
+            A chemical identifier or number entity.
+            </td></tr><tr><td>ClaimId</td><td>3,010</td><td>
+            A claim identifier or number entity.
+            </td></tr><tr><td>ClientId</td><td>3,011</td><td>
+            A client identifier or number entity.
+            </td></tr><tr><td>CollectionId</td><td>3,012</td><td>
+            A collection identifier or number entity.
+            </td></tr><tr><td>CommentId</td><td>3,013</td><td>
+            A comment identifier or number entity.
+            </td></tr><tr><td>CompanyId</td><td>3,014</td><td>
+            A company identifier or number entity. 
+            </td></tr><tr><td>CorporateId</td><td>3,015</td><td>
+            A corporate identifier or number entity.
+            </td></tr><tr><td>ConferenceId</td><td>3,016</td><td>
+            A conference identifier or number entity.
+            </td></tr><tr><td>ConfirmationId</td><td>3,017</td><td>
+            A confirmation identifier or number entity.
+            </td></tr><tr><td>ConstituentId</td><td>3,018</td><td>
+            A constituent identifier or number entity.
+            </td></tr><tr><td>ContractId</td><td>3,019</td><td>
+            A contract identifier or number entity.
+            </td></tr><tr><td>CustodianId</td><td>3,020</td><td>
+            A custodian identifier or number entity.
+            </td></tr><tr><td>CustomerId</td><td>3,021</td><td>
+            A customer identifier or number entity.
+            </td></tr><tr><td>DocketId</td><td>3,022</td><td>
+            A docket identifier or number entity. A court's official identifying number for a case.
+            </td></tr><tr><td>DocumentId</td><td>3,023</td><td>
+            A document identifier or number entity.
+            </td></tr><tr><td>DUNSNumberId</td><td>3,024</td><td>
+            A D-U-N-S Number identifier or number entity. The Dun and Bradstreet D‑U‑N‑S Number 
+            is a unique nine-digit identifier for businesses. 
+            </td></tr><tr><td>EmailId</td><td>3,025</td><td>
+            A email identifier or number entity.
+            </td></tr><tr><td>EmployeeId</td><td>3,026</td><td>
+            A employee identifier or number entity.
+            </td></tr><tr><td>EmployerId</td><td>3,027</td><td>
+            A employer identifier or number entity.
+            </td></tr><tr><td>EntityId</td><td>3,028</td><td>
+            A entity identifier or number entity.
+            </td></tr><tr><td>EventId</td><td>3,029</td><td>
+            A event identifier or number entity.
+            </td></tr><tr><td>FacilityId</td><td>3,030</td><td>
+            A facility identifier or number entity.
+            </td></tr><tr><td>GroupId</td><td>3,031</td><td>
+            A group identifier or number entity.
+            </td></tr><tr><td>InsuranceId</td><td>3,032</td><td>
+            A insurance identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>InsurancePolicyId</td><td>3,033</td><td>
+            A insurance policy identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>InsuredId</td><td>3,034</td><td>
+            An insured identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>InsuredPolicyId</td><td>3,035</td><td>
+            An insured policy identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>InventoryId</td><td>3,036</td><td>
+            A inventory identifier or number entity.
+            </td></tr><tr><td>InvestigationId</td><td>3,037</td><td>
+            A investigation identifier or number entity.
+            </td></tr><tr><td>InvoiceId</td><td>3,038</td><td>
+            A invoice identifier or number entity.
+            </td></tr><tr><td>IssueId</td><td>3,039</td><td>
+            A issue identifier or number entity.
+            </td></tr><tr><td>LicenseId</td><td>3,040</td><td>
+            A license identifier or number entity (that wasn't identified as <span class="selflink">DriversLicense</span>).
+            </td></tr><tr><td>LocationId</td><td>3,041</td><td>
+            A location identifier or number entity.
+            </td></tr><tr><td>ManufacturerId</td><td>3,042</td><td>
+            A manufacturer identifier or number entity.
+            </td></tr><tr><td>MeetingId</td><td>3,043</td><td>
+            A meeting identifier or number entity.
+            </td></tr><tr><td>MemberId</td><td>3,044</td><td>
+            An member identifier or number entity (that couldn't be identified as a <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>MemberPolicyId</td><td>3,045</td><td>
+            An member policy identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>MissionId</td><td>3,046</td><td>
+            A mission identifier or number entity.
+            </td></tr><tr><td>NoticeId</td><td>3,047</td><td>
+            A notice/notification identifier or number entity.
+            </td></tr><tr><td>OrderId</td><td>3,048</td><td>
+            A order identifier or number entity.
+            </td></tr><tr><td>PaperId</td><td>3,049</td><td>
+            A paper identifier or number entity.
+            </td></tr><tr><td>PartId</td><td>3,050</td><td>
+            A part identifier or number entity.
+            </td></tr><tr><td>ParticipantId</td><td>3,051</td><td>
+            A participant identifier or number entity.
+            </td></tr><tr><td>PatientIdOrName</td><td>3,052</td><td>
+            A patient identifier or name entity.
+            </td></tr><tr><td>PlanId</td><td>3,053</td><td>
+            A plan identifier or number entity.
+            </td></tr><tr><td>PolicyId</td><td>3,054</td><td>
+            A policy identifier or number entity.
+            </td></tr><tr><td>PostId</td><td>3,055</td><td>
+            A post identifier or number entity.
+            </td></tr><tr><td>PrescriptionId</td><td>3,056</td><td>
+            A prescription Id or number entity.
+            </td></tr><tr><td>PriorityId</td><td>3,057</td><td>
+            A priority identifier or number entity.
+            </td></tr><tr><td>ProjectId</td><td>3,058</td><td>
+            A project identifier or number entity.
+            </td></tr><tr><td>ProtocolId</td><td>3,059</td><td>
+            A protocol identifier or number entity.
+            </td></tr><tr><td>PurchaseId</td><td>3,060</td><td>
+            A purchase identifier or number entity (includes  'purchase order').
+            </td></tr><tr><td>ReferenceId</td><td>3,061</td><td>
+            A reference identifier or number entity.
+            </td></tr><tr><td>RegistrationId</td><td>3,062</td><td>
+            A registration identifier or number entity. 
+            </td></tr><tr><td>ReportId</td><td>3,063</td><td>
+            A report identifier or number entity.
+            </td></tr><tr><td>RequestId</td><td>3,064</td><td>
+            A request identifier or number entity.
+            </td></tr><tr><td>RoutingNumberId</td><td>3,065</td><td>
+            ABA routing number identifier. All recognized ABA routing numbers get this entity Id. See also <span class="selflink">SwiftBicCodeId</span> and <span class="selflink">SortCodeId</span>.
+            </td></tr><tr><td>SectionId</td><td>3,066</td><td>
+            A section identifier or number entity.
+            </td></tr><tr><td>SeriesId</td><td>3,067</td><td>
+            A series identifier or number entity. For serial numbers see <span class="selflink">SerialNumberId</span>.
+            </td></tr><tr><td>SiteId</td><td>3,068</td><td>
+            A site identifier or number entity. 
+            </td></tr><tr><td>SortCodeId</td><td>3,069</td><td>
+            A (bank) sort code identifier or number entity. See also <span class="selflink">RoutingNumberId</span> and <span class="selflink">SwiftBicCodeId</span>.
+            </td></tr><tr><td>StatementId</td><td>3,070</td><td>
+            A statement identifier or number entity.
+            </td></tr><tr><td>StatusId</td><td>3,071</td><td>
+            A status identifier or number entity.
+            </td></tr><tr><td>StudyId</td><td>3,072</td><td>
+            A study identifier or number entity.
+            </td></tr><tr><td>SubpartId</td><td>3,073</td><td>
+            A sub-part identifier or number entity.
+            </td></tr><tr><td>SubscriberId</td><td>3,074</td><td>
+            An subscriber policy identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>SubscriberPolicyId</td><td>3,075</td><td>
+            An subscriber identifier or number entity (that wasn't identified as <span class="selflink">HealthCareNumberID</span>).
+            </td></tr><tr><td>SwiftBicCodeId</td><td>3,076</td><td>
+            A SWIFT/BIC code identifier or number entity.  See also <span class="selflink">RoutingNumberId</span> and <span class="selflink">SortCodeId</span>.
+            </td></tr><tr><td>TestCaseId</td><td>3,077</td><td>
+            A test case identifier or number entity. 
+            </td></tr><tr><td>TicketId</td><td>3,078</td><td>
+            A ticket identifier or number entity.
+            </td></tr><tr><td>TaskId</td><td>3,079</td><td>
+            A task identifier or number entity.
+            </td></tr><tr><td>TaxId</td><td>3,080</td><td>
+            A tax identifier or number entity (that wasn't identified as a <span class="selflink">SocialSecurityNumber</span> or <span class="selflink">IndividualTaxpayerIdNumber</span>). 
+            </td></tr><tr><td>TrackId</td><td>3,081</td><td>
+            A track identifier or number entity.
+            </td></tr><tr><td>TradeId</td><td>3,082</td><td>
+            A trade identifier or number entity.
+            </td></tr><tr><td>TransactionId</td><td>3,083</td><td>
+            A transaction identifier or number entity.
+            </td></tr><tr><td>TransitId</td><td>3,084</td><td>
+            A transit identifier or number entity.
+            </td></tr><tr><td>TripId</td><td>3,085</td><td>
+            A trip identifier or number entity.
+            </td></tr><tr><td>UnitId</td><td>3,086</td><td>
+            A unit identifier or number entity.
+            </td></tr><tr><td>VendorId</td><td>3,087</td><td>
+            A vendor identifier or number entity.
+            </td></tr><tr><td>VoucherId</td><td>3,088</td><td>
+            A voucher identifier or number entity.
+            </td></tr><tr><td>WebinarId</td><td>3,089</td><td>
+            A webinar identifier or number entity.
+            </td></tr><tr><td>WorkOrderId</td><td>3,090</td><td>
+            A work order identifier or number entity.
+            </td></tr><tr><td>AgentLicenseId</td><td>3,091</td><td>
+            Agent license identifier or number entity.
+            </td></tr><tr><td>PersonnelId</td><td>3,092</td><td>
+            Personnel identifier or number entity.
+            </td></tr><tr><td>MOUNumber</td><td>3,093</td><td>
+            MOU (memorandum of understanding) identifier or number entity.
+            </td></tr><tr><td>CUSIPNumber</td><td>3,094</td><td>
+            CUSIP identifier or number (Assigned by CUSIP Global Services (CGS)).
+            </td></tr><tr><td>CINSNumber</td><td>3,095</td><td>
+            CINS identifier or number (The CUSIP International Numbering System (CINS) is assigned by CUSIP Global Services (CGS)).
+            </td></tr><tr><td>ISINNumber</td><td>3,096</td><td>
+            ISIN identifier or number (The International Securities Identification Number (ISIN))).
+            </td></tr><tr><td>LEINumber</td><td>3,097</td><td>
+            LEI identifier or number (The Legal Entity Identifier (LEI) is an alphanumeric code based on the ISO 17442 standard. It is 20-characters in length).
+            </td></tr><tr><td>PatientAccountNumber</td><td>3,098</td><td>
+            Patient account number.
+            </td></tr><tr><td>StudentId</td><td>3,099</td><td>
+            Student Id number.
+            </td></tr><tr><td>SerialNumberId</td><td>3,100</td><td>
+            Serial number or Id. For series Id see <span class="selflink">SeriesId</span>.
+            </td></tr><tr><td>DeviceId</td><td>3,101</td><td>
+            Device number or Id. For serial number or Id see <span class="selflink">SerialNumberId</span>.
+            </td></tr><tr><td>ApplicationNumber</td><td>3,102</td><td>
+            Application identifier or number.
+            </td></tr><tr><td>InsuranceClaimNumber</td><td>3,103</td><td>
+            Insurance claim identifier or number.
+            </td></tr><tr><td>AdmissionId</td><td>3,104</td><td>
+            A admission identifier or number entity.
+            </td></tr><tr><td>InternalControlNumber</td><td>3,105</td><td>
+            Internal control number (ICN) in medical billing. 
+            </td></tr><tr><td>MedicalRecordNumber</td><td>3,106</td><td>
+            Medical Record Number (MRN). 
+            </td></tr><tr><td>HealthInsuranceClaimNumber</td><td>3,107</td><td>
+            Health Insurance Claim Number (HICN). 
+            </td></tr><tr><td>DEARegistrationNumber</td><td>3,108</td><td>
+            DEA Registration Number entity. A DEA number is an identifier assigned to a health care provider by the United States Drug Enforcement Administration.
+            </td></tr><tr><td>NationalProviderIdentifier</td><td>3,109</td><td>
+            A National Provider Identifier (NPI) is a unique 10-digit identification number issued to health care providers in the United States by the Centers for Medicare and Medicaid Services (CMS).
+            </td></tr><tr><td>PersonalHealthNumber</td><td>3,110</td><td>
+            Personal health number (phn) or personal health identification number (phin).
+            </td></tr><tr><td>MexicoConsularId</td><td>3,111</td><td>
+            The Consular Identification Card of Mexico. The Consular Identification card was created as proof of Mexican nationality.
+            </td></tr><tr><td>NationalId</td><td>3,112</td><td>
+            Generic national identification/identity/identifier/card number.
+            </td></tr><tr><td>AccessCodeNumber</td><td>3,113</td><td>
+            Access code number.
+            </td></tr><tr><td>EncounterNumber</td><td>3,114</td><td>
+            Encounter number or Id.
+            </td></tr><tr><td>VisitNumber</td><td>3,115</td><td>
+            Visit number or Id.
+            </td></tr><tr><td>ClientIdentificationNumber</td><td>3,116</td><td>
+            Client Identification Number (CIN) is a unique 9-digit number assigned to each Medicaid recipient. See also <span class="selflink">ClientId</span>.
+            </td></tr><tr><td>OMBControlNumber</td><td>3,117</td><td>
+            Office of Management and Budget (OMB) Control Number.
+            </td></tr><tr><td>LoanId</td><td>3,118</td><td>
+            Loan identifier or number.
+            </td></tr><tr><td>NMLSUniqueIdentifier</td><td>3,119</td><td>
+            Nationwide Mortgage License System and Registry (NMLS) identifier or number.
+            </td></tr><tr><td>SpecificationNumber</td><td>3,120</td><td>
+            Specification identifier or number.
+            </td></tr><tr><td>PatentNumber</td><td>3,121</td><td>
+            Patent identifier or number (see <span class="selflink">PatentApplicationNumber</span>).
+            </td></tr><tr><td>PatentApplicationNumber</td><td>3,122</td><td>
+            Patent application identifier or number (see <span class="selflink">PatentNumber</span>).
+            </td></tr><tr><td>TrademarkNumber</td><td>3,123</td><td>
+            Trademark identifier or number.
+            </td></tr><tr><td>AttorneyDocketNumber</td><td>3,124</td><td>
+            Attorney docket identifier or number (used to identify a patent application and is an internal docket number of the law firm/patent attorney).
+            </td></tr><tr><td>AlienRegistrationNumber</td><td>3,126</td><td>
+            U.S. alien registration identifier or number (also permanent resident/green card number or identifier).
+            </td></tr><tr><td>TribalIdentificationNumber</td><td>3,127</td><td>
+            Tribal identification identifier or number. A federally-recognized, tribal-issued ID number is also a valid form of government-issued photo identification.
+            </td></tr><tr><td>CLIAIdentificationNumber</td><td>3,128</td><td>
+            Clinical Laboratory Improvement Amendments (CLIA) identifier or number. Identifies CLIA-certified laboratories.
+            </td></tr><tr><td>GenericIdCardNumber</td><td>3,129</td><td>
+            A generic (non-specific) ID card identifier or number.
+            </td></tr><tr><td>VATRegistrationNumber</td><td>3,130</td><td>
+            EU VAT (value-added tax) registration number or identifier.
+            </td></tr><tr><td>PersonalIdentificationNumber</td><td>3,131</td><td>
+            Personal identification number (PIN) or verification (PIV) identifier.
+            </td></tr><tr><td>AccessCardNumber</td><td>3,132</td><td>
+            Access card number or identifier.
+            </td></tr><tr><td>SecurityCodeNumber</td><td>3,133</td><td>
+            Security code number or identifier.
+            </td></tr><tr><td>SecurityCardNumber</td><td>3,134</td><td>
+            Security/access card number or identifier.
+            </td></tr><tr><td>HealthIdNumber</td><td>3,135</td><td>
+            General health number or identifier.
+            </td></tr><tr><td>DepartmentOfDefenseIdCardNumber</td><td>3,136</td><td>
+            Department of Defense Identification Card number.
+            </td></tr><tr><td>VeteranIdCardNumber</td><td>3,137</td><td>
+            A Veteran ID Card (VIC) is a form of photo ID you can use to get discounts offered to Veterans.
+            </td></tr><tr><td>BadgeNumber</td><td>3,138</td><td>
+            Generic badge number or identifier.
+            </td></tr><tr><td>DisabilityCode</td><td>3,139</td><td>
+            Federal census codes defining disabilities.
+            </td></tr><tr><td>RevenueId</td><td>3,140</td><td>
+            Revenue number or Id.
+            </td></tr><tr><td>PromoCodeId</td><td>3,141</td><td>
+            Promotion code number or Id.
+            </td></tr><tr><td>CouponCodeId</td><td>3,142</td><td>
+            Coupon code number or Id.
+            </td></tr><tr><td>MatterId</td><td>3,143</td><td>
+            A matter identifier or number entity.
+            </td></tr><tr><td>ICRReferenceNumber</td><td>3,144</td><td>
+            Information Collection Request (ICR) number. An ICR number is a set of documents that describes reporting, record keeping, 
+            survey, or other information collection requirements imposed on the public by a federal agency. 
+            </td></tr><tr><td>RecipientId</td><td>3,145</td><td>
+            Recipient number or identifier.
+            </td></tr><tr><td>CertificationId</td><td>3,146</td><td>
+            A certification/certificate identifier or number entity.
+            </td></tr><tr><td>PaymentId</td><td>3,147</td><td>
+            A payment identifier or number entity.
+            </td></tr><tr><td>ReceiptId</td><td>3,148</td><td>
+            A receipt identifier or number entity.
+            </td></tr><tr><td>ProviderId</td><td>3,149</td><td>
+            A provider identifier or number entity.
+            </td></tr><tr><td>ProviderTransactionAccessNumber</td><td>3,150</td><td>
+            Provider transaction access number (PTAN).
+            </td></tr><tr><td>ProcessorControlNumber</td><td>3,151</td><td>
+            Processor Control Number (PCN) is a secondary identifier that may be used in routing of pharmacy transactions.
+            </td></tr><tr><td>AccessionId</td><td>3,152</td><td>
+            Accession identifier or number entity. Accession numbers are a unique alphanumeric character set which is assigned to each specimen processed in a laboratory.
+            </td></tr><tr><td>CurrentProceduralTerminologyCodeId</td><td>3,153</td><td>
+            Current Procedural Terminology (CPT) code identifier entity. CPT codes are numbers assigned to each task and service a healthcare provider offers.
+            </td></tr><tr><td>InternationalClassificationOfDiseasesCodeId</td><td>3,154</td><td>
+            International Classification of Diseases (ICD) code identifier entity. ICD codes are a system used by physicians and other healthcare providers to classify and 
+            code all diagnoses, symptoms and procedures recorded in conjunction with hospital care.
+            </td></tr><tr><td>RemittanceId</td><td>3,155</td><td>
+            A remittance identifier or number entity.
+            </td></tr><tr><td>HospitalAccountRecordId</td><td>3,156</td><td>
+            Hospital account record (HAR) identifier or number entity.
+            </td></tr><tr><td>StateId</td><td>3,157</td><td>
+            State identifier or number entity.
+            </td></tr><tr><td>SpecimenId</td><td>3,158</td><td>
+            Specimen identifier or number entity.
+            </td></tr><tr><td>CheckId</td><td>3,159</td><td>
+            Check identifier or number entity.
+            </td></tr><tr><td>BankId</td><td>3,160</td><td>
+            Bank identifier or number entity.
+            </td></tr><tr><td>PayeeId</td><td>3,161</td><td>
+            Payee identifier or number entity.
+            </td></tr><tr><td>PayerId</td><td>3,162</td><td>
+            Payer identifier or number entity.
+            </td></tr><tr><td>RxBinId</td><td>3,163</td><td>
+            Prescription reimbursement identifier or number.
+            </td></tr><tr><td>RxGroupId</td><td>3,164</td><td>
+            Prescription group plan identifier or number.
+            </td></tr><tr><td>DocuSignEnvelopeId</td><td>3,165</td><td>
+            DocuSign envelope identifier or number entity (see ).
+            </td></tr><tr><td>EnvelopeId</td><td>3,166</td><td>
+            General envelope identifier or number entity (see ).
+            </td></tr><tr><td>FileId</td><td>3,167</td><td>
+            File identifier or number entity.
+            </td></tr><tr><td>LexisNexisId</td><td>3,168</td><td>
+            LexisNexis unique identifier.
+            </td></tr><tr><td>EmployeeAccountNumber</td><td>3,169</td><td>
+            Employee account identifier or number entity.
+            </td></tr><tr><td>EmployerAccountNumber</td><td>3,170</td><td>
+            Employer account identifier or number entity.
+            </td></tr><tr><td>PensionId</td><td>3,171</td><td>
+            Pension identifier or number entity.
+            </td></tr><tr><td>AppointmentId</td><td>3,172</td><td>
+            Appointment identifier or number entity.
+            </td></tr><tr><td>FICECode</td><td>3,173</td><td>
+            Federal Interagency Committee on Education (FICE) code used to identify institutions of higer education in the United States (replaced by the <span class="selflink">OPEIDCode</span>).
+            </td></tr><tr><td>OPEIDCode</td><td>3,174</td><td>
+            Office of Postsecondary Education Identification (OPE ID) number is assigned by the U.S. Department of Education (replaced the <span class="selflink">FICECode</span>). 
+            </td></tr><tr><td>CEEBCode</td><td>3,175</td><td>
+            College Entrance Examination Board (CEEB) numbers is a standardized ID number that is assigned to a high school, college, or university. CEEB code is also known as ATP code.
+            </td></tr><tr><td>LockBoxId</td><td>3,176</td><td>
+            Lockbox identifier or number entity. This entity could refer to a service provided by banks to businesses for collecting payments from their customers or it could refer
+            to a physical lockbox used by real estate agents, for example.
+            </td></tr><tr><td>ProductKey</td><td>3,177</td><td>
+            Product/OEM/Software/license key identifier or number entity.
+            </td></tr><tr><td>MaintenanceId</td><td>3,178</td><td>
+            Maintenance agreement identifier or number entity.
+            </td></tr><tr><td>NaturalizationCertificateNumber</td><td>3,179</td><td>
+            US Certificate of Naturalization number entity. See <span class="selflink">CertificateOfCitizenshipNumber</span></td></tr><tr><td>CertificateOfCitizenshipNumber</td><td>3,180</td><td>
+            US Certificate of Citizenship number entity (this entity is different from <span class="selflink">NaturalizationCertificateNumber</span>).
+            </td></tr><tr><td>MortgageElectronicRegSystemsNumber</td><td>3,181</td><td>
+            Mortgage Electronic Registration Systems (MERS/MIN) number entity.
+            </td></tr><tr><td>MobileIdentificationNumber</td><td>3,182</td><td>
+            Mobile Identification Number (MIN). A MIN is a serial number that uniquely identifies a cell phone services subscriber within a mobile carrier network.
+            </td></tr><tr><td>InstrumentId</td><td>3,183</td><td>
+            Instrument identifier or number entity.
+            </td></tr><tr><td>ParcelId</td><td>3,185</td><td>
+            Parcel identification number or entity.
+            </td></tr><tr><td>EscrowId</td><td>3,186</td><td>
+            Escrow identification number or entity.
+            </td></tr><tr><td>FHACaseId</td><td>3,187</td><td>
+            Federal Housing Administration (FHA) Case Number or entity.
+            </td></tr><tr><td>IndianFinancialSystemCode</td><td>3,188</td><td>
+            Indian Financial System Code (IFSC) that identifies the branches in the National Electronic Funds Transfer (NEFT) network. 
+            </td></tr><tr><td>BankOrganization</td><td>10,000</td><td>
+            Recognized bank organization entity.
+            </td></tr><tr><td>InvestmentBankOrganization</td><td>10,001</td><td>
+            Recognized investment bank or financial service organization entity.
+            </td></tr><tr><td>InsuranceOrganization</td><td>11,000</td><td>
+            Recognized general insurance organization entity (auto, home, business).
+            </td></tr><tr><td>InsurancePolicy</td><td>11,001</td><td>
+            Recognized general insurance entities.
+            </td></tr><tr><td>HealthCareInsuranceOrganization</td><td>12,000</td><td>
+            Recognized health care insurance provider organization entity.
+            </td></tr><tr><td>HospitalOrganization</td><td>12,001</td><td>
+            Recognized hospital organization entity.
+            </td></tr><tr><td>UrgentCareOrganization</td><td>12,002</td><td>
+            Recognized urgent care organization entity.
+            </td></tr><tr><td>ClinicalLaboratoryServiceOrganization</td><td>12,003</td><td>
+            Recognized health care clinical laboratory service organization entity
+            </td></tr><tr><td>HospicePalliativeCareOrganization</td><td>12,010</td><td>
+            Recognized hospice and/or palliative care organization entity
+            </td></tr><tr><td>MedicalPersonType</td><td>12,100</td><td>
+            Medical person type entity. Examples: "icu nurse",  "r.n.", "physician", "pathologist", "surgeon", etc.
+            </td></tr><tr><td>MedicalRecordRelated</td><td>12,101</td><td>
+            Medical record related entity. These are entities that one might find on a medical record.
+            </td></tr><tr><td>MedicalDiagnosticTest</td><td>12,102</td><td>
+            Medical diagnostic test related entity.
+            </td></tr><tr><td>BehavioralHealthServicePersonType</td><td>12,150</td><td>
+            Behavioral health service person type entity. Examples: "clinical psychologist", "psychotherapist", etc.
+            </td></tr><tr><td>BehavioralHealthService</td><td>12,151</td><td>
+            Behavioral health service type entity. Examples: "behavioral health therapy", "marriage and family therapy", "psychotherapy",  etc.
+            </td></tr><tr><td>PsychologicalDiagnosticTest</td><td>12,152</td><td>
+            Psychological diagnostic test related entity.
+            </td></tr><tr><td>WorkersCompensationInsuraceOrganization</td><td>13,000</td><td>
+            Recognized workers' compensation only insurance providers.
+            </td></tr><tr><td>WorkersCompensationClaim</td><td>13,001</td><td>
+            Workers' compensation claim related entity.
+            </td></tr><tr><td>LegalOrganization</td><td>14,000</td><td>
+            Recognized legal organization entity.
+            </td></tr><tr><td>LegalPersonType</td><td>14,001</td><td>
+            Recognized legal person type entity. 
+            </td></tr><tr><td>LegalTerm</td><td>14,002</td><td>
+            Recognized legal term entity. For legal contract terms see <span class="selflink">LegalContractTerm</span>.
+            </td></tr><tr><td>LegalContractTerm</td><td>14,003</td><td>
+            Recognized legal contract term entity. 
+            </td></tr><tr><td>LegalContractType</td><td>14,004</td><td>
+            Recognized legal contract type entity. 
+            </td></tr><tr><td>LegalPrivilegedRelated</td><td>14,005</td><td>
+            Recognized terms that may indicate privileged information is being discussed.
+            </td></tr><tr><td>IntellectualPropertyTerm</td><td>14,006</td><td>
+            Recognized intellectual property term entity. 
+            </td></tr><tr><td>UsptoPatentForm</td><td>14,007</td><td>
+            Recognized USPTO patent form identifier entity.
+            </td></tr><tr><td>InvestigativeOrganization</td><td>14,100</td><td>
+            Recognized investigative organization entity.
+            </td></tr><tr><td>InvestigativeTerm</td><td>14,102</td><td>
+            Recognized entity related to an investigation.
+            </td></tr><tr><td>BusinessDepartment</td><td>15,000</td><td>
+            Recognized business department entity. Examples: "sales department", "department of human resources", etc.
+            </td></tr><tr><td>BusinessExecutiveType</td><td>15,001</td><td>
+            Recognized business executive type entity. Examples: "chief administrative officer", "account executive", "ceo", etc.
+            </td></tr><tr><td>StudentInformationRelated</td><td>16,000</td><td>
+            Student information record related entity. These are unique entities that one might find on a student information form.
+            </td></tr><tr><td>IRSTaxFormName</td><td>17,000</td><td>
+            Recognized IRS tax form identifier entity.
+            </td></tr><tr><td>IRSTaxFormRelated</td><td>17,001</td><td>
+            Recognized IRS tax form related entity.
+            </td></tr><tr><td>SecurityChallengeRelated</td><td>18,000</td><td>
+            Recognized security challenge related entity (e.g., a recognized security challenge question).
+            </td></tr><tr><td>FederallyRecognizedTribe</td><td>19,000</td><td>
+            Recognized U.S. federally recognized tribe name.
+            </td></tr><tr><td>ImmigrationFormRelated</td><td>20,000</td><td>
+            Recognized immigration form related entity.
+            </td></tr><tr><td>DocumentElectronicSignatureRelated</td><td>21,000</td><td>
+            Recognized document e-signature related entity.
+            </td></tr><tr><td>NationalSecurityQuestionnaireFormRelated</td><td>22,000</td><td>
+            Recognized Standard Form 86 "Questionnaire for National Security Positions" entity.
+            </td></tr><tr><td>DoDInformationCollectionFormRelated</td><td>23,000</td><td>
+            Recognized Department of Defense (DoD) Information Collections form related entity.
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="12331b25-bce3-6a9b-929b-46b5cf49471c.htm">OpenDiscoverSDK.Interfaces.Content.TextAnalytics Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Definition</a></li><li><a class="quickLink">Remarks</a></li><li><a class="quickLink">Members</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+hljs.highlightAll();
+});</script></body></html>

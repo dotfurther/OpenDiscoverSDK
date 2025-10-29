@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>Document Properties</title><meta name="Title" content="Properties" /><meta name="Help.Id" content="Properties.T:OpenDiscoverSDK.Interfaces.Platform.Document" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Platform" /><meta name="guid" content="3fcc9cef-9094-8782-7705-b453c57ba103" /><meta name="tocFile" content="../toc/IDBN.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Document Properties</h1><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Properties</h2><div id="IDADASection"><table id="PropertyList" class="table is-hoverable"><tr><td><a href="fdacb34b-84bc-c07a-7bb8-998e182550a2.htm">AttachmentArchiveRecordOffset</a></td><td>
+            The zero-byte offset of the attachment document in the attachment data archive (.ada) file given by <a href="da522ff9-84be-81b4-4898-37e38973e1d6.htm">FilePath</a>.
+            </td></tr><tr><td><a href="b93fa1c8-77f0-8086-2976-07513f145380.htm">Attributes</a></td><td>
+            Document attributes (see <a href="97455b46-6bb8-0e3b-270d-5e3bdde3f3ee.htm">DocumentAttributes</a> enumeration).
+            </td></tr><tr><td><a href="f3be0589-0971-c2e0-e64c-a0f3f1071d7a.htm">BccRecipients</a></td><td>
+            "Bcc" recipients email address information.
+            </td></tr><tr><td><a href="f0cbd14e-1466-33d2-c1f6-c0c5932cd3d6.htm">CcRecipients</a></td><td>
+            "Cc" recipients email address information.
+            </td></tr><tr><td><a href="a1bf6deb-7e1f-a4c6-096b-688de9570059.htm">ChildDocuments</a></td><td>
+            Child documents (attachments, embedded, or contained).
+            </td></tr><tr><td><a href="d019e4bb-ec9a-a49d-4e72-ce41bc8c2a23.htm">ContainerComment</a></td><td>
+            Parent container comment associated with this contained document. Some archive container types support user comments for container items.
+            </td></tr><tr><td><a href="38996dd8-9bb4-6ac3-19e2-935f83d15f45.htm">ContainerPassword</a></td><td>
+            Decryption password found that successfully decrypted the document from it's parent container (e.g., password encrypted archive items).
+            </td></tr><tr><td><a href="580c86cf-2b35-b230-95e9-843b9277ba09.htm">ContainerRelativePath</a></td><td>
+            The relative path of this document inside its parent document container. 
+            </td></tr><tr><td><a href="3da2d9b6-32b1-6044-f159-cecb1d235a42.htm">ContentExtractionTimeTicks</a></td><td>
+            Time, in CPU timer ticks, to extract content document.
+            </td></tr><tr><td><a href="26d017cf-1198-5ad5-0da8-9f5e8d9f5587.htm">CreationTimeFileSystem</a></td><td>
+            File system creation time (UTC) of the document. 
+            </td></tr><tr><td><a href="ad7e821a-acf1-e86a-a7b0-5eb413f9735d.htm">CustomMetadata</a></td><td>
+            Contains custom (user-defined) document metadata as a dictionary of metadata field names as keys and metadata field data as corresponding values.
+            </td></tr><tr><td><a href="874c2990-b018-a850-21e1-171464621636.htm">DatabaseTableInfo</a></td><td>
+            If document is a supported database format (see help for supported formats), then this property contains a list of <a href="495f3690-7ebb-df28-9638-2efc1a2323e1.htm">TableInfo</a> objects that describe 
+            the tables and table columns in the database. 
+            </td></tr><tr><td><a href="92851336-b367-8ac7-85bd-8955fffecd5c.htm">DatabaseTableMaxRowCount</a></td><td>
+            If document is a supported database format (see help for supported formats), then this property contains the maximum number of table rows found in all tables
+            in the database (i.e., the row count of the table in <a href="874c2990-b018-a850-21e1-171464621636.htm">DatabaseTableInfo</a> that has the most rows).
+            </td></tr><tr><td><a href="5bf04a4e-5496-1528-2730-041321ca181e.htm">DocControlNumber</a></td><td><p>
+            [Optional] Document control number. 
+            </p><p>
+            If this property is set on an input document (see <a href="b68ae6b1-5941-ef7e-5054-9537863e0856.htm">Documents</a>), then each child document (recursively) will have its DocControlNumber set to its 
+            parent DocControlNumber with its child index (one offset) appended. For example, if input document has DocControlNumber of "00000265", then its second child document will have 
+            a DocControlNumber of "00000265_2" (and so on, if the child document itself has child documents).
+            </p><p>
+            For child documents of input documents, this property value is only populated by the DocumentDataArchiveReader when deserializing a document 
+            data archive (.dda) file.
+            </p></td></tr><tr><td><a href="1eceddf2-da6a-3a4d-970e-982a7d42eca6.htm">DocGuid</a></td><td>
+            Unique GUID document ID generated for every document by the Document class constructor. 
+            </td></tr><tr><td><a href="747ff6df-0986-4816-f2ed-88e0b3b76403.htm">DocId</a></td><td><p>
+            This is a convenience property for users that may want to attach their own unique id to the document (e.g., SQL table primary key for document). This value is not used in processing
+            of documents other than logging. Default value is empty string (""), which indicates not set.
+            </p><p>
+            If this property is set on an input document (see <a href="b68ae6b1-5941-ef7e-5054-9537863e0856.htm">Documents</a>), then each child document (recursively) will have its DocId set to its parent DocId with
+            its child index (one offset) appended. For example, if input document has DocId of "00000265", then its second child document will have a DocId of "00000265.2" (and so on, if the child
+            document itself has child documents).
+            </p></td></tr><tr><td><a href="f7b33e5c-862d-6dfa-7332-cff867f8975a.htm">DuplicateGroupId</a></td><td>
+            This is a convenience property for users that may want to track duplicate documents (de-duplication based on hashes). This value is not used or set during processing
+            of documents. Default values is null, which indicates not set. If the property is set, it must be set to the unique ID of the selected representing document  
+            of a duplicate document group, and the selected document to represent this duplicate group must have <a href="a3107c24-6cfc-ca1c-0027-5323d69c5acd.htm">IsRepresentingDuplicate</a> set to true. 
+            </td></tr><tr><td><a href="8177cfc1-263d-a302-4d4e-9064479eccac.htm">EDRMMessageIdentificationHash</a></td><td>
+            The EDRM Message Identification Hash (MIH) is the MD5 hash value of the ASCII string comprised of the Message-ID header field of RFC-compliant email messages.
+            </td></tr><tr><td><a href="3850aff9-2af5-85b1-7b66-9b87c821e20b.htm">EmailBody</a></td><td>
+            Email text body used in extracted email text and content hash. 
+            </td></tr><tr><td><a href="172325be-f527-e1e4-609c-837bfc203fda.htm">EmailBodyType</a></td><td>
+            The source email body format type for the text of <a href="3850aff9-2af5-85b1-7b66-9b87c821e20b.htm">EmailBody</a>. 
+            </td></tr><tr><td><a href="023bdb6c-2795-231a-26d3-da67c669c2c8.htm">EmailCreationDate</a></td><td>
+            Email creation time, if document is an email (see <a href="588896b7-e3ae-c034-ef5b-376cbdf8cca6.htm">IsEmailType</a>).
+            </td></tr><tr><td><a href="b837b0d3-4087-c580-8e26-14ca03d5a62d.htm">EmailEntryId</a></td><td>
+            Entry ID for Outlook PST/OST extracted message objects in hexadecimal string format.
+            </td></tr><tr><td><a href="7499648c-e7aa-e1c0-a8d4-19526caa3ab1.htm">EmailLastModificationTime</a></td><td>
+            Email last modified time, if document is an email (see <a href="588896b7-e3ae-c034-ef5b-376cbdf8cca6.htm">IsEmailType</a>).
+            </td></tr><tr><td><a href="0633ffa1-4816-a291-851c-652fab61c348.htm">EmailReceivedTime</a></td><td>
+            Email received date/time, if document is an email (see <a href="588896b7-e3ae-c034-ef5b-376cbdf8cca6.htm">IsEmailType</a>).
+            </td></tr><tr><td><a href="d92e537c-30dc-c15c-3352-e66666ba7d7f.htm">EmailSentTime</a></td><td>
+            Email sent date/time, if document is an email (see <a href="588896b7-e3ae-c034-ef5b-376cbdf8cca6.htm">IsEmailType</a>).
+            </td></tr><tr><td><a href="2d8ddede-2492-6fd7-971d-4031933f6f9e.htm">EmailSubject</a></td><td>
+            Email subject.
+            </td></tr><tr><td><a href="fafcddd1-cee1-4914-f234-ace1faee9bc5.htm">EnrichedBody</a></td><td>
+            If <a href="ebbf6169-d66f-f727-02d4-b394a0ddcc9e.htm">HasFlowedBody</a> is true, then this property contains the Enriched formatted email body.
+            </td></tr><tr><td><a href="90dcc7a7-cf31-ec20-89ef-e31f40bdd647.htm">EntityExtractionTimeTicks</a></td><td><div class="summary">
+            Time, in CPU timer ticks, to extract entity items in this document's extracted text and metadata.
+            </div></td></tr><tr><td><a href="0eb06573-174a-a437-057c-15a71e94a6b5.htm">EntityResult</a></td><td>
+            Entity detection results from scanning the document's extracted text, metadata, and URLs.
+            </td></tr><tr><td><a href="3346ed5f-0c00-7fd7-fada-4a11f9185e43.htm">Extension</a></td><td>
+            The document's file extension. 
+            </td></tr><tr><td><a href="8bb7136d-69bb-d1d3-4dbf-d49945590448.htm">ExtractedText</a></td><td>
+            Extracted document text. See remarks for text extraction limitations.
+            </td></tr><tr><td><a href="f152ce6d-a652-8297-19c0-4920da5eba18.htm">ExtractedTextSize</a></td><td>
+            Gets the document's extracted text, in characters.
+            </td></tr><tr><td><a href="daf7fbe6-096b-33df-ca7b-0d255cb1e9eb.htm">FailedPdfPages</a></td><td>
+            If document is a PDF (a Document with <a href="04a7f5f8-7155-e7aa-f716-b1e9e0b016b2.htm">FormatId</a> property with <a href="b4fb5522-8bb4-b6ac-fc42-ac833701e116.htm">ID</a> equal to <a href="6f1047fb-7367-c09c-5621-ae7632c8404b.htm">AdobePDF</a>), then this property contains a 
+            list of PDF pages (<a href="fd3fc89d-e1e7-1dc0-73d0-0ef5454a6c84.htm">PdfPageInfo</a>) in the PDF document where either an exception occured processing the page or where the text extracted 
+            length was below the <a href="b38280ef-11f7-aac9-3bc1-f0724146f27a.htm">PageExtractedTextCriteria</a> criteria.
+            </td></tr><tr><td><a href="ebb24ade-ac78-b975-09f5-495550d13a43.htm">FamilyControlNumber</a></td><td>
+            [Optional] Document family control number. This is the <a href="5bf04a4e-5496-1528-2730-041321ca181e.htm">DocControlNumber</a> of the top-most non-container document in a parent/child hierarchy.
+            </td></tr><tr><td><a href="63bad228-d718-7611-0fa1-b2fe78eaff86.htm">FamilyDocGuid</a></td><td>
+            [Optional] Document family GUID. This is the <a href="1eceddf2-da6a-3a4d-970e-982a7d42eca6.htm">DocGuid</a> of the top-most non-container document in a parent/child hierarchy.
+            </td></tr><tr><td><a href="c1506718-109c-00ff-8476-0fdb011f6799.htm">FamilySHA1Hash</a></td><td><p>
+            [Optional] This is the SHA-1 hash of all documents in a family given by <a href="ebb24ade-ac78-b975-09f5-495550d13a43.htm">FamilyControlNumber</a>.
+            </p><p>
+            This property value is only populated by the DocumentDataArchiveReader when deserializing a document 
+            data archive (.dda) file.
+            </p></td></tr><tr><td><a href="3c76a583-5aa6-e1bc-37bc-60d75e78407c.htm">FamilySHA256Hash</a></td><td><p>
+            [Optional] This is the SHA-256 hash of all documents in a family given by <a href="ebb24ade-ac78-b975-09f5-495550d13a43.htm">FamilyControlNumber</a>.
+            </p><p>
+            This property value is only populated by the DocumentDataArchiveReader when deserializing a document 
+            data archive (.dda) file.
+            </p></td></tr><tr><td><a href="bb4b6ec8-fefa-780e-78f4-580a46a34aab.htm">FileAttributes</a></td><td>
+            Document file system attributes.
+            </td></tr><tr><td><a href="09adab72-edd2-b845-8409-c95b4eeaee33.htm">FileEntropy</a></td><td>
+            Shannon entropy calculated from the document's raw bytes.
+            </td></tr><tr><td><a href="da522ff9-84be-81b4-4898-37e38973e1d6.htm">FilePath</a></td><td>
+            Document's file path.
+            </td></tr><tr><td><a href="818c8d8d-0609-75ee-27c5-8475d32bcf08.htm">FirstContainerParentId</a></td><td>
+            The first container "ID" ** (see remarks) in the parent/child hierarchy, if any, that contains this document. A document can be contained in a 
+            container that itself is contained in a container (and so on). This property returns the "ID" of the first container, if any, that contains this
+            document. This property returns null if this document does not have a container parent.
+            </td></tr><tr><td><a href="56150a05-b7f6-bdc4-6fa8-15a7ea261023.htm">FlowedBody</a></td><td>
+            If <a href="ebbf6169-d66f-f727-02d4-b394a0ddcc9e.htm">HasFlowedBody</a> is true, then this property contains the Flowed formatted email body.
+            </td></tr><tr><td><a href="04a7f5f8-7155-e7aa-f716-b1e9e0b016b2.htm">FormatId</a></td><td>
+            Document format identification result.
+            </td></tr><tr><td><a href="4ef750eb-f86e-d3a0-b4c2-ab2ddf6ba362.htm">From</a></td><td>
+            Specifies the author(s) of the message; that is, the <a href="21765f9e-0286-ef3c-c3bd-4e06b00b365a.htm">EmailAddress</a>(es) of the person(s) or system(s) responsible for the writing of the message.
+            </td></tr><tr><td><a href="88aecbb9-7bd8-2b42-f074-65f011510435.htm">HasEnrichedBody</a></td><td>
+            Specifies if this email has a Enriched formatted body.
+            </td></tr><tr><td><a href="ebbf6169-d66f-f727-02d4-b394a0ddcc9e.htm">HasFlowedBody</a></td><td>
+            Specifies if this email has a Flowed formatted body.
+            </td></tr><tr><td><a href="d6232ddc-3f3c-41e8-be1f-7c6832877139.htm">HasHtmlBody</a></td><td>
+            Specifies if this email has an HTML body.
+            </td></tr><tr><td><a href="73e344ad-ec98-a383-da07-b58733dcbc34.htm">HasRtfBody</a></td><td>
+            Specifies if this email has an RTF body.
+            </td></tr><tr><td><a href="afb689f5-f6d0-7439-b362-395160ca68a6.htm">HasTextBody</a></td><td>
+            Specifies if this email has a plain-text body.
+            </td></tr><tr><td><a href="7dac0df7-29de-2f7f-4aef-1171e7979379.htm">HtmlBaseUrl</a></td><td>
+            HTML document "base" element tag specifies the base URL/target for all relative URLs in a document. 
+            </td></tr><tr><td><a href="efc21c42-a667-4803-9cd9-baf9ba36d3e3.htm">HtmlBody</a></td><td>
+            If <a href="d6232ddc-3f3c-41e8-be1f-7c6832877139.htm">HasHtmlBody</a> is true, then this property contains the email HTML body.
+            </td></tr><tr><td><a href="220a0a37-06aa-907c-3410-2708170089c6.htm">HtmlImageTags</a></td><td>
+            HTML document 'img' tag info. 
+            </td></tr><tr><td><a href="48035d54-a750-1c63-16a6-ae4513f23e44.htm">HtmlTitle</a></td><td>
+            HTML document "title" element text.
+            </td></tr><tr><td><a href="3ebedd54-622f-c7e8-a339-93985d56337a.htm">HyperLinks</a></td><td>
+            Document hyperlinks.
+            </td></tr><tr><td><a href="a021e1a1-0ba7-8047-f60e-15e7be05d357.htm">IdentificationTimeTicks</a></td><td>
+            Time, in CPU timer ticks, to identify this document.
+            </td></tr><tr><td><a href="638ed11e-7895-6b0b-b76a-5497bff19765.htm">ImageHeightInPixels</a></td><td>
+            For supported raster image file formats, this property will hold the image's height in pixels; otherwise the default value is -1, meaning not determined.
+            </td></tr><tr><td><a href="4335baa7-16fe-5fc8-5820-c98f05f97c68.htm">ImageWidthInPixels</a></td><td>
+            For supported raster image file formats, this property will hold the image's width in pixels; otherwise the default value is -1, meaning not determined.
+            </td></tr><tr><td><a href="0fddb636-e2d3-f850-ed1c-20b5031cb27c.htm">Index</a></td><td>
+            Zero-offset index of the document in the order it is found embedded in the parent container document for most container types. For some
+            mail store container types it is the internal file format node ID of the message object.
+            </td></tr><tr><td><a href="f7c5bcdc-ee11-edc6-e4b3-7c5c2c70b3dd.htm">InlineImageContentId</a></td><td>
+            If <a href="9ea9e4f7-4c7b-dd30-a7a1-77713b6e30f4.htm">IsInlineEmailImage</a> is true; then this property contains the "Content-ID" of the inline image, if it exists.
+            </td></tr><tr><td><a href="5b9b1da9-6567-37fc-fa22-fb8ed0ca6ea2.htm">IsAttachmentArchiveFilePath</a></td><td>
+            If true, then the file was an extracted attachment and saved to an attachment archive file given by <a href="da522ff9-84be-81b4-4898-37e38973e1d6.htm">FilePath</a> and its zero-byte offset in the archive 
+            is given by <a href="fdacb34b-84bc-c07a-7bb8-998e182550a2.htm">AttachmentArchiveRecordOffset</a>.
+            </td></tr><tr><td><a href="8725dc2d-e920-2225-8120-9ebfe662d123.htm">IsContainerType</a></td><td>
+            Specifies whether the document is a document container (i.e., FormatId.Classification is equal to IdClassification.Archive, 
+            IdClassification.MailStore, IdClassification.MessagingStore, or IdClassification.MediaImage).
+            </td></tr><tr><td><a href="588896b7-e3ae-c034-ef5b-376cbdf8cca6.htm">IsEmailType</a></td><td>
+            Specifies whether this document is an email type.
+            </td></tr><tr><td><a href="3235654c-4b85-935f-abf7-2d7a367b3991.htm">IsEmbedded</a></td><td>
+            If true, this document is embedded in a Microsoft Office document.
+            </td></tr><tr><td><a href="a9d2b52a-642b-ad7f-5552-c8e9efd8b6a9.htm">IsEncrypted</a></td><td>
+            Specifies whether the document is password protected/encrypted.
+            </td></tr><tr><td><a href="be81bbbc-d3b2-0bbf-6217-0693894c5d7a.htm">IsEncryptedInContainer</a></td><td>
+            Specifies whether document is encrypted inside of its parent container. This property only applies to archive child documents. 
+            </td></tr><tr><td><a href="2e8926cd-b5b3-56f5-9e13-f3013ae219df.htm">IsExcludedType</a></td><td>
+            Specifies whether document was excluded from processing based on it format type (<a href="b4fb5522-8bb4-b6ac-fc42-ac833701e116.htm">ID</a>). 
+            </td></tr><tr><td><a href="0674ec52-ef44-641f-a59d-7b1e9bd50ed9.htm">IsExternalAttachment</a></td><td>
+            Specifies whether this file is an external file attachment to a parent document (example: MS OneNote .onebin files).
+            </td></tr><tr><td><a href="0ebb6763-a884-e88b-e8ea-fd706fea5866.htm">IsHtmlType</a></td><td>
+            Specifies whether this document is an HTML document.
+            </td></tr><tr><td><a href="9ea9e4f7-4c7b-dd30-a7a1-77713b6e30f4.htm">IsInlineEmailImage</a></td><td>
+            Specifies whether this document is an inline email image. 
+            </td></tr><tr><td><a href="fc0e0762-7378-d095-1dbd-4b29d22d4eb9.htm">IsLargeFile</a></td><td>
+            Specifies whether this file is considered "large" document, i.e., file size exceeds a configurable size, <a href="90aee97f-a132-9d0b-5c91-d6ac2eb95ace.htm">LargeDocumentCritera</a>. 
+            </td></tr><tr><td><a href="ec18431d-8483-34b1-3b0e-94fb593d7d3a.htm">IsMimePartialMessage</a></td><td>
+            True if this is an MIME email partial message (ContentType MIME header with MIME-type = "message/partial"); false otherwise.
+            </td></tr><tr><td><a href="ee4bb99b-24c0-d564-5082-290b9c430b4a.htm">IsNist</a></td><td>
+            Specifies whether the document's SHA1 hash is contained in the National Software Reference Library (NSRL) Reference Data Set (RDS) database.
+            </td></tr><tr><td><a href="a3107c24-6cfc-ca1c-0027-5323d69c5acd.htm">IsRepresentingDuplicate</a></td><td>
+            This is a convenience property for users that may want to track duplicate documents (de-duplication based on hashes). This value is not used or set during processing
+            of documents. Default value is true, which indicates this document is the representing duplicate of a group of duplicate documents. A de-duplication
+            process will need to set this property to false for the non-representing duplicated and also set property <a href="f7b33e5c-862d-6dfa-7332-cff867f8975a.htm">DuplicateGroupId</a>.
+            </td></tr><tr><td><a href="7057776e-7b4e-c731-4cf9-2c91a3af8706.htm">IsTextArchivePath</a></td><td>
+            Specifies whether the extracted text was saved to a text archive file, in which case <a href="f3eb3aaf-f58f-1f77-3421-fee03037ce04.htm">TextFilePath</a> points to the containing archive file.
+            </td></tr><tr><td><a href="c60ba2f3-d724-0f8c-5386-f3ff494546dc.htm">LanguageIdResults</a></td><td>
+            Extracted text language identification results (see <a href="d5f8d689-fe98-b398-4797-c9d03af5c48a.htm">LanguageIdResult</a>).
+            </td></tr><tr><td><a href="7439672b-fbdd-05ee-6dd6-ed7388281403.htm">LanguageIdTimeTicks</a></td><td><div class="summary">
+            Time, in CPU timer ticks, to identify languages in this document's extracted text.
+            </div></td></tr><tr><td><a href="756d1795-9bb4-4c1d-daac-a863b374168e.htm">LastAccessTimeFileSystem</a></td><td>
+            File system last access time (UTC) of the document. 
+            </td></tr><tr><td><a href="6aad7c6c-5448-b37b-23bc-18b83e96bbba.htm">LastModifiedTimeFileSystem</a></td><td>
+            File system last modified time (UTC) of the document. 
+            </td></tr><tr><td><a href="03e32e6c-5276-9c31-cda2-58f69c176411.htm">MD5BinaryHash</a></td><td>
+            MD5 document hash (hash of all document bytes).
+            </td></tr><tr><td><a href="79c70de0-b9e0-0b16-a0b5-06486db71585.htm">MD5ContentHash</a></td><td>
+            MD5 content hash is a proprietary hash on only the content part of document file format.
+            </td></tr><tr><td><a href="5c24f3de-0f34-4020-bd84-bbcbc9bbf586.htm">Metadata</a></td><td>
+            Contains standard (non-user-defined) document metadata as a dictionary of metadata field names as keys and metadata field data as corresponding values.
+            </td></tr><tr><td><a href="baa4a120-776c-40f0-484b-2f67d0429e76.htm">MimePartialMessageId</a></td><td>
+            If <a href="ec18431d-8483-34b1-3b0e-94fb593d7d3a.htm">IsMimePartialMessage</a> is true, then property holds the unique partial message 'id' that all parts (separate MIME files) of the partial message contain.
+            </td></tr><tr><td><a href="74b0f82b-040e-83bb-c7f6-c04a0881d91b.htm">MimePartialMessagePartNumber</a></td><td>
+            If <a href="ec18431d-8483-34b1-3b0e-94fb593d7d3a.htm">IsMimePartialMessage</a> is true, then property holds the index (out of 1 to <a href="fd21e526-927b-f2bb-1888-ba794590fadd.htm">MimePartialMessageTotalParts</a>) of this message part.
+            </td></tr><tr><td><a href="fd21e526-927b-f2bb-1888-ba794590fadd.htm">MimePartialMessageTotalParts</a></td><td>
+            If <a href="ec18431d-8483-34b1-3b0e-94fb593d7d3a.htm">IsMimePartialMessage</a> is true, then property holds the total number of message parts. It is not always guaranteed that each message part will
+            have the total parts set in MIME 'ContentType' header value, often it is just the first or last message part that has this value set.
+            </td></tr><tr><td><a href="012b3021-0f62-2f1c-75a9-866097617825.htm">Name</a></td><td>
+            Filename of the document with extension.
+            </td></tr><tr><td><a href="d38620bc-808f-c7c6-0860-2f23b54d91bf.htm">NumOfContainerItems</a></td><td>
+            If document is a supported container format this property holds the number of container child items. 
+            </td></tr><tr><td><a href="2e288603-0760-7906-ae1f-df7a77205c5c.htm">OriginalFilePath</a></td><td>
+            Embedded document original file path. Some embedded documents with container wrappers store the location from where the embedded child document was originally 
+            located on the file system before being embedded into the parent container. For most child documents, this value will be null.
+            </td></tr><tr><td><a href="4ef29805-58d3-7fdf-a577-a20261a27251.htm">PackedSize</a></td><td>
+            Document's packed size, in bytes, within its parent archive container. If the document is a compressed item in a parent container then this value is the compressed size. 
+            This property only applies to archive child documents and to the archive formats that store this item metadata.
+            </td></tr><tr><td><a href="a6468f89-bf50-d0d3-da27-3e43b506000d.htm">ParentChildSourcePath</a></td><td>
+            Hierarchical parent/child relative path. This path is the same as <a href="0fb8fc1f-a307-c23b-30b1-c582657fca15.htm">ParentChildVirtualPath</a> property, except for emails where the email subject is used as
+            part of the virtual path. If the email does not have a subject then "(No Subject)" is used as the email's subject.
+            </td></tr><tr><td><a href="0fb8fc1f-a307-c23b-30b1-c582657fca15.htm">ParentChildVirtualPath</a></td><td>
+            Hierarchical parent/child virtual path. This path is only set for child documents of processing input documents and this property is set by the 
+            DocumentDataArchiveReader class when de-serializing a document data archive (.dda) processing output file.
+            </td></tr><tr><td><a href="17061403-2795-459b-b88d-fc6f5de98ea0.htm">ParentDocControlNumber</a></td><td><p>
+            [Optional] Parent document control number. See <a href="5bf04a4e-5496-1528-2730-041321ca181e.htm">DocControlNumber</a>.
+            </p><p>
+            For child documents of input documents, this property value is only populated by the DocumentDataArchiveReader when deserializing a document 
+            data archive (.dda) file.
+            </p></td></tr><tr><td><a href="84259840-69d2-67e7-9903-2ff21154e06c.htm">ParentDocGuid</a></td><td>
+            The GUID ID of this document's immediate parent. The property only gets set if this document is a child document of an input document.
+            </td></tr><tr><td><a href="206b6d2c-3b59-09b2-8e46-a7fde2306a3e.htm">ParentId</a></td><td>
+            This is a convenience property for users that may want to attach their own unique id for the parent document of this document (e.g., SQL table primary key for document's parent document). 
+            This value is not used in processing of documents other than logging. Default value is empty string (""), which indicates not set.
+            </td></tr><tr><td><a href="05ebe79d-75ae-2cff-1d64-38f6ca135f3a.htm">Password</a></td><td>
+            Decryption password found that successfully decrypted the document.
+            </td></tr><tr><td><a href="ef7b5786-94f3-3fe2-0e1a-ae71411197c3.htm">PrimaryDate</a></td><td>
+            PrimaryDate can be used to sort documents by a common property date that is meaningful across document formats. See <a href="81912529-9c4f-1f46-ef3b-e8af71409ee4.htm">PrimaryDateType</a> for the metdata field precedence
+            rules (in order of DatePrecedenceType enumeration values) used in calculating a document's PrimaryDate.
+            </td></tr><tr><td><a href="81912529-9c4f-1f46-ef3b-e8af71409ee4.htm">PrimaryDateType</a></td><td>
+            This property specifies which metadata date field was used for this document's <a href="ef7b5786-94f3-3fe2-0e1a-ae71411197c3.htm">PrimaryDate</a>. See <a href="b8418fcb-1f4b-8ad8-cf5e-2965b4ad4f66.htm">DatePrecedenceType</a> for the metdata field precedence
+            rules (in order of DatePrecedenceType enumeration values) used in calculating a document's PrimaryDate.
+            </td></tr><tr><td><a href="afc45d77-b73b-c2ea-47d8-95bb69deb137.htm">Result</a></td><td>
+            Content extraction result. Check this value to see the state of the the content extraction.
+            </td></tr><tr><td><a href="adfa2fde-049c-52f5-543e-12f15dd97c5b.htm">ResultErrorMessage</a></td><td>
+            Error message associated with <a href="afc45d77-b73b-c2ea-47d8-95bb69deb137.htm">Result</a>, if any. This property is only set when Result is not set to 'OK'.
+            </td></tr><tr><td><a href="5713105c-d320-438a-b0bc-99cafe839d25.htm">ResultErrorStackTrace</a></td><td>
+            Exception stack trace that is only set if <a href="adfa2fde-049c-52f5-543e-12f15dd97c5b.htm">ResultErrorMessage</a> is due to caught internal exception.
+            </td></tr><tr><td><a href="3cae45ba-4ceb-23e7-b6fc-36e416460277.htm">RtfBody</a></td><td>
+            If <a href="73e344ad-ec98-a383-da07-b58733dcbc34.htm">HasRtfBody</a> is true, then this property contains the email RTF body.
+            </td></tr><tr><td><a href="c3174f6f-e17a-970f-ac74-49186eda1159.htm">Sender</a></td><td>
+            Sender information. The sender is the <a href="21765f9e-0286-ef3c-c3bd-4e06b00b365a.htm">EmailAddress</a> of the agent responsible for the actual transmission of the message. The
+            sender and the <a href="4ef750eb-f86e-d3a0-b4c2-ab2ddf6ba362.htm">From</a> are often the same but can be different.
+            </td></tr><tr><td><a href="c9a576ae-b132-1356-9d30-abebe16ed30c.htm">SHA1BinaryHash</a></td><td>
+            SHA-1 document hash (hash of all document bytes).
+            </td></tr><tr><td><a href="1711d552-357d-7bc8-4e17-aed0d2888466.htm">SHA1ContentHash</a></td><td>
+            SHA-1 content hash is a proprietary hash on only the content part of document file format.
+            </td></tr><tr><td><a href="046f5434-24a3-6e4b-da50-4be8c8545bdc.htm">SHA1EmailAttachmentHash</a></td><td>
+            SHA-1 hash of the concatenated SHA1 hash of each attachment binary data (includes hashes of inline images).
+            </td></tr><tr><td><a href="2ba427c5-8c45-3b09-07b0-b346397ed01a.htm">SHA1EmailAttachmentSortedHash</a></td><td>
+            SHA-1 hash of the SORTED and then concatenated SHA1 hash of each attachment binary data (includes hashes of inline images).
+            </td></tr><tr><td><a href="769634ff-3b3e-af89-5c63-a7d33307a1fd.htm">SHA1EmailBodyHash</a></td><td>
+            SHA1 hash of the email <a href="3850aff9-2af5-85b1-7b66-9b87c821e20b.htm">EmailBody</a> text (converted to lower case and with all white space removed).
+            </td></tr><tr><td><a href="2e9db61a-26d2-92cd-1ba0-cd25bee2d85f.htm">SHA1EmailHeaderHash</a></td><td>
+            SHA-1 email header hash. 
+            </td></tr><tr><td><a href="959839a6-2fd4-efa5-39b4-543f41a9219d.htm">SHA1EmailRecipientNamesHash</a></td><td>
+            SHA-1 hash of all recipient names concatenated together (all lower case).
+            </td></tr><tr><td><a href="f3164e7b-9587-3798-8ff0-a13072e9f9e2.htm">SHA1EmailRecipientsHash</a></td><td>
+            SHA-1 hash of recipient names and email addresses concatenated together (all lower case).
+            </td></tr><tr><td><a href="3907ec97-4735-6054-d9d0-0485ecf09b74.htm">SHA256BinaryHash</a></td><td>
+            SHA-256 document hash (hash of all document bytes).
+            </td></tr><tr><td><a href="0df50394-bd84-cfa6-8fdd-3150e4b2e5ff.htm">SHA256ContentHash</a></td><td>
+            SHA-256 content hash is a proprietary hash on only the content part of document file format.
+            </td></tr><tr><td><a href="3e7e510f-9968-3fbc-ab79-6d2ded797e4e.htm">Size</a></td><td>
+            Gets the document's native file size, in bytes.
+            </td></tr><tr><td><a href="52b38d48-9e0e-1908-9bb6-21ab0a1aa311.htm">SortDate</a></td><td><p>
+            SortDate can be used to sort documents by a common property date that is meaningful across document formats. For parent documents, this property is set to the 
+            <a href="ef7b5786-94f3-3fe2-0e1a-ae71411197c3.htm">PrimaryDate</a> property value, and for child documents of non-container parent types, this property is set to the SortDate of the parent document.
+            </p><p>
+            See <a href="b8418fcb-1f4b-8ad8-cf5e-2965b4ad4f66.htm">DatePrecedenceType</a> for the metdata field precedence rules (in order of DatePrecedenceType enumeration values) used in calculating a document's SortDate.
+            </p></td></tr><tr><td><a href="3ea0a4fc-72e4-1e21-891a-4282d78a5783.htm">SortDateType</a></td><td>
+            This property specifies which metadata date field was used for this document's <a href="52b38d48-9e0e-1908-9bb6-21ab0a1aa311.htm">SortDate</a>. See <a href="b8418fcb-1f4b-8ad8-cf5e-2965b4ad4f66.htm">DatePrecedenceType</a> for the metdata field precedence
+            rules (in order of DatePrecedenceType enumeration values) used in calculating a document's SortDate.
+            </td></tr><tr><td><a href="4f22d11b-889b-2e77-fd68-6273c4bf9873.htm">TestedResult</a></td><td>
+            This property is set for archive items that have been tested for actual expansion size and extraction result (see also <a href="11974ac9-104d-15f2-34a9-fc8a53348a61.htm">TestedSize</a>). 
+            </td></tr><tr><td><a href="11974ac9-104d-15f2-34a9-fc8a53348a61.htm">TestedSize</a></td><td>
+            This property is set for archives and archive items that have been tested for expanded (de-compressed) size (see also <a href="4f22d11b-889b-2e77-fd68-6273c4bf9873.htm">TestedResult</a>). 
+            </td></tr><tr><td><a href="10fa41c7-4339-2ba2-630d-9c5e83e6cdc0.htm">TextArchiveRecordOffset</a></td><td>
+            Zero-byte offset of the extracted text in the text data archive (.tda) file given by <a href="f3eb3aaf-f58f-1f77-3421-fee03037ce04.htm">TextFilePath</a></td></tr><tr><td><a href="6a448c05-1c8d-cccd-578e-f5a510544a1e.htm">TextBody</a></td><td>
+            If <a href="afb689f5-f6d0-7439-b362-395160ca68a6.htm">HasTextBody</a> is true, then this property contains the email plain-text body.
+            </td></tr><tr><td><a href="f3eb3aaf-f58f-1f77-3421-fee03037ce04.htm">TextFilePath</a></td><td>
+            File path to document's extracted text.
+            </td></tr><tr><td><a href="e47704a5-f6f3-279e-2698-8fff3eb37c99.htm">TextSourceType</a></td><td>
+            Get how the document's text was extracted.
+            </td></tr><tr><td><a href="a40aea46-188f-9ae9-ed45-ef3fc6708145.htm">TopMostContainerParentId</a></td><td>
+            Top-most container in the parent/child hierarchy, if any, that contains this document. A document can be contained in a container that itself
+            is contained in a container (and so on). This property returns the <a href="1eceddf2-da6a-3a4d-970e-982a7d42eca6.htm">DocGuid</a> of the top-most container, if any, in the hierarchy 
+            that contains this document. This property returns null if this document does not have a container parent.
+            </td></tr><tr><td><a href="eda8154f-6a44-5d33-5981-7298de25468d.htm">ToRecipients</a></td><td>
+            "To" recipients email address information.
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="1ada9969-add0-f951-f601-f7107618fb9d.htm">Document Class</a></div><div><a href="a1e65d49-050f-842a-426e-ba8aab188009.htm">OpenDiscoverSDK.Interfaces.Platform Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Properties</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+});</script></body></html>

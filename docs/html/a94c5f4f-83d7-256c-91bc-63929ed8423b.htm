@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>KnownMetadataHelper Class</title><meta name="Title" content="KnownMetadataHelper" /><meta name="Help.Id" content="T:OpenDiscoverSDK.Interfaces.Metadata.KnownMetadataHelper" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Metadata" /><meta name="guid" content="a94c5f4f-83d7-256c-91bc-63929ed8423b" /><meta name="Description" content="Helper class to access lists of known metadata field names by .NET type and by document format types." /><meta name="tocFile" content="../toc/IDM.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Known<wbr />Metadata<wbr />Helper Class</h1><div class="summary">
+            Helper class to access lists of known metadata field names by .NET type and by document format types.
+            </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Definition</h2><div id="IDBSection"><strong>Namespace:</strong> <a href="520b27cc-9ac9-4549-2981-558ed96ae428.htm">OpenDiscoverSDK.Interfaces.Metadata</a><br /><strong>Assembly:</strong> OpenDiscoverSDK.Interfaces (in OpenDiscoverSDK.Interfaces.dll) Version: 2025.4.4.0 (2025.4.4)<div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><span class="buttons"><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></span></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="identifier">KnownMetadataHelper</span></code></pre></div></div><dl class="inheritanceHierarchy"><dt>Inheritance</dt><dd><span class="noLink">Object</span>  <span class="icon is-small"><i class="fa fa-arrow-right"></i></span>  <span class="selflink">KnownMetadataHelper</span></dd></dl></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Remarks</h2><div id="IDBCSection"><p>
+            The helper lists of metadata fields in this class can be used to populate UI drop down lists of fields to search for in full-text search indexes,
+            for example.
+            </p><p>
+            This class uses reflection to create lists of the defined fields and field attributes in classes <a href="3b2b7e10-e1a6-3aee-f9dd-76bb9945e5ac.htm">KnownBooleanMetadataFields</a>,
+            <a href="f03e94cc-c234-355d-3bfe-9779d14de8b4.htm">KnownDateTimeMetadataFields</a>, <a href="35c06e81-a65e-b780-c317-e0bb0d9ad127.htm">KnownDoubleMetadataFields</a>, <a href="15fed54c-da5c-04fb-e2e4-bec2f355eb86.htm">KnownInt32MetadataFields</a>, 
+            <a href="719305ad-2094-b3f9-5340-4d47576ca35b.htm">KnownInt64MetadataFields</a>, and <a href="a5bc4ff5-f912-67fc-b9d8-e66a70f3896f.htm">KnownStringMetadataFields</a>.
+            </p></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Properties</h2><div id="IDAEASection"><table id="PropertyList" class="table is-hoverable"><tr><td><a href="7cc40983-2f71-3bfe-cda4-656cf18f8884.htm">ArchiveTypeMetadataFields</a></td><td>
+            Archive (.7z, .zip, .rar, etc) associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="a252306f-883a-dd95-1c78-ac0c75db0358.htm">BooleanMetadataFields</a></td><td>
+            All boolean type known metadata field names.
+            </td></tr><tr><td><a href="e163eada-f6d3-95a7-43fe-71978917f6a9.htm">DateTimeMetadataFields</a></td><td>
+            All DateTime type known metadata field names.
+            </td></tr><tr><td><a href="e534c176-6dbf-9d29-3036-f615fed4ca8a.htm">DocumentStoreTypeMetadataFields</a></td><td>
+            Document store (DXL database, etc) metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="b0f9720e-fbf5-d553-bb90-fefd0e88afcc.htm">DoubleMetadataFields</a></td><td>
+            All double type known metadata field names.
+            </td></tr><tr><td><a href="5e581ba3-5c77-b501-36fc-4f9cfabd8be5.htm">EmailTypeMetadataFields</a></td><td>
+            Email document associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="0b028d43-80e3-fccb-daba-4bff868db296.htm">HtmlTypeMetadataFields</a></td><td>
+            HTML document associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="14bcc926-b02d-27c9-6915-2f845b1247d9.htm">ImageTypeMetadataFields</a></td><td>
+            Image document associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="36de65c9-70f9-6b41-f4e4-7d1aeb599f4a.htm">Int32MetadataFields</a></td><td>
+            All Int32 type known metadata field names.
+            </td></tr><tr><td><a href="9f1413f4-edfe-dd2c-8b68-1c6e6f7f24c7.htm">Int64MetadataFields</a></td><td>
+            All Int64 type known metadata field names.
+            </td></tr><tr><td><a href="893b7d27-c5f8-208f-b41e-c54d61092568.htm">MailStoreTypeMetadataFields</a></td><td>
+            Mail store (.pst, .ost, .mbox, etc.) associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="ccddc334-4a47-4bc2-d139-581e7b3bd3d0.htm">MessagingStoreTypeMetadataFields</a></td><td>
+            Messaging store (Slack export, WhatsApp export, etc) associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="e1b1520c-2b04-f74d-89f3-a39607fb56f3.htm">MessagingTypeMetadataFields</a></td><td>
+            Messaging type metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>, e.g., Teams, Slack, etc., message metadata).
+            </td></tr><tr><td><a href="3107177f-3d4a-ac80-9623-1c21759473f0.htm">MultimediaTypeMetadataFields</a></td><td>
+            Multimedia document associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="30f3f5b2-50fb-efa8-9ae7-57dc075c8d17.htm">OfficeTypeMetadataFields</a></td><td>
+            Common office document type associated metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="995a31e4-e0ec-8a37-c73c-0355c0fb2471.htm">OtherTypeMetadataFields</a></td><td>
+            "Other" (miscellaneous) metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="43e1fb22-e34f-c964-b88d-ef9e9836b539.htm">ReservedMetadataFields</a></td><td>
+            Reserved metadata fields (see <a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a>).
+            </td></tr><tr><td><a href="c32bbd40-e3df-bd58-e48e-79de46d79aad.htm">StringMetadataFields</a></td><td>
+            All string type known metadata field names.
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="520b27cc-9ac9-4549-2981-558ed96ae428.htm">OpenDiscoverSDK.Interfaces.Metadata Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Definition</a></li><li><a class="quickLink">Remarks</a></li><li><a class="quickLink">Properties</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+hljs.highlightAll();
+});</script></body></html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>OpenDiscoverSDK.Interfaces.Metadata Namespace</title><meta name="Title" content="OpenDiscoverSDK.Interfaces.Metadata" /><meta name="Help.Id" content="N:OpenDiscoverSDK.Interfaces.Metadata" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Metadata" /><meta name="guid" content="520b27cc-9ac9-4549-2981-558ed96ae428" /><meta name="Description" content="Open Discover™ SDK for .NET known metadata fields extracted from supported file formats." /><meta name="tocFile" content="../toc/Root.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Open<wbr />Discover<wbr />SDK.<wbr />Interfaces.<wbr />Metadata Namespace</h1><div class="summary"><p>
+            Open Discover™ SDK for .NET known metadata fields extracted from supported file formats. 
+            </p><p>
+            A 'known' metadata field (property) is one that is extracted from at least one file format and is documented in one of the 'known' metadata field collection classes by type.
+            Documenting the known metadata fields by type and also by the common file formats that they are found in (see <a href="a94c5f4f-83d7-256c-91bc-63929ed8423b.htm">KnownMetadataHelper</a> helper class) helps users to
+            know which fields one can index/search for when using Open Discover™ SDK .NET in full-text indexing applications.
+            </p><p>
+            The actual number of metadata fields extracted from all supported file formats is greater than what is presented in this namespace. Note: not all extracted metadata 
+            fields could be documented and many formats allow users to create custom metadata fields with custom names.
+            </p><p>
+            System Requirements:    
+            <ul><li><strong>Minimum supported client</strong> – Windows 7 [desktop apps | UWP apps]</li><li><strong>Minimum supported server</strong> – Windows Server 2008 R2[desktop apps | UWP apps]</li></ul></p></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Classes</h2><div id="IDACASection"><table id="classList" class="table is-hoverable"><tr><td><a href="3b2b7e10-e1a6-3aee-f9dd-76bb9945e5ac.htm">KnownBooleanMetadataFields</a></td><td>
+            Known boolean typed metadata property names.
+            </td></tr><tr><td><a href="f03e94cc-c234-355d-3bfe-9779d14de8b4.htm">KnownDateTimeMetadataFields</a></td><td>
+            Known DateTime typed metadata property names.
+            </td></tr><tr><td><a href="35c06e81-a65e-b780-c317-e0bb0d9ad127.htm">KnownDoubleMetadataFields</a></td><td>
+            Known double typed metadata property names.
+            </td></tr><tr><td><a href="15fed54c-da5c-04fb-e2e4-bec2f355eb86.htm">KnownInt32MetadataFields</a></td><td>
+            Known Int32 typed metadata property names.
+            </td></tr><tr><td><a href="719305ad-2094-b3f9-5340-4d47576ca35b.htm">KnownInt64MetadataFields</a></td><td>
+            Known Int64 typed metadata property names.
+            </td></tr><tr><td><a href="33dc8cc2-7c38-84f2-ccb5-67df92ad903c.htm">KnownMetadataAttribute</a></td><td>
+            Metadata field attribute.
+            </td></tr><tr><td><a href="a4b5275b-c507-047c-66df-6eb5d206a3a3.htm">KnownMetadataField</a></td><td>
+            Used only by the <a href="a94c5f4f-83d7-256c-91bc-63929ed8423b.htm">KnownMetadataHelper</a> class to represent a known metadata field.
+            </td></tr><tr><td><a href="a94c5f4f-83d7-256c-91bc-63929ed8423b.htm">KnownMetadataHelper</a></td><td>
+            Helper class to access lists of known metadata field names by .NET type and by document format types.
+            </td></tr><tr><td><a href="a5bc4ff5-f912-67fc-b9d8-e66a70f3896f.htm">KnownStringMetadataFields</a></td><td>
+            Known string typed metadata property names.
+            </td></tr></table></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Classes</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+});</script></body></html>

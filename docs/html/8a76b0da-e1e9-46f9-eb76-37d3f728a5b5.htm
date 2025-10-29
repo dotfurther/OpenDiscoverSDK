@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>Entity Properties</title><meta name="Title" content="Properties" /><meta name="Help.Id" content="Properties.T:OpenDiscoverSDK.Interfaces.Content.TextAnalytics.Entity" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Content.TextAnalytics" /><meta name="guid" content="8a76b0da-e1e9-46f9-eb76-37d3f728a5b5" /><meta name="tocFile" content="../toc/IDBK.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Entity Properties</h1><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Properties</h2><div id="IDADASection"><table id="PropertyList" class="table is-hoverable"><tr><td><a href="61dafa43-aaeb-fcf6-142c-563894b8568e.htm">Associated</a></td><td>
+            Extra associated information, if any, about the item. See remarks.
+            </td></tr><tr><td><a href="2264f465-ad49-8737-d68c-94ca6bb9e53c.htm">CategoryType</a></td><td>
+            The category of this entity item.
+            </td></tr><tr><td><a href="cbcd5f35-2b20-a87d-4afe-a31922b597a2.htm">ColumnIndexStart</a></td><td>
+            If non-negative, contains the starting column index of the entity in a structured file format column.
+            </td></tr><tr><td><a href="cdde513a-1924-4371-e0b4-e5933554df53.htm">Context</a></td><td>
+            Additional keyword information, if any, used to identify the item.
+            </td></tr><tr><td><a href="bdf4691f-7731-587b-fb4b-0ebf0373b76c.htm">CustomEntityClassification</a></td><td>
+            User defined custom entity classification. Useful for classifying (grouping) different <a href="046a1804-7c59-e142-fa8c-7a4d1c122412.htm">CustomEntityName</a>.
+            </td></tr><tr><td><a href="046a1804-7c59-e142-fa8c-7a4d1c122412.htm">CustomEntityName</a></td><td>
+            User defined custom entity name.
+            </td></tr><tr><td><a href="1eeca01f-7d8f-3bcc-7395-49aea769de0d.htm">End</a></td><td>
+            Zero-offset ending position in text of item.
+            </td></tr><tr><td><a href="0eb5cae3-7dde-cda0-16e6-ee30bd9cd05c.htm">GroupId</a></td><td>
+            Entity group Id. Applies only to PXI entities found in spreadsheet/database formats.
+            </td></tr><tr><td><a href="c025ee41-2df2-737f-922f-abe13f0a53b1.htm">ItemType</a></td><td>
+            The type of this entity item.
+            </td></tr><tr><td><a href="50d6be9d-f0a4-0626-3060-232f92024de2.htm">Keywords</a></td><td>
+            If <a href="f227edb8-9866-1e26-f4df-b99b45ce7252.htm">MatchType</a> property is equal to <a href="64ec20af-09d5-26a6-0761-e985bdc39291.htm">ImmediatelyAfter</a>, <a href="64ec20af-09d5-26a6-0761-e985bdc39291.htm">ProximityBefore</a>, or 
+            <a href="64ec20af-09d5-26a6-0761-e985bdc39291.htm">ProximityAfter</a> then this property gives the the keywords that triggered the match for the item. If MatchType property is 
+            equal <a href="64ec20af-09d5-26a6-0761-e985bdc39291.htm">Structure</a> then this property value will be null.
+            </td></tr><tr><td><a href="a7b4ac5f-5110-4c79-01bc-428939758c58.htm">Line</a></td><td>
+            Line number in text of item.
+            </td></tr><tr><td><a href="77778bff-5e97-8619-f6dd-35ec7aa5ea12.htm">LocationType</a></td><td>
+            Get or set where in the document content the entity is located (e.g., in extracted text, metadata, or hyperlink).
+            </td></tr><tr><td><a href="f227edb8-9866-1e26-f4df-b99b45ce7252.htm">MatchType</a></td><td>
+            The type of match used to find this entity item.
+            </td></tr><tr><td><a href="a1214890-c214-1316-f6cd-e745af91010e.htm">MetadataName</a></td><td>
+            If property <a href="77778bff-5e97-8619-f6dd-35ec7aa5ea12.htm">LocationType</a> is set to <a href="d5b32c7b-a063-bd9f-f849-97f13567251a.htm">Metadata</a>, this property holds the name of the metadata field.
+            If the metadata field is a custom (user defined) property then it will be prefixed with "cust:".
+            </td></tr><tr><td><a href="6c1823e4-2076-6fff-fd1c-7d79e9af33c0.htm">NormalizedText</a></td><td>
+            Normalized extracted text, if supported for the <a href="c025ee41-2df2-737f-922f-abe13f0a53b1.htm">ItemType</a>. 
+            </td></tr><tr><td><a href="ab54fdc2-b3ca-d5ad-9671-00137852a716.htm">Start</a></td><td>
+            Zero-offset starting position in text of item.
+            </td></tr><tr><td><a href="78237b47-97e4-7f4b-d6c9-18ae0143b759.htm">Text</a></td><td>
+            Extracted text of entity item (e.g., for credit cards it will be the credit card number).
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="75bf3100-d4b4-0098-46f5-b953923776a9.htm">Entity Class</a></div><div><a href="12331b25-bce3-6a9b-929b-46b5cf49471c.htm">OpenDiscoverSDK.Interfaces.Content.TextAnalytics Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Properties</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+});</script></body></html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>DatePrecedenceType Enumeration</title><meta name="Title" content="DatePrecedenceType" /><meta name="Help.Id" content="T:OpenDiscoverSDK.Interfaces.Platform.DatePrecedenceType" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="OpenDiscoverSDK.Interfaces.Platform" /><meta name="guid" content="b8418fcb-1f4b-8ad8-cf5e-2965b4ad4f66" /><meta name="Description" content="The enumeration specifies which field were used for a document's and property values. The order of the enumeration fields here is also the precedence order of the metadata fields used to calculate and ." /><meta name="tocFile" content="../toc/IDN.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Open Discover® SDK and Platform for .NET - Release 2025.4.2</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>Date<wbr />Precedence<wbr />Type Enumeration</h1><div class="summary">
+            The enumeration specifies which <a href="f03e94cc-c234-355d-3bfe-9779d14de8b4.htm">KnownDateTimeMetadataFields</a> field were used for a document's <a href="ef7b5786-94f3-3fe2-0e1a-ae71411197c3.htm">PrimaryDate</a> 
+            and <a href="52b38d48-9e0e-1908-9bb6-21ab0a1aa311.htm">SortDate</a> property values. The order of the enumeration fields here is also the precedence order of the metadata fields 
+            used to calculate <a href="ef7b5786-94f3-3fe2-0e1a-ae71411197c3.htm">PrimaryDate</a> and <a href="52b38d48-9e0e-1908-9bb6-21ab0a1aa311.htm">SortDate</a>.
+            </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Definition</h2><div id="IDBSection"><strong>Namespace:</strong> <a href="a1e65d49-050f-842a-426e-ba8aab188009.htm">OpenDiscoverSDK.Interfaces.Platform</a><br /><strong>Assembly:</strong> OpenDiscoverSDK.Interfaces (in OpenDiscoverSDK.Interfaces.dll) Version: 2025.4.4.0 (2025.4.4)<div class="codeSnippet"><div class="codeHeader"><span class="codeHeaderTitle">C#</span><span class="buttons"><button class="button is-small is-light copyCode" title="Copy"><span class="icon is-small"><i class="fa fa-copy"></i></span><span>Copy</span></button></span></div><div class="codePanel hljs"><pre xml:space="preserve"><code class="language-cs">[<span class="identifier">DataContractAttribute</span>]
+<span class="keyword">public</span> <span class="keyword">enum</span> <span class="identifier">DatePrecedenceType</span></code></pre></div></div></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Members</h2><div id="IDADASection"><table id="enumMemberList" class="table is-hoverable"><tr><td>SentDate</td><td>1</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Email</a> and used <a href="36018960-d069-2e06-75e2-a966cb3c8850.htm">SentDate</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>ReceivedDate</td><td>2</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Email</a> and used <a href="03ae44b8-c7c2-63fc-f6ba-0f6ee6f15435.htm">ReceivedDate</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>AppointmentStart</td><td>3</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Calendar</a> and used <a href="a1949b92-5ef1-3b0e-f270-6ff51cdd3632.htm">AppointmentStart</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>AppointmentEnd</td><td>4</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Calendar</a> and used <a href="b2c5510f-ccaf-1bd2-39bc-5933bf961fdd.htm">AppointmentEnd</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>TaskLastUpdate</td><td>5</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Email</a> (Microsoft Outlook Task message object) and used <a href="b74c6cce-0589-0586-5617-7f65a3a9a842.htm">TaskLastUpdate</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>LogEnd</td><td>6</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Email</a> (Microsoft Outlook Journal message object) and used <a href="5016c76a-b00c-7b81-551b-6a8094e009c5.htm">LogEnd</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>LogStart</td><td>7</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Email</a> (Microsoft Outlook Journal message object) and used <a href="b180a8ec-2367-795e-d3e3-3f5374b57745.htm">LogStart</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>LastModifiedDate</td><td>8</td><td><a href="be9ec8b9-0fc9-f983-0103-482d256a2261.htm">LastModifiedDate</a> metadata field was used for PrimaryDate/SortDate.
+            </td></tr><tr><td>LastSavedDate</td><td>9</td><td><a href="7367f3db-c559-9cfb-f53d-6be74a0d7d95.htm">LastSavedDate</a> metadata field was used for PrimaryDate/SortDate.
+            </td></tr><tr><td>CreateDateTimeReadOnly</td><td>10</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">Email</a> and Microsoft Outlook 'Document' message object type, and used <a href="3c3463d0-3f80-58f6-8cfb-b3d468bea93c.htm">CreateDateTimeReadOnly</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>TakenDate</td><td>11</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">RasterImage</a> or <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">VectorImage</a> and used <a href="961d6d4d-c876-1508-0990-eb4deeda4362.htm">TakenDate</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>OriginalDate</td><td>12</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">RasterImage</a> or <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">VectorImage</a> and used <a href="acab5baf-1de4-e3bd-bc22-6ce4986acea9.htm">OriginalDate</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>DigitizedDate</td><td>13</td><td>
+            Document file format is of classification <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">RasterImage</a> or <a href="1e3a8090-926a-275b-2e9c-c0851d3c49e2.htm">VectorImage</a> and used <a href="2950e8f6-6960-7fdf-efef-d1ff1ed9f0a3.htm">DigitizedDate</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>TimeEdited</td><td>14</td><td>
+            Document file format is a Microsoft Visio type and used <a href="7488bdbe-7f20-41ad-6c72-23a47f1d683e.htm">TimeEdited</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>TimeSaved</td><td>15</td><td>
+            Document file format is a Microsoft Visio type and used <a href="7784b5f3-2d64-0f87-bbd0-595f2a4b8387.htm">TimeSaved</a> metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>Date</td><td>16</td><td><a href="9afc508a-56dc-eb5f-a0d6-a05491b562fe.htm">Date</a> (MIME header and image document associated) metadata field for PrimaryDate/SortDate.
+            </td></tr><tr><td>CreationDate</td><td>17</td><td><a href="e83db884-5ddf-910a-f10e-e286dee1e934.htm">CreationDate</a> metadata field was used for PrimaryDate/SortDate. If document has a parent container, and if CreationDate is newer (after) its parent container's SortDate, then the 
+            parent container's SortDate is used. The next rule is that if CreationDate is newer (after) <a href="c829e72a-5a1f-5085-794b-2d97defa8bab.htm">LastModifiedTimeFileSystem</a>, then LastModifiedTimeFileSystem metadata field is 
+            used for SortDate. 
+            </td></tr><tr><td>LastIMReceivedTime</td><td>18</td><td>
+            Chat log (e.g., Skype) where the <a href="f2ba6a7e-90b6-b8cf-3310-fead5ae7b9f8.htm">LastIMReceivedTime</a> metadata field was used for PrimaryDate/SortDate.
+            </td></tr><tr><td>PostedDate</td><td>19</td><td><a href="50d5f591-74b6-7629-419a-eb6e4f1155ae.htm">PostedDate</a> metadata field was used for PrimaryDate/SortDate.
+            </td></tr><tr><td>Parent</td><td>100</td><td>
+            If document is a child attachment/embedded item, then the parent's PrimaryDate/SortDate was used.
+            </td></tr><tr><td>ExportDate</td><td>101</td><td>
+            Document file format is <a href="6f1047fb-7367-c09c-5621-ae7632c8404b.htm">SkypeChatHistoryExport</a> and <a href="9465cf1c-1125-d3e7-80c0-36a18b7540c9.htm">ExportDate</a> metadata field was used for PrimaryDate/SortDate.
+            </td></tr><tr><td>LastModifiedTimeFileSystem</td><td>102</td><td>
+            Document used <a href="c829e72a-5a1f-5085-794b-2d97defa8bab.htm">LastModifiedTimeFileSystem</a> for PrimaryDate/SortDate.
+            </td></tr><tr><td>CreationTimeFileSystem</td><td>103</td><td>
+            Document used <a href="e69d71f2-baa1-8a35-3e4c-5037f6b3af7b.htm">CreationTimeFileSystem</a> for PrimaryDate/SortDate.
+            </td></tr><tr><td>Undefined</td><td>500</td><td>
+            No sort date was set.
+            </td></tr></table></div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>See Also</h2><div id="seeAlsoSection"><h4>Reference</h4><div><a href="a1e65d49-050f-842a-426e-ba8aab188009.htm">OpenDiscoverSDK.Interfaces.Platform Namespace</a></div></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Definition</a></li><li><a class="quickLink">Members</a></li><li><a class="quickLink">See Also</a></li></ul></nav></div></div></div><footer id="PageFooter" class="footer border-top py-3 fixedFooter"><div class="columns"><div class="column"><p>Copyright © 2017-2025 dotFurther, inc. All rights reserved.  "Open Discover" is a registered trademark (®) of dotFurther, inc.</p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:support%40dotfurther.com?Subject=Open%20Discover®%20SDK%20and%20Platform%20for%20.NET%20-%20Release%202025.4.2">support@dotfurther.com</a></div>
+        <script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        </script> 
+				</div><div class="column"> 
+				</div></div></footer></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+hljs.highlightAll();
+});</script></body></html>
