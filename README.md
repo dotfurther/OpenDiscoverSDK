@@ -39,7 +39,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * IP addresses (IPv4 and IPv6)
      * MAC addresses
      * Cryptocurrency addresses
-     * And more...
+     * And more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
 * Detecting 4 types of sensitive security information (in extracted text and metadata):
      * Passwords
      * Usernames
