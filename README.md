@@ -1,7 +1,9 @@
 Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 
+### API Help: https://dotfurther.github.io/OpenDiscoverSDK
+
 # Welcome to Open Discover® SDK for .NET Code Examples
-### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery, incidence response, data breach, and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows. 
+### At this time, Open Discover SDK is only available for evaluation to companies that are in the eDiscovery, incidence response, data breach, AI/ML, and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows. 
 
 ### See white paper on Azure performance of a distributed document processing/entity extraction workflow system built upon the OpenDiscover SDK:  https://github.com/dotfurther/Open-Discover-WhitePaper-1
 
@@ -9,10 +11,12 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 
 ## Open Discover® SDK is a .NET 8 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
-  (versus using unreliable file extensions, especially in embedded objects/attachments). 1,570+ file formats 
+  (versus using unreliable file extensions, especially in embedded objects/attachments). 1,600+ file formats 
   supported for identification.
-* Extracting text from supported file formats and optionally identifying languages present in the extracted text. [Notable supported file formats](https://dotfurther.com/features/)
-* Extracting metadata (includes user defined custom metadata) from supported file formats (over 1,400 known and documented metadata fields in total)
+* Extracting text from supported file formats and optionally identifying languages present in the extracted text.
+     * Supported file formats for identification and extraction: https://dotfurther.github.io/OpenDiscoverSDK/html/7e782821-dd62-4262-b342-f603ac374bba.htm
+* Extracting metadata (includes user defined custom metadata) from supported file formats (over 4,500 known and documented metadata fields in total)
+    * All known metadata extracted and documented: https://dotfurther.github.io/OpenDiscoverSDK/html/520b27cc-9ac9-4549-2981-558ed96ae428.htm
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
@@ -37,7 +41,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * IP addresses (IPv4 and IPv6)
      * MAC addresses
      * Cryptocurrency addresses
-     * And more...
+     * And more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
 * Detecting 4 types of sensitive security information (in extracted text and metadata):
      * Passwords
      * Usernames
