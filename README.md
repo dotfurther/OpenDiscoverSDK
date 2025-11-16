@@ -20,7 +20,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* Extracting personally identifiable information (PII) and protected health information (PHI) (in extracted text and metadata) using the SDK's built-in rules based expert system:
+* PII/PHI/FERPA Detection: Extracting PII, PHI, and FERPA (in extracted text and metadata) using the SDK's built-in rules-based expert system:
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
@@ -41,8 +41,6 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * IP addresses (IPv4 and IPv6)
      * MAC addresses
      * Cryptocurrency addresses
-     * And many more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
-* Detecting and extracting information on many entity types related to:
      * Person name
      * Medical records
      * Health care/insurance
@@ -57,10 +55,10 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * Form entry fields related to sensitive items
      * Policy numbers
      * Insurance
-     * 350+ entity types extracted (along with all content, in one simple API call and at a very high performance).
+     * And many more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
 * Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
-* Open Discover SDK does not use regular expressions for sensitive/entity item detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
+* Open Discover SDK PII/PHI/FERPA detection expert system does not use regular expressions for detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
 
 ## The Open Discover® SDK API is purposed for users to develop higher level document processing applications for:
 * Full text indexing/search
