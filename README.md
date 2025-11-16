@@ -9,7 +9,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
-## Open Discover® SDK is a .NET 8 application programming interface (API) that supports:
+## Open Discover® SDK is a .NET 10 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1,600+ file formats 
   supported for identification.
@@ -20,7 +20,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* Detecting and extracting information on 25 types of personally identifiable information (PII) (in extracted text and metadata):
+* Extracting personally identifiable information (PII) and protected health information (PHI) (in extracted text and metadata) using the SDK's built-in rules based expert system:
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
@@ -41,12 +41,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * IP addresses (IPv4 and IPv6)
      * MAC addresses
      * Cryptocurrency addresses
-     * And more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
-* Detecting 4 types of sensitive security information (in extracted text and metadata):
-     * Passwords
-     * Usernames
-     * Network names
-     * Database credentials
+     * And many more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
 * Detecting and extracting information on many entity types related to:
      * Person name
      * Medical records
