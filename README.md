@@ -34,7 +34,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * State ID card numbers
      * Passport numbers
      * Maiden names
-     * Health care number/member IDs
+     * Health care number/member IDs (HICN, MBI, and generic)
      * License plate numbers
      * Vehicle identification numbers (VIN)
      * Social media accounts
