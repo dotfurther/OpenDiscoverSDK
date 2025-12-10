@@ -1,4 +1,4 @@
-Copyright © 2019-2025 dotFurther Inc. All rights reserved.
+Copyright © 2019-2026 dotFurther Inc. All rights reserved.
 
 ### API Help: https://dotfurther.github.io/OpenDiscoverSDK
 
