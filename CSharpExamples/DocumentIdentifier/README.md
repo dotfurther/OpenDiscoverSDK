@@ -1,4 +1,4 @@
-Copyright © 2019-2025 dotFurther Inc. All rights reserved.
+Copyright © 2019-2026 dotFurther Inc. All rights reserved.
 
 ## File Format Document Identification Example
 
@@ -29,7 +29,7 @@ Screen shot of "All Supported File Formats" view (at this time, Open Discover SD
 <img src="DocumentationImages/Image4.png">
 
 
-To ENABLE long file path support for Windows 10 and .NET 8, see this article:
+To ENABLE long file path support for Windows 10 and .NET 10, see this article:
  https://blogs.msdn.microsoft.com/jeremykuhne/2016/07/30/net-4-6-2-and-long-paths-on-windows-10/
 
 ------------------------------------------------------------------------------------------------------------------------
