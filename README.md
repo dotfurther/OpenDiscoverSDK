@@ -59,6 +59,7 @@ Copyright © 2019-2026 dotFurther Inc. All rights reserved.
 * Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
 * Open Discover SDK PII/PHI/FERPA detection expert system does not use regular expressions for detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
+* The OpenDiscoverSDK.Platform SDK .NET namespace has a built-in multi-threaded eDiscovery quality document processing engine worker class (DocumentTaskEngine). This class will fully recurse process a set of input documents, archives, and email mail stores (PST/OST/MBOX/etc). A single instance of DocumentTaskEngine (where instances can be distributed for greater throughput) typically processes a batch of documents/archives/email stores at 200+ GB/hr expanded size rate. For example, 1 (ONE) instance of DocumentTaskEngine can fully recurse process 1.2+M emails/attachments in the 189 ENRON Outlook PST dataset in ~30 minutes on a desktop PC (53GB of input PSTs -- 140+ GB of output natives/extracted text/metadata).
 
 ## The Open Discover® SDK API is purposed for users to develop higher level document processing applications for:
 * Full text indexing/search
