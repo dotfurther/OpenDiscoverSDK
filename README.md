@@ -99,6 +99,6 @@ high volume document processing workflows.
 #### Processing Summary Screen Shot:
 <img src="DocumentTaskEngineProcessingTaskSummary.png">
 
-#### Processed Document Review Tab for text, metadata, entity, languages identified in text, etc., extraction:
+#### Processed Document Review tab for reviewing text, metadata, entity, languages identified in text, etc., extraction:
 <img src="DocumentTaskEngineReviewTab.png">
 
