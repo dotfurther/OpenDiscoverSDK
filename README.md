@@ -96,9 +96,10 @@ high volume document processing workflows.
 
 ### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,540 files (1.3GB of files recursively processed in under 17 seconds on a OS cached SSD drive)
 
-#### Processing Summary Screen Shot:
+#### Processing Summary Screen Shot (~280 GB/hour processing rate based upon the 1.3GB input size of the dataset):
 <img src="DocumentTaskEngineProcessingTaskSummary.png">
 
 #### Processed Document Review tab for reviewing text, metadata, entity, languages identified in text, etc., extraction:
+- In the image below, the selected review file "036277.pptx" (Powerpoint file) near the bottom of the image has and embedded attachment "image1.jpeg" that has a red forecolor, this is due to the image being in the NIST database. The DocumentTaskEngine de-NISTs files as processing by default.
 <img src="DocumentTaskEngineReviewTab.png">
 
