@@ -94,7 +94,7 @@ high volume document processing workflows.
 
 ## Open Discover SDK Platform namespace comes with the distributable, parallel, document/container ingestion class, DocumentTaskEngine. The screen shots below are of a QA test UI that tests an instance of the DocumentTaskEngine on various datasets.
 
-### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,540 files (processed in under 17 seconds on a OS cached folder)
+### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,540 files (1.3GB of files recursively processed in under 17 seconds on a OS cached SSD drive)
 
 #### Processing Summary Screen Shot:
 <img src="DocumentTaskEngineProcessingTaskSummary.png">
