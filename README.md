@@ -94,10 +94,13 @@ high volume document processing workflows.
 
 ## The Open Discover SDK Platform namespace comes with a distributable, highly parallel, document/container ingestion class, DocumentTaskEngine. The screen shots below are of a QA test UI that is used to test an instance of the DocumentTaskEngine on various QA datasets.
 
-### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,665 files (1.3GB of files)
+### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,665 files (1.3GB of files). Below are results for 2 different DocumentTaskEngine CpuModes (4 core and 16 core), the test PC is a 16-core AMD:
 
-#### Processing Summary Screen Shot (~280 GB/hour processing rate based upon the 1.3GB input size of the dataset):
-<img src="DocumentTaskEngineProcessingTaskSummary.png">
+#### Processing Summary Screen Shot for DocumentTaskEngine in 4 CPU Core Mode Setting (~275 GB/hour processing rate):
+<img src="DocumentTaskEngine_4CoreCpuMode.png">
+
+#### Processing Summary Screen Shot for DocumentTaskEngine in 16 CPU Core Mode Setting (~627 GB/hour processing rate):
+<img src="DocumentTaskEngine_16CoreCpuMode.png">
 
 #### Processed Document Review tab for reviewing text, metadata, entity, languages identified in text, etc., extraction:
 - In the image below, the selected review file "036277.pptx" (Powerpoint file) near the bottom of the image has and embedded attachment "image1.jpeg" that has a red forecolor, this is due to the image being in the NIST database. The DocumentTaskEngine de-NISTs files as processing by default.
