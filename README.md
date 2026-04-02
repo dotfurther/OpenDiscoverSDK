@@ -21,7 +21,7 @@ Copyright © 2019-2026 dotFurther Inc. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* PII/PHI/FERPA Detection: Extracting PII, PHI, and FERPA (in extracted text and metadata) using the SDK's built-in rules-based expert system (also useful to QA AI LLM output):
+* PII/PHI/FERPA Detection: Extracting PII, PHI, and FERPA (in extracted text and metadata) using the SDK's built-in rules-based expert system (useful for quality checking AI LLM output for hallucinations and to give estimates of PII/PHI/FERPA density in data):
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
