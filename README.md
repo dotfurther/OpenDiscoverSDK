@@ -92,7 +92,9 @@ high volume document processing workflows.
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
    * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc.
 
-## The Open Discover SDK Platform namespace comes with a distributable, highly parallel, document/container ingestion class, DocumentTaskEngine. The screen shots below are of a QA test UI that is used to test an instance of the DocumentTaskEngine on various QA datasets.
+## The Open Discover SDK Platform namespace comes with a distributable, highly parallel, document/container ingestion class, DocumentTaskEngine (often called a document processing "worker" in eDiscovery industry). The screen shots below are of a QA test UI that is used to test an instance of the DocumentTaskEngine on various QA datasets.
+
+See https://github.com/dotfurther/Open-Discover-WhitePaper-1 for a whitepaper on 1.65TB dataset using many DocumentTaskEngine instances for extraction.
 
 ### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,665 files (1.3GB of files). Below are results for 2 different DocumentTaskEngine CpuMode's (4 core and 16 core - CpuMode, an enumeration setting, determines how many threads and types of internal worker threads that are created for the task), the test PC is a 16-core AMD:
 
