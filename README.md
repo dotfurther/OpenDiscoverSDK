@@ -94,7 +94,7 @@ high volume document processing workflows.
 
 ## The Open Discover SDK Platform namespace comes with a distributable, highly parallel, document/container ingestion class, DocumentTaskEngine (often called a document processing "worker" in eDiscovery industry). The screen shots below are of a QA test UI that is used to test an instance of the DocumentTaskEngine on various QA datasets.
 
-See https://github.com/dotfurther/Open-Discover-WhitePaper-1 for a whitepaper on 1.65TB dataset using many DocumentTaskEngine instances for extraction.
+See https://github.com/dotfurther/Open-Discover-WhitePaper-1 for a whitepaper on 1.65TB 'real world' dataset processed using many DocumentTaskEngine instances for extraction.
 
 ### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,665 files (1.3GB of files). Below are results for 2 different DocumentTaskEngine CpuMode's (4 core and 16 core - CpuMode, an enumeration setting, determines how many threads and types of internal worker threads that are created for the task), the test PC is a 16-core AMD:
 
