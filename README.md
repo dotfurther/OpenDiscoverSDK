@@ -1,15 +1,16 @@
-Copyright © 2019-2025 dotFurther Inc. All rights reserved.
+Copyright © 2019-2026 dotFurther Inc. All rights reserved.
 
 ### API Help: https://dotfurther.github.io/OpenDiscoverSDK
+### Higher Level Distributed Document Ingestion/OCR System: https://github.com/dotfurther/Open-Discover-WhitePaper-1
 
-# Welcome to Open Discover® SDK for .NET Code Examples
+# Welcome to Open Discover® SDK for Deep Content Extraction
 ### At this time, Open Discover SDK is only available for evaluation to companies that are in the legal eDiscovery, incident response, data breach, AI/ML, and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows.
 
 ### See white paper on Azure performance of a distributed document processing/entity extraction workflow system built upon the OpenDiscover SDK:  https://github.com/dotfurther/Open-Discover-WhitePaper-1
 
 ### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
-## Open Discover® SDK is a .NET 8 application programming interface (API) that supports:
+## Open Discover® SDK is a .NET 10 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
   (versus using unreliable file extensions, especially in embedded objects/attachments). 1,600+ file formats 
   supported for identification.
@@ -20,7 +21,7 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* Detecting and extracting information on 25 types of personally identifiable information (PII) (in extracted text and metadata):
+* PII/PHI/FERPA Detection: Extracting PII, PHI, and FERPA (in extracted text and metadata) using the SDK's built-in rules-based expert system (useful for quality checking AI LLM output for hallucinations and to give estimates of PII/PHI/FERPA density in data):
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
@@ -34,20 +35,13 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * State ID card numbers
      * Passport numbers
      * Maiden names
-     * Health care number/member IDs
+     * Health care number/member IDs (HICN, MBI, and generic)
      * License plate numbers
      * Vehicle identification numbers (VIN)
      * Social media accounts
      * IP addresses (IPv4 and IPv6)
      * MAC addresses
      * Cryptocurrency addresses
-     * And more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
-* Detecting 4 types of sensitive security information (in extracted text and metadata):
-     * Passwords
-     * Usernames
-     * Network names
-     * Database credentials
-* Detecting and extracting information on many entity types related to:
      * Person name
      * Medical records
      * Health care/insurance
@@ -62,10 +56,11 @@ Copyright © 2019-2025 dotFurther Inc. All rights reserved.
      * Form entry fields related to sensitive items
      * Policy numbers
      * Insurance
-     * 350+ entity types extracted (along with all content, in one simple API call and at a very high performance).
+     * And many more... See https://dotfurther.github.io/OpenDiscoverSDK/html/2caef568-f7bd-69fc-89c4-aa0d3e2c497b.htm
 * Ability to define and detect user defined custom sensitive/entity item types in extracted text and metadata.
      * Create your own entity or sensitive item definitions
-* Open Discover SDK does not use regular expressions for sensitive/entity item detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
+* Open Discover SDK PII/PHI/FERPA detection expert system does not use regular expressions for detection; however, user defined custom sensitive/entity items have an option to use regular expressions.
+* The OpenDiscoverSDK.Platform SDK .NET namespace has a built-in multi-threaded eDiscovery quality document processing engine worker class (DocumentTaskEngine). This class will fully recurse process a set of input documents, archives, and email mail stores (PST/OST/MBOX/etc). A single instance of DocumentTaskEngine (where instances can be distributed for greater throughput) typically processes a batch of documents/archives/email stores at 200+ GB/hr expanded size rate. For example, 1 (ONE) instance of DocumentTaskEngine can fully recurse process 1.2+M emails/attachments in the 189 ENRON Outlook PST dataset in ~30 minutes on a desktop PC (53GB of input PSTs -- 140+ GB of output natives/extracted text/metadata).
 
 ## The Open Discover® SDK API is purposed for users to develop higher level document processing applications for:
 * Full text indexing/search
@@ -95,4 +90,21 @@ high volume document processing workflows.
    * Sensitive item detection (PII) such as social security, credit card numbers, IBAN, driver's license numbers, license plate numbers, phone numbers, emails, and much more.
 ### [PowerShell Example - shows how to create Cmdlets that use SDK to:](./CSharpExamples/PowerShellExample/README.md)
    * Identify file formats. This Cmdlet can be used in a pipeline to find file server files with specific formats or classifications
-   * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc. 
+   * Extract all document content such as text, metadata, hyperlinks, attachments, etc. This Cmdlet can be used in a pipeline to search for and aggregate duplicate documents, search for documents with specific metadata values (i.e., author, creator, etc), search for specific text, etc.
+
+## The Open Discover SDK Platform namespace comes with a distributable, highly parallel, document/container ingestion class, DocumentTaskEngine (often called a document processing "worker" in eDiscovery industry). The screen shots below are of a QA test UI that is used to test an instance of the DocumentTaskEngine on various QA datasets.
+
+See https://github.com/dotfurther/Open-Discover-WhitePaper-1 for a whitepaper on 1.65TB 'real world' dataset processed using many DocumentTaskEngine instances for extraction.
+
+### Example 1.3GB, 1,571 file/container dataset that upon processing expands to 12,665 files (1.3GB of files). Below are results for 2 different DocumentTaskEngine CpuMode's (4 core and 16 core - CpuMode, an enumeration setting, determines how many threads and types of internal worker threads that are created for the task), the test PC is a 16-core AMD:
+
+#### Processing Summary Screen Shot for DocumentTaskEngine in 4 CPU Core Mode Setting (~275 GB/hour processing rate):
+<img src="DocumentTaskEngine_4CoreCpuMode.png">
+
+#### Processing Summary Screen Shot for DocumentTaskEngine in 16 CPU Core Mode Setting (~627 GB/hour processing rate):
+<img src="DocumentTaskEngine_16CoreCpuMode.png">
+
+#### Processed Document Review tab for reviewing text, metadata, entity, languages identified in text, etc., extraction:
+- In the image below, the selected review file "036277.pptx" (Powerpoint file) near the bottom of the image has and embedded attachment "image1.jpeg" that has a red forecolor, this is due to the image being in the NIST database. The DocumentTaskEngine de-NISTs files as processing by default.
+<img src="DocumentTaskEngineReviewTab.png">
+
