@@ -1,8 +1,8 @@
 ﻿// ***************************************************************************************
 // 
-//  Copyright © 2019-2025 dotFurther Inc. All rights reserved. 
+//  Copyright © 2019-2025 DOTFURTHER LLC All rights reserved. 
 //	 The software and associated documentation supplied hereunder are the proprietary 
-//   information of dotFurther, inc., and are supplied subject to licence terms.
+//   information of DOTFURTHER LLC, and are supplied subject to licence terms.
 // 
 // ***************************************************************************************
 using OpenDiscoverSDK.Interfaces;
