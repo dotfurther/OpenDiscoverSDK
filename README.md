@@ -1,4 +1,4 @@
-Copyright © 2019-2026 dotFurther Inc. All rights reserved.
+Copyright © 2019-2026 dotFurther LLC. All rights reserved.
 
 ### API Help: https://dotfurther.github.io/OpenDiscoverSDK
 ### Higher Level Distributed Document Ingestion/OCR System: https://github.com/dotfurther/Open-Discover-WhitePaper-1
