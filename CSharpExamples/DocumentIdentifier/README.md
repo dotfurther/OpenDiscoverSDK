@@ -1,4 +1,4 @@
-Copyright © 2019-2026 dotFurther Inc. All rights reserved.
+Copyright © 2019-2026 dotFurther LLC. All rights reserved.
 
 ## File Format Document Identification Example
 
