@@ -4,11 +4,10 @@ Copyright © 2019-2026 dotFurther LLC. All rights reserved.
 ### Higher Level Distributed System Document Ingestion/Indexing/OCR System: https://github.com/dotfurther/Open-Discover-WhitePaper-1
 
 # Welcome to Open Discover® SDK for Deep Content Extraction
-### At this time, Open Discover SDK is only available for evaluation to companies that are in the legal eDiscovery, incident response, data breach, AI/ML, and information governance industries or in an industry that ingests/processes large volumes of documents. We also provide higher level APIs built upon the SDK, Open Discover Platform, that help customers easily and quickly build high volume/high throughput document processing workflows.
 
-### See white paper on Azure performance of a distributed document processing/entity extraction workflow system built upon the OpenDiscover SDK:  https://github.com/dotfurther/Open-Discover-WhitePaper-1
+### See white paper on Azure performance of a distributed document ingestion/entity extraction workflow system built upon the OpenDiscover SDK:  https://github.com/dotfurther/Open-Discover-WhitePaper-1
 
-### Contact us if your company meets these requirements and are interested in evaluating the APIs: https://dotfurther.com/contact-us/
+### Contact us if interested in evaluating the APIs: https://dotfurther.com/contact-us/
 
 ## Open Discover® SDK is a .NET 10 application programming interface (API) that supports:
 * Identifying file formats using internal binary signatures for reliable and fast file format identification 
@@ -21,7 +20,7 @@ Copyright © 2019-2026 dotFurther LLC. All rights reserved.
 * Extracting embedded items/attachments from supported document formats
 * Extracting archive container items (7ZIP, ZIP, RAR, TAR, split archives, etc)
 * Extracting mail store container email objects (PST, OST, OST2013, OLM, MBOX, etc)
-* PII/PHI/FERPA Detection: Extracting PII, PHI, and FERPA (in extracted text and metadata) using the SDK's built-in rules-based expert system (useful for quality checking AI LLM output for hallucinations and to give estimates of PII/PHI/FERPA density in data):
+* PII/PHI/FERPA Detection: Extracting PII, PHI, and FERPA (in extracted text and metadata) using the SDK's built-in rules-based expert system (useful for quality checking AI LLM output and to give estimates of PII/PHI/FERPA density in data):
      * Social security numbers
      * Credit card numbers (13-19 digits)
      * Bank account numbers
